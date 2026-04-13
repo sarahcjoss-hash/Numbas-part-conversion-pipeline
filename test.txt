@@ -1,0 +1,286 @@
+Exam file report: ${config.name}
+Number of questions: 11
+
+Question 0 : Human cells
+ Tags hg_chbi1_0euq1 
+Extensions manual_marking
+
+Number of parts : 4
+Part 0: type patternmatch 
+
+
+,Part 1: type gapfill manual marking
+
+ <p>A well known drug company has developed a drug for the treatment of the symptoms of a particular inherited disease. However, before they can proceed to clinical trials using volunteers, the company has decided to do additional tests in the laboratory using stem cells.</p>
+<p>Suggest an ethical consideration which may influence their decision in using stem cells.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+builder manualmarking_builder('b'), width manualmarking_textarea_width('350px'), height manualmarking_textarea_height('4em')
+Marks:1 Answer Choose an answer from: Is it safer than using the drug directly on volunteers? Is it right to use embryos to extract stem cells? Is it right to deprive sufferers of potential treatment? Is it right to use stem cells rather than animals?
+
+,Part 2: type gapfill manual marking
+
+ <p>What is the difference between embryonic and tissue stem cells?</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('c')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+builder manualmarking_builder('c'), width manualmarking_textarea_width('350px'), height manualmarking_textarea_height('4em')
+Marks:1 Answer Tissue stem cells are more differentiated than embryonic stem cells.
+
+,Part 3: type gapfill 
+
+
+
+-------------------------------------
+,Question 1 : Structure of DNA
+ Tags hg_chbi1_0euq2 
+Extensions 
+
+Number of parts : 6
+Part 0: type patternmatch 
+
+
+,Part 1: type patternmatch 
+
+
+,Part 2: type patternmatch 
+
+
+,Part 3: type patternmatch 
+
+
+,Part 4: type patternmatch 
+
+
+,Part 5: type patternmatch 
+
+
+
+-------------------------------------
+,Question 2 : Replication of DNA
+ Tags hg_chbi1_0euq3 
+Extensions 
+
+Number of parts : 6
+Part 0: type patternmatch 
+
+
+,Part 1: type patternmatch 
+
+
+,Part 2: type patternmatch 
+
+
+,Part 3: type gapfill 
+
+
+,Part 4: type 1_n_2 
+
+
+,Part 5: type 1_n_2 
+
+
+
+-------------------------------------
+,Question 3 : Gene expression
+ Tags hg_chbi1_0euq4 
+Extensions manual_marking
+
+Number of parts : 9
+Part 0: type patternmatch 
+
+
+,Part 1: type patternmatch 
+
+
+,Part 2: type patternmatch 
+
+
+,Part 3: type patternmatch 
+
+
+,Part 4: type patternmatch 
+
+
+,Part 5: type gapfill manual marking
+
+ <p>Explain why a primary mRNA molecule is longer than a mature mRNA molecule.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('f')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+builder manualmarking_builder('f'), width manualmarking_textarea_width('350px'), height manualmarking_textarea_height('4em')
+Marks:1 Answer Choose an answer from: the introns / non-coding regions of genes are removed; due to RNA splicing;  the mature mRNA only contains exons / coding regions of genes.
+
+,Part 6: type patternmatch 
+
+
+,Part 7: type patternmatch 
+
+
+,Part 8: type patternmatch 
+
+
+
+-------------------------------------
+,Question 4 : Mutations
+ Tags  
+Extensions 
+
+Number of parts : 4
+Part 0: type m_n_2 
+
+
+,Part 1: type patternmatch 
+
+
+,Part 2: type patternmatch 
+
+
+,Part 3: type 1_n_2 
+
+
+
+-------------------------------------
+,Question 5 : Human Genomics
+ Tags hg_chbi1_0euq6 
+Extensions 
+
+Number of parts : 2
+Part 0: type patternmatch 
+
+
+,Part 1: type patternmatch 
+
+
+
+-------------------------------------
+,Question 6 : Metabolic pathways
+ Tags  
+Extensions 
+
+Number of parts : 3
+Part 0: type gapfill 
+
+
+,Part 1: type gapfill 
+
+
+,Part 2: type gapfill 
+
+
+
+-------------------------------------
+,Question 7 : Metabolic pathways
+ Tags hg_chbi1_0euq8 
+Extensions manual_marking
+
+Number of parts : 2
+Part 0: type gapfill manual marking
+
+ <p>Explain the term 'induced fit'.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('a')}{manualmarking_textarea_width('400px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+builder manualmarking_builder('a'), width manualmarking_textarea_width('400px'), height manualmarking_textarea_height('4em')
+Marks:1 Answer When a substrate binds, the active site on the enzyme changes shape.
+
+,Part 1: type gapfill manual marking
+
+ <p>Explain the difference between a competitive inhibitor and non-competitive inhibitor.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('400px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+builder manualmarking_builder('b'), width manualmarking_textarea_width('400px'), height manualmarking_textarea_height('4em')
+Marks:1 Answer Competitive inhibitors bind at the active site, non-competitive inhibitors bind away from the active site.
+
+
+-------------------------------------
+,Question 8 : Metabolic Pathways
+ Tags hg_chbi1_0euq9 
+Extensions manual_marking
+
+Number of parts : 3
+Part 0: type patternmatch 
+
+
+,Part 1: type 1_n_2 
+
+
+,Part 2: type 1_n_2 
+
+
+
+-------------------------------------
+,Question 9 : Cellular respiration
+ Tags hg_chbi1_0euq10 
+Extensions 
+
+Number of parts : 6
+Part 0: type patternmatch 
+
+
+,Part 1: type patternmatch 
+
+
+,Part 2: type patternmatch 
+
+
+,Part 3: type patternmatch 
+
+
+,Part 4: type patternmatch 
+
+
+,Part 5: type gapfill 
+
+
+
+-------------------------------------
+,Question 10 : Energy systems in muscle cells
+ Tags hg_chbi1_0euq11 
+Extensions drag_and_drop
+
+Number of parts : 3
+Part 0: type gapfill 
+
+
+,Part 1: type gapfill 
+drag and drop
+ <p>For each of the following descriptions decide whether they refer to slow twitch muscle fibres or fast twitch muscle fibres and put them under the correct heading in the table.</p>
+<table border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr>
+<th>Slow twitch muscle fibres</th>
+<th>Fast twitch muscle fibres</th>
+</tr>
+<tr>
+<td style="text-align: center;">[[0]]</td>
+<td style="text-align: center;">[[4]]</td>
+</tr>
+<tr>
+<td style="text-align: center;">[[1]]</td>
+<td style="text-align: center;">[[5]]</td>
+</tr>
+<tr>
+<td style="text-align: center;">[[2]]</td>
+<td style="text-align: center;">[[6]]</td>
+</tr>
+<tr>
+<td style="text-align: center;">[[3]]</td>
+<td style="text-align: center;">[[7]]</td>
+</tr>
+</tbody>
+</table>
+<p>{dnd_builder("b","text",drags_b)}{dnd_dragHeight(56)}{dnd_dragWidth(120)}{dnd_render()}</p>
+SETTINGS number of gaps 8 : builder: dnd_builder("b","text",drags_b), width: dnd_dragHeight(56), height: dnd_dragWidth(120)
+drag values ["Rely on aerobic respiration to generate ATP","Many mitochondria","Large blood supply","Major storage fuel is fats","Generate ATP through glycolysis only","Fewer mitochondria","Lower blood supply","Major storage fuel is glycogen"]
+Gap 0: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 1: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 2: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 3: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 4: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 5: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 6: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 7: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+
+,Part 2: type gapfill 
+
+
+
+-------------------------------------
