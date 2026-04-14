@@ -1,4 +1,4 @@
-class question {
+class Question {
     constructor() {
         this.name = "";
         this.tags = [];
@@ -70,3 +70,4 @@ class question {
         return questionString;
     }
 }
+export { Question as default };

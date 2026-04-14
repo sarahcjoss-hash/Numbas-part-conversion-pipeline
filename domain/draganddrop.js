@@ -41,5 +41,7 @@ class DragAndDropPart extends part {
 
     partReport() {
         let partString = super(this.partReport);
+        return partString;
     }
 }
+export { DragAndDropPart as default };

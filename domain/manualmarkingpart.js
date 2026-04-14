@@ -1,4 +1,4 @@
-class manualMarkingPart extends part {
+class ManualMarkingPart extends part {
     constructor() {
         this.prompt = "";
         this.gaps = [];
@@ -37,9 +37,9 @@ class manualMarkingPart extends part {
         this.gaps.push(gap);
     }
 
-
-
     partReport() {
         let partString = super(this.partReport);
+        return partString;
     }
 }
+export { ManualMarkingPart as default };

@@ -77,5 +77,6 @@ class FileReader {
         });
     }
 }
+export { FileReader as default };
 
 

@@ -1,4 +1,4 @@
-class dragGap {
+class DragGap {
     //although all parts have a prompt and 0 to many gaps 
     // for most parts we only need to know type, number, and we might as well get marks
     //for now leave prompt and gaps for teh parts where that matters
@@ -35,3 +35,4 @@ class dragGap {
         return gapString;
     }
 }
+export { DragGap as default };

@@ -1,38 +1,5 @@
-const fs = require('fs');
 
-function readConfigFile(filename, callback) {
-  console.log('here')
-  fs.readFile(filename, 'utf8', (err, data) => {
-    if (err) {
-      // Handle specific error types
-      if (err.code === 'ENOENT') {
-        return callback(new Error(`Config file ${filename} not found`));
-      } else if (err.code === 'EACCES') {
-        return callback(new Error(`No permission to read ${filename}`));
-      }
-      // For all other errors
-      return callback(err);
-    }
 
-    // Process data if no error
-    try {
-      parseThisJSON(data, callback)
-
-    } catch (parseError) {
-      callback(new Error(`Invalid JSON in ${filename}`));
-    }
-  });
-}
-function parseThisJSON(json, callback) {
-  // Process data if no error
-  try {
-    const parsedJSON = JSON.parse(json);
-    callback(null, parsedJSON);
-  } catch (parseError) {
-    callback(new Error(`Invalid JSON `));
-  }
-
-}
 
 // Usage
 readConfigFile('source.exam', (err, config) => {

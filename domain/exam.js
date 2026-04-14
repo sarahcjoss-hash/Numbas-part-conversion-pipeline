@@ -1,4 +1,4 @@
-class exam {
+class Exam {
     constructor(file) {
         this.fileName = file;
         this.name = "";
@@ -70,3 +70,4 @@ class exam {
         return examString;
     }
 }
+export { Exam as default };
