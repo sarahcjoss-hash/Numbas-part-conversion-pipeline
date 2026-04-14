@@ -1,4 +1,5 @@
-
+import {FileReader} from './fileReader.js';
+import {ExamFromJSON} from './ExamFromJSON.js;
 
 
 // Usage

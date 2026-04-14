@@ -1,4 +1,4 @@
-class DragAndDropPart extends part {
+class DragAndDropPart extends Part {
     constructor() {
         this.prompt = "";
         this.gaps = [];

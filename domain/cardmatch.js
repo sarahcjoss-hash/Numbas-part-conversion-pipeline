@@ -1,4 +1,4 @@
-class CardMatch extends part {
+class CardMatch extends Part {
     constructor() {
         this.prompt = "";
         this.gaps = [];

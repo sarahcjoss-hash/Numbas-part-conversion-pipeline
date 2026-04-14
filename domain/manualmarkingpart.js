@@ -1,4 +1,4 @@
-class ManualMarkingPart extends part {
+class ManualMarkingPart extends Part {
     constructor() {
         this.prompt = "";
         this.gaps = [];
