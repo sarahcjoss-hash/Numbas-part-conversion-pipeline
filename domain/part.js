@@ -1,17 +1,14 @@
 class part {
+    //although all parts have a prompt and 0 to many gaps 
+    // for most parts we only need to know type, number, and we might as well get marks
+    //for now leave prompt and gaps for teh parts where that matters
     constructor() {
-        this.prompt = "";
         this.type = "";
         this.pNumber = 0;
-        this.gaps = [];
+        this.marks = 0;
     }
 
-    set partPrompt(prompt) {
-        this.prompt = prompt;
-    }
-    get partPrompt() {
-        return this.prompt;
-    }
+
     set partType(type) {
         this.type = type;
     }
@@ -24,15 +21,17 @@ class part {
     get partNumber() {
         return this.pNumber;
     }
-    addGap(gap) {
-        this.gaps.push(gap);
+    set marks(mark){
+        this.marks = this.marks;
     }
-
+    get marks (){
+        return this.marks;
+    }
 
 
     partReport() {
         let partString = `part number: ${this.pNumber}\n`;
-        partString += `part type: ${this.type}\n`; 
+        partString += `part type: ${this.type} marks: ${this.marks}\n`; 
         return partString;
     }
 }
