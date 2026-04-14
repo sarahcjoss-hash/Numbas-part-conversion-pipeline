@@ -1,29 +1,15 @@
-const fs = require('fs');
+class JSONConfigParser {
+    //read the file
+    //parse the JSON and return it as an object
+    //this is really just a wrapper for the readConfigFile function but it allows us to have a more object oriented approach and also to have the option of adding more functionality to this class later if we need to
+    constructor(filename, callback) {
+        this.filename = filename; 
+        this.callback = callback;
+        readConfigFile(filename, callback);
 
-function readConfigFile(filename, callback) {
-  console.log('here')
-  fs.readFile(filename, 'utf8', (err, data) => {
-    if (err) {
-      // Handle specific error types
-      if (err.code === 'ENOENT') {
-        return callback(new Error(`Config file ${filename} not found`));
-      } else if (err.code === 'EACCES') {
-        return callback(new Error(`No permission to read ${filename}`));
-      }
-      // For all other errors
-      return callback(err);
     }
 
-    // Process data if no error
-    try {
-      parseThisJSON(data, callback)
-
-    } catch (parseError) {
-      callback(new Error(`Invalid JSON in ${filename}`));
-    }
-  });
-}
-function parseThisJSON(json, callback) {
+    parseThisJSON(json, callback) {
   // Process data if no error
   try {
     const parsedJSON = JSON.parse(json);
@@ -33,6 +19,16 @@ function parseThisJSON(json, callback) {
   }
 
 }
+
+
+
+}
+
+
+const fs = require('fs');
+
+
+
 
 // Usage
 readConfigFile('source.exam', (err, config) => {

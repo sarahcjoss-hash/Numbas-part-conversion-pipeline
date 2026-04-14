@@ -22,7 +22,7 @@ class part {
         return this.pNumber;
     }
     set marks(mark){
-        this.marks = this.marks;
+        this.marks = mark;
     }
     get marks (){
         return this.marks;
