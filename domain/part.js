@@ -27,7 +27,9 @@ class Part {
     get marks (){
         return this.marks;
     }
-
+    addGap(gap) {
+        this.gaps.push(gap);
+    }
 
     partReport() {
         let partString = `part number: ${this.pNumber}\n`;
@@ -35,4 +37,4 @@ class Part {
         return partString;
     }
 }
-export { Part as default };
+export { Part };

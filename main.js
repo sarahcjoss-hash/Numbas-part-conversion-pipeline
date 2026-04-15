@@ -1,9 +1,19 @@
 import {FileReader} from './fileReader.js';
-import {ExamFromJSON} from './ExamFromJSON.js;
+import {ExamFromJSON} from './ExamFromJSON.js';
 
 
 // Usage
-readConfigFile('source.exam', (err, config) => {
+const examFile = 'example2.exam';
+const filereader = new FileReader();
+filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
+    console.log(`Line 2 of ${examFile}: ${line}`);
+    const examData = JSON.parse(line);
+    const exam = new ExamFromJSON(examData);
+    // Process the exam data as needed  
+}).catch(err => {    console.error(err);
+});
+
+/*readConfigFile('source.exam', (err, config) => {
   if (err) {
     console.error('Failed to read config:', err.message);
     // Handle the error (e.g., use default config)

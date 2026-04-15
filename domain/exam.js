@@ -70,4 +70,4 @@ class Exam {
         return examString;
     }
 }
-export { Exam as default };
+export { Exam };

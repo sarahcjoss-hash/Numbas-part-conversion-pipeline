@@ -1,10 +1,14 @@
+import { Part } from "./Part.js";
 class DragAndDropPart extends Part {
     constructor() {
         this.prompt = "";
         this.gaps = [];
         this.dragsVariableName = ""
         this.dragsVariableValue = "";
-        this.newPartTypeMatch = "1-2-1";//other option is "bucket"
+        this.newPartTypeMatch = "1-2-1";//other option is "bucket";
+        this.type = "drag_and_drop";
+        this.dragHeight = "";
+        this.dragWidth = "";
 
     }
 
@@ -33,15 +37,25 @@ class DragAndDropPart extends Part {
     get newPartTypeMatch(){
         return this.newPartTypeMatch;
     }
-    addGap(gap) {
-        this.gaps.push(gap);
+    set dragHeight(height){
+        this.dragHeight = height;
+    }       
+    get dragHeight(){
+        return this.dragHeight;
     }
+    set dragWidth(width){
+        this.dragWidth = width;
+    }   
+    get dragWidth(){
+        return this.dragWidth;
+    }
+
 
 
 
     partReport() {
-        let partString = super(this.partReport);
+        let partString = super.partReport();
         return partString;
     }
 }
-export { DragAndDropPart as default };
+export { DragAndDropPart };

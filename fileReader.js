@@ -1,12 +1,13 @@
+import fs from 'fs';
+import fsPromises from 'fs/promises';
+
 class FileReader {
 
     constructor() {
-        const fs = require('fs').promises;
-
     }
     async readFileAsync(fileName) {
         try {
-            const data = await fs.readFile(fileName, 'utf8');
+            const data = await fsPromises.readFile(fileName, 'utf8');
             return (data);
         } catch (err) {
             if (err.code === 'ENOENT') {
@@ -77,6 +78,6 @@ class FileReader {
         });
     }
 }
-export { FileReader as default };
+export { FileReader};
 
 

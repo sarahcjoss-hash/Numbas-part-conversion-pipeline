@@ -35,4 +35,4 @@ class DragGap {
         return gapString;
     }
 }
-export { DragGap as default };
+export { DragGap };

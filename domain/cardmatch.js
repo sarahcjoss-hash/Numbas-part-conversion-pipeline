@@ -1,3 +1,4 @@
+import { Part } from "./Part.js";
 class CardMatch extends Part {
     constructor() {
         this.prompt = "";
@@ -26,22 +27,15 @@ class CardMatch extends Part {
     get dragsVariableValue() {
         return this.dragsVariableValue;    
     }
-    set newPartTypeMatch(type){
-        this.newPartTypeMatch = type;
 
-    }
     get newPartTypeMatch(){
         return this.newPartTypeMatch;
     }
-    addGap(gap) {
-        this.gaps.push(gap);
-    }
-
 
 
     partReport() {
-        let partString = super(this.partReport);
+        let partString = super.partReport();
         return partString;
     }
 }
-export { CardMatch as default };
+export { CardMatch };

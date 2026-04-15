@@ -70,4 +70,4 @@ class Question {
         return questionString;
     }
 }
-export { Question as default };
+export { Question };

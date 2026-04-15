@@ -1,3 +1,4 @@
+import { Part } from "./Part.js";
 class ManualMarkingPart extends Part {
     constructor() {
         this.prompt = "";
@@ -33,13 +34,11 @@ class ManualMarkingPart extends Part {
     get answer(){
         return this.answer;
     }
-    addGap(gap) {
-        this.gaps.push(gap);
-    }
+
 
     partReport() {
-        let partString = super(this.partReport);
+        let partString = super.partReport();
         return partString;
     }
 }
-export { ManualMarkingPart as default };
+export { ManualMarkingPart };
