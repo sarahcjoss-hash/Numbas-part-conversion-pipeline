@@ -6,6 +6,7 @@ class Part {
         this.type = "";
         this.pNumber = 0;
         this.marks = 0;
+        this.gaps = [];
     }
 
 

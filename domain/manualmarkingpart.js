@@ -2,7 +2,6 @@ import { Part } from "./Part.js";
 class ManualMarkingPart extends Part {
     constructor() {
         this.prompt = "";
-        this.gaps = [];
         this.textAreaWidth;
         this.textAreaHeight;
         this.answer = "";

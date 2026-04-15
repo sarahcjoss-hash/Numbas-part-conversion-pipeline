@@ -12,6 +12,7 @@ class ExamFromJSON {
         this.exam = new Exam();
         console.log('Config loaded successfully:', this.data);
         const extensionNames = ['manual_marking', 'drag_and_drop'];//can replace with a list later to match any of
+        this.processExamData(this.data);
     }
 
     processExamData(config) {
@@ -34,9 +35,7 @@ class ExamFromJSON {
                 const mmFlag = prompt.match('manualmarking_builder') ? true : false;
                 const ddFlag = prompt.match('dnd_builder') ? true : false;
                 const cmFlag = prompt.match('cardmatch_builder') ? true : false;
-                part.type = p.type;
-                part.prompt = prompt;
-                part.gaps = p.gaps;
+                
                 
                 //to do
                 //pull out the drag and drop values
@@ -71,6 +70,9 @@ class ExamFromJSON {
                     else{
                         part = new Part();
                     }
+                    part.type = p.type;
+                    part.prompt = prompt;
+                    part.gaps = p.gaps;
                 } catch (err) {
                     console.log(`unable to get inforamtion for custom part type ${err.message}`);
 

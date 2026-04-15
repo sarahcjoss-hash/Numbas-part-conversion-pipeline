@@ -2,7 +2,6 @@ import { Part } from "./Part.js";
 class CardMatch extends Part {
     constructor() {
         this.prompt = "";
-        this.gaps = [];
         this.dragsVariableName = ""
         this.dragsVariableValue = "";
         this.newPartTypeMatch = "card-match";

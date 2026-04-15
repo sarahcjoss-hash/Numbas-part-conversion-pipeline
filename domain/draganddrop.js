@@ -2,7 +2,6 @@ import { Part } from "./Part.js";
 class DragAndDropPart extends Part {
     constructor() {
         this.prompt = "";
-        this.gaps = [];
         this.dragsVariableName = ""
         this.dragsVariableValue = "";
         this.newPartTypeMatch = "1-2-1";//other option is "bucket";
