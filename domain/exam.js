@@ -1,12 +1,11 @@
 class Exam {
-    constructor(file) {
-        this.fileName = file;
+    constructor() {
         this.name = "";
-        this.numberOfQuestions = 0;
+        this.numOfQuestions = 0;
         this.containsCustomParts = false;
         this.customPartsTypes = [];
-        this.questions = [];
-        this.tags = [];
+        this.qs = [];
+        this.qTags = [];
         this.extensions = [];
     }
 
@@ -19,11 +18,11 @@ class Exam {
     }
 
     set numberOfQuestions(n){
-        this.numberOfQuestions = n;
+        this.numOfQuestions = n;
     }
 
     get numberOfQuestions(){
-        return this.numberOfQuestions;
+        return this.numOfQuestions;
     }
 
     get hasCustomParts(){
@@ -41,17 +40,17 @@ class Exam {
     }
 
     addQuestion(question){
-        this.questions.push(question);
+        this.qs.push(question);
     }
 
     get questions(){
-        return this.questions;
+        return this.qs;
     }
-    addTags(tags){
-        this.tags.push(...tags);
+    addqTags(qTags){
+        this.qTags.push(...qTags);
     }   
-    get examTags(){
-        return this.tags;
+    get examqTags(){
+        return this.qTags;
     }
     addExtensions(extensions){
         this.extensions.push(...extensions);
@@ -64,8 +63,8 @@ class Exam {
     examReport() {
         let examString = ` Exam name: ${this.name}\n`;
         examString += this.containsCustomParts?`Contains custom parts: this.customPartsTypes.join()\n`:`Contains NO custom parts\n`;
-        examString += `Exam tags: ${this.tags.join()}\n`;
-        examString += `Number of questions: ${this.numberOfQuestions}\n\n`
+        examString += `Exam qTags: ${this.qTags.join()}\n`;
+        examString += `Number of questions: ${this.numOfQuestions}\n\n`
 
         return examString;
     }

@@ -15,23 +15,23 @@ class ManualMarkingPart extends Part {
     get partPrompt() {
         return this.prompt;
     }
-    set textAreaWidth(width) {
+    set partTextAreaWidth(width) {
         this.textAreaWidth = width;
     }
-    get textAreaWidth() {
+    get partTextAreaWidth() {
         return this.textAreaWidth;
     }
-    set textAreaHeight(height) {
-        this.prompt = height;
+    set partTextAreaHeight(height) {
+        this.textAreaHeight = height;
     }
-    get textAreaHeight() {
+    get partTextAreaHeight() {
         return this.textAreaHeight;    
     }
-    set answer(ans){
+    set partAnswer(ans){
         this.answer = ans;
 
     }
-    get answer(){
+    get partAnswer(){
         return this.answer;
     }
 

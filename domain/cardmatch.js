@@ -15,20 +15,23 @@ class CardMatch extends Part {
     get partPrompt() {
         return this.prompt;
     }
-    set dragsVariableName(name) {
+    set partDragsVariableName(name) {
         this.dragsVariableName = name;
     }
-    get dragsVariableName() {
+    get partDragsVariableName() {
         return this.dragsVariableName;
     }
-    set dragsVariableValue(value) {
+    set partDragsVariableValue(value) {
         this.dragsVariableValue = value;
     }
-    get dragsVariableValue() {
+    get partDragsVariableValue() {
         return this.dragsVariableValue;    
     }
 
-    get newPartTypeMatch(){
+    set partNewPartTypeMatch(type){
+        this.newPartTypeMatch = type;
+    }
+    get partNewPartTypeMatch(){
         return this.newPartTypeMatch;
     }
 

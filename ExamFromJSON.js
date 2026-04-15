@@ -48,8 +48,8 @@ class ExamFromJSON {
                         const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt);
                         const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt);
                         part = new ManualMarkingPart();
-                        part.textAreaWidth = width;
-                        part.textAreaHeight = height;
+                        part.partTextAreaWidth = width;
+                        part.partTextAreaHeight = height;
 
                         const gap = p.gaps[0];
                     }else if (ddFlag) {
@@ -62,9 +62,9 @@ class ExamFromJSON {
                         const width = /dnd_dragHeight\(.+?\)/.exec(prompt);
                         const height = /dnd_dragWidth\(.+?\)/.exec(prompt);
                         part = new DragAndDropPart();
-                        part.dragValues = dragValues;
-                        part.dragWidth = width;
-                        part.dragHeight = height;
+                        part.partDragsVariableValue = dragValues;
+                        part.partDragWidth = width;
+                        part.partDragHeight = height;
                     }else if (cmFlag){
                         part = new CardMatch();
                     }

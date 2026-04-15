@@ -21,10 +21,10 @@ class Part {
     get partNumber() {
         return this.pNumber;
     }
-    set marks(mark){
+    set partMarks(mark){
         this.marks = mark;
     }
-    get marks (){
+    get partMarks (){
         return this.marks;
     }
     addGap(gap) {

@@ -18,35 +18,35 @@ class DragAndDropPart extends Part {
     get partPrompt() {
         return this.prompt;
     }
-    set dragsVariableName(name) {
+    set partDragsVariableName(name) {
         this.dragsVariableName = name;
     }
-    get dragsVariableName() {
+    get partDragsVariableName() {
         return this.dragsVariableName;
     }
-    set dragsVariableValue(value) {
+    set partDragsVariableValue(value) {
         this.dragsVariableValue = value;
     }
-    get dragsVariableValue() {
+    get partDragsVariableValue() {
         return this.dragsVariableValue;    
     }
-    set newPartTypeMatch(type){
+    set partNewPartTypeMatch(type){
         this.newPartTypeMatch = type;
 
     }
-    get newPartTypeMatch(){
+    get partNewPartTypeMatch(){
         return this.newPartTypeMatch;
     }
-    set dragHeight(height){
+    set partDragHeight(height){
         this.dragHeight = height;
     }       
-    get dragHeight(){
+    get partDragHeight(){
         return this.dragHeight;
     }
-    set dragWidth(width){
+    set partDragWidth(width){
         this.dragWidth = width;
     }   
-    get dragWidth(){
+    get partDragWidth(){
         return this.dragWidth;
     }
 

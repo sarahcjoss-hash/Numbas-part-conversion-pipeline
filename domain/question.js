@@ -22,10 +22,10 @@ class Question {
     get questionNumber() {
         return this.qNumber;
     }
-    set numberOfParts(n) {
+    set questionNumberOfParts(n) {
         this.numberOfParts = n;
     }
-    get numberOfParts() {
+    get questionNumberOfParts() {
         return this.numberOfParts;
     }
     set hasCustomParts(bool) {
@@ -59,7 +59,7 @@ class Question {
     addPart(part) {
         this.parts.push(part);
     }
-    get parts() {
+    get questionParts() {
         return this.parts;
     }
 
