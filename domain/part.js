@@ -2,9 +2,9 @@ class Part {
     //although all parts have a prompt and 0 to many gaps 
     // for most parts we only need to know type, number, and we might as well get marks
     //for now leave prompt and gaps for teh parts where that matters
-    constructor() {
+    constructor(num) {
         this._type = "";
-        this._pNumber = 0;
+        this._pNumber = num;
         this._marks = 0;
         this._gaps = [];
     }

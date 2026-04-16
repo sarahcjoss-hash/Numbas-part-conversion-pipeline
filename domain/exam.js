@@ -17,10 +17,6 @@ class Exam {
         return this._name;
     }
 
-    set numberOfQuestions(n){
-        this._numOfQuestions = n;
-    }
-
     get numberOfQuestions(){
         return this._numOfQuestions;
     }
@@ -32,6 +28,7 @@ class Exam {
     addCustomPartType(type){
         if (!this._customPartsTypes.includes(type)){
             this._customPartsTypes.push(type);
+            this._containsCustomParts = true;
         }
     }
 
@@ -41,21 +38,25 @@ class Exam {
 
     addQuestion(question){
         this._qs.push(question);
+        this._numOfQuestions = this._qs.length;
     }
 
     get questions(){
         return this._qs;
     }
     addqTags(qTags){
-        this._qTags.push(...qTags);
+        this._qTags.push(qTags);
     }   
     get qTags(){
         return this._qTags;
     }
-    addExtensions(extensions){
-        this._extensions.push(...extensions);
-        this._containsCustomParts = true;
+    set extensions(extensions){
+        if (Array.isArray(extensions) && extensions.length > 0){
+            this._extensions.push(...extensions);
+            this._containsCustomParts = true;
+        }
     }
+
     get extensions(){
         return this._extensions;
     }

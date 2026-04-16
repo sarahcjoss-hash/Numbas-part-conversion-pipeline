@@ -4,7 +4,7 @@ import { ReportWriter } from './ReportWriter.js';
 
 
 // Usage
-const examFile = 'example2.exam';
+const examFile = 'question-229253-daniel-s-drag-and-drop-test.exam';
 const filereader = new FileReader();
 const reportWriter = new ReportWriter();
 filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {

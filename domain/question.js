@@ -1,9 +1,9 @@
 class Question {
-    constructor() {
+    constructor(num) {
         this._name = "";
         this._tags = [];
         this._extensions = [];
-        this._qNumber = 0;
+        this._qNumber = num;
         this._numberOfParts = 0;
         this._containsCustomParts = false;
         this._customPartsTypes = [];
@@ -16,9 +16,6 @@ class Question {
         return this._name;
     }
 
-    set number(n) {
-        this._qNumber = n;
-    }
     get number() {
         return this._qNumber;
     }

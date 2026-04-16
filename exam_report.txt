@@ -1,15 +1,18 @@
-Exam file report: Expressions avec avoir
- Exam name: Expressions avec avoir
+Exam file report: Daniel's drag and drop test
+ Exam name: Daniel's drag and drop test
 Contains custom parts: this._customPartsTypes.join()
 Exam qTags: 
-Number of questions: 0
+Number of questions: 1
 
-Question 0 : pattern for sentence reorder
- Tags a,h,_,c,f,r,h,4,_,2,_,9,c,h,a,u,d,f,r,o,i,d 
-Extensions 
+Question 1 : Daniel's drag and drop test
+ Tags  
+Extensions scholar-drag-1-to-1
 
-Number of parts : 1
-Part 0: type scholar-sentence-reorder 
+Number of parts : 2
+Part 0: type drag-and-drop-text-1-to-1-1 
+
+
+,Part 1: type drag-and-drop-text-1-to-1-1 
 
 
 

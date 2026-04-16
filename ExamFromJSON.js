@@ -19,22 +19,22 @@ class ExamFromJSON {
         this.exam.name = config.name;
         this.exam.description = config.description;
         this.exam.tags = config.tags;
-        this.exam.addExtensions(...config.extensions);
+        this.exam.extensions = config.extensions;
         const qGroups = config.question_groups;
         const questions = qGroups.map(qg => qg.questions).flat();//need flat here as the questions are themselves an array
         questions.map((q, i) => {
-            let question = new Question();
+            let question = new Question(i+1);
             question.name = q.name;
-            question.addTags(...q.tags);
+            question.addTags(q.tags);
             question.addExtensions(q.extensions);
 
             const parts = q.parts;
             parts.map((p, i) => {
                 let part;
                 const prompt = p.prompt;
-                const mmFlag = prompt.match('manualmarking_builder') ? true : false;
-                const ddFlag = prompt.match('dnd_builder') ? true : false;
-                const cmFlag = prompt.match('cardmatch_builder') ? true : false;
+                const mmFlag = prompt?.match('manualmarking_builder') ? true : false;
+                const ddFlag = prompt?.match('dnd_builder') ? true : false;
+                const cmFlag = prompt?.match('cardmatch_builder') ? true : false;
                 
                 
                 //to do
@@ -46,7 +46,7 @@ class ExamFromJSON {
                         const builder = /manualmarking_builder\(.+?\)/.exec(prompt);
                         const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt);
                         const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt);
-                        part = new ManualMarkingPart();
+                        part = new ManualMarkingPart(i+1);
                         part._textAreaWidth = width;
                         part._textAreaHeight = height;
 
@@ -60,15 +60,16 @@ class ExamFromJSON {
                         const dragValues = variables[dragsVariableName].definition;
                         const width = /dnd_dragHeight\(.+?\)/.exec(prompt);
                         const height = /dnd_dragWidth\(.+?\)/.exec(prompt);
-                        part = new DragAndDropPart();
+                        part = new DragAndDropPart(i+1);
                         part.dragsVariableValue = dragValues;
                         part.dragWidth = width;
                         part.dragHeight = height;
+                        let pBuilder = new Builder(builder);
                     }else if (cmFlag){
                         part = new CardMatch();
                     }
                     else{
-                        part = new Part();
+                        part = new Part(i+1);
                     }
                     part._type = p.type;
                     part.prompt = prompt;
