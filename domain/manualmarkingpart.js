@@ -1,37 +1,43 @@
 import { Part } from "./Part.js";
+import { Builder } from "./Builder.js";
+
 class ManualMarkingPart extends Part {
     constructor() {
-        this.prompt = "";
-        this.textAreaWidth;
-        this.textAreaHeight;
-        this.answer = "";
+        this._prompt = "";
+        this._textAreaWidth;
+        this._textAreaHeight;
+        this._answer = "";
+        this._builder = new Builder();
 
     }
 
-    set partPrompt(prompt) {
-        this.prompt = prompt;
+    set prompt(prompt) {
+        this._prompt = prompt;
     }
-    get partPrompt() {
-        return this.prompt;
+    get prompt() {
+        return this._prompt;
     }
-    set partTextAreaWidth(width) {
-        this.textAreaWidth = width;
+    set textAreaWidth(width) {
+        this._textAreaWidth = width;
     }
-    get partTextAreaWidth() {
-        return this.textAreaWidth;
+    get textAreaWidth() {
+        return this._textAreaWidth;
     }
-    set partTextAreaHeight(height) {
-        this.textAreaHeight = height;
+    set textAreaHeight(height) {
+        this._textAreaHeight = height;
     }
-    get partTextAreaHeight() {
-        return this.textAreaHeight;    
+    get textAreaHeight() {
+        return this._textAreaHeight;    
     }
-    set partAnswer(ans){
-        this.answer = ans;
+    set answer(ans){
+        this._answer = ans;
 
     }
-    get partAnswer(){
-        return this.answer;
+    get answer(){
+        return this._answer;
+    }
+    get builder(){
+        return this._builder;
     }
 
 

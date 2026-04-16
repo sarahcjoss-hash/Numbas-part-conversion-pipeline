@@ -1,70 +1,70 @@
 class Exam {
     constructor() {
-        this.name = "";
-        this.numOfQuestions = 0;
-        this.containsCustomParts = false;
-        this.customPartsTypes = [];
-        this.qs = [];
-        this.qTags = [];
-        this.extensions = [];
+        this._name = "";
+        this._numOfQuestions = 0;
+        this._containsCustomParts = false;
+        this._customPartsTypes = [];
+        this._qs = [];
+        this._qTags = [];
+        this._extensions = [];
     }
 
-    set examName(name) {
-        this.name = name;
+    set name(name) {
+        this._name = name;
     }
 
-    get examName() {
-        return this.name;
+    get name() {
+        return this._name;
     }
 
     set numberOfQuestions(n){
-        this.numOfQuestions = n;
+        this._numOfQuestions = n;
     }
 
     get numberOfQuestions(){
-        return this.numOfQuestions;
+        return this._numOfQuestions;
     }
 
     get hasCustomParts(){
-        return this.containsCustomParts;
+        return this._containsCustomParts;
     }
 
     addCustomPartType(type){
-        if (!this.customPartsTypes.includes(type)){
-            this.customPartsTypes.push(type);
+        if (!this._customPartsTypes.includes(type)){
+            this._customPartsTypes.push(type);
         }
     }
 
     get customPartTypes(){
-        return this.customPartsTypes;
+        return this._customPartsTypes;
     }
 
     addQuestion(question){
-        this.qs.push(question);
+        this._qs.push(question);
     }
 
     get questions(){
-        return this.qs;
+        return this._qs;
     }
     addqTags(qTags){
-        this.qTags.push(...qTags);
+        this._qTags.push(...qTags);
     }   
-    get examqTags(){
-        return this.qTags;
+    get qTags(){
+        return this._qTags;
     }
     addExtensions(extensions){
-        this.extensions.push(...extensions);
-        this.containsCustomParts = true;
+        this._extensions.push(...extensions);
+        this._containsCustomParts = true;
     }
-    get examExtensions(){
-        return this.extensions;
+    get extensions(){
+        return this._extensions;
     }
 
     examReport() {
-        let examString = ` Exam name: ${this.name}\n`;
-        examString += this.containsCustomParts?`Contains custom parts: this.customPartsTypes.join()\n`:`Contains NO custom parts\n`;
-        examString += `Exam qTags: ${this.qTags.join()}\n`;
-        examString += `Number of questions: ${this.numOfQuestions}\n\n`
+        let examString = ` Exam name: ${this._name}\n`;
+        examString += this._containsCustomParts?`Contains custom parts: this._customPartsTypes.join()\n`:`Contains NO custom parts\n`;
+        examString += `Exam qTags: ${this._qTags.join()}\n`;
+        examString += `Number of questions: ${this._numOfQuestions}\n\n`
 
         return examString;
     }

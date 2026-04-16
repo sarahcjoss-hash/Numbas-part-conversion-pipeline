@@ -9,18 +9,14 @@ class ReportWriter {
 
         let reportString = `Exam file report: ${exam.name}\n`;
         let questions = exam.questions;
-
-        reportString += `Number of questions: ${exam.numberOfQuestions}\n\n`;
+        reportString += exam.examReport();
         reportString += questions.map((q, i) => {
-            console.log(q)
-            let questionString = `Question ${i} : ${q.name}\n Tags ${q.tags} \nExtensions ${q.extensions}\n\n`;
+            console.log(q.questionReport());
+            let questionString = q.questionReport();
             let parts = q.parts;
-            questionString += `Number of parts : ${parts.length}\n`;
             questionString += parts.map((p, i) => {
 
-                //to do
-                //pull out the drag and drop values
-                //this will include having to find the varaible name and then get teh varaible values
+        
                 let partString = `Part ${i}: type ${p.type} `;
                 partString += p.type === 'manual_marking' ? 'manual marking\n' : '\n';
                 partString += p.type === 'drag_and_drop' ? 'drag and drop\n' : '\n';

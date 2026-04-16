@@ -1,72 +1,72 @@
 class Question {
     constructor() {
-        this.name = "";
-        this.tags = [];
-        this.extensions = [];
-        this.qNumber = 0;
-        this.numberOfParts = 0;
-        this.containsCustomParts = false;
-        this.customPartsTypes = [];
-        this.parts = [];
+        this._name = "";
+        this._tags = [];
+        this._extensions = [];
+        this._qNumber = 0;
+        this._numberOfParts = 0;
+        this._containsCustomParts = false;
+        this._customPartsTypes = [];
+        this._parts = [];
     }
-    set questionName(name) {
-        this.name = name;
+    set name(name) {
+        this._name = name;
     }
-    get questionName() {
-        return this.name;
+    get name() {
+        return this._name;
     }
 
-    set questionNumber(n) {
-        this.qNumber = n;
+    set number(n) {
+        this._qNumber = n;
     }
-    get questionNumber() {
-        return this.qNumber;
+    get number() {
+        return this._qNumber;
     }
-    set questionNumberOfParts(n) {
-        this.numberOfParts = n;
+    set numberOfParts(n) {
+        this._numberOfParts = n;
     }
-    get questionNumberOfParts() {
-        return this.numberOfParts;
+    get numberOfParts() {
+        return this._numberOfParts;
     }
     set hasCustomParts(bool) {
-        this.containsCustomParts = bool;
+        this._containsCustomParts = bool;
     }
     get hasCustomParts() {
-        return this.containsCustomParts;
+        return this._containsCustomParts;
     }
     addTags(tags) {
-        this.tags.push(...tags);
+        this._tags.push(...tags);
     }
-    get questionTags() {
-        return this.tags;
+    get tags() {
+        return this._tags;
     }
     addExtensions(extensions) {
-        this.extensions.push(...extensions);
-        this.containsCustomParts = true;
+        this._extensions.push(...extensions);
+        this._containsCustomParts = true;
     }
-    get questionExtensions() {
-        return this.extensions;
+    get extensions() {
+        return this._extensions;
     }
 
     addCustomPartType(type) {
-        if (!this.customPartsTypes.includes(type)) {
-            this.customPartsTypes.push(type);
+        if (!this._customPartsTypes.includes(type)) {
+            this._customPartsTypes.push(type);
         }
     }
     get customPartTypes() {
-        return this.customPartsTypes;
+        return this._customPartsTypes;
     }
     addPart(part) {
-        this.parts.push(part);
+        this._parts.push(part);
     }
-    get questionParts() {
-        return this.parts;
+    get parts() {
+        return this._parts;
     }
 
     questionReport() {
         const q = this;
-        let questionString = `Question ${q.qNumber} : ${q.name}\n Tags ${q.tags.join()} \nExtensions ${q.extensions.join()}\n\n`;
-        questionString += `Number of parts : ${q.parts.length}\n`;
+        let questionString = `Question ${q._qNumber} : ${q._name}\n Tags ${q._tags.join()} \nExtensions ${q._extensions.join()}\n\n`;
+        questionString += `Number of parts : ${q._parts.length}\n`;
         return questionString;
     }
 }

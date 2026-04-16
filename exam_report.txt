@@ -1,3 +1,16 @@
 Exam file report: Expressions avec avoir
+ Exam name: Expressions avec avoir
+Contains NO custom parts
+Exam qTags: 
 Number of questions: 0
 
+Question 0 : pattern for sentence reorder
+ Tags ah_cfrh4_2_9chaudfroid,ah_cfrh4_2ex9 
+Extensions 
+
+Number of parts : 1
+Part 0: type scholar-sentence-reorder 
+
+
+
+-------------------------------------

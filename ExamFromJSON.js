@@ -47,8 +47,8 @@ class ExamFromJSON {
                         const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt);
                         const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt);
                         part = new ManualMarkingPart();
-                        part.partTextAreaWidth = width;
-                        part.partTextAreaHeight = height;
+                        part._textAreaWidth = width;
+                        part._textAreaHeight = height;
 
                         const gap = p.gaps[0];
                     }else if (ddFlag) {
@@ -61,18 +61,20 @@ class ExamFromJSON {
                         const width = /dnd_dragHeight\(.+?\)/.exec(prompt);
                         const height = /dnd_dragWidth\(.+?\)/.exec(prompt);
                         part = new DragAndDropPart();
-                        part.partDragsVariableValue = dragValues;
-                        part.partDragWidth = width;
-                        part.partDragHeight = height;
+                        part.dragsVariableValue = dragValues;
+                        part.dragWidth = width;
+                        part.dragHeight = height;
                     }else if (cmFlag){
                         part = new CardMatch();
                     }
                     else{
                         part = new Part();
                     }
-                    part.type = p.type;
+                    part._type = p.type;
                     part.prompt = prompt;
-                    part.gaps = p.gaps;
+                    part._gaps = p.gaps;
+                    question.addPart(part);
+
                 } catch (err) {
                     console.log(`unable to get inforamtion for custom part type ${err.message}`);
 
@@ -80,6 +82,7 @@ class ExamFromJSON {
 
 
             });
+            this.exam.addQuestion(question);
 
         });
     }

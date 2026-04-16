@@ -9,22 +9,22 @@ class DragGap {
     }
 
 
-    set gapAnswer(ans) {
+    set answer(ans) {
         this.answer = ans;
     }
-    get gapAnswer() {
+    get answer() {
         return this.answer;
     }
-    set gapGapNumber(n) {
+    set gapNumber(n) {
         this.gapNumber = n;
     }
-    get gapGapNumber() {
+    get gapNumber() {
         return this.gapNumber;
     }
-    set gapMarks(mark){
+    set marks(mark){
         this.marks = mark;
     }
-    get gapMarks (){
+    get marks (){
         return this.marks;
     }
 

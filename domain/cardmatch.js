@@ -1,37 +1,36 @@
 import { Part } from "./Part.js";
 class CardMatch extends Part {
     constructor() {
-        this.prompt = "";
-        this.dragsVariableName = ""
-        this.dragsVariableValue = "";
-        this.newPartTypeMatch = "card-match";
-
+        this._prompt = "";
+        this._dragsVariableName = "";
+        this._dragsVariableValue = "";
+        this._newPartTypeMatch = "card-match";
     }
 
-    set partPrompt(prompt) {
-        this.prompt = prompt;
+    set prompt(prompt) {
+        this._prompt = prompt;
     }
-    get partPrompt() {
-        return this.prompt;
+    get prompt() {
+        return this._prompt;
     }
-    set partDragsVariableName(name) {
-        this.dragsVariableName = name;
+    set dragsVariableName(name) {
+        this._dragsVariableName = name;
     }
-    get partDragsVariableName() {
-        return this.dragsVariableName;
+    get dragsVariableName() {
+        return this._dragsVariableName;
     }
-    set partDragsVariableValue(value) {
-        this.dragsVariableValue = value;
+    set dragsVariableValue(value) {
+        this._dragsVariableValue = value;
     }
-    get partDragsVariableValue() {
-        return this.dragsVariableValue;    
+    get dragsVariableValue() {
+        return this._dragsVariableValue;    
     }
 
-    set partNewPartTypeMatch(type){
-        this.newPartTypeMatch = type;
+    set newPartTypeMatch(type){
+        this._newPartTypeMatch = type;
     }
-    get partNewPartTypeMatch(){
-        return this.newPartTypeMatch;
+    get newPartTypeMatch(){
+        return this._newPartTypeMatch;
     }
 
 

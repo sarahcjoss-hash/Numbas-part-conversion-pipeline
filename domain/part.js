@@ -3,38 +3,41 @@ class Part {
     // for most parts we only need to know type, number, and we might as well get marks
     //for now leave prompt and gaps for teh parts where that matters
     constructor() {
-        this.type = "";
-        this.pNumber = 0;
-        this.marks = 0;
-        this.gaps = [];
+        this._type = "";
+        this._pNumber = 0;
+        this._marks = 0;
+        this._gaps = [];
     }
 
 
-    set partType(type) {
-        this.type = type;
+    set type(type) {
+        this._type = type;
     }
-    get partType() {
-        return this.type;
+    get type() {
+        return this._type;
     }
-    set partNumber(n) {
-        this.pNumber = n;
+    set number(n) {
+        this._pNumber = n;
     }
-    get partNumber() {
-        return this.pNumber;
+    get number() {
+        return this._pNumber;
     }
-    set partMarks(mark){
-        this.marks = mark;
+    set marks(mark){
+        this._marks = mark;
     }
-    get partMarks (){
-        return this.marks;
+    get marks (){
+        return this._marks;
     }
     addGap(gap) {
-        this.gaps.push(gap);
+        this._gaps.push(gap);
     }
+    get numberOfGaps() {
+        return this._gaps.length;
+    };
 
     partReport() {
-        let partString = `part number: ${this.pNumber}\n`;
-        partString += `part type: ${this.type} marks: ${this.marks}\n`; 
+        let partString = `part number: ${this._pNumber}\n`;
+        partString += `part type: ${this._type} marks: ${this._marks}\n`; 
         return partString;
     }
 }
