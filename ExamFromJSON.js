@@ -19,14 +19,14 @@ class ExamFromJSON {
         this.exam.name = config.name;
         this.exam.description = config.description;
         this.exam.tags = config.tags;
-        this.exam.extensions = config.extensions;
+        this.exam.addExtensions(...config.extensions);
         const qGroups = config.question_groups;
         const questions = qGroups.map(qg => qg.questions).flat();//need flat here as the questions are themselves an array
         questions.map((q, i) => {
             let question = new Question();
             question.name = q.name;
-            question.tags = q.tags;
-            question.extensions = q.extensions;
+            question.addTags(...q.tags);
+            question.addExtensions(q.extensions);
 
             const parts = q.parts;
             parts.map((p, i) => {

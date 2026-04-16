@@ -1,11 +1,11 @@
 Exam file report: Expressions avec avoir
  Exam name: Expressions avec avoir
-Contains NO custom parts
+Contains custom parts: this._customPartsTypes.join()
 Exam qTags: 
 Number of questions: 0
 
 Question 0 : pattern for sentence reorder
- Tags ah_cfrh4_2_9chaudfroid,ah_cfrh4_2ex9 
+ Tags a,h,_,c,f,r,h,4,_,2,_,9,c,h,a,u,d,f,r,o,i,d 
 Extensions 
 
 Number of parts : 1
