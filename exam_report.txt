@@ -1,19 +1,243 @@
-Exam file report: Daniel's drag and drop test
- Exam name: Daniel's drag and drop test
-Contains custom parts: this._customPartsTypes.join()
-Exam qTags: 
-Number of questions: 1
+Exam file report: Antenatal and postnatal screening: End of topic test
+ Exam name: Antenatal and postnatal screening: End of topic test
+Exam tags: None
+Exam description: None
+Number of questions: 13
 
-Question 1 : Daniel's drag and drop test
- Tags  
-Extensions scholar-drag-1-to-1
+QUESTIONS
+ ________________________________
+Question 1 : Antenatal and postnatal screening and care
+ Tags amniocentesis,amniotic fluid,antenatal,blood marker chemical,blood pressure,blood test,chorionic villus sampling,chromosome,foetus,hg_chbi2_4etq1,IVF,karyotype,placenta,postnatal,pre-implantation genetic diagnosis,pregnancy,ultrasound 
+Extensions drag_and_drop
+
+Number of parts : 1
+part number: 1
+part type: drag_and_drop marks: 0
+drag height: null drag width: null
+drag variables: name , value [ "Tested as part of a general health check", "A procedure that may be involved in IVF", "Usually taken 8-14 weeks after pregnancy", "Used to detect the possibility of physical problems", "Timing of tests taken into account when assessing", "Used to indicate the likelihood of a disorder", "Used to confirm the presence of a disorder", "Screening tests include", "Diagnostic tests include", "The name for an image of a fetus\' chromosomes", "Involves removing cells from the amniotic fluid", "Involves removing cells from the placenta" ]
+builder : builder string: dnd_builder('a','reorder',drags_a)
+part letter: 'a'
+type: 'reorder'
+variable name: drags_a
+SETTINGS number of gaps 12 : builder: [object Object], width: undefined, height: undefined
+drag values undefined
+UNABLE TO GET PART INFORMATION
+
+-------------------------------------
+,Question 2 : Pregnancy screening tests
+ Tags blood pressure,blood test,cystic fibrosis,hg_chbi2_4etq3,hypertension,pregnancy,screening test 
+Extensions 
+
+Number of parts : 1
+part number: 1
+part type: patternmatch marks: 0
+
+
+-------------------------------------
+,Question 3 : Pregnancy tests and scans
+ Tags antenatal,diagnostic test,false positive,fetal disorder,hg_chbi2_4etq4,marker chemical,postnatal,screening test,ultrasound 
+Extensions manual_marking
+
+Number of parts : 4
+part number: 1
+part type: patternmatch marks: 0
+
+,part number: 2
+part type: manual_marking marks: 0
+prompt: <p>State when the scan is carried out and its purpose.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
+text area width: manualmarking_textarea_width('300px') text area height: null
+answer: 
+builder string: manualmarking_builder('b')
+part letter: 'b'
+type: 
+variable name: width manualmarking_textarea_width('300px'), height null
+Marks:undefined Answer undefined
+
+,part number: 3
+part type: manual_marking marks: 0
+prompt: <p>Describe how a marker chemical might indicate the presence of a fetal disorder.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('c')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
+text area width: manualmarking_textarea_width('300px') text area height: null
+answer: 
+builder string: manualmarking_builder('c')
+part letter: 'c'
+type: 
+variable name: width manualmarking_textarea_width('300px'), height null
+Marks:undefined Answer undefined
+
+,part number: 4
+part type: manual_marking marks: 0
+prompt: <p>Explain how a test for a marker chemical might give a false positive result.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('d')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
+text area width: manualmarking_textarea_width('300px') text area height: null
+answer: 
+builder string: manualmarking_builder('d')
+part letter: 'd'
+type: 
+variable name: width manualmarking_textarea_width('300px'), height null
+Marks:undefined Answer undefined
+
+
+-------------------------------------
+,Question 4 : Amniocentesis
+ Tags amniocentesis,chorionic villus sampling,hg_chbi2_4etq5,karyotype,ultrasound probe 
+Extensions manual_marking
 
 Number of parts : 2
-Part 0: type drag-and-drop-text-1-to-1-1 
+part number: 1
+part type: manual_marking marks: 0
+prompt: <p>State two ways in which a diagram of chorionic villus sampling would be different from the above diagram.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('a')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
+text area width: manualmarking_textarea_width('300px') text area height: null
+answer: 
+builder string: manualmarking_builder('a')
+part letter: 'a'
+type: 
+variable name: width manualmarking_textarea_width('300px'), height null
+Marks:undefined Answer undefined
+
+,part number: 2
+part type: manual_marking marks: 0
+prompt: <p>State what a karyotype is and what it may reveal about an individual.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
+text area width: manualmarking_textarea_width('300px') text area height: null
+answer: 
+builder string: manualmarking_builder('b')
+part letter: 'b'
+type: 
+variable name: width manualmarking_textarea_width('300px'), height null
+Marks:undefined Answer undefined
 
 
-,Part 1: type drag-and-drop-text-1-to-1-1 
+-------------------------------------
+,Question 5 : Phenylketonuria
+ Tags hg_chbi2_4etq6,phenylketonuria,PKU 
+Extensions 
 
+Number of parts : 3
+part number: 1
+part type: patternmatch marks: 0
+
+,part number: 2
+part type: patternmatch marks: 0
+
+,part number: 3
+part type: patternmatch marks: 0
+
+
+-------------------------------------
+,Question 6 : Patterns of inheritance 1
+ Tags allele,autosome,chromosome,diploid,dominant,expression,gamete,gene,genotype,hg_chbi2_4etq7,homozygous,incomplete dominance,inheritance,phenotype,recessive 
+Extensions drag_and_drop
+
+Number of parts : 1
+part number: 1
+part type: drag_and_drop marks: 0
+drag height: null drag width: null
+drag variables: name , value [ "Diploid", "Gamete", "Alleles", "Genotype", "Phenotype", "Homozygous", "Dominant", "Recessive", "Incomplete dominance", "Autosome", "X", "Siblings" ]
+builder : builder string: dnd_builder('a','reorder',drags_a)
+part letter: 'a'
+type: 'reorder'
+variable name: drags_a
+SETTINGS number of gaps 12 : builder: [object Object], width: undefined, height: undefined
+drag values undefined
+UNABLE TO GET PART INFORMATION
+
+-------------------------------------
+,Question 7 : Patterns of inheritance 3
+ Tags hg_chbi2_4etq9 
+Extensions 
+
+Number of parts : 2
+part number: 1
+part type: gapfill marks: 0
+
+,part number: 2
+part type: gapfill marks: 0
+
+
+-------------------------------------
+,Question 8 : Monohybrid cross 1
+ Tags F1,F2,geneotype,heterozygote,hg_chbi2_4etq10,homozygote,monohybrid cross,offspring 
+Extensions 
+
+Number of parts : 3
+part number: 1
+part type: 1_n_2 marks: 0
+
+,part number: 2
+part type: 1_n_2 marks: 0
+
+,part number: 3
+part type: 1_n_2 marks: 0
+
+
+-------------------------------------
+,Question 9 : Huntington's disease
+ Tags chromosome,degeneration,dominant mutation,heterozygous,hg_chbi2_4etq12,Huntington's disease,inheritable disorder,nerve cell 
+Extensions 
+
+Number of parts : 1
+part number: 1
+part type: 1_n_2 marks: 0
+
+
+-------------------------------------
+,Question 10 : Cystic fibrosis
+ Tags carrier,chromosome 7,cystic fibrosis,heterozygous,hg_chbi2_4etq13,inheritable disorder,mutation,recessive mutation,symptom 
+Extensions 
+
+Number of parts : 2
+part number: 1
+part type: 1_n_2 marks: 0
+
+,part number: 2
+part type: 1_n_2 marks: 0
+
+
+-------------------------------------
+,Question 11 : Dominant sex-linked disorder
+ Tags dominant,hg_chbi2_4etq14,sex-linked disorder 
+Extensions 
+
+Number of parts : 2
+part number: 1
+part type: 1_n_2 marks: 0
+
+,part number: 2
+part type: 1_n_2 marks: 0
+
+
+-------------------------------------
+,Question 12 : Duchenne muscular dystrophy
+ Tags carrier,Duchenne muscular dystrophy,heterozygous,hg_chbi2_4etq15,muscle wastage,recessive,sex-linked disorder 
+Extensions 
+
+Number of parts : 3
+part number: 1
+part type: 1_n_2 marks: 0
+
+,part number: 2
+part type: 1_n_2 marks: 0
+
+,part number: 3
+part type: 1_n_2 marks: 0
+
+
+-------------------------------------
+,Question 13 : Red-green colour-blindness
+ Tags colour-blindness,hg_chbi2_4etq16,red-green,sex-linked trait 
+Extensions 
+
+Number of parts : 1
+part number: 1
+part type: 1_n_2 marks: 0
 
 
 -------------------------------------

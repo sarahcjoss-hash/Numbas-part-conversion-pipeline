@@ -2,10 +2,12 @@ import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
 
 class ManualMarkingPart extends Part {
-    constructor() {
+    constructor(num) {
+        super(num);
+        super._type = "manual_marking";
         this._prompt = "";
-        this._textAreaWidth;
-        this._textAreaHeight;
+        this._textAreaWidth = 'auto';
+        this._textAreaHeight = 'auto';
         this._answer = "";
         this._builder = new Builder();
 
@@ -43,6 +45,10 @@ class ManualMarkingPart extends Part {
 
     partReport() {
         let partString = super.partReport();
+            partString += `prompt: ${this._prompt}\n`;
+            partString += `text area width: ${this._textAreaWidth} text area height: ${this._textAreaHeight}\n`;
+            partString += `answer: ${this._answer}\n`;
+            partString += this._builder.report();
         return partString;
     }
 }

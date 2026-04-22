@@ -1,6 +1,8 @@
 import { Part } from "./Part.js";
 class CardMatch extends Part {
-    constructor() {
+    constructor(num) {
+        super(num);
+        super._type = "card_match";
         this._prompt = "";
         this._dragsVariableName = "";
         this._dragsVariableValue = "";
@@ -36,6 +38,10 @@ class CardMatch extends Part {
 
     partReport() {
         let partString = super.partReport();
+        partString += `scholar type:card match\n`;
+            partString += `prompt: ${this._prompt}\n`;
+                partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
+                
         return partString;
     }
 }

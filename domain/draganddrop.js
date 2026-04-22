@@ -1,7 +1,9 @@
 import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
 class DragAndDropPart extends Part {
-    constructor() {
+    constructor(num) {
+        super(num);
+        super._type = "drag_and_drop";
         this._prompt = "";
         this._dragsVariableName = "";
         this._dragsVariableValue = "";
@@ -59,6 +61,10 @@ class DragAndDropPart extends Part {
 
     partReport() {
         let partString = super.partReport();
+        partString += `drag height: ${this._dragHeight} `;
+        partString += `drag width: ${this._dragWidth}\n`;
+        partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
+        partString += `builder : ${this._builder.report()}\n`;
         return partString;
     }
 }

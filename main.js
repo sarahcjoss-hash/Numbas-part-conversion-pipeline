@@ -3,12 +3,15 @@ import { ExamFromJSON } from './ExamFromJSON.js';
 import { ReportWriter } from './ReportWriter.js';
 
 
-// Usage
-const examFile = 'question-229253-daniel-s-drag-and-drop-test.exam';
+// to do
+//teh type for manual amrking etc is coming out as the part type we need to add the custom extension type to teh report and generally finsih writing the part reports
+const path = "C:/work/NUMBAS exams for practice/EXAMS downloaded from numbas mathcentre/human biology/"
+const folder = "exam-234463-antenatal-and-postnatal-screening-end-of-topic-test/"
+const examFile = path + folder + 'source.exam';
 const filereader = new FileReader();
 const reportWriter = new ReportWriter();
 filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
-  console.log(`Line 2 of ${examFile}: ${line}`);
+  
   const examData = JSON.parse(line);
   const exam = new ExamFromJSON(examData);
   const report =reportWriter.createReport(exam.exam);

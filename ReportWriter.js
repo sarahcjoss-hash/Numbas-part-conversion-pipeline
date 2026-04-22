@@ -17,10 +17,8 @@ class ReportWriter {
             questionString += parts.map((p, i) => {
 
         
-                let partString = `Part ${i}: type ${p.type} `;
-                partString += p.type === 'manual_marking' ? 'manual marking\n' : '\n';
-                partString += p.type === 'drag_and_drop' ? 'drag and drop\n' : '\n';
-                partString += p.type === 'manual_marking' || p.type === 'drag_and_drop' ? ` ${p.prompt}\n` : '';
+                let partString = p.partReport();
+
                 try {
                     if (p.type === 'manual_marking') {
                         partString += `width ${p.textAreaWidth}, height ${p.textAreaHeight}\n`;

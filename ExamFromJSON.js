@@ -9,16 +9,14 @@ import { CardMatch } from "./domain/CardMatch.js";
 class ExamFromJSON {
     constructor(jsonData) {
         this.data = jsonData;
-        this.exam = new Exam();
-        console.log('Config loaded successfully:', this.data);
+        this.exam;;
+        //console.log('Config loaded successfully:', this.data);
         const extensionNames = ['manual_marking', 'drag_and_drop'];//can replace with a list later to match any of
         this.processExamData(this.data);
     }
 
     processExamData(config) {
-        this.exam.name = config.name;
-        this.exam.description = config.description;
-        this.exam.tags = config.tags;
+        this.exam = new Exam(config.name, config.tags, config.description);    
         this.exam.extensions = config.extensions;
         const qGroups = config.question_groups;
         const questions = qGroups.map(qg => qg.questions).flat();//need flat here as the questions are themselves an array
@@ -49,6 +47,7 @@ class ExamFromJSON {
                         part = new ManualMarkingPart(i+1);
                         part._textAreaWidth = width;
                         part._textAreaHeight = height;
+                        part.builder.builderString = builder;
 
                         const gap = p.gaps[0];
                     }else if (ddFlag) {
@@ -64,14 +63,15 @@ class ExamFromJSON {
                         part.dragsVariableValue = dragValues;
                         part.dragWidth = width;
                         part.dragHeight = height;
-                        let pBuilder = new Builder(builder);
+                        part.builder.builderString = builder;
                     }else if (cmFlag){
                         part = new CardMatch();
                     }
                     else{
                         part = new Part(i+1);
+                        part._type = p.type;
                     }
-                    part._type = p.type;
+                    
                     part.prompt = prompt;
                     part._gaps = p.gaps;
                     question.addPart(part);

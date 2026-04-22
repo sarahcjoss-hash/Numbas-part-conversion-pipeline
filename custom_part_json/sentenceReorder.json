@@ -1,0 +1,25 @@
+{
+                            "type": "scholar-sentence-reorder",
+                            "useCustomName": false,
+                            "customName": "",
+                            "marks": 1,
+                            "scripts": {},
+                            "customMarkingAlgorithm": "",
+                            "extendBaseMarkingAlgorithm": true,
+                            "unitTests": [],
+                            "showCorrectAnswer": true,
+                            "showFeedbackIcon": true,
+                            "variableReplacements": [],
+                            "variableReplacementStrategy": "originalfirst",
+                            "nextParts": [],
+                            "suggestGoingBack": false,
+                            "adaptiveMarkingPenalty": 0,
+                            "exploreObjective": null,
+                            "settings": {
+                                "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
+                                "how_many_drags": "6",
+                                "distractors": [],
+                                "target_height": "35",
+                                "all_or_nothing": false
+                            }
+                        }

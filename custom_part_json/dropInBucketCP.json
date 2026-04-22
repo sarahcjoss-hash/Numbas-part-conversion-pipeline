@@ -1,0 +1,143 @@
+{
+                            "source": {
+                                "pk": 290,
+                                "author": {
+                                    "name": "Joss Joss",
+                                    "pk": 258
+                                },
+                                "edit_page": "/part_type/290/edit"
+                            },
+                            "name": "Scholar drop in bucket",
+                            "short_name": "scholar-drop-in-bucket",
+                            "description": "<p>Select and drop a selection of items into one of several buckets- many to many match to replace drag and drops.<br />This allows you to set up a questions with n number of categories each of which can receive up to x number of answers in any order as long as they are under the correct category.</p>\n<p>You can format the layout of the buckets by use of HTML.<br />To create extra spaces in a bucket (or to keep all buckets of an even size) you can use empty items.<br /><br />You can create distractors to have extra drop items.<br />Items can be dropped in any of teh lcaotions in their bucket.</p>",
+                            "help_url": "",
+                            "input_widget": "scholar-drop-in-bucket",
+                            "input_options": {
+                                "correctAnswer": "settings['how_many_matches']",
+                                "hint": {
+                                    "static": true,
+                                    "value": "Select an item and then select where you would like to place it."
+                                },
+                                "how_many_matches": {
+                                    "static": true,
+                                    "value": "9"
+                                },
+                                "item_width": {
+                                    "static": false,
+                                    "value": "settings['item_width']"
+                                },
+                                "item_height": {
+                                    "static": false,
+                                    "value": "settings['item_height']"
+                                },
+                                "drop_zone": {
+                                    "static": false,
+                                    "value": "settings['drop_zone']"
+                                },
+                                "distractors": {
+                                    "static": false,
+                                    "value": "settings['distractors']"
+                                },
+                                "mark_on_match": {
+                                    "static": true,
+                                    "value": "false"
+                                },
+                                "all_or_nothing": {
+                                    "static": true,
+                                    "value": "false"
+                                }
+                            },
+                            "can_be_gap": true,
+                            "can_be_step": true,
+                            "marking_script": "mark:\nif(interpreted_answer = 0, incorrect(\"Incorrect. Try again?\"),\nif(interpreted_answer < input_options['how_many_matches'],if (input_options['all_or_nothing'],incorrect(\"You must find all matches to get the marks\") , apply(partial_feedback)),correct(\"Correct.\"));end())\n\ninterpreted_answer:\nstudentAnswer\n\nmark_per_gap:\nmarks/input_options[\"how_many_matches\"]\n\npartial_feedback:\nset_credit((interpreted_answer/input_options['how_many_matches']) , \"Partially correct.\"); end()",
+                            "marking_notes": [
+                                {
+                                    "name": "mark",
+                                    "description": "This is the main marking note. It should award credit and provide feedback based on the student's answer.",
+                                    "definition": "if(interpreted_answer = 0, incorrect(\"Incorrect. Try again?\"),\nif(interpreted_answer < input_options['how_many_matches'],if (input_options['all_or_nothing'],incorrect(\"You must find all matches to get the marks\") , apply(partial_feedback)),correct(\"Correct.\"));end())"
+                                },
+                                {
+                                    "name": "interpreted_answer",
+                                    "description": "A value representing the student's answer to this part.",
+                                    "definition": "studentAnswer"
+                                },
+                                {
+                                    "name": "mark_per_gap",
+                                    "description": "",
+                                    "definition": "marks/input_options[\"how_many_matches\"]"
+                                },
+                                {
+                                    "name": "partial_feedback",
+                                    "description": "",
+                                    "definition": "set_credit((interpreted_answer/input_options['how_many_matches']) , \"Partially correct.\"); end()"
+                                }
+                            ],
+                            "settings": [
+                                {
+                                    "name": "drop_zone",
+                                    "label": "Drop zone with items",
+                                    "help_url": "",
+                                    "hint": "<p>Design the categories.</p>\n<p>'Buckets' are defined Using @[ bucket ]@</p>\n<p>'Items' are contained within the brackets of the bucket, and defined using%[ item]%</p>\n<p>Use blank items to control the number of slots in each bucket.</p>\n<p>You can use html markup to add images, align and style text etc.<br />Capitalisation does not work in this type - for capitlisation/drag to sentence use the 1-2-1 drop on targe question,</p>\n<p></p>",
+                                    "input_type": "html",
+                                    "default_value": "<table width=\"356\" height=\"225\">\n<tbody>\n<tr>\n<td style=\"width: 123.859px;\">Animal</td>\n<td style=\"width: 91.5625px;\">Vegetable</td>\n<td style=\"width: 91.5781px;\">Mineral</td>\n</tr>\n<tr>\n<td style=\"width: 123.859px;\">\n<p>@[</p>\n<p>%[Pangolin]%</p>\n<p>%[Muntjac]%</p>\n<p>%[Mangalica]%</p>\n<p>]@</p>\n</td>\n<td style=\"width: 91.5625px;\">\n<p>@[</p>\n<p>%[Mangelwurzel]%</p>\n<p>%[Rubber]%</p>\n<p>%[Ebony]%</p>\n<p>]@</p>\n</td>\n<td style=\"width: 91.5781px;\">\n<p>@[</p>\n<p>%[Manganese]%</p>\n<p>%[Jade]%</p>\n<p>]@</p>\n</td>\n</tr>\n</tbody>\n</table>",
+                                    "subvars": true
+                                },
+                                {
+                                    "name": "how_many_matches",
+                                    "label": "How many matches are there in the question",
+                                    "help_url": "",
+                                    "hint": "How many matches are there in the question",
+                                    "input_type": "code",
+                                    "default_value": "9",
+                                    "evaluate": true
+                                },
+                                {
+                                    "name": "distractors",
+                                    "label": "Optional distractors",
+                                    "help_url": "",
+                                    "hint": "",
+                                    "input_type": "list_of_strings",
+                                    "default_value": [],
+                                    "subvars": false
+                                },
+                                {
+                                    "name": "item_width",
+                                    "label": "Width of items",
+                                    "help_url": "",
+                                    "hint": "This can either be a size in pixels or put 'auto' if you want the item to size to it's contents",
+                                    "input_type": "string",
+                                    "default_value": "120",
+                                    "subvars": false
+                                },
+                                {
+                                    "name": "item_height",
+                                    "label": "Height of items",
+                                    "help_url": "",
+                                    "hint": "This can either be a size in pixels or put 'auto' if you want teh item to size to it's contents",
+                                    "input_type": "string",
+                                    "default_value": "80",
+                                    "subvars": false
+                                },
+                                {
+                                    "name": "all_or_nothing",
+                                    "label": "marks awarded only for getting all answers",
+                                    "help_url": "",
+                                    "hint": "",
+                                    "input_type": "checkbox",
+                                    "default_value": false
+                                },
+                                {
+                                    "name": "mark_on_match",
+                                    "label": "Mark each item as it is dropped",
+                                    "help_url": "",
+                                    "hint": "",
+                                    "input_type": "checkbox",
+                                    "default_value": false
+                                }
+                            ],
+                            "public_availability": "restricted",
+                            "published": false,
+                            "extensions": [
+                                "scholar-drop-in-bucket"
+                            ]
+                        }
