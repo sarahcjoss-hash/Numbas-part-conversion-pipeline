@@ -1351,7 +1351,7 @@ var math = Numbas.math = /** @lends Numbas.math */ {
 	 *
 	 * from http://dreaminginjavascript.wordpress.com/2008/11/08/combinations-and-permutations-in-javascript/ 
 	 * 
-	 * (public domain)
+	 * (public existing_parts)
 	 * @param {Number} a
 	 * @param {Number} b
 	 * @returns {Number}

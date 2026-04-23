@@ -3,7 +3,6 @@ import { Builder } from "./Builder.js";
 class DragAndDropPart extends Part {
     constructor(num) {
         super(num);
-        super._type = "drag_and_drop";
         this._prompt = "";
         this._dragsVariableName = "";
         this._dragsVariableValue = "";

@@ -1297,7 +1297,7 @@ if(!String.prototype.split)
 // -- killdream Quildreen Motta Copyright (C) 2011 MIT Licence
 // -- michaelficarra Michael Ficarra Copyright (C) 2011 3-clause BSD License
 // -- sharkbrainguy Gerard Paapu Copyright (C) 2011 MIT License
-// -- bbqsrc Brendan Molloy (C) 2011 Creative Commons Zero (public domain)
+// -- bbqsrc Brendan Molloy (C) 2011 Creative Commons Zero (public existing_parts)
 // -- iwyg XXX TODO License or CLA
 // -- DomenicDenicola Domenic Denicola Copyright (C) 2011 MIT License
 // -- xavierm02 Montillet Xavier Copyright (C) 2011 MIT License
