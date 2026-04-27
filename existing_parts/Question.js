@@ -1,12 +1,10 @@
 class Question {
-    constructor(num) {
-        this._name = "";
-        this._tags = [];
-        this._extensions = [];
-        this._qNumber = num;
-        this._numberOfParts = 0;
+    constructor(data, num) {
+        this._name = data.name || "";
+        this._tags = data.tags || [];
         this._containsCustomParts = false;
-        this._customPartsTypes = [];
+        this._extensions = this.addExtensions (data.extensions) || [];
+        this._qNumber = num;
         this._parts = [];
     }
     set name(name) {
@@ -19,14 +17,9 @@ class Question {
     get number() {
         return this._qNumber;
     }
-    set numberOfParts(n) {
-        this._numberOfParts = n;
-    }
+
     get numberOfParts() {
-        return this._numberOfParts;
-    }
-    set hasCustomParts(bool) {
-        this._containsCustomParts = bool;
+        return this._parts.length;
     }
     get hasCustomParts() {
         return this._containsCustomParts;
@@ -45,14 +38,7 @@ class Question {
         return this._extensions;
     }
 
-    addCustomPartType(type) {
-        if (!this._customPartsTypes.includes(type)) {
-            this._customPartsTypes.push(type);
-        }
-    }
-    get customPartTypes() {
-        return this._customPartsTypes;
-    }
+
     addPart(part) {
         this._parts.push(part);
     }

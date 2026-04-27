@@ -1,7 +1,7 @@
 import { Exam } from "./existing_parts/Exam.js";
 import { Question } from "./existing_parts/Question.js";
 import { Part } from "./existing_parts/Part.js";
-import { ManualMarkingPart } from "./existing_parts/ManualMarkingPart.js";
+import { ManualMarkingPart } from "./existing_parts/manualmarkingpart.js";
 import { DragAndDropPart } from "./existing_parts/DragAndDrop.js";
 import { CardMatch } from "./existing_parts/CardMatch.js";
 
@@ -21,11 +21,9 @@ class ExamFromJSON {
         const qGroups = config.question_groups;
         const questions = qGroups.map(qg => qg.questions).flat();//need flat here as the questions are themselves an array
         questions.map((q, i) => {
-            let question = new Question(i+1);
-            question.name = q.name;
-            question.addTags(q.tags);
-            question.addExtensions(q.extensions);
-
+            let question = new Question(q,i+1);
+            //working here to change code so that questions and aprts populate themselves from teh data- 
+            // //think about how you do this for sub parts- at teh m,oment we are ending up with parts that do not ahve the requisite data
             const parts = q.parts;
             parts.map((p, i) => {
                 let part;
@@ -45,8 +43,9 @@ class ExamFromJSON {
                         const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt);
                         const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt);
                         part = new ManualMarkingPart(i+1);
-                        part._textAreaWidth = width;
-                        part._textAreaHeight = height;
+                        part.textAreaWidth = width;
+                        part.textAreaHeight = height;
+                        part.answer = p.gaps[0].displayAnswer;
                         part.builder.builderString = builder;
 
                         const gap = p.gaps[0];
@@ -73,7 +72,8 @@ class ExamFromJSON {
                     }
                     
                     part.prompt = prompt;
-                    part._gaps = p.gaps;
+                    part.gaps = p.gaps;
+                    part.marks = p.marks;
                     question.addPart(part);
 
                 } catch (err) {

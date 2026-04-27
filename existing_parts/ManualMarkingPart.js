@@ -48,6 +48,8 @@ class ManualMarkingPart extends Part {
             partString += `prompt: ${this._prompt}\n`;
             partString += `text area width: ${this._textAreaWidth} text area height: ${this._textAreaHeight}\n`;
             partString += `answer: ${this._answer}\n`;
+    
+                        partString += `Marks:${p.answer.marks} Answer ${p.answer.displayAnswer}\n`
             partString += this._builder.report();
         return partString;
     }

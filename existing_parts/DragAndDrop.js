@@ -64,6 +64,12 @@ class DragAndDropPart extends Part {
         partString += `drag width: ${this._dragWidth}\n`;
         partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
         partString += `builder : ${this._builder.report()}\n`;
+   
+        partString += `SETTINGS number of gaps ${this._numberOfGaps} \n`;
+        
+        partString += this._gaps.map((g, i) => {
+                            return `Gap ${i}: answer ${g.answer} Marks: ${g.marks}\n`
+        });
         return partString;
     }
 }

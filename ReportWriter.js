@@ -19,12 +19,6 @@ class ReportWriter {
         
                 let partString = p.partReport();
 
-                try {
-                    if (p.type === 'manual_marking') {
-                        partString += `width ${p.textAreaWidth}, height ${p.textAreaHeight}\n`;
-                        partString += `Marks:${p.answer.marks} Answer ${p.answer.displayAnswer}\n`
-
-                    }
                     if (p.type === 'drag_and_drop') {
                         partString += `SETTINGS number of gaps ${p.numberOfGaps} : builder: ${p.builder}, width: ${p.width}, height: ${p.height}\n`;
                         partString += `drag values ${p.dragValues}\n`
@@ -33,10 +27,7 @@ class ReportWriter {
                         });
 
                     }
-                } catch (err) {
-                    console.log(`unable to get inforamtion for custom part type ${err.message}`);
-                    partString += "UNABLE TO GET PART INFORMATION"
-                }
+
 
                 partString += `\n`;
                 return partString;

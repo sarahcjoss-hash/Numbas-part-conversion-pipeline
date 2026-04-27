@@ -8,15 +8,7 @@ class PartUpdater {
         const type = this.partToConvert.type;
         switch (type) {
             case "drag_and_drop":
-                const dndSubType = this.partToConvert.builder.builderType;
-                switch (dndSubType) {
-                    case "1-2-1":
-                        this.newPart = new DragAndDropPart(this.partToConvert.number);
-                        break;
-                    case "bucket":
-                    default:
-                        console.log(`no conversion for drag_and_drop sub-type ${dndSubType}`);
-                }
+               this.newPart = this.convertToDragAndDrop(this.partToConvert);
                 break;
             case "card_match":
                 this.newPart = new CardMatch(this.partToConvert.number);
@@ -28,5 +20,25 @@ class PartUpdater {
                 console.log(`no conversion for part type ${type}`);
 
         }
+    }
+
+    convertToDragAndDrop(oldPart){
+         const dndSubType = oldPart.builder.builderType;
+         const prompt = oldPart.prompt;
+         const targetText = this.convertOldDnDPromptToTargetText(prompt);
+         
+                switch (dndSubType) {
+                    case "1-2-1":
+                        //
+                        break;
+                    case "bucket":
+                    default:
+                        console.log(`no conversion for drag_and_drop sub-type ${dndSubType}`);
+                }
+
+        return this.newPart;
+    }
+    convertOldDnDPromptToTargetText(oldPrompt){
+        return oldPrompt.replace(/%\[targets\]%/g, "%[targets]%").replace(/%\[your item here\]%/g, "%[your item here]%");
     }
 }
