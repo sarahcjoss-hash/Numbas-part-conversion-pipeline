@@ -39,41 +39,19 @@ class ExamFromJSON {
 
                 try {
                     if (mmFlag) {
-                        const builder = /manualmarking_builder\(.+?\)/.exec(prompt);
-                        const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt);
-                        const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt);
-                        part = new ManualMarkingPart(i+1);
-                        part.textAreaWidth = width;
-                        part.textAreaHeight = height;
-                        part.answer = p.gaps[0].displayAnswer;
-                        part.builder.builderString = builder;
-
-                        const gap = p.gaps[0];
+                         part = new ManualMarkingPart(p, i+1);
                     }else if (ddFlag) {
-                        const numberOfGaps = p.gaps.length;
-                        const variables = q.variables;
-                        console.log("VARIABLES" + q.variables)
-                        const builder = /dnd_builder\(.+?\)/.exec(prompt);
-                        const dragsVariableName = /drags_./.exec(builder);
-                        const dragValues = variables[dragsVariableName].definition;
-                        const width = /dnd_dragHeight\(.+?\)/.exec(prompt);
-                        const height = /dnd_dragWidth\(.+?\)/.exec(prompt);
-                        part = new DragAndDropPart(i+1);
-                        part.dragsVariableValue = dragValues;
-                        part.dragWidth = width;
-                        part.dragHeight = height;
-                        part.builder.builderString = builder;
+                        part = new DragAndDropPart(p, i+1, q.variables);
+                   
                     }else if (cmFlag){
                         part = new CardMatch();
                     }
                     else{
                         part = new Part(i+1);
-                        part._type = p.type;
+                        
                     }
                     
-                    part.prompt = prompt;
-                    part.gaps = p.gaps;
-                    part.marks = p.marks;
+             
                     question.addPart(part);
 
                 } catch (err) {
