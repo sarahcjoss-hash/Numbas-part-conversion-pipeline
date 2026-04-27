@@ -1,37 +1,43 @@
 import { Part } from "./Part.js";
+import { Builder } from "./Builder.js";
+import { DragGap } from "./DragGap.js";
 class CardMatch extends Part {
-    constructor(num) {
-        super(num);
+    constructor(num, data, variables) {
+        super(num, data);
         super._type = "card_match";
-        this._prompt = "";
-        this._dragsVariableName = "";
-        this._dragsVariableValue = "";
+        const builder = /dnd_builder\(.+?\)/.exec(prompt);
+        const dragsVariableName = /drags_./.exec(builder);
+        const dragValues = variables[dragsVariableName].definition;
+        this._dragsVariableName = dragsVariableName || "";
+        this._dragsVariableValue = dragValues || "";
         this._newPartTypeMatch = "card-match";
+        this._gaps = this.processGaps(data.gaps);
     }
 
-    set prompt(prompt) {
-        this._prompt = prompt;
+    processGaps(gaps) {
+        //for drag and drop we need to know the number of gaps but also the answers and marks for each gap
+        //create a DragGap for each gap
+        try {
+            return gaps.map((gap, i) => new DragGap(gap, i + 1));
+        } catch (error) {
+            console.error("Error processing gaps:", error);
+            return [];
+        }
     }
     get prompt() {
         return this._prompt;
     }
-    set dragsVariableName(name) {
-        this._dragsVariableName = name;
-    }
+
     get dragsVariableName() {
         return this._dragsVariableName;
     }
-    set dragsVariableValue(value) {
-        this._dragsVariableValue = value;
-    }
+
     get dragsVariableValue() {
-        return this._dragsVariableValue;    
+        return this._dragsVariableValue;
     }
 
-    set newPartTypeMatch(type){
-        this._newPartTypeMatch = type;
-    }
-    get newPartTypeMatch(){
+
+    get newPartTypeMatch() {
         return this._newPartTypeMatch;
     }
 
@@ -39,9 +45,9 @@ class CardMatch extends Part {
     partReport() {
         let partString = super.partReport();
         partString += `scholar type:card match\n`;
-            partString += `prompt: ${this._prompt}\n`;
-                partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
-                
+        partString += `prompt: ${this._prompt}\n`;
+        partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
+
         return partString;
     }
 }

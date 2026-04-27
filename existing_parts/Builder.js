@@ -1,13 +1,13 @@
 class Builder {
-    constructor() {
-        this._builderString = "";
+    constructor(str) {
+        this._builderString = str;
         this._partLetter = "";
         this._type = "";
         this._variableName = "";
-        //should variable value go here or in hte part?
+        processbuilderString(str)
     }
-   
-        set builderString(str) {
+
+    processbuilderString(str) {
         this._builderString = str;
         //parse the string to get the part letter, type and variable name
         const bitInBrackets = /\(.+?\)/.exec(str);
@@ -22,16 +22,16 @@ class Builder {
 
     get builderString() {
         return this._builderString;
-    }   
+    }
 
     get partLetter() {
         return this._partLetter;
-    }   
-  
+    }
+
     get builderType() {
         return this._type;
-    }   
- 
+    }
+
     get variableName() {
         return this._variableName;
     }

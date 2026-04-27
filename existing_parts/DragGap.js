@@ -2,10 +2,10 @@ class DragGap {
     //although all parts have a prompt and 0 to many gaps 
     // for most parts we only need to know type, number, and we might as well get marks
     //for now leave prompt and gaps for teh parts where that matters
-    constructor() {
-        this.answer = "";
-        this.marks = 0;
-        this.gapNumber = 0;
+    constructor(data, num) {
+        this.answer = data.answer || "";
+        this.marks = data.marks || 0;
+        this.gapNumber = num || 0;
     }
 
 

@@ -44,7 +44,7 @@ class ExamFromJSON {
                         part = new DragAndDropPart(p, i+1, q.variables);
                    
                     }else if (cmFlag){
-                        part = new CardMatch();
+                        part = new CardMatch(p, i+1, q.variables);
                     }
                     else{
                         part = new Part(i+1);

@@ -1,5 +1,6 @@
 import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
+import { DragGap } from "./DragGap.js";
 class DragAndDropPart extends Part {
     constructor(data, num, variables) {
         super(data, num);
@@ -15,7 +16,8 @@ class DragAndDropPart extends Part {
         this._dragsVariableName = dragsVariableName || "";
         this._dragsVariableValue = dragValues || [];
         //this._newPartTypeMatch = "1-2-1";//other option is "bucket";
-        this._gaps = data.gaps;
+
+        this._gaps = this.processGaps(data.gaps);
 
         this._dragHeight = height || "";
         this._dragWidth = width || "";
@@ -23,12 +25,18 @@ class DragAndDropPart extends Part {
         this._builder.builderString = builder || "";
     }
 
-   processPrompt(prompt) {
+    processPrompt(prompt) {
         //find hte marked areas in the prompt
     }
     processGaps(gaps) {
         //for drag and drop we need to know the number of gaps but also the answers and marks for each gap
         //create a DragGap for each gap
+        try {
+            return gaps.map((gap, i) => new DragGap(gap, i + 1));
+        } catch (error) {
+            console.error("Error processing gaps:", error);
+            return [];
+        }
     }
 
     get dragsVariableName() {
