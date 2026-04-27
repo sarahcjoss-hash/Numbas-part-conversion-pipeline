@@ -3,29 +3,24 @@ class DragGap {
     // for most parts we only need to know type, number, and we might as well get marks
     //for now leave prompt and gaps for teh parts where that matters
     constructor(data, num) {
-        this.answer = data.answer || "";
-        this.marks = data.marks || 0;
-        this.gapNumber = num || 0;
+        this._answer = data.answer || "";
+        this._marks = data.marks || 0;
+        this._gapNumber = num || 0;
+        this._type = data.type;
     }
 
 
-    set answer(ans) {
-        this.answer = ans;
-    }
+
     get answer() {
-        return this.answer;
+        return this._answer;
     }
-    set gapNumber(n) {
-        this.gapNumber = n;
-    }
+
     get gapNumber() {
-        return this.gapNumber;
+        return this._gapNumber;
     }
-    set marks(mark){
-        this.marks = mark;
-    }
+
     get marks (){
-        return this.marks;
+        return this._marks;
     }
 
 

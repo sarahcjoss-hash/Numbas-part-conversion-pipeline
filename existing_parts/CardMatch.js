@@ -12,6 +12,7 @@ class CardMatch extends Part {
         this._dragsVariableValue = dragValues || "";
         this._newPartTypeMatch = "card-match";
         this._gaps = this.processGaps(data.gaps);
+        this._builder = new Builder(builder);
     }
 
     processGaps(gaps) {

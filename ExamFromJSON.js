@@ -47,13 +47,10 @@ class ExamFromJSON {
                         part = new CardMatch(p, i+1, q.variables);
                     }
                     else{
-                        part = new Part(i+1);
-                        
-                    }
-                    
+                        part = new Part(i+1,p);                        
+                    }            
              
                     question.addPart(part);
-
                 } catch (err) {
                     console.log(`unable to get inforamtion for custom part type ${err.message}`);
 

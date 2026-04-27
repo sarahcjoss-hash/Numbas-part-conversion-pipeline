@@ -13,15 +13,38 @@ Extensions drag_and_drop
 Number of parts : 1
 part number: 1
 part type: drag_and_drop marks: 0
-drag height: null drag width: null
-drag variables: name , value [ "Tested as part of a general health check", "A procedure that may be involved in IVF", "Usually taken 8-14 weeks after pregnancy", "Used to detect the possibility of physical problems", "Timing of tests taken into account when assessing", "Used to indicate the likelihood of a disorder", "Used to confirm the presence of a disorder", "Screening tests include", "Diagnostic tests include", "The name for an image of a fetus\' chromosomes", "Involves removing cells from the amniotic fluid", "Involves removing cells from the placenta" ]
-builder : builder string: dnd_builder('a','reorder',drags_a)
+drag height:  drag width: 
+drag variables: name drags_a, value [ "Tested as part of a general health check", "A procedure that may be involved in IVF", "Usually taken 8-14 weeks after pregnancy", "Used to detect the possibility of physical problems", "Timing of tests taken into account when assessing", "Used to indicate the likelihood of a disorder", "Used to confirm the presence of a disorder", "Screening tests include", "Diagnostic tests include", "The name for an image of a fetus\' chromosomes", "Involves removing cells from the amniotic fluid", "Involves removing cells from the placenta" ]
+builder : builder string: undefined
 part letter: 'a'
 type: 'reorder'
 variable name: drags_a
-SETTINGS number of gaps 12 : builder: [object Object], width: undefined, height: undefined
-drag values undefined
-UNABLE TO GET PART INFORMATION
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 1
+,Gap 1: answer {drags_a[1]} Marks: 1
+,Gap 2: answer {drags_a[2]} Marks: 1
+,Gap 3: answer {drags_a[3]} Marks: 1
+,Gap 4: answer {drags_a[4]} Marks: 1
+,Gap 5: answer {drags_a[5]} Marks: 1
+,Gap 6: answer {drags_a[6]} Marks: 1
+,Gap 7: answer {drags_a[7]} Marks: 1
+,Gap 8: answer {drags_a[8]} Marks: 1
+,Gap 9: answer {drags_a[9]} Marks: 1
+,Gap 10: answer {drags_a[10]} Marks: 1
+,Gap 11: answer {drags_a[11]} Marks: 1
+,Gap 12: answer {drags_a[0]} Marks: 1
+,Gap 13: answer {drags_a[1]} Marks: 1
+,Gap 14: answer {drags_a[2]} Marks: 1
+,Gap 15: answer {drags_a[3]} Marks: 1
+,Gap 16: answer {drags_a[4]} Marks: 1
+,Gap 17: answer {drags_a[5]} Marks: 1
+,Gap 18: answer {drags_a[6]} Marks: 1
+,Gap 19: answer {drags_a[7]} Marks: 1
+,Gap 20: answer {drags_a[8]} Marks: 1
+,Gap 21: answer {drags_a[9]} Marks: 1
+,Gap 22: answer {drags_a[10]} Marks: 1
+,Gap 23: answer {drags_a[11]} Marks: 1
+
 
 -------------------------------------
 ,Question 2 : Pregnancy screening tests
@@ -29,8 +52,8 @@ UNABLE TO GET PART INFORMATION
 Extensions 
 
 Number of parts : 1
-part number: 1
-part type: patternmatch marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------
@@ -39,48 +62,39 @@ part type: patternmatch marks: 0
 Extensions manual_marking
 
 Number of parts : 4
-part number: 1
-part type: patternmatch marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
 ,part number: 2
-part type: manual_marking marks: 0
-prompt: <p>State when the scan is carried out and its purpose.</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('b')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('300px') text area height: null
-answer: 
-builder string: manualmarking_builder('b')
+part type: manual_marking marks: 2
+prompt: undefined
+text area width: manualmarking_textarea_width('300px') text area height: auto
+answer:  Dating scan: 10 - 14 weeks; to determine the age of the fetus/due date. Anomaly scan: 18 - 20 weeks; to detect possible physical problems.
+Marks:2 Answer  Dating scan: 10 - 14 weeks; to determine the age of the fetus/due date. Anomaly scan: 18 - 20 weeks; to detect possible physical problems.
+builder string: undefined
 part letter: 'b'
 type: 
-variable name: width manualmarking_textarea_width('300px'), height null
-Marks:undefined Answer undefined
-
+variable name: 
 ,part number: 3
-part type: manual_marking marks: 0
-prompt: <p>Describe how a marker chemical might indicate the presence of a fetal disorder.</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('c')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('300px') text area height: null
-answer: 
-builder string: manualmarking_builder('c')
+part type: manual_marking marks: 2
+prompt: undefined
+text area width: manualmarking_textarea_width('300px') text area height: auto
+answer:  A marker chemical may indicate the presence of a foetal disorder if its level is above or below the level in the mother's blood which is normally expected at that stage in the pregnancy.
+Marks:2 Answer  A marker chemical may indicate the presence of a foetal disorder if its level is above or below the level in the mother's blood which is normally expected at that stage in the pregnancy.
+builder string: undefined
 part letter: 'c'
 type: 
-variable name: width manualmarking_textarea_width('300px'), height null
-Marks:undefined Answer undefined
-
+variable name: 
 ,part number: 4
-part type: manual_marking marks: 0
-prompt: <p>Explain how a test for a marker chemical might give a false positive result.</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('d')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('300px') text area height: null
-answer: 
-builder string: manualmarking_builder('d')
+part type: manual_marking marks: 2
+prompt: undefined
+text area width: manualmarking_textarea_width('300px') text area height: auto
+answer:  A marker chemical may indicate the presence of a disorder when it is absent if the age of the foetus is not correctly determined.
+Marks:2 Answer  A marker chemical may indicate the presence of a disorder when it is absent if the age of the foetus is not correctly determined.
+builder string: undefined
 part letter: 'd'
 type: 
-variable name: width manualmarking_textarea_width('300px'), height null
-Marks:undefined Answer undefined
-
+variable name: 
 
 -------------------------------------
 ,Question 4 : Amniocentesis
@@ -89,31 +103,25 @@ Extensions manual_marking
 
 Number of parts : 2
 part number: 1
-part type: manual_marking marks: 0
-prompt: <p>State two ways in which a diagram of chorionic villus sampling would be different from the above diagram.</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('a')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('300px') text area height: null
-answer: 
-builder string: manualmarking_builder('a')
+part type: manual_marking marks: 2
+prompt: undefined
+text area width: manualmarking_textarea_width('300px') text area height: auto
+answer: The tissue sampled is placenta. The fetus much smaller.
+Marks:2 Answer The tissue sampled is placenta. The fetus much smaller.
+builder string: undefined
 part letter: 'a'
 type: 
-variable name: width manualmarking_textarea_width('300px'), height null
-Marks:undefined Answer undefined
-
+variable name: 
 ,part number: 2
-part type: manual_marking marks: 0
-prompt: <p>State what a karyotype is and what it may reveal about an individual.</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('b')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('300px') text area height: null
-answer: 
-builder string: manualmarking_builder('b')
+part type: manual_marking marks: 2
+prompt: undefined
+text area width: manualmarking_textarea_width('300px') text area height: auto
+answer:  A karyotype is an image of an individual's chromosomes, arranged in homologous pairs.  A karyotype is used to identify anomalies in numbers or structure of chromosomes (as well as the sex of the individual).
+Marks:2 Answer  A karyotype is an image of an individual's chromosomes, arranged in homologous pairs.  A karyotype is used to identify anomalies in numbers or structure of chromosomes (as well as the sex of the individual).
+builder string: undefined
 part letter: 'b'
 type: 
-variable name: width manualmarking_textarea_width('300px'), height null
-Marks:undefined Answer undefined
-
+variable name: 
 
 -------------------------------------
 ,Question 5 : Phenylketonuria
@@ -121,14 +129,14 @@ Marks:undefined Answer undefined
 Extensions 
 
 Number of parts : 3
-part number: 1
-part type: patternmatch marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 2
-part type: patternmatch marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 3
-part type: patternmatch marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------
@@ -139,15 +147,38 @@ Extensions drag_and_drop
 Number of parts : 1
 part number: 1
 part type: drag_and_drop marks: 0
-drag height: null drag width: null
-drag variables: name , value [ "Diploid", "Gamete", "Alleles", "Genotype", "Phenotype", "Homozygous", "Dominant", "Recessive", "Incomplete dominance", "Autosome", "X", "Siblings" ]
-builder : builder string: dnd_builder('a','reorder',drags_a)
+drag height:  drag width: 
+drag variables: name drags_a, value [ "Diploid", "Gamete", "Alleles", "Genotype", "Phenotype", "Homozygous", "Dominant", "Recessive", "Incomplete dominance", "Autosome", "X", "Siblings" ]
+builder : builder string: undefined
 part letter: 'a'
 type: 'reorder'
 variable name: drags_a
-SETTINGS number of gaps 12 : builder: [object Object], width: undefined, height: undefined
-drag values undefined
-UNABLE TO GET PART INFORMATION
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 1
+,Gap 1: answer {drags_a[1]} Marks: 1
+,Gap 2: answer {drags_a[2]} Marks: 1
+,Gap 3: answer {drags_a[3]} Marks: 1
+,Gap 4: answer {drags_a[4]} Marks: 1
+,Gap 5: answer {drags_a[5]} Marks: 1
+,Gap 6: answer {drags_a[6]} Marks: 1
+,Gap 7: answer {drags_a[7]} Marks: 1
+,Gap 8: answer {drags_a[8]} Marks: 1
+,Gap 9: answer {drags_a[9]} Marks: 1
+,Gap 10: answer {drags_a[10]} Marks: 1
+,Gap 11: answer {drags_a[11]} Marks: 1
+,Gap 12: answer {drags_a[0]} Marks: 1
+,Gap 13: answer {drags_a[1]} Marks: 1
+,Gap 14: answer {drags_a[2]} Marks: 1
+,Gap 15: answer {drags_a[3]} Marks: 1
+,Gap 16: answer {drags_a[4]} Marks: 1
+,Gap 17: answer {drags_a[5]} Marks: 1
+,Gap 18: answer {drags_a[6]} Marks: 1
+,Gap 19: answer {drags_a[7]} Marks: 1
+,Gap 20: answer {drags_a[8]} Marks: 1
+,Gap 21: answer {drags_a[9]} Marks: 1
+,Gap 22: answer {drags_a[10]} Marks: 1
+,Gap 23: answer {drags_a[11]} Marks: 1
+
 
 -------------------------------------
 ,Question 7 : Patterns of inheritance 3
@@ -155,11 +186,11 @@ UNABLE TO GET PART INFORMATION
 Extensions 
 
 Number of parts : 2
-part number: 1
-part type: gapfill marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 2
-part type: gapfill marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------
@@ -168,14 +199,14 @@ part type: gapfill marks: 0
 Extensions 
 
 Number of parts : 3
-part number: 1
-part type: 1_n_2 marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 2
-part type: 1_n_2 marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 3
-part type: 1_n_2 marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------
@@ -184,8 +215,8 @@ part type: 1_n_2 marks: 0
 Extensions 
 
 Number of parts : 1
-part number: 1
-part type: 1_n_2 marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------
@@ -194,11 +225,11 @@ part type: 1_n_2 marks: 0
 Extensions 
 
 Number of parts : 2
-part number: 1
-part type: 1_n_2 marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 2
-part type: 1_n_2 marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------
@@ -207,11 +238,11 @@ part type: 1_n_2 marks: 0
 Extensions 
 
 Number of parts : 2
-part number: 1
-part type: 1_n_2 marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 2
-part type: 1_n_2 marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------
@@ -220,14 +251,14 @@ part type: 1_n_2 marks: 0
 Extensions 
 
 Number of parts : 3
-part number: 1
-part type: 1_n_2 marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 2
-part type: 1_n_2 marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
-,part number: 3
-part type: 1_n_2 marks: 0
+,part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------
@@ -236,8 +267,8 @@ part type: 1_n_2 marks: 0
 Extensions 
 
 Number of parts : 1
-part number: 1
-part type: 1_n_2 marks: 0
+part number: [object Object]
+part type: undefined marks: undefined
 
 
 -------------------------------------

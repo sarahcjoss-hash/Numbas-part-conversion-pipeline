@@ -18,17 +18,6 @@ class ReportWriter {
 
         
                 let partString = p.partReport();
-
-                    if (p.type === 'drag_and_drop') {
-                        partString += `SETTINGS number of gaps ${p.numberOfGaps} : builder: ${p.builder}, width: ${p.width}, height: ${p.height}\n`;
-                        partString += `drag values ${p.dragValues}\n`
-                        partString += p.gaps.map((g, i) => {
-                            return `Gap ${i}: answer ${g.answer} Marks: ${g.marks}\n`
-                        });
-
-                    }
-
-
                 partString += `\n`;
                 return partString;
             });

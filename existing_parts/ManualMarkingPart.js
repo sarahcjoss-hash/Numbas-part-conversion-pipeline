@@ -13,8 +13,9 @@ class ManualMarkingPart extends Part {
         this._textAreaWidth = width || 'auto';
         this._textAreaHeight = height || 'auto';
         this._answer = gap.displayAnswer || "";
-        this._builder = new Builder();
-        this._builder.builderString = builder;
+        this._builder = new Builder(builder);
+        this._marks = gap.marks || 0;
+        
 
     }
 
@@ -46,9 +47,8 @@ class ManualMarkingPart extends Part {
         let partString = super.partReport();
         partString += `prompt: ${super._prompt}\n`;
         partString += `text area width: ${this._textAreaWidth} text area height: ${this._textAreaHeight}\n`;
-        partString += `answer: ${this._answer}\n`;
-
-        partString += `Marks:${p.answer.marks} Answer ${p.answer.displayAnswer}\n`
+        partString += `answer: ${this.answer}\n`;
+        partString += `Marks:${this.marks} Answer ${this.answer}\n`;
         partString += this._builder.report();
         return partString;
     }

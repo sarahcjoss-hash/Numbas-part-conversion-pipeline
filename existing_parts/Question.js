@@ -3,7 +3,8 @@ class Question {
         this._name = data.name || "";
         this._tags = data.tags || [];
         this._containsCustomParts = false;
-        this._extensions = this.addExtensions (data.extensions) || [];
+        this._extensions = [];
+        this.addExtensions (data.extensions);
         this._qNumber = num;
         this._parts = [];
     }

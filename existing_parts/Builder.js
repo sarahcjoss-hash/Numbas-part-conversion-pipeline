@@ -1,24 +1,35 @@
 class Builder {
     constructor(str) {
-        this._builderString = str;
-        this._partLetter = "";
-        this._type = "";
-        this._variableName = "";
-        processbuilderString(str)
-    }
+        function processbuilderString(str) {
+            //parse the string to get the part letter, type and variable name
+            let partLetter = "";
+            let type = "";
+            let variableName = "";
+            try {
+                const bitInBrackets = /\(.+?\)/.exec(str);
 
-    processbuilderString(str) {
-        this._builderString = str;
-        //parse the string to get the part letter, type and variable name
-        const bitInBrackets = /\(.+?\)/.exec(str);
-        if (bitInBrackets) {
-            const contents = bitInBrackets[0].split(',').map(s => s.trim());
-            this._partLetter = contents[0].replace(/(\(|\))/g, '').trim();
-            this._type = contents.length > 1 ? contents[1].trim() : '';
-            this._variableName = contents.length > 2 ? contents[2].replace(')', '').trim() : '';
+                if (bitInBrackets) {
+                    const contents = bitInBrackets[0].split(',').map(s => s.trim());
+                    partLetter = contents[0].replace(/(\(|\))/g, '').trim();
+                    type = contents.length > 1 ? contents[1].trim() : '';
+                    variableName = contents.length > 2 ? contents[2].replace(')', '').trim() : '';
+                }
+
+            } catch (error) {
+                console.error("Error processing builder string:", error);
+                this._partLetter = "";
+                this._type = "";
+                this._variableName = "";
+            }
+            return { partLetter: partLetter, type: type, variableName: variableName };
         }
-
+        const result = processbuilderString(str);
+        this._partLetter = result.partLetter;
+        this._type = result.type;
+        this._variableName = result.variableName;
     }
+
+
 
     get builderString() {
         return this._builderString;
