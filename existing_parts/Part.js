@@ -30,6 +30,9 @@ class Part {
     get numberOfGaps() {
         return this._gaps.length;
     };
+    get prompt() {
+        return this._prompt;
+    }
 
     partReport() {
         let partString = `part number: ${this._pNumber}\n`;

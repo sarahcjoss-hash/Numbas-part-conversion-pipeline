@@ -14,15 +14,13 @@ class DragAndDropPart extends Part {
             console.error("Error processing gaps:", error);
             return [];
         }
-
-        const prompt = data.prompt;
-        const numberOfGaps = data.gaps.length;
+        const prompt = data.prompt;        
         const builder = /dnd_builder\(.+?\)/.exec(prompt);
         const dragsVariableName = /drags_./.exec(builder);
         const dragValues = variables[dragsVariableName].definition;
         const width = /dnd_dragHeight\(.+?\)/.exec(prompt);
         const height = /dnd_dragWidth\(.+?\)/.exec(prompt);
-        this._prompt = "";
+        
         this._dragsVariableName = dragsVariableName || "";
         this._dragsVariableValue = dragValues || [];
         //this._newPartTypeMatch = "1-2-1";//other option is "bucket";
@@ -68,6 +66,7 @@ class DragAndDropPart extends Part {
 
     partReport() {
         let partString = super.partReport();
+        partString += `prompt: ${this.prompt}\n`;
         partString += `drag height: ${this._dragHeight} `;
         partString += `drag width: ${this._dragWidth}\n`;
         partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;

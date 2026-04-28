@@ -47,7 +47,7 @@ class ExamFromJSON {
                         part = new CardMatch(p, i+1, q.variables);
                     }
                     else{
-                        part = new Part(i+1,p);                        
+                        part = new Part(p, i+1);                        
                     }            
              
                     question.addPart(part);

@@ -12,7 +12,20 @@ Extensions drag_and_drop
 
 Number of parts : 1
 part number: 1
-part type: drag_and_drop marks: 0
+part type: drag_and_drop marks: 0,. 
+prompt: <p>[[0]] - blood pressure.</p>
+<p>[[1]] - pre-implantation genetic diagnosis.</p>
+<p>[[2]] - first ultrasound imaging.</p>
+<p>[[3]] - second ultrasound imaging.</p>
+<p>[[4]] - blood marker chemicals.</p>
+<p>[[5]] - screening tests.</p>
+<p>[[6]] - diagnostic tests.</p>
+<p>[[7]] - ultrasound and blood tests.</p>
+<p>[[8]] - amniocentesis / chorionic villus sampling.</p>
+<p>[[9]] - karyotype.</p>
+<p>[[10]] - amniocenesis.</p>
+<p>[[11]] - chorionic villus sampling.</p>
+<p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>
 drag height:  drag width: 
 drag variables: name drags_a, value [ "Tested as part of a general health check", "A procedure that may be involved in IVF", "Usually taken 8-14 weeks after pregnancy", "Used to detect the possibility of physical problems", "Timing of tests taken into account when assessing", "Used to indicate the likelihood of a disorder", "Used to confirm the presence of a disorder", "Screening tests include", "Diagnostic tests include", "The name for an image of a fetus\' chromosomes", "Involves removing cells from the amniotic fluid", "Involves removing cells from the placenta" ]
 builder : builder string: undefined
@@ -52,8 +65,8 @@ Gap 0: answer {drags_a[0]} Marks: 1
 Extensions 
 
 Number of parts : 1
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: patternmatch marks: 1
 
 
 -------------------------------------
@@ -62,12 +75,14 @@ part type: undefined marks: undefined
 Extensions manual_marking
 
 Number of parts : 4
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: patternmatch marks: 1
 
 ,part number: 2
 part type: manual_marking marks: 2
-prompt: undefined
+prompt: <p>State when the scan is carried out and its purpose.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
 text area width: manualmarking_textarea_width('300px') text area height: auto
 answer:  Dating scan: 10 - 14 weeks; to determine the age of the fetus/due date. Anomaly scan: 18 - 20 weeks; to detect possible physical problems.
 Marks:2 Answer  Dating scan: 10 - 14 weeks; to determine the age of the fetus/due date. Anomaly scan: 18 - 20 weeks; to detect possible physical problems.
@@ -77,7 +92,9 @@ type:
 variable name: 
 ,part number: 3
 part type: manual_marking marks: 2
-prompt: undefined
+prompt: <p>Describe how a marker chemical might indicate the presence of a fetal disorder.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('c')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
 text area width: manualmarking_textarea_width('300px') text area height: auto
 answer:  A marker chemical may indicate the presence of a foetal disorder if its level is above or below the level in the mother's blood which is normally expected at that stage in the pregnancy.
 Marks:2 Answer  A marker chemical may indicate the presence of a foetal disorder if its level is above or below the level in the mother's blood which is normally expected at that stage in the pregnancy.
@@ -87,7 +104,9 @@ type:
 variable name: 
 ,part number: 4
 part type: manual_marking marks: 2
-prompt: undefined
+prompt: <p>Explain how a test for a marker chemical might give a false positive result.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('d')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
 text area width: manualmarking_textarea_width('300px') text area height: auto
 answer:  A marker chemical may indicate the presence of a disorder when it is absent if the age of the foetus is not correctly determined.
 Marks:2 Answer  A marker chemical may indicate the presence of a disorder when it is absent if the age of the foetus is not correctly determined.
@@ -104,7 +123,9 @@ Extensions manual_marking
 Number of parts : 2
 part number: 1
 part type: manual_marking marks: 2
-prompt: undefined
+prompt: <p>State two ways in which a diagram of chorionic villus sampling would be different from the above diagram.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('a')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
 text area width: manualmarking_textarea_width('300px') text area height: auto
 answer: The tissue sampled is placenta. The fetus much smaller.
 Marks:2 Answer The tissue sampled is placenta. The fetus much smaller.
@@ -114,7 +135,9 @@ type:
 variable name: 
 ,part number: 2
 part type: manual_marking marks: 2
-prompt: undefined
+prompt: <p>State what a karyotype is and what it may reveal about an individual.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
 text area width: manualmarking_textarea_width('300px') text area height: auto
 answer:  A karyotype is an image of an individual's chromosomes, arranged in homologous pairs.  A karyotype is used to identify anomalies in numbers or structure of chromosomes (as well as the sex of the individual).
 Marks:2 Answer  A karyotype is an image of an individual's chromosomes, arranged in homologous pairs.  A karyotype is used to identify anomalies in numbers or structure of chromosomes (as well as the sex of the individual).
@@ -129,14 +152,14 @@ variable name:
 Extensions 
 
 Number of parts : 3
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: patternmatch marks: 1
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 2
+part type: patternmatch marks: 1
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 3
+part type: patternmatch marks: 1
 
 
 -------------------------------------
@@ -147,6 +170,19 @@ Extensions drag_and_drop
 Number of parts : 1
 part number: 1
 part type: drag_and_drop marks: 0
+prompt: <p>[[0]] - a cell containing two of each chromosome.</p>
+<p>[[1]] - a call containing one of each chromosome.</p>
+<p>[[2]] - alternative forms of a gene.</p>
+<p>[[3]] - a pair of alleles carried by a gene.</p>
+<p>[[4]] - the expression of the alleles of a gene.</p>
+<p>[[5]] - a genotype with two identical alleles.</p>
+<p>[[6]] - an allele which is always expressed in the phenotype if present.</p>
+<p>[[7]] - allele which is only expressed by a homozygous person.</p>
+<p>[[8]] - causes three different phenotypes for a gene.</p>
+<p>[[9]] - a chromosome which does not affect gender.</p>
+<p>[[10]] - a chromosome which carries sex-linked genes.</p>
+<p>[[11]] - borthers and sisters.</p>
+<p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>
 drag height:  drag width: 
 drag variables: name drags_a, value [ "Diploid", "Gamete", "Alleles", "Genotype", "Phenotype", "Homozygous", "Dominant", "Recessive", "Incomplete dominance", "Autosome", "X", "Siblings" ]
 builder : builder string: undefined
@@ -186,11 +222,11 @@ Gap 0: answer {drags_a[0]} Marks: 1
 Extensions 
 
 Number of parts : 2
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: gapfill marks: 0
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 2
+part type: gapfill marks: 0
 
 
 -------------------------------------
@@ -199,14 +235,14 @@ part type: undefined marks: undefined
 Extensions 
 
 Number of parts : 3
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: 1_n_2 marks: 0
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 2
+part type: 1_n_2 marks: 0
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 3
+part type: 1_n_2 marks: 0
 
 
 -------------------------------------
@@ -215,8 +251,8 @@ part type: undefined marks: undefined
 Extensions 
 
 Number of parts : 1
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: 1_n_2 marks: 0
 
 
 -------------------------------------
@@ -225,11 +261,11 @@ part type: undefined marks: undefined
 Extensions 
 
 Number of parts : 2
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: 1_n_2 marks: 0
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 2
+part type: 1_n_2 marks: 0
 
 
 -------------------------------------
@@ -238,11 +274,11 @@ part type: undefined marks: undefined
 Extensions 
 
 Number of parts : 2
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: 1_n_2 marks: 0
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 2
+part type: 1_n_2 marks: 0
 
 
 -------------------------------------
@@ -251,14 +287,14 @@ part type: undefined marks: undefined
 Extensions 
 
 Number of parts : 3
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: 1_n_2 marks: 0
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 2
+part type: 1_n_2 marks: 0
 
-,part number: [object Object]
-part type: undefined marks: undefined
+,part number: 3
+part type: 1_n_2 marks: 0
 
 
 -------------------------------------
@@ -267,8 +303,8 @@ part type: undefined marks: undefined
 Extensions 
 
 Number of parts : 1
-part number: [object Object]
-part type: undefined marks: undefined
+part number: 1
+part type: 1_n_2 marks: 0
 
 
 -------------------------------------

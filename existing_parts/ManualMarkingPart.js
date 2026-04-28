@@ -45,7 +45,7 @@ class ManualMarkingPart extends Part {
 
     partReport() {
         let partString = super.partReport();
-        partString += `prompt: ${super._prompt}\n`;
+        partString += `prompt: ${super.prompt}\n`;
         partString += `text area width: ${this._textAreaWidth} text area height: ${this._textAreaHeight}\n`;
         partString += `answer: ${this.answer}\n`;
         partString += `Marks:${this.marks} Answer ${this.answer}\n`;
