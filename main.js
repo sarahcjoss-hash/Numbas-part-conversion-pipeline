@@ -15,7 +15,7 @@ filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
   const examData = JSON.parse(line);
   const exam = new ExamFromJSON(examData);
   const report =reportWriter.createReport(exam.exam);
-  console.log(report);
+  //console.log(report);
   reportWriter.writeReportToFile(report, 'exam_report.txt');
 }).catch(err => {
   console.error(err);

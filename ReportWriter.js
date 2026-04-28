@@ -11,7 +11,7 @@ class ReportWriter {
         let questions = exam.questions;
         reportString += exam.examReport();
         reportString += questions.map((q, i) => {
-            console.log(q.questionReport());
+           //console.log(q.questionReport());
             let questionString = q.questionReport();
             let parts = q.parts;
             questionString += parts.map((p, i) => {

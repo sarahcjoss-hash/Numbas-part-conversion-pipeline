@@ -12,7 +12,7 @@ Extensions drag_and_drop
 
 Number of parts : 1
 part number: 1
-part type: drag_and_drop marks: 0,. 
+part type: drag_and_drop marks: 0
 prompt: <p>[[0]] - blood pressure.</p>
 <p>[[1]] - pre-implantation genetic diagnosis.</p>
 <p>[[2]] - first ultrasound imaging.</p>
@@ -27,7 +27,7 @@ prompt: <p>[[0]] - blood pressure.</p>
 <p>[[11]] - chorionic villus sampling.</p>
 <p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>
 drag height:  drag width: 
-drag variables: name drags_a, value [ "Tested as part of a general health check", "A procedure that may be involved in IVF", "Usually taken 8-14 weeks after pregnancy", "Used to detect the possibility of physical problems", "Timing of tests taken into account when assessing", "Used to indicate the likelihood of a disorder", "Used to confirm the presence of a disorder", "Screening tests include", "Diagnostic tests include", "The name for an image of a fetus\' chromosomes", "Involves removing cells from the amniotic fluid", "Involves removing cells from the placenta" ]
+drag variables: name drags_a, value undefined
 builder : builder string: undefined
 part letter: 'a'
 type: 'reorder'
@@ -184,7 +184,7 @@ prompt: <p>[[0]] - a cell containing two of each chromosome.</p>
 <p>[[11]] - borthers and sisters.</p>
 <p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>
 drag height:  drag width: 
-drag variables: name drags_a, value [ "Diploid", "Gamete", "Alleles", "Genotype", "Phenotype", "Homozygous", "Dominant", "Recessive", "Incomplete dominance", "Autosome", "X", "Siblings" ]
+drag variables: name drags_a, value undefined
 builder : builder string: undefined
 part letter: 'a'
 type: 'reorder'

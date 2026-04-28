@@ -16,7 +16,6 @@ class ManualMarkingPart extends Part {
         this._builder = new Builder(builder);
         this._marks = gap.marks || 0;
         
-
     }
 
     processPrompt(prompt) {
