@@ -26,6 +26,7 @@ prompt: <p>[[0]] - blood pressure.</p>
 <p>[[10]] - amniocenesis.</p>
 <p>[[11]] - chorionic villus sampling.</p>
 <p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>
+Converted prompt: undefined
 drag height:  drag width: 
 drag variables: name drags_a, value undefined
 builder : builder string: undefined
@@ -183,6 +184,7 @@ prompt: <p>[[0]] - a cell containing two of each chromosome.</p>
 <p>[[10]] - a chromosome which carries sex-linked genes.</p>
 <p>[[11]] - borthers and sisters.</p>
 <p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>
+Converted prompt: undefined
 drag height:  drag width: 
 drag variables: name drags_a, value undefined
 builder : builder string: undefined

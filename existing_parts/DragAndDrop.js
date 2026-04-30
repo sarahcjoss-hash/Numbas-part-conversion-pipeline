@@ -26,7 +26,18 @@ class DragAndDropPart extends Part {
         this._dragWidth = width || "";
         this._builder = new Builder(builder);
         this._convertedPrompt = this.processPrompt(prompt);
-        console.log(this.dragsList);
+        this._subType = this.builder.builderType; 
+        switch (this._subType) {
+            case 'reorder':
+            case 'text':
+                this._newPartTypeMatch = 'reorder';
+                break;
+            case 'image':
+                this._newPartTypeMatch = 'drag1-2-1';
+                break;
+            default:
+                this._newPartTypeMatch = null;
+        }
 
     }
 
@@ -40,13 +51,14 @@ class DragAndDropPart extends Part {
                 const gapNumber = parseInt(match.match(/\d+/)[0], 10);
                 const gap = this._gaps[gapNumber];
                 const gapAnswerVariable = gap.answer;
-                //find the bit in square brackets then remove the brackets                const index = parseInt(gapAnswerVariable.match(/\[\d+\]/)[0], 10).replace(/\[|\]/g, ''); // Extract the index number from the variable name
+                //find the bit in square brackets then remove the brackets                
+                const index = parseInt(gapAnswerVariable.match(/\[\d+\]/)[0].replace(/\[|\]/g, ''), 10); // Extract the index number from the variable name
                 const value = gapAnswerVariable && this.dragsList ? this.dragsList[index] : match; // Replace with answer or keep original if not found
                 return value ? `%[${value}]%` : match; // Replace with answer, plus new markup, or keep original if not found
             });            
             //remove hthe builder string gubbins
             const convertedPrompt = filledPrompt.replace(/\<p\>\s*{\s*dnd_builder\(.+?\)\s*}\s*{dnd_render\(\)\s*}\s*\<\/p\>/, '');
-            console.log("Converted Prompt:", convertedPrompt);
+            return convertedPrompt;
         } catch (error) {
             console.error("Error processing prompt:", error);
         }
@@ -107,10 +119,10 @@ class DragAndDropPart extends Part {
 
 
 
-
     partReport() {
         let partString = super.partReport();
         partString += `prompt: ${this.prompt}\n`;
+        partString += `Converted prompt: ${this.convertedPrompt}\n`;
         partString += `drag height: ${this._dragHeight} `;
         partString += `drag width: ${this._dragWidth}\n`;
         partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
