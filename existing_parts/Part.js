@@ -20,6 +20,9 @@ class Part {
     get number() {
         return this._pNumber;
     }
+    set marks(m){
+        this._marks = m;
+    }
 
     get marks (){
         return this._marks;

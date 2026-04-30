@@ -4,9 +4,16 @@ import { ReportWriter } from './ReportWriter.js';
 
 
 // to do
-//teh type for manual amrking etc is coming out as the part type we need to add the custom extension type to teh report and generally finsih writing the part reports
-const path = "C:/work/NUMBAS exams for practice/EXAMS downloaded from numbas mathcentre/human biology/"
-const folder = "exam-234463-antenatal-and-postnatal-screening-end-of-topic-test/"
+//create a UI that allows user to browse to a folder
+//find all the folder in the path and look for exam files
+//or if the folder contains question.exam i.e. single exam files- use those 
+//but for single exam files we need to alter converter to read without all the exam, questions groups etc.
+//handle no exam files found
+//create a folder to outout the new exam files
+//create somewhere for files we could not process
+const path = "C:/work/UTL-Numbas_Part_Converter/";
+const folder = "sample_exams/";
+
 const examFile = path + folder + 'source.exam';
 const filereader = new FileReader();
 const reportWriter = new ReportWriter();

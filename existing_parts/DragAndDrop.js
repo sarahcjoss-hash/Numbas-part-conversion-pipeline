@@ -26,36 +26,37 @@ class DragAndDropPart extends Part {
         this._dragWidth = width || "";
         this._builder = new Builder(builder);
         this._convertedPrompt = this.processPrompt(prompt);
-        this._subType = this.builder.builderType; 
-        switch (this._subType) {
-            case 'reorder':
-            case 'text':
-                this._newPartTypeMatch = 'reorder';
-                break;
-            case 'image':
-                this._newPartTypeMatch = 'drag1-2-1';
-                break;
-            default:
-                this._newPartTypeMatch = null;
-        }
+
+
+        this._subType = this.builder.builderType;
+        super.marks = this.marksFromGaps;
+
+
 
     }
 
     processPrompt(prompt) {
         //find hte marked areas in the prompt
-        //find all the gaps [[n]] and replace with the appropriate gap answer
+        //find all the gaps [[n]] and replace with the appropriate gap display answer- using the display answer not the gap answer means this will work for drop in bucket type too
+        //although there may need to be additional processing to convert
         //remove builder string.
+
+
         try {
             const gapRegex = /\[\[\d+\]\]/g;
             const filledPrompt = prompt.replace(gapRegex, (match) => {
                 const gapNumber = parseInt(match.match(/\d+/)[0], 10);
                 const gap = this._gaps[gapNumber];
-                const gapAnswerVariable = gap.answer;
+                const gapAnswerVariable = gap.displayAnswer;
+
                 //find the bit in square brackets then remove the brackets                
                 const index = parseInt(gapAnswerVariable.match(/\[\d+\]/)[0].replace(/\[|\]/g, ''), 10); // Extract the index number from the variable name
                 const value = gapAnswerVariable && this.dragsList ? this.dragsList[index] : match; // Replace with answer or keep original if not found
                 return value ? `%[${value}]%` : match; // Replace with answer, plus new markup, or keep original if not found
-            });            
+
+
+            });
+
             //remove hthe builder string gubbins
             const convertedPrompt = filledPrompt.replace(/\<p\>\s*{\s*dnd_builder\(.+?\)\s*}\s*{dnd_render\(\)\s*}\s*\<\/p\>/, '');
             return convertedPrompt;
@@ -98,11 +99,56 @@ class DragAndDropPart extends Part {
     get convertedPrompt() {
         return this._convertedPrompt;
     }
-    findNewPartTypeMatch() {
-        //the type of drag and drop is in the builder string
+    isThisADropInBucket() {
+        //check if this is a drop in bucket by looking for more then one reference to the dragVariable in each gap answer and/or the | symbol 
+        //it is possible that some gaps but not all ahve more than one answer
+        //and/or that more than one gap has the same answer as another gap and for it not to be drop in bucket type.
+        //flag this in report
+        let counter = 0;
+        this._gaps.forEach(gap => {
+            const answer = gap.answer;
+            const variableReferences = (answer.match(new RegExp(this._dragsVariableName, 'g')) || []).length;
+            const hasPipeSymbol = answer.includes('|');
+            if (variableReferences > 1 || hasPipeSymbol) {
+                counter++;
+            }
+        });
+        return counter > 2 ? true : false;
+
     }
+    get marksFromGaps() {
+        try {
+            const marks = this._gaps.map(g => { return g.marks }).reduce(
+                (accumulator, currentValue) => accumulator + currentValue,
+                0,
+            );
+            return marks ? marks : 0;
+        } catch (err) {
+            console.warn(err);
+            return 0;
+        }
+    }
+
     get newPartTypeMatch() {
-        return this._newPartTypeMatch;
+        //check if this is a drop in bucket
+        //if not return the base type
+        if (this.isThisADropInBucket()) {
+            return 'drag_and_drop_bucket';
+        }
+        let newPartType = 'reorder';
+        switch (this._subType) {
+            case 'reorder':
+            case 'text':
+                newPartType = 'reorder';
+                break;
+            case 'image':
+                newPartType = 'drag1-2-1';
+                break;
+            default:
+                newPartType = null;
+        }
+
+        return newPartType;
     }
 
     get dragHeight() {
@@ -127,6 +173,7 @@ class DragAndDropPart extends Part {
         partString += `drag width: ${this._dragWidth}\n`;
         partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
         partString += `builder : ${this._builder.report()}\n`;
+        partString += this.isThisADropInBucket() ? "!THIS PART APPEARS TO BE A DROP IN BUCKET TYPE. Please check this is correct and appropriate part type has been chosen!\n" : "This part does not appear drop in bucket type\n";
 
         partString += `SETTINGS number of gaps ${this._numberOfGaps} \n`;
 
