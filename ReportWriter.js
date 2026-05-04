@@ -5,6 +5,15 @@ class ReportWriter {
 
     }
 
+    createErrorReport(name, logger){
+        let errReportString = `Error report for: ${name}\n`;
+        errReportString += logger.errorReport;
+        return errReportString;
+
+
+
+    }
+
     createReport(exam) {
 
         let reportString = `Exam file report: ${exam.name}\n`;

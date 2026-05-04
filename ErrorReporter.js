@@ -1,7 +1,8 @@
 class ErrorReporter{
-    constructor(logToConsole){
+    constructor(logToConsole, file){
         this._errors=[]
         this._logToConsole = logToConsole;
+        this._name = file;
         
     }
     
@@ -19,8 +20,9 @@ class ErrorReporter{
         return this.errors.length>0? allErrors = this.errors.map(e => `{e.message} \n`).join(): "";
     }
     get errorReport(){
-        let errorString = this._errors.length > 1 ?`!THIS CONVERSION ENCOUNTERED ERRORS`:`No errors found`;
-        errorString += this.allErrors;
+        let errorString = `Log file for ${this._name}`;
+        errorString = this._errors.length > 1 ?`!THIS CONVERSION ENCOUNTERED ERRORS`:`No errors found`;
+        errorString += this.allErrorMessages;
         return errorString;
     }
 

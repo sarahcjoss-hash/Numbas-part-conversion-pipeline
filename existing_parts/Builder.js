@@ -25,7 +25,7 @@ class Builder {
             return { partLetter: partLetter, type: type, variableName: variableName };
         }
         this._errorLog = logger;
-        this._errorString;
+        this._errorString ="";
         const result = processbuilderString(str);
         this._partLetter = result.partLetter;
         this._type = result.type;
@@ -55,7 +55,7 @@ class Builder {
         return this._variableName;
     }
     report() {
-        return `${this.errorString},builder string: ${this._builderString}\npart letter: ${this._partLetter}\ntype: ${this._type}\nvariable name: ${this._variableName}`;
+        return `${this._errorString},builder string: ${this._builderString}\npart letter: ${this._partLetter}\ntype: ${this._type}\nvariable name: ${this._variableName}`;
     }
 }
 export { Builder };
