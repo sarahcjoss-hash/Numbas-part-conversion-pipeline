@@ -18,7 +18,7 @@ const folder = "sample_exams/";
 const examFile = path + folder + 'source.exam';
 const filereader = new FileReader();
 const reportWriter = new ReportWriter();
-const errorReporter = new ErrorReporter();
+const errorReporter = new ErrorReporter(true);
 filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
   
   const examData = JSON.parse(line);

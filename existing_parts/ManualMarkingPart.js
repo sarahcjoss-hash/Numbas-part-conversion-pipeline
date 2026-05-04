@@ -23,7 +23,8 @@ class ManualMarkingPart extends Part {
         //fill this is one we decide what processing if any manual marking prompt needs
 
     }
-    reportError(err){
+    reportError(err, additional){
+        err.message = `${additional} : ${err.message}`;
         super.reportError(err);
     }
     get prompt() {

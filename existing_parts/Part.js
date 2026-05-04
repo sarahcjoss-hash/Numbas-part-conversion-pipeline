@@ -14,10 +14,9 @@ class Part {
 
     }
     reportError(err){
-        const errMessage = `Error creating part ${this.number}\n ${err.name} ${err.message} \n ${err.stack}`;
-        console.error(errMessage);
-        const partError = new Error(errMessage)
-        this._errorLog.reportError(partError);//add more detail to this or throw a new Error using a switch (and throw error to question?)
+        const errMessage = `Error creating part ${this.number}\n ${err.name} ${err.message}`;
+        this._errorString += errMessage;
+        this._errorLog.reportError(err);//add more detail to this or throw a new Error using a switch (and throw error to question?)
 
     }
 
@@ -50,6 +49,7 @@ class Part {
     partReport() {
         let partString = `part number: ${this._pNumber}\n`;
         partString += `part type: ${this._type} marks: ${this._marks}\n`; 
+        partString += `${this._errorString}`;
         return partString;
     }
 }

@@ -1,9 +1,14 @@
 class ErrorReporter{
-    constructor(){
+    constructor(logToConsole){
         this._errors=[]
+        this._logToConsole = logToConsole;
+        
     }
     
     reportError(err){
+        if (this.logToConsole){
+            console.error(`Error via logger : ${err.message}`);
+        }
         this._errors.push(err)
 
     }

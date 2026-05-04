@@ -5,6 +5,8 @@ class Builder {
             let partLetter = "";
             let type = "";
             let variableName = "";
+            this._errorLog = logger;
+            this._errorString;
             try {
                 const bitInBrackets = /\(.+?\)/.exec(str);
 
@@ -16,7 +18,7 @@ class Builder {
                 }
 
             } catch (error) {
-                console.error("Error processing builder string:", error);
+                this.reportError( error, "Error processing builder string:");
                 this._partLetter = "";
                 this._type = "";
                 this._variableName = "";
@@ -29,7 +31,12 @@ class Builder {
         this._variableName = result.variableName;
     }
 
+    reportError(err, additional){
+        err.message = `Error creating builder: ${additional}`;
+        this._errorString += errMessage;
+        this._errorLog.reportError(err);//add more detail to this or throw a new Error using a switch (and throw error to question?)
 
+    }
 
     get builderString() {
         return this._builderString;
@@ -47,7 +54,7 @@ class Builder {
         return this._variableName;
     }
     report() {
-        return `builder string: ${this._builderString}\npart letter: ${this._partLetter}\ntype: ${this._type}\nvariable name: ${this._variableName}`;
+        return `${this.errorString},builder string: ${this._builderString}\npart letter: ${this._partLetter}\ntype: ${this._type}\nvariable name: ${this._variableName}`;
     }
 }
 export { Builder };

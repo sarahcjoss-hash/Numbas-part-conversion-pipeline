@@ -13,9 +13,7 @@ class DragAndDropPart extends Part {
                 super.addGap(new DragGap(data, i + 1));
             });
         } catch (error) {
-            const message = `Error processing gaps in drag and drop part {num}: {error.message}`
-            console.error("Error processing gaps in drag and drop:", error);
-            errorLogger.reportError(new Error(message))
+            this.reportError(error,`Error processing gaps in drag and drop part {num}:` )
         }
         const prompt = data.prompt;
         const builder = /dnd_builder\(.+?\)/.exec(prompt);
@@ -28,7 +26,7 @@ class DragAndDropPart extends Part {
 
         this._dragHeight = height || "";
         this._dragWidth = width || "";
-        this._builder = new Builder(builder);
+        this._builder = new Builder(builder, logger);
         this._convertedPrompt = this.processPrompt(prompt);
 
 
@@ -53,7 +51,7 @@ class DragAndDropPart extends Part {
 
         try {
             //test logger
-            this.reportError(new Error('testing the error logger'))
+            
             const gapRegex = /\[\[\d+\]\]/g;
             const filledPrompt = prompt.replace(gapRegex, (match) => {
                 const gapNumber = parseInt(match.match(/\d+/)[0], 10);
@@ -75,7 +73,8 @@ class DragAndDropPart extends Part {
             console.error("Error processing prompt:", error);
         }
     }
-    reportError(err){
+    reportError(err, additional){
+        err.message = `${additional} : ${err.message}`;
         super.reportError(err);
     }
 
@@ -100,7 +99,8 @@ class DragAndDropPart extends Part {
             return dragList;
 
         } catch (error) {
-            console.error("Error processing drag values:", error);
+
+            this.reportError(error, 'Error processing drag values:');
             //parse with string manipulation as a fallback
             const trimmedValues = dragValues.trim("'[").trim("]'");
             dragList = trimmedValues.split(',');
@@ -136,7 +136,7 @@ class DragAndDropPart extends Part {
             );
             return marks ? marks : 0;
         } catch (err) {
-            console.warn(err);
+            this.reportError(err, "");
             return 0;
         }
     }

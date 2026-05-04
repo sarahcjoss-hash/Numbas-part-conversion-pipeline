@@ -26,7 +26,8 @@ class CardMatch extends Part {
             return [];
         }
     }
-    reportError(err){
+    reportError(err, additional){
+        err.message = `${additional} : ${err.message}`;
         super.reportError(err);
     }
     get prompt() {
