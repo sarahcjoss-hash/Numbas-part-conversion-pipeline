@@ -1,6 +1,6 @@
 class Builder {
     constructor(str) {
-        function processbuilderString(str) {
+        function processbuilderString(str, logger) {
             //parse the string to get the part letter, type and variable name
             let partLetter = "";
             let type = "";

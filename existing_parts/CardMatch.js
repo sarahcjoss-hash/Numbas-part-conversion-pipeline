@@ -2,9 +2,10 @@ import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
 import { DragGap } from "./DragGap.js";
 class CardMatch extends Part {
-    constructor(num, data, variables) {
+    constructor(num, data, variables, logger) {
         super(num, data);
         super._type = "card_match";
+        super._errorLog = logger;
         const builder = /dnd_builder\(.+?\)/.exec(prompt);
         const dragsVariableName = /drags_./.exec(builder);
         const dragValues = variables[dragsVariableName].definition;
@@ -24,6 +25,9 @@ class CardMatch extends Part {
             console.error("Error processing gaps:", error);
             return [];
         }
+    }
+    reportError(err){
+        super.reportError(err);
     }
     get prompt() {
         return this._prompt;

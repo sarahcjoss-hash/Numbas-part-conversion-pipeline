@@ -2,9 +2,10 @@ import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
 
 class ManualMarkingPart extends Part {
-    constructor(data, num) {
+    constructor(data, num, errorReporter) {
         super(data, num);
         super._type = "manual_marking";
+        super._errorLog = errorReporter;
         const prompt = data.prompt;
         const builder = /manualmarking_builder\(.+?\)/.exec(prompt);
         const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt);
@@ -21,6 +22,9 @@ class ManualMarkingPart extends Part {
     processPrompt(prompt) {
         //fill this is one we decide what processing if any manual marking prompt needs
 
+    }
+    reportError(err){
+        super.reportError(err);
     }
     get prompt() {
         return this._prompt;

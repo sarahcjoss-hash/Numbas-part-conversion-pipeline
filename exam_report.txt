@@ -261,88 +261,9 @@ part type: gapfill marks: 0
  Tags hg_chbi1_0euq11 
 Extensions drag_and_drop
 
-Number of parts : 3
+Number of parts : 2
 part number: 1
 part type: gapfill marks: 0
-
-,part number: 2
-part type: drag_and_drop marks: 16
-prompt: <p>For each of the following descriptions decide whether they refer to slow twitch muscle fibres or fast twitch muscle fibres and put them under the correct heading in the table.</p>
-<table border="1" cellpadding="1" cellspacing="1">
-<tbody>
-<tr>
-<th>Slow twitch muscle fibres</th>
-<th>Fast twitch muscle fibres</th>
-</tr>
-<tr>
-<td style="text-align: center;">[[0]]</td>
-<td style="text-align: center;">[[4]]</td>
-</tr>
-<tr>
-<td style="text-align: center;">[[1]]</td>
-<td style="text-align: center;">[[5]]</td>
-</tr>
-<tr>
-<td style="text-align: center;">[[2]]</td>
-<td style="text-align: center;">[[6]]</td>
-</tr>
-<tr>
-<td style="text-align: center;">[[3]]</td>
-<td style="text-align: center;">[[7]]</td>
-</tr>
-</tbody>
-</table>
-<p>{dnd_builder("b","text",drags_b)}{dnd_dragHeight(56)}{dnd_dragWidth(120)}{dnd_render()}</p>
-Converted prompt: <p>For each of the following descriptions decide whether they refer to slow twitch muscle fibres or fast twitch muscle fibres and put them under the correct heading in the table.</p>
-<table border="1" cellpadding="1" cellspacing="1">
-<tbody>
-<tr>
-<th>Slow twitch muscle fibres</th>
-<th>Fast twitch muscle fibres</th>
-</tr>
-<tr>
-<td style="text-align: center;">%[Rely on aerobic respiration to generate ATP]%</td>
-<td style="text-align: center;">%[Generate ATP through glycolysis only]%</td>
-</tr>
-<tr>
-<td style="text-align: center;">%[Many mitochondria]%</td>
-<td style="text-align: center;">%[Fewer mitochondria]%</td>
-</tr>
-<tr>
-<td style="text-align: center;">%[Large blood supply]%</td>
-<td style="text-align: center;">%[Lower blood supply]%</td>
-</tr>
-<tr>
-<td style="text-align: center;">%[Major storage fuel is fats]%</td>
-<td style="text-align: center;">%[Major storage fuel is glycogen]%</td>
-</tr>
-</tbody>
-</table>
-
-drag height: dnd_dragWidth(120) drag width: dnd_dragHeight(56)
-drag variables: name drags_b, value undefined
-builder : builder string: undefined
-part letter: "b"
-type: "text"
-variable name: drags_b
-!THIS PART APPEARS TO BE A DROP IN BUCKET TYPE. Please check this is correct and appropriate part type has been chosen!
-SETTINGS number of gaps undefined 
-Gap 0: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
-,Gap 1: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
-,Gap 2: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
-,Gap 3: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
-,Gap 4: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
-,Gap 5: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
-,Gap 6: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
-,Gap 7: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
-,Gap 8: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
-,Gap 9: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
-,Gap 10: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
-,Gap 11: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
-,Gap 12: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
-,Gap 13: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
-,Gap 14: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
-,Gap 15: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
 
 ,part number: 3
 part type: gapfill marks: 0

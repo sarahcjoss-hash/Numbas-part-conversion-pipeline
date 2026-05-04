@@ -1,11 +1,12 @@
 class Exam {
-    constructor(name, tags, description) {
+    constructor(name, tags, description, errorReporter) {
         this._name = name;
         this._numOfQuestions = 0;
         this._questions = [];
         this._tags = tags;
         this._description = description;
         this._extensions = [];
+        this.errorLog = errorReporter;
     }
 
 

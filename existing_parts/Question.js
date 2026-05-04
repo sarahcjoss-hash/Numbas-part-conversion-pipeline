@@ -1,5 +1,5 @@
 class Question {
-    constructor(data, num) {
+    constructor(data, num, errorReporter) {
         this._name = data.name || "";
         this._tags = data.tags || [];
         this._containsCustomParts = false;
@@ -7,6 +7,8 @@ class Question {
         this.addExtensions (data.extensions);
         this._qNumber = num;
         this._parts = [];
+         this.errorLog = errorReporter;
+
     }
     set name(name) {
         this._name = name;

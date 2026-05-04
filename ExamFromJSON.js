@@ -6,22 +6,25 @@ import { DragAndDropPart } from "./existing_parts/DragAndDrop.js";
 import { CardMatch } from "./existing_parts/CardMatch.js";
 
 
+
 class ExamFromJSON {
-    constructor(jsonData) {
+    constructor(jsonData, errorReporter) {
         this.data = jsonData;
-        this.exam;;
+        this.errorLog = errorReporter;//consider changing this later for a config with logger, logToConsole, and mock etc.
+        this.exam;
         //console.log('Config loaded successfully:', this.data);
         const extensionNames = ['manual_marking', 'drag_and_drop'];//can replace with a list later to match any of
         this.processExamData(this.data);
     }
 
     processExamData(config) {
-        this.exam = new Exam(config.name, config.tags, config.description);    
+        this.exam = new Exam(config.name, config.tags, config.description, this.errorLog);    
         this.exam.extensions = config.extensions;
         const qGroups = config.question_groups;
         const questions = qGroups.map(qg => qg.questions).flat();//need flat here as the questions are themselves an array
+        try {
         questions.map((q, i) => {
-            let question = new Question(q,i+1);
+            let question = new Question(q,i+1, this.errorLog);
             //working here to change code so that questions and aprts populate themselves from teh data- 
             // //think about how you do this for sub parts- at teh m,oment we are ending up with parts that do not ahve the requisite data
             const parts = q.parts;
@@ -39,15 +42,15 @@ class ExamFromJSON {
 
                 try {
                     if (mmFlag) {
-                         part = new ManualMarkingPart(p, i+1);
+                         part = new ManualMarkingPart(p, i+1, this.errorLog);
                     }else if (ddFlag) {
-                        part = new DragAndDropPart(p, i+1, q.variables);
+                        part = new DragAndDropPart(p, i+1, q.variables, this.errorLog);
                    
                     }else if (cmFlag){
-                        part = new CardMatch(p, i+1, q.variables);
+                        part = new CardMatch(p, i+1, q.variables, this.errorLog);
                     }
                     else{
-                        part = new Part(p, i+1);                        
+                        part = new Part(p, i+1, this.errorLog);                        
                     }            
              
                     question.addPart(part);
@@ -61,6 +64,9 @@ class ExamFromJSON {
             this.exam.addQuestion(question);
 
         });
+    }catch (err){
+        console.error(err);
+    }
     }
 
   // Add methods to process the JSON data as needed

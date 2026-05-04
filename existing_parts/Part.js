@@ -2,13 +2,23 @@ class Part {
     //although all parts have a prompt and 0 to many gaps 
     // for most parts we only need to know type, number, and we might as well get marks
     //for now leave prompt and gaps for teh parts where that matters
-    constructor(data, num) {
+    constructor(data, num, errorReporter) {
         
         this._type = data.type;
         this._prompt = data.prompt;
         this._gaps = data.gaps;
         this._marks = data.marks;
         this._pNumber = num;
+        this._errorLog = errorReporter;
+        this._errorString = '';
+
+    }
+    reportError(err){
+        const errMessage = `Error creating part ${this.number}\n ${err.name} ${err.message} \n ${err.stack}`;
+        console.error(errMessage);
+        const partError = new Error(errMessage)
+        this._errorLog.reportError(partError);//add more detail to this or throw a new Error using a switch (and throw error to question?)
+
     }
 
 

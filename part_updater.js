@@ -23,9 +23,9 @@ class PartUpdater {
     }
 
     convertToDragAndDrop(oldPart){
-         const dndSubType = oldPart.builder.builderType;
+         const dndSubType = oldPart.newPartTypeMatch;
          const prompt = oldPart.prompt;
-         const targetText = this.convertOldDnDPromptToTargetText(prompt);
+         const targetText = oldPart.convertedPrompt;
          
                 switch (dndSubType) {
                     case "1-2-1":

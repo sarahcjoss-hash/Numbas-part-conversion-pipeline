@@ -1,17 +1,21 @@
 import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
 import { DragGap } from "./DragGap.js";
+import { ErrorReporter } from "../ErrorReporter.js"; 
 class DragAndDropPart extends Part {
-    constructor(data, num, variables) {
+    constructor(data, num, variables, logger) {
 
         super(data, num);
         super._type = "drag_and_drop";
+        super._errorLog = logger;
         try {
             data.gaps.map((data, i) => {
                 super.addGap(new DragGap(data, i + 1));
             });
         } catch (error) {
-            console.error("Error processing gaps:", error);
+            const message = `Error processing gaps in drag and drop part {num}: {error.message}`
+            console.error("Error processing gaps in drag and drop:", error);
+            errorLogger.reportError(new Error(message))
         }
         const prompt = data.prompt;
         const builder = /dnd_builder\(.+?\)/.exec(prompt);
@@ -31,8 +35,13 @@ class DragAndDropPart extends Part {
         this._subType = this.builder.builderType;
         super.marks = this.marksFromGaps;
 
+    }
 
-
+    static get dndSubTypes (){
+        return ['bucket', 'reorder', '1-2-1'];
+    }
+    static verifySubType(type){
+        return DragAndDropPart.dndSubTypes.contains(type);
     }
 
     processPrompt(prompt) {
@@ -43,6 +52,8 @@ class DragAndDropPart extends Part {
 
 
         try {
+            //test logger
+            this.reportError(new Error('testing the error logger'))
             const gapRegex = /\[\[\d+\]\]/g;
             const filledPrompt = prompt.replace(gapRegex, (match) => {
                 const gapNumber = parseInt(match.match(/\d+/)[0], 10);
@@ -63,6 +74,9 @@ class DragAndDropPart extends Part {
         } catch (error) {
             console.error("Error processing prompt:", error);
         }
+    }
+    reportError(err){
+        super.reportError(err);
     }
 
 
@@ -93,9 +107,7 @@ class DragAndDropPart extends Part {
             return dragList;
         }
     }
-    get filledVariables() {
 
-    }
     get convertedPrompt() {
         return this._convertedPrompt;
     }
@@ -133,7 +145,7 @@ class DragAndDropPart extends Part {
         //check if this is a drop in bucket
         //if not return the base type
         if (this.isThisADropInBucket()) {
-            return 'drag_and_drop_bucket';
+            return 'bucket';
         }
         let newPartType = 'reorder';
         switch (this._subType) {
@@ -142,13 +154,18 @@ class DragAndDropPart extends Part {
                 newPartType = 'reorder';
                 break;
             case 'image':
-                newPartType = 'drag1-2-1';
+                newPartType = '1-2-1';
                 break;
             default:
                 newPartType = null;
         }
+        //check it is valid
+        if (DragAndDropPart.verifySubType(newPartType)){
 
-        return newPartType;
+            return newPartType;
+        }else{
+            throw new Error('The drag and drop subtype is not one of the known types and will not convert to a new custom part')
+        }
     }
 
     get dragHeight() {
