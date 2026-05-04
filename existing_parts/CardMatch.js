@@ -3,9 +3,8 @@ import { Builder } from "./Builder.js";
 import { DragGap } from "./DragGap.js";
 class CardMatch extends Part {
     constructor(num, data, variables, logger) {
-        super(num, data);
+        super(num, data, logger);
         super._type = "card_match";
-        super._errorLog = logger;
         const builder = /dnd_builder\(.+?\)/.exec(prompt);
         const dragsVariableName = /drags_./.exec(builder);
         const dragValues = variables[dragsVariableName].definition;
@@ -13,7 +12,7 @@ class CardMatch extends Part {
         this._dragsVariableValue = dragValues || "";
         this._newPartTypeMatch = "card-match";
         this._gaps = this.processGaps(data.gaps);
-        this._builder = new Builder(builder);
+        this._builder = new Builder(builder, logger);
     }
 
     processGaps(gaps) {

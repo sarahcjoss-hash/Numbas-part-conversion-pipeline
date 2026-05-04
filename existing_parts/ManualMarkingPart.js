@@ -3,9 +3,9 @@ import { Builder } from "./Builder.js";
 
 class ManualMarkingPart extends Part {
     constructor(data, num, errorReporter) {
-        super(data, num);
+        super(data, num, errorReporter);
         super._type = "manual_marking";
-        super._errorLog = errorReporter;
+
         const prompt = data.prompt;
         const builder = /manualmarking_builder\(.+?\)/.exec(prompt);
         const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt);
@@ -14,7 +14,7 @@ class ManualMarkingPart extends Part {
         this._textAreaWidth = width || 'auto';
         this._textAreaHeight = height || 'auto';
         this._answer = gap.displayAnswer || "";
-        this._builder = new Builder(builder);
+        this._builder = new Builder(builder, errorReporter);
         this._marks = gap.marks || 0;
         
     }

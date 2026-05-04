@@ -23,7 +23,7 @@ prompt: <p>A well known drug company has developed a drug for the treatment of t
 text area width: manualmarking_textarea_width('350px') text area height: manualmarking_textarea_height('4em')
 answer: Choose an answer from: Is it safer than using the drug directly on volunteers? Is it right to use embryos to extract stem cells? Is it right to deprive sufferers of potential treatment? Is it right to use stem cells rather than animals?
 Marks:1 Answer Choose an answer from: Is it safer than using the drug directly on volunteers? Is it right to use embryos to extract stem cells? Is it right to deprive sufferers of potential treatment? Is it right to use stem cells rather than animals?
-builder string: undefined
+undefined,builder string: undefined
 part letter: 'b'
 type: 
 variable name: 
@@ -35,7 +35,7 @@ prompt: <p>What is the difference between embryonic and tissue stem cells?</p>
 text area width: manualmarking_textarea_width('350px') text area height: manualmarking_textarea_height('4em')
 answer: Tissue stem cells are more differentiated than embryonic stem cells.
 Marks:1 Answer Tissue stem cells are more differentiated than embryonic stem cells.
-builder string: undefined
+undefined,builder string: undefined
 part letter: 'c'
 type: 
 variable name: 
@@ -122,7 +122,7 @@ prompt: <p>Explain why a primary mRNA molecule is longer than a mature mRNA mole
 text area width: manualmarking_textarea_width('350px') text area height: manualmarking_textarea_height('4em')
 answer: Choose an answer from: the introns / non-coding regions of genes are removed; due to RNA splicing;  the mature mRNA only contains exons / coding regions of genes.
 Marks:1 Answer Choose an answer from: the introns / non-coding regions of genes are removed; due to RNA splicing;  the mature mRNA only contains exons / coding regions of genes.
-builder string: undefined
+undefined,builder string: undefined
 part letter: 'f'
 type: 
 variable name: 
@@ -198,7 +198,7 @@ prompt: <p>Explain the term 'induced fit'.</p>
 text area width: manualmarking_textarea_width('400px') text area height: manualmarking_textarea_height('4em')
 answer: When a substrate binds, the active site on the enzyme changes shape.
 Marks:1 Answer When a substrate binds, the active site on the enzyme changes shape.
-builder string: undefined
+undefined,builder string: undefined
 part letter: 'a'
 type: 
 variable name: 
@@ -210,7 +210,7 @@ prompt: <p>Explain the difference between a competitive inhibitor and non-compet
 text area width: manualmarking_textarea_width('400px') text area height: manualmarking_textarea_height('4em')
 answer: Competitive inhibitors bind at the active site, non-competitive inhibitors bind away from the active site.
 Marks:1 Answer Competitive inhibitors bind at the active site, non-competitive inhibitors bind away from the active site.
-builder string: undefined
+undefined,builder string: undefined
 part letter: 'b'
 type: 
 variable name: 
@@ -321,7 +321,7 @@ Converted prompt: <p>For each of the following descriptions decide whether they 
 
 drag height: dnd_dragWidth(120) drag width: dnd_dragHeight(56)
 drag variables: name drags_b, value undefined
-builder : builder string: undefined
+builder : undefined,builder string: undefined
 part letter: "b"
 type: "text"
 variable name: drags_b

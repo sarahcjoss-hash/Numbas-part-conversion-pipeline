@@ -10,11 +10,15 @@ import { CardMatch } from "./existing_parts/CardMatch.js";
 class ExamFromJSON {
     constructor(jsonData, errorReporter) {
         this.data = jsonData;
-        this.errorLog = errorReporter;//consider changing this later for a config with logger, logToConsole, and mock etc.
+        this._errorLog = errorReporter;//consider changing this later for a config with logger, logToConsole, and mock etc.
         this.exam;
         //console.log('Config loaded successfully:', this.data);
         const extensionNames = ['manual_marking', 'drag_and_drop'];//can replace with a list later to match any of
         this.processExamData(this.data);
+    }
+    reportError(err, additional){
+        err.message= `${additional} : ${err.message}`
+        this._errorLog.reportError(err);
     }
 
     processExamData(config) {
@@ -42,20 +46,22 @@ class ExamFromJSON {
 
                 try {
                     if (mmFlag) {
-                         part = new ManualMarkingPart(p, i+1, this.errorLog);
+                         part = new ManualMarkingPart(p, i+1, this._errorLog);
                     }else if (ddFlag) {
-                        part = new DragAndDropPart(p, i+1, q.variables, this.errorLog);
+                        part = new DragAndDropPart(p, i+1, q.variables, this._errorLog);
                    
                     }else if (cmFlag){
-                        part = new CardMatch(p, i+1, q.variables, this.errorLog);
+                        part = new CardMatch(p, i+1, q.variables, this._errorLog);
                     }
                     else{
-                        part = new Part(p, i+1, this.errorLog);                        
+                        part = new Part(p, i+1, this._errorLog);                        
                     }            
              
                     question.addPart(part);
                 } catch (err) {
-                    console.log(`unable to get inforamtion for custom part type ${err.message}`);
+                    
+                    this.reportError(err, `unable to get inforamtion for custom part type` );
+                    
 
                 }
 
@@ -65,7 +71,8 @@ class ExamFromJSON {
 
         });
     }catch (err){
-        console.error(err);
+
+        this.reportError(err, "");
     }
     }
 

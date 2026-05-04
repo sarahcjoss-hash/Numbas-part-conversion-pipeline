@@ -1,12 +1,11 @@
 class Builder {
-    constructor(str) {
+    constructor(str, logger) {
         function processbuilderString(str, logger) {
             //parse the string to get the part letter, type and variable name
             let partLetter = "";
             let type = "";
             let variableName = "";
-            this._errorLog = logger;
-            this._errorString;
+
             try {
                 const bitInBrackets = /\(.+?\)/.exec(str);
 
@@ -25,6 +24,8 @@ class Builder {
             }
             return { partLetter: partLetter, type: type, variableName: variableName };
         }
+        this._errorLog = logger;
+        this._errorString;
         const result = processbuilderString(str);
         this._partLetter = result.partLetter;
         this._type = result.type;

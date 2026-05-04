@@ -5,9 +5,8 @@ import { ErrorReporter } from "../ErrorReporter.js";
 class DragAndDropPart extends Part {
     constructor(data, num, variables, logger) {
 
-        super(data, num);
+        super(data, num, logger);
         super._type = "drag_and_drop";
-        super._errorLog = logger;
         try {
             data.gaps.map((data, i) => {
                 super.addGap(new DragGap(data, i + 1));
