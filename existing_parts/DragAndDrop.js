@@ -7,6 +7,16 @@ class DragAndDropPart extends Part {
 
         super(data, num, logger);
         super._type = "drag_and_drop";
+                function   extractValueFromBS(val, prefix){
+            try{
+            const length = prefix.length;
+            return val.substring(length, val.length-1);
+            }catch(err){
+                errorReporter.reportError(err);
+                return val;
+            }
+
+        }
         try {
             data.gaps.map((data, i) => {
                 super.addGap(new DragGap(data, i + 1));
@@ -18,13 +28,14 @@ class DragAndDropPart extends Part {
         const builder = /dnd_builder\(.+?\)/.exec(prompt);
         const dragsVariableName = /drags_./.exec(builder);
         this._dragsListAsJSONString = variables[dragsVariableName].definition;
-        const width = /dnd_dragHeight\(.+?\)/.exec(prompt);
-        const height = /dnd_dragWidth\(.+?\)/.exec(prompt);
+        const height = /dnd_dragHeight\(.+?\)/.exec(prompt)[0];
+        const width = /dnd_dragWidth\(.+?\)/.exec(prompt)[0];
+        const builderPrefix = "dnd_drag";
 
         this._dragsVariableName = dragsVariableName || "";
 
-        this._dragHeight = height || "";
-        this._dragWidth = width || "";
+        this._dragHeight = extractValueFromBS(height, builderPrefix+'height(')|| '';
+        this._dragWidth = extractValueFromBS(width, builderPrefix+'width(')|| '';
         this._builder = new Builder(builder, logger);
         this._convertedPrompt = this.processPrompt(prompt);
 

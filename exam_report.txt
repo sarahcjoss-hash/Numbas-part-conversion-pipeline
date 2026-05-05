@@ -20,9 +20,10 @@ prompt: <p>A well known drug company has developed a drug for the treatment of t
 <p>Suggest an ethical consideration which may influence their decision in using stem cells.</p>
 <p>[[0]]</p>
 <p>{manualmarking_builder('b')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('350px') text area height: manualmarking_textarea_height('4em')
+text area width: '350px' text area height: '4em'
 answer: Choose an answer from: Is it safer than using the drug directly on volunteers? Is it right to use embryos to extract stem cells? Is it right to deprive sufferers of potential treatment? Is it right to use stem cells rather than animals?
-Marks:1 Answer Choose an answer from: Is it safer than using the drug directly on volunteers? Is it right to use embryos to extract stem cells? Is it right to deprive sufferers of potential treatment? Is it right to use stem cells rather than animals?/n,builder string: undefined
+Marks:1 Answer Choose an answer from: Is it safer than using the drug directly on volunteers? Is it right to use embryos to extract stem cells? Is it right to deprive sufferers of potential treatment? Is it right to use stem cells rather than animals?
+,builder string: undefined
 part letter: 'b'
 type: 
 variable name: 
@@ -31,9 +32,10 @@ part type: manual_marking marks: 1
 prompt: <p>What is the difference between embryonic and tissue stem cells?</p>
 <p>[[0]]</p>
 <p>{manualmarking_builder('c')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('350px') text area height: manualmarking_textarea_height('4em')
+text area width: '350px' text area height: '4em'
 answer: Tissue stem cells are more differentiated than embryonic stem cells.
-Marks:1 Answer Tissue stem cells are more differentiated than embryonic stem cells./n,builder string: undefined
+Marks:1 Answer Tissue stem cells are more differentiated than embryonic stem cells.
+,builder string: undefined
 part letter: 'c'
 type: 
 variable name: 
@@ -117,9 +119,10 @@ part type: manual_marking marks: 1
 prompt: <p>Explain why a primary mRNA molecule is longer than a mature mRNA molecule.</p>
 <p>[[0]]</p>
 <p>{manualmarking_builder('f')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('350px') text area height: manualmarking_textarea_height('4em')
+text area width: '350px' text area height: '4em'
 answer: Choose an answer from: the introns / non-coding regions of genes are removed; due to RNA splicing;  the mature mRNA only contains exons / coding regions of genes.
-Marks:1 Answer Choose an answer from: the introns / non-coding regions of genes are removed; due to RNA splicing;  the mature mRNA only contains exons / coding regions of genes./n,builder string: undefined
+Marks:1 Answer Choose an answer from: the introns / non-coding regions of genes are removed; due to RNA splicing;  the mature mRNA only contains exons / coding regions of genes.
+,builder string: undefined
 part letter: 'f'
 type: 
 variable name: 
@@ -192,9 +195,10 @@ part type: manual_marking marks: 1
 prompt: <p>Explain the term 'induced fit'.</p>
 <p>[[0]]</p>
 <p>{manualmarking_builder('a')}{manualmarking_textarea_width('400px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('400px') text area height: manualmarking_textarea_height('4em')
+text area width: '400px' text area height: '4em'
 answer: When a substrate binds, the active site on the enzyme changes shape.
-Marks:1 Answer When a substrate binds, the active site on the enzyme changes shape./n,builder string: undefined
+Marks:1 Answer When a substrate binds, the active site on the enzyme changes shape.
+,builder string: undefined
 part letter: 'a'
 type: 
 variable name: 
@@ -203,9 +207,10 @@ part type: manual_marking marks: 1
 prompt: <p>Explain the difference between a competitive inhibitor and non-competitive inhibitor.</p>
 <p>[[0]]</p>
 <p>{manualmarking_builder('b')}{manualmarking_textarea_width('400px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
-text area width: manualmarking_textarea_width('400px') text area height: manualmarking_textarea_height('4em')
+text area width: '400px' text area height: '4em'
 answer: Competitive inhibitors bind at the active site, non-competitive inhibitors bind away from the active site.
-Marks:1 Answer Competitive inhibitors bind at the active site, non-competitive inhibitors bind away from the active site./n,builder string: undefined
+Marks:1 Answer Competitive inhibitors bind at the active site, non-competitive inhibitors bind away from the active site.
+,builder string: undefined
 part letter: 'b'
 type: 
 variable name: 
@@ -314,7 +319,7 @@ Converted prompt: <p>For each of the following descriptions decide whether they 
 </tbody>
 </table>
 
-drag height: dnd_dragWidth(120) drag width: dnd_dragHeight(56)
+drag height: 56 drag width: 120
 drag variables: name drags_b, value undefined
 builder : ,builder string: undefined
 part letter: "b"

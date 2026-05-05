@@ -5,19 +5,33 @@ class ManualMarkingPart extends Part {
     constructor(data, num, errorReporter) {
         super(data, num, errorReporter);
         super._type = "manual_marking";
+        function   extractValueFromBS(val, prefix){
+            try{
+            const length = prefix.length;
+            return val.substring(length, val.length-1);
+            }catch(err){
+                errorReporter.reportError(err);
+                return val;
+            }
+
+        }
 
         const prompt = data.prompt;
+        const builderPrefix = "manualmarking_textarea_"
         const builder = /manualmarking_builder\(.+?\)/.exec(prompt);
-        const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt);
-        const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt);
+        const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt)[0];
+        const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt)[0];
         const gap = data.gaps[0];
-        this._textAreaWidth = width || 'auto';
-        this._textAreaHeight = height || 'auto';
+
+        this._textAreaWidth = extractValueFromBS(width, builderPrefix+'width(')|| 'auto';
+        this._textAreaHeight = extractValueFromBS(height,builderPrefix+'height(' ) || 'auto';
+        //console.log(`this._textAreaWidth ${this._textAreaWidth} _textAreaHeight ${this._textAreaHeight}`)
         this._answer = gap.displayAnswer || "";
         this._builder = new Builder(builder, errorReporter);
         this._marks = gap.marks || 0;
         
     }
+  
 
     processPrompt(prompt) {
         //fill this is one we decide what processing if any manual marking prompt needs

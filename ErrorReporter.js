@@ -17,7 +17,7 @@ class ErrorReporter{
         return this._errors;
     }
     get allErrorMessages(){
-        return this.errors.length>0? allErrors = this.errors.map(e => `{e.message} \n`).join(): "";
+        return this._errors.length>0? this.errors.map(e => `{e.message} \n`).join(): "";
     }
     get errorReport(){
         let errorString = `Log file for ${this._name}`;
