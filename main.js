@@ -2,6 +2,8 @@ import { FileReader } from './fileReader.js';
 import { ExamFromJSON } from './ExamFromJSON.js';
 import { ReportWriter } from './ReportWriter.js';
 import { ErrorReporter } from './ErrorReporter.js';
+import { UpdatedExam } from './UpdatedExam.js';
+import { JSONFromExam } from './JSONFromExam.js';
 
 
 // to do
@@ -19,6 +21,7 @@ const examFile = path + folder + 'source.exam';
 const filereader = new FileReader();
 const reportWriter = new ReportWriter();
 const errorReporter = new ErrorReporter(true, `${examFile}`);
+
 filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
   
   const examData = JSON.parse(line);
@@ -27,6 +30,9 @@ filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
   //console.log(report);
   reportWriter.writeReportToFile(report, 'exam_report.txt');
   reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
+
+  const updatedExam = new UpdatedExam(exam);
+  const updatedJSON = new JSONFromExam(updatedExam, examData)
 }).catch(err => {
   console.error(err);
 });

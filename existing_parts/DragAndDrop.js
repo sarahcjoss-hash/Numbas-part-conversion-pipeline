@@ -52,6 +52,10 @@ class DragAndDropPart extends Part {
         return DragAndDropPart.dndSubTypes.contains(type);
     }
 
+    get needsReplacing(){
+        return true;
+    }
+
     processPrompt(prompt) {
         //find hte marked areas in the prompt
         //find all the gaps [[n]] and replace with the appropriate gap display answer- using the display answer not the gap answer means this will work for drop in bucket type too

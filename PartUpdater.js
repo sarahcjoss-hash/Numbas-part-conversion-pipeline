@@ -1,25 +1,26 @@
 class PartUpdater {
-    constructor(old) {
-        this.partToConvert = old;
-        this.newCustomPartModel;
-        this.newPart;
+    constructor() {
+
     }
-    convertPart() {
-        const type = this.partToConvert.type;
+    convertPart(part) {
+        let partToConvert = part;
+        let newPart = part;
+        const type = partToConvert.type;
         switch (type) {
             case "drag_and_drop":
-               this.newPart = this.convertToDragAndDrop(this.partToConvert);
+               newPart = this.convertToDragAndDrop(this.partToConvert);
                 break;
             case "card_match":
-                this.newPart = new CardMatch(this.partToConvert.number);
+                newPart = new CardMatch(this.partToConvert.number);
                 break;
             case "manual_marking":
-                this.newPart = new ManualMarkingPart(this.partToConvert.number);
+                newPart = new ManualMarkingPart(this.partToConvert.number);
                 break;
             default:
                 console.log(`no conversion for part type ${type}`);
 
         }
+        return newPart;
     }
 
     convertToDragAndDrop(oldPart){

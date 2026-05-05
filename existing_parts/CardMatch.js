@@ -15,6 +15,10 @@ class CardMatch extends Part {
         this._builder = new Builder(builder, logger);
     }
 
+    get needsReplacing(){
+        return true;
+    }
+
     processGaps(gaps) {
         //for drag and drop we need to know the number of gaps but also the answers and marks for each gap
         //create a DragGap for each gap

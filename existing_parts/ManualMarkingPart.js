@@ -31,6 +31,10 @@ class ManualMarkingPart extends Part {
         this._marks = gap.marks || 0;
         
     }
+
+    get needsReplacing(){
+        return true;
+    }
   
 
     processPrompt(prompt) {

@@ -12,6 +12,7 @@ class Part {
         this._errorLog = errorReporter;
         this._errorString = '';
 
+
     }
     reportError(err){
         const errMessage = `Error creating part ${this.number}\n ${err.name} ${err.message}`;
@@ -20,7 +21,9 @@ class Part {
 
     }
 
-
+    get needsReplacing(){
+        return false;
+    }
 
     get type() {
         return this._type;
