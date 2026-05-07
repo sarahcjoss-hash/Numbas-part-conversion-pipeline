@@ -2,7 +2,7 @@ import { FileReader } from './fileReader.js';
 import { ExamFromJSON } from './ExamFromJSON.js';
 import { ReportWriter } from './ReportWriter.js';
 import { ErrorReporter } from './ErrorReporter.js';
-import { UpdatedExam } from './UpdatedExam.js';
+import { ExamUpdater } from './ExamUpdater.js';
 import { JSONFromExam } from './JSONFromExam.js';
 
 
@@ -30,9 +30,8 @@ filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
   //console.log(report);
   reportWriter.writeReportToFile(report, 'exam_report.txt');
   reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
-
-  const updatedExam = new UpdatedExam(exam);
-  const updatedJSON = new JSONFromExam(updatedExam, examData)
+  const examUpdater = new ExamUpdater(errorReporter);
+  examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
 }).catch(err => {
   console.error(err);
 });
