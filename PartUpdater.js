@@ -20,13 +20,13 @@ class PartUpdater {
         const type = partToConvert.type;
         switch (type) {
             case "drag_and_drop":
-               newPart = this.convertToDragAndDrop(this.partToConvert);
+               newPart = this.convertToDragAndDrop(part);
                 break;
             case "card_match":
-                newPart = new CardMatch(this.partToConvert.number);
+                newPart = new CardMatch(part.number);
                 break;
             case "manual_marking":
-                newPart = new LongTextEntry(this.partToConvert.number);
+                newPart = this.convertToLongTextEntry(part);
                 break;
             default:
                 console.log(`no conversion for part type ${type}`);
@@ -37,6 +37,10 @@ class PartUpdater {
         err.message = `Error trying to convert part ${part.number}: ${err.message}`
         return part;
     }
+    }
+    convertToLongTextEntry(part){
+        let  newPart = new LongTextEntry(part.number);
+
     }
 
     convertToDragAndDrop(oldPart){
