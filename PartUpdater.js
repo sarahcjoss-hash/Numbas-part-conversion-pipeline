@@ -55,7 +55,7 @@ class PartUpdater {
                         newPart = new Drag121(oldPart.number)
                         break;
                     case "bucket":
-                        newPart = new DropInBucket(oldPart.number);
+                        newPart = DropInBucket.createNewFromExisting(oldPart, this.errorlog);
                         break;
                         case "reorder":
                             newPart = new SentenceReorder(oldPart.number)

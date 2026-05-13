@@ -13,6 +13,7 @@ class NewDragAndDrop extends NewPart {
         this._allOrNothing = false;
         this._templateJson;
         this._templateSettings;
+        this._dragItems = [];
    
     }
     set type(type) {
@@ -27,6 +28,10 @@ class NewDragAndDrop extends NewPart {
     set templateSettings (settings) {
         this._templateSettings = settings;
     }
+    set dragItems(items){
+        this._dragItems = items;
+    }
+
 
 
 

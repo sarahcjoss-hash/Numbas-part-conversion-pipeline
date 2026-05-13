@@ -11,6 +11,7 @@ class NewPart {
         this._fileReader = new PartJSONFileReader(errorLogger);
         this._customPartFileName = '';
         this._templateJsonFileName = '';
+        this._settings = {};
     }
     reportError(err, additional){
         err.message= `${additional} : ${err.message}`
@@ -44,6 +45,18 @@ class NewPart {
  }
  get prompt(){
     return this._prompt;
+ }
+
+updateSetting(setting, val) {
+        //check the setting exists and if so update it otherwise report an error
+        if (this._settings.hasOwnProperty(setting)) {
+            this._settings[setting] = val;
+        } else {
+            this._errorLogger.reportError(new Error(`Setting '${setting}' does not exist`));
+        }
+}
+ get settings(){
+    return this._settings;
  }
     createNewFromExisting(part){
         let newPart = new NewPart()
