@@ -1,0 +1,351 @@
+Exam file report: Human cells test
+ Exam name: Human cells test
+Exam tags: None
+Exam description: None
+Number of questions: 11
+
+QUESTIONS
+ ________________________________
+Question 1 : Human cells
+ Tags hg_chbi1_0euq1 
+Extensions manual_marking
+
+Number of parts : 4
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: manual_marking marks: 1
+prompt: <p>A well known drug company has developed a drug for the treatment of the symptoms of a particular inherited disease. However, before they can proceed to clinical trials using volunteers, the company has decided to do additional tests in the laboratory using stem cells.</p>
+<p>Suggest an ethical consideration which may influence their decision in using stem cells.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+text area width: '350px' text area height: '4em'
+answer: Choose an answer from: Is it safer than using the drug directly on volunteers? Is it right to use embryos to extract stem cells? Is it right to deprive sufferers of potential treatment? Is it right to use stem cells rather than animals?
+Marks:1 Answer Choose an answer from: Is it safer than using the drug directly on volunteers? Is it right to use embryos to extract stem cells? Is it right to deprive sufferers of potential treatment? Is it right to use stem cells rather than animals?
+,builder string: undefined
+part letter: 'b'
+type: 
+variable name: 
+,part number: 3
+part type: manual_marking marks: 1
+prompt: <p>What is the difference between embryonic and tissue stem cells?</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('c')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+text area width: '350px' text area height: '4em'
+answer: Tissue stem cells are more differentiated than embryonic stem cells.
+Marks:1 Answer Tissue stem cells are more differentiated than embryonic stem cells.
+,builder string: undefined
+part letter: 'c'
+type: 
+variable name: 
+,part number: 4
+part type: gapfill marks: 0
+
+
+-------------------------------------
+,Question 2 : Structure of DNA
+ Tags hg_chbi1_0euq2 
+Extensions 
+
+Number of parts : 6
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: patternmatch marks: 1
+
+,part number: 3
+part type: patternmatch marks: 1
+
+,part number: 4
+part type: patternmatch marks: 1
+
+,part number: 5
+part type: patternmatch marks: 1
+
+,part number: 6
+part type: patternmatch marks: 1
+
+
+-------------------------------------
+,Question 3 : Replication of DNA
+ Tags hg_chbi1_0euq3 
+Extensions 
+
+Number of parts : 6
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: patternmatch marks: 1
+
+,part number: 3
+part type: patternmatch marks: 1
+
+,part number: 4
+part type: gapfill marks: 0
+
+,part number: 5
+part type: 1_n_2 marks: 0
+
+,part number: 6
+part type: 1_n_2 marks: 0
+
+
+-------------------------------------
+,Question 4 : Gene expression
+ Tags hg_chbi1_0euq4 
+Extensions manual_marking
+
+Number of parts : 9
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: patternmatch marks: 1
+
+,part number: 3
+part type: patternmatch marks: 1
+
+,part number: 4
+part type: patternmatch marks: 1
+
+,part number: 5
+part type: patternmatch marks: 1
+
+,part number: 6
+part type: manual_marking marks: 1
+prompt: <p>Explain why a primary mRNA molecule is longer than a mature mRNA molecule.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('f')}{manualmarking_textarea_width('350px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+text area width: '350px' text area height: '4em'
+answer: Choose an answer from: the introns / non-coding regions of genes are removed; due to RNA splicing;  the mature mRNA only contains exons / coding regions of genes.
+Marks:1 Answer Choose an answer from: the introns / non-coding regions of genes are removed; due to RNA splicing;  the mature mRNA only contains exons / coding regions of genes.
+,builder string: undefined
+part letter: 'f'
+type: 
+variable name: 
+,part number: 7
+part type: patternmatch marks: 1
+
+,part number: 8
+part type: patternmatch marks: 1
+
+,part number: 9
+part type: patternmatch marks: 1
+
+
+-------------------------------------
+,Question 5 : Mutations
+ Tags  
+Extensions 
+
+Number of parts : 4
+part number: 1
+part type: m_n_2 marks: 0
+
+,part number: 2
+part type: patternmatch marks: 1
+
+,part number: 3
+part type: patternmatch marks: 1
+
+,part number: 4
+part type: 1_n_2 marks: 0
+
+
+-------------------------------------
+,Question 6 : Human Genomics
+ Tags hg_chbi1_0euq6 
+Extensions 
+
+Number of parts : 2
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: patternmatch marks: 1
+
+
+-------------------------------------
+,Question 7 : Metabolic pathways
+ Tags  
+Extensions 
+
+Number of parts : 3
+part number: 1
+part type: gapfill marks: 0
+
+,part number: 2
+part type: gapfill marks: 0
+
+,part number: 3
+part type: gapfill marks: 0
+
+
+-------------------------------------
+,Question 8 : Metabolic pathways
+ Tags hg_chbi1_0euq8 
+Extensions manual_marking
+
+Number of parts : 2
+part number: 1
+part type: manual_marking marks: 1
+prompt: <p>Explain the term 'induced fit'.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('a')}{manualmarking_textarea_width('400px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+text area width: '400px' text area height: '4em'
+answer: When a substrate binds, the active site on the enzyme changes shape.
+Marks:1 Answer When a substrate binds, the active site on the enzyme changes shape.
+,builder string: undefined
+part letter: 'a'
+type: 
+variable name: 
+,part number: 2
+part type: manual_marking marks: 1
+prompt: <p>Explain the difference between a competitive inhibitor and non-competitive inhibitor.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('400px')}{manualmarking_textarea_height('4em')}{manualmarking_render()}</p>
+text area width: '400px' text area height: '4em'
+answer: Competitive inhibitors bind at the active site, non-competitive inhibitors bind away from the active site.
+Marks:1 Answer Competitive inhibitors bind at the active site, non-competitive inhibitors bind away from the active site.
+,builder string: undefined
+part letter: 'b'
+type: 
+variable name: 
+
+-------------------------------------
+,Question 9 : Metabolic Pathways
+ Tags hg_chbi1_0euq9 
+Extensions manual_marking
+
+Number of parts : 3
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: 1_n_2 marks: 0
+
+,part number: 3
+part type: 1_n_2 marks: 0
+
+
+-------------------------------------
+,Question 10 : Cellular respiration
+ Tags hg_chbi1_0euq10 
+Extensions 
+
+Number of parts : 6
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: patternmatch marks: 1
+
+,part number: 3
+part type: patternmatch marks: 1
+
+,part number: 4
+part type: patternmatch marks: 1
+
+,part number: 5
+part type: patternmatch marks: 1
+
+,part number: 6
+part type: gapfill marks: 0
+
+
+-------------------------------------
+,Question 11 : Energy systems in muscle cells
+ Tags hg_chbi1_0euq11 
+Extensions drag_and_drop
+
+Number of parts : 3
+part number: 1
+part type: gapfill marks: 0
+
+,part number: 2
+part type: drag_and_drop marks: 16
+prompt: <p>For each of the following descriptions decide whether they refer to slow twitch muscle fibres or fast twitch muscle fibres and put them under the correct heading in the table.</p>
+<table border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr>
+<th>Slow twitch muscle fibres</th>
+<th>Fast twitch muscle fibres</th>
+</tr>
+<tr>
+<td style="text-align: center;">[[0]]</td>
+<td style="text-align: center;">[[4]]</td>
+</tr>
+<tr>
+<td style="text-align: center;">[[1]]</td>
+<td style="text-align: center;">[[5]]</td>
+</tr>
+<tr>
+<td style="text-align: center;">[[2]]</td>
+<td style="text-align: center;">[[6]]</td>
+</tr>
+<tr>
+<td style="text-align: center;">[[3]]</td>
+<td style="text-align: center;">[[7]]</td>
+</tr>
+</tbody>
+</table>
+<p>{dnd_builder("b","text",drags_b)}{dnd_dragHeight(56)}{dnd_dragWidth(120)}{dnd_render()}</p>
+Converted prompt: <p>For each of the following descriptions decide whether they refer to slow twitch muscle fibres or fast twitch muscle fibres and put them under the correct heading in the table.</p>
+<table border="1" cellpadding="1" cellspacing="1">
+<tbody>
+<tr>
+<th>Slow twitch muscle fibres</th>
+<th>Fast twitch muscle fibres</th>
+</tr>
+<tr>
+<td style="text-align: center;">%[Rely on aerobic respiration to generate ATP]%</td>
+<td style="text-align: center;">%[Generate ATP through glycolysis only]%</td>
+</tr>
+<tr>
+<td style="text-align: center;">%[Many mitochondria]%</td>
+<td style="text-align: center;">%[Fewer mitochondria]%</td>
+</tr>
+<tr>
+<td style="text-align: center;">%[Large blood supply]%</td>
+<td style="text-align: center;">%[Lower blood supply]%</td>
+</tr>
+<tr>
+<td style="text-align: center;">%[Major storage fuel is fats]%</td>
+<td style="text-align: center;">%[Major storage fuel is glycogen]%</td>
+</tr>
+</tbody>
+</table>
+
+drag height: 56 drag width: 120
+drag variables: name drags_b, value undefined
+builder : ,builder string: undefined
+part letter: "b"
+type: "text"
+variable name: drags_b
+!THIS PART APPEARS TO BE A DROP IN BUCKET TYPE. Please check this is correct and appropriate part type has been chosen!
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 1: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 2: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 3: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 4: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 5: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 6: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 7: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 8: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 9: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 10: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 11: answer {drags_b[0]}|{drags_b[1]}|{drags_b[2]}|{drags_b[3]} Marks: 1
+,Gap 12: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 13: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 14: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+,Gap 15: answer {drags_b[4]}|{drags_b[5]}|{drags_b[6]}|{drags_b[7]} Marks: 1
+
+,part number: 3
+part type: gapfill marks: 0
+
+
+-------------------------------------

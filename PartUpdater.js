@@ -39,7 +39,7 @@ class PartUpdater {
     }
     }
     convertToLongTextEntry(part){
-        let  newPart = new LongTextEntry(part.number);
+        let  newPart = LongTextEntry.createNewFromExisting(part,  this.errorlog);
 
     }
 

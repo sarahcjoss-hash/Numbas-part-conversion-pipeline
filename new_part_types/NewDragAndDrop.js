@@ -2,8 +2,8 @@
 
 import { NewPart } from "./NewPart.js";
 class NewDragAndDrop extends NewPart {
-    constructor() {
-        super();
+    constructor(errorLogger) {
+        super(errorLogger);
         this._prompt = "";
         this._dragsVariableName = "";
         this._dragsVariableValue = "";

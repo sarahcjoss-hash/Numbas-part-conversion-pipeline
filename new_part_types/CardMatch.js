@@ -1,9 +1,10 @@
 import { NewPart } from "./NewPart.js";
 class CardMatch extends NewPart {
-    constructor() {
-        super();
-        super._type = "scholar_card_match";
-        super._templateJson = "cardMatch.json"
+    constructor(errorLogger) {
+        super(errorLogger);
+        super._type = "card-match";
+        super._templateJson = "cardMatchPart.json";
+        super._customPartFileName = 'cardMatchCP.json';
         super._templateSettings =     {list_of_pairs: '[["a","A"],["b","B"],["c","C"]]',
                                     "howManyPairs": "3",
                                 "markOnMatch": true,

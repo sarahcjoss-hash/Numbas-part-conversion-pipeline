@@ -1,8 +1,8 @@
 
 import { NewDragAndDrop } from "./NewDragAndDrop.js";
 class Drag121 extends NewDragAndDrop {
-    constructor() {
-        super();
+    constructor(errorLogger) {
+        super(errorLogger);
         super._type = "scholar_drag_1_2_1";
         super._templateJson = "drag121Part.json"
         super._templateSettings = {

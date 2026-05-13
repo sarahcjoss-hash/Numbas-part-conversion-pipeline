@@ -1,8 +1,8 @@
 
 import { NewDragAndDrop } from "./NewDragAndDrop.js";
 class DropInBucket extends NewDragAndDrop {
-    constructor() {
-        super();
+    constructor(errorLogger) {
+        super(errorLogger);
         super._type = "scholar_drop_in_bucket";
         super._templateJson = "dropInBucket.json"
         super._templateSettings = {
