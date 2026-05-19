@@ -2,7 +2,7 @@ Exam file report: example question types taken from scholar archive for testing 
  Exam name: example question types taken from scholar archive for testing part converter
 Exam tags: None
 Exam description: None
-Number of questions: 11
+Number of questions: 10
 
 QUESTIONS
  ________________________________
@@ -101,23 +101,7 @@ type:
 variable name: 
 
 -------------------------------------
-,Question 4 : Energy systems in muscle cells
- Tags energy system,hg_chbi1_0euq11,muscle cell 
-Extensions drop-in-bucket
-
-Number of parts : 3
-part number: 1
-part type: patternmatch marks: 1
-
-,part number: 2
-part type: scholar-drop-in-bucket-1 marks: 8
-
-,part number: 3
-part type: patternmatch marks: 1
-
-
--------------------------------------
-,Question 5 : Menstrual cycle 2
+,Question 4 : Menstrual cycle 2
  Tags blastocyst,hg_chbi2_2etq7,hormone,menstrual cycle,ovulation 
 Extensions manual_marking
 
@@ -184,7 +168,7 @@ type:
 variable name: 
 
 -------------------------------------
-,Question 6 : Ion-electron equation
+,Question 5 : Ion-electron equation
  Tags balance,charge,electron,hg_cche1_6etq12,hydrogen,ion,ion-electron equation,molecule,product,reactant,water 
 Extensions 
 
@@ -206,7 +190,7 @@ part type: gapfill marks: 0
 
 
 -------------------------------------
-,Question 7 : Precedence tables and network diagrams
+,Question 6 : Precedence tables and network diagrams
  Tags critical path,n5_app4_0euq6,network diagrams,precedence tables 
 Extensions drag_and_drop
 
@@ -253,7 +237,7 @@ part type: gapfill marks: 0
 
 
 -------------------------------------
-,Question 8 : Useful phrases
+,Question 7 : Useful phrases
  Tags hg_cgae1_3ex11 
 Extensions drag_and_drop
 
@@ -361,7 +345,7 @@ Gap 0: answer {drags_a[0]} Marks: 1
 
 
 -------------------------------------
-,Question 9 : An làmh
+,Question 8 : An làmh
  Tags hg_cgae1_2_23anatomy5words,hg_cgae1_2ex23 
 Extensions card_match
 
@@ -371,11 +355,19 @@ part type: card_match marks: 0
 scholar type:card match
 prompt: <p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]][[7]][[8]]</p>
 <p>{cardmatch_builder('a','text',pairs_a)}{cardmatch_cardWidth(120)}{cardmatch_cardHeight(50)}{cardmatch_render()}</p>
-drag variables: name undefined, value undefined
+pairs variables: name pairs_a, value [["&igrave;nean","fingernails"],
+  ["an &ograve;rdag","the thumb"],
+  ["an gunna fada","the middle finger"],
+  ["an sgealbag","the 2nd finger"],
+  ["luideag bheag an airgid","the pinkie finger"],
+  ["mac an aba","the 4th finger"],
+  ["corragan","fingers"],
+  ["bas","palm"],
+  ["d&ograve;rn","fist"]]
 
 
 -------------------------------------
-,Question 10 : Blas-chainnt 2
+,Question 9 : Blas-chainnt 2
  Tags hg_cgae1_4et1q2 
 Extensions manual_marking
 
@@ -397,7 +389,7 @@ type:
 variable name: 
 
 -------------------------------------
-,Question 11 : Reordering with 'S ann (1)
+,Question 10 : Reordering with 'S ann (1)
  Tags hg_cgae1_4ex29_1 
 Extensions drag_and_drop
 

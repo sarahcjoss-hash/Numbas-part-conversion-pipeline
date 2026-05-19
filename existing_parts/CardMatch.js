@@ -5,6 +5,20 @@ class CardMatch extends Part {
     constructor(data, num, variables, logger) {
         super(data, num, logger);
         super._type = "card_match";
+        function extractValueFromBS(val, prefix) {
+            try {
+                const length = prefix.length;
+                if (val.indexOf(prefix) !== -1) {
+                    return val.substring(length, val.length - 1);
+                } else {
+                    return val;
+                }
+            } catch (err) {
+                errorReporter.reportError(err);
+                return val;
+            }
+
+        }
         const builder = /cardmatch_builder\(.+?\)/.exec(this.prompt);
         const pairsVariableName = /pairs_./.exec(builder);
         const pairsValues = variables[pairsVariableName].definition;
@@ -13,6 +27,10 @@ class CardMatch extends Part {
         this._newPartTypeMatch = "card-match";
         this._gaps = this.processGaps(data.gaps);
         this._builder = new Builder(builder, logger);
+        const height = /cardmatch_cardHeight\(.+?\)/.exec(this.prompt) ? /cardmatch_cardHeight\(.+?\)/.exec(this.prompt)[0] : '50';
+        const width = /cardmatch_cardWidth\(.+?\)/.exec(this.prompt) ? /cardmatch_cardWidth\(.+?\)/.exec(this.prompt)[0] : '120';
+        this._cardHeight = extractValueFromBS(height, "cardmatch_cardHeight(") || '50';
+        this._cardWidth = extractValueFromBS(width, "cardmatch_cardWidth(") || '120';
     }
 
     get needsReplacing(){
@@ -37,12 +55,12 @@ class CardMatch extends Part {
         return this._prompt;
     }
 
-    get dragsVariableName() {
-        return this._dragsVariableName;
+    get pairsVariableName() {
+        return this._pairsVariableName;
     }
 
-    get dragsVariableValue() {
-        return this._dragsVariableValue;
+    get pairsVariableValue() {
+        return this._pairsVariableValue;
     }
 
 
@@ -55,7 +73,7 @@ class CardMatch extends Part {
         let partString = super.partReport();
         partString += `scholar type:card match\n`;
         partString += `prompt: ${this._prompt}\n`;
-        partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
+        partString += `pairs variables: name ${this._pairsVariableName}, value ${this._pairsVariableValue}\n`;
 
         return partString;
     }
