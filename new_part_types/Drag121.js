@@ -18,6 +18,42 @@ class Drag121 extends NewDragAndDrop {
 
     }
 
+     static createNewFromExisting(part, errorLog) {
+        try {
+            //there are issue converting the pixels sizes to text area sizes
+            //don;t worry too much about this for this iteration just get it working but for future using 
+            // field-sizing where available
+            let newPart = new Drag121(errorLog);
+            newPart.prompt = part.prompt;
+            newPart.marks = part.marks || 1;
+            newPart.how_many_gaps = part.numberofGaps;  
+            newPart.target_width = part.dragWidth || 100;
+            newPart.target_height = part.dragHeight || 40;
+            newPart.distractors = part.distractors || [];
+            newPart.dragItems = part.dragItems || [];
+            return newPart;
+        }catch (err) {
+            err.message = `Error creating new Drop in bucket part from existing part ${part.type}: ${err.message}`;
+            errorLog.reportError(err);//have to report directly to log as in this case it may have gone so wrong we cannot call reportError on super
+        }
+    }
+    set targetText(text) { 
+        this._targetText = text;
+        this.updateSetting('target_text',text);
+    }
+    get targetText() {
+        return this._targetText;
+    } 
+
+    set targetWidth(width) {
+        this._targetWidth = width;
+        this.updateSetting('target_width',width);
+    }
+    get targetWidth() {
+        return this._targetWidth;
+    }
+    //targetHeight is set in NewDragAndDrop as it is used in DropInBucket as well as Drag121
+
 
     get filledSettings() {
         let settings = {};

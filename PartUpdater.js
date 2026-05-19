@@ -4,6 +4,10 @@ import {DropInBucket } from './new_part_types/DropInBucket.js';
 import {CardMatch } from './new_part_types/CardMatch.js';
 import {SentenceReorder} from './new_part_types/SentenceReorder.js';
 
+/* Class to take an old part and convert it to a new part. 
+It will use the type of the old part to determine which new part type to convert to and 
+then call the appropriate conversion method on the new part. */
+
 class PartUpdater {
     constructor(errorLogger) {
         this.errorlog = errorLogger
@@ -52,13 +56,13 @@ class PartUpdater {
                 switch (dndSubType) {
                     case "1-2-1":
                         //
-                        newPart = new Drag121(oldPart.number)
+                        newPart = new Drag121(oldPart, this.errorlog);
                         break;
                     case "bucket":
                         newPart = DropInBucket.createNewFromExisting(oldPart, this.errorlog);
                         break;
                         case "reorder":
-                            newPart = new SentenceReorder(oldPart.number)
+                            newPart = new SentenceReorder(oldPart, this.errorlog);
                     default:
                         this.reportError(new Error(`no conversion for drag_and_drop sub-type ${dndSubType}`))
                         console.log(`no conversion for drag_and_drop sub-type ${dndSubType}`);

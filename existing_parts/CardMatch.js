@@ -1,15 +1,15 @@
 import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
-import { DragGap } from "./DragGap.js";
+import { CardGap } from "./CardGap.js";
 class CardMatch extends Part {
-    constructor(num, data, variables, logger) {
-        super(num, data, logger);
+    constructor(data, num, variables, logger) {
+        super(data, num, logger);
         super._type = "card_match";
-        const builder = /dnd_builder\(.+?\)/.exec(prompt);
-        const dragsVariableName = /drags_./.exec(builder);
-        const dragValues = variables[dragsVariableName].definition;
-        this._dragsVariableName = dragsVariableName || "";
-        this._dragsVariableValue = dragValues || "";
+        const builder = /cardmatch_builder\(.+?\)/.exec(this.prompt);
+        const pairsVariableName = /pairs_./.exec(builder);
+        const pairsValues = variables[pairsVariableName].definition;
+        this._pairsVariableName = pairsVariableName || "";
+        this._pairsVariableValue = pairsValues || "";
         this._newPartTypeMatch = "card-match";
         this._gaps = this.processGaps(data.gaps);
         this._builder = new Builder(builder, logger);
@@ -23,7 +23,7 @@ class CardMatch extends Part {
         //for drag and drop we need to know the number of gaps but also the answers and marks for each gap
         //create a DragGap for each gap
         try {
-            return gaps.map((gap, i) => new DragGap(gap, i + 1));
+            return gaps.map((gap, i) => new CardGap(gap, i + 1));
         } catch (error) {
             console.error("Error processing gaps:", error);
             return [];

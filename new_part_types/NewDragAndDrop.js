@@ -14,7 +14,16 @@ class NewDragAndDrop extends NewPart {
         this._templateJson;
         this._templateSettings;
         this._dragItems = [];
+        this.settings = NewDragAndDrop.getDefaultSettings();
    
+    }
+
+    static getDefaultSettings() {
+        let settings = {};
+        settings.distractors = [];
+        settings.all_or_nothing = false;
+        return settings;
+
     }
     set type(type) {
         super._type = type;
@@ -31,39 +40,34 @@ class NewDragAndDrop extends NewPart {
     set dragItems(items){
         this._dragItems = items;
     }
-
-
-
-
     get prompt() {
         return this._prompt;
     }
-    set targetText(text) { 
-        this._targetText = text;
-    }
-    get targetText() {
-        return this._targetText;
-    }     
+    
     set howManyDrags(num) {
         this._howManyDrags = num;
     }   
     get howManyDrags() {
         return this._howManyDrags;
     }
-    set distractors(distractors) {
-        this._distractors = distractors;
-    }   
+    set distractors(arr){
+        this._distractors = arr;
+        this.updateSetting('distractors',arr);
+
+    }  
     get distractors() {
         return this._distractors;
     }
     set targetHeight(height) {
         this._targetHeight = height;
+        this.updateSetting('target_height',height);
     }
     get targetHeight() {
         return this._targetHeight;
     }
     set allOrNothing(allOrNothing) {
         this._allOrNothing = allOrNothing;
+        this.updateSetting('all_or_nothing',allOrNothing);
     }
     get allOrNothing() {
         return this._allOrNothing;

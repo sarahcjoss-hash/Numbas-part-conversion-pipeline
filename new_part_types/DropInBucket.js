@@ -16,7 +16,6 @@ class DropInBucket extends NewDragAndDrop {
         }
         this._settings = DropInBucket.getDefaultSettings();
         this._how_many_matches = 9;
-        this._distractors = [];
         this._item_width = 120;
         this._item_height = 80;
 
@@ -39,11 +38,7 @@ class DropInBucket extends NewDragAndDrop {
         this.how_many_matches = num;
         this.updateSetting('how_many_matches',num)
     }
-    set distractors(arr){
-        this._distractors = arr;
-        this.updateSetting('distractors',arr);
 
-    }
     set item_width(width){
         this._item_width = width;
         this.updateSetting('item_width',width);

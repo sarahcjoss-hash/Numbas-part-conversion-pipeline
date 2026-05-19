@@ -1,17 +1,21 @@
 import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
 import { DragGap } from "./DragGap.js";
-import { ErrorReporter } from "../ErrorReporter.js"; 
+import { ErrorReporter } from "../ErrorReporter.js";
 class DragAndDropPart extends Part {
     constructor(data, num, variables, logger) {
 
         super(data, num, logger);
-        super._type = "drag_and_drop";
-                function   extractValueFromBS(val, prefix){
-            try{
-            const length = prefix.length;
-            return val.substring(length, val.length-1);
-            }catch(err){
+        this._type = "drag_and_drop";
+        function extractValueFromBS(val, prefix) {
+            try {
+                const length = prefix.length;
+                if (val.indexOf(prefix) !== -1) {
+                    return val.substring(length, val.length - 1);
+                } else {
+                    return val;
+                }
+            } catch (err) {
                 errorReporter.reportError(err);
                 return val;
             }
@@ -22,20 +26,20 @@ class DragAndDropPart extends Part {
                 super.addGap(new DragGap(data, i + 1));
             });
         } catch (error) {
-            this.reportError(error,`Error processing gaps in drag and drop part {num}:` )
+            this.reportError(error, `Error processing gaps in drag and drop part {num}:`)
         }
         const prompt = data.prompt;
         const builder = /dnd_builder\(.+?\)/.exec(prompt);
         const dragsVariableName = /drags_./.exec(builder);
         this._dragsListAsJSONString = variables[dragsVariableName].definition;
-        const height = /dnd_dragHeight\(.+?\)/.exec(prompt)[0];
-        const width = /dnd_dragWidth\(.+?\)/.exec(prompt)[0];
+        const height = /dnd_dragHeight\(.+?\)/.exec(prompt) ? /dnd_dragHeight\(.+?\)/.exec(prompt)[0] : 'auto';
+        const width = /dnd_dragWidth\(.+?\)/.exec(prompt) ? /dnd_dragWidth\(.+?\)/.exec(prompt)[0] : 'auto';
         const builderPrefix = "dnd_drag";
 
         this._dragsVariableName = dragsVariableName || "";
 
-        this._dragHeight = extractValueFromBS(height, builderPrefix+'height(')|| '';
-        this._dragWidth = extractValueFromBS(width, builderPrefix+'width(')|| '';
+        this._dragHeight = extractValueFromBS(height, builderPrefix + 'height(') || '';
+        this._dragWidth = extractValueFromBS(width, builderPrefix + 'width(') || '';
         this._builder = new Builder(builder, logger);
         this._convertedPrompt = this.processPrompt(prompt);
 
@@ -45,14 +49,14 @@ class DragAndDropPart extends Part {
 
     }
 
-    static get dndSubTypes (){
+    static get dndSubTypes() {
         return ['bucket', 'reorder', '1-2-1'];
     }
-    static verifySubType(type){
+    static verifySubType(type) {
         return DragAndDropPart.dndSubTypes.contains(type);
     }
 
-    get needsReplacing(){
+    get needsReplacing() {
         return true;
     }
 
@@ -65,7 +69,7 @@ class DragAndDropPart extends Part {
 
         try {
             //test logger
-            
+
             const gapRegex = /\[\[\d+\]\]/g;
             const filledPrompt = prompt.replace(gapRegex, (match) => {
                 const gapNumber = parseInt(match.match(/\d+/)[0], 10);
@@ -87,7 +91,7 @@ class DragAndDropPart extends Part {
             console.error("Error processing prompt:", error);
         }
     }
-    reportError(err, additional){
+    reportError(err, additional) {
         err.message = `${additional} : ${err.message}`;
         super.reportError(err);
     }
@@ -174,10 +178,10 @@ class DragAndDropPart extends Part {
                 newPartType = null;
         }
         //check it is valid
-        if (DragAndDropPart.verifySubType(newPartType)){
+        if (DragAndDropPart.verifySubType(newPartType)) {
 
             return newPartType;
-        }else{
+        } else {
             throw new Error('The drag and drop subtype is not one of the known types and will not convert to a new custom part')
         }
     }

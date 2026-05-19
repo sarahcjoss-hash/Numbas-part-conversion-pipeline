@@ -5,11 +5,15 @@ class ManualMarkingPart extends Part {
     constructor(data, num, errorReporter) {
         super(data, num, errorReporter);
         super._type = "manual_marking";
-        function   extractValueFromBS(val, prefix){
-            try{
-            const length = prefix.length;
-            return val.substring(length, val.length-1);
-            }catch(err){
+        function extractValueFromBS(val, prefix) {
+            try {
+                const length = prefix.length;
+                if (val.indexOf(prefix) !== -1) {
+                    return val.substring(length, val.length - 1);
+                } else {
+                    return val;
+                }
+            } catch (err) {
                 errorReporter.reportError(err);
                 return val;
             }
@@ -19,8 +23,8 @@ class ManualMarkingPart extends Part {
         const prompt = data.prompt;
         const builderPrefix = "manualmarking_textarea_"
         const builder = /manualmarking_builder\(.+?\)/.exec(prompt);
-        const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt)[0];
-        const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt)[0];
+        const width = /manualmarking_textarea_width\(.+?\)/.exec(prompt)?/manualmarking_textarea_width\(.+?\)/.exec(prompt)[0]:'auto';
+        const height = /manualmarking_textarea_height\(.+?\)/.exec(prompt)?/manualmarking_textarea_height\(.+?\)/.exec(prompt)[0]:'auto';
         const gap = data.gaps[0];
 
         this._textAreaWidth = extractValueFromBS(width, builderPrefix+'width(')|| 'auto';

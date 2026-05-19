@@ -32,7 +32,7 @@ class ExamFromJSON {
             //working here to change code so that questions and aprts populate themselves from teh data- 
             // //think about how you do this for sub parts- at teh m,oment we are ending up with parts that do not ahve the requisite data
             const parts = q.parts;
-            parts.map((p, i) => {
+            parts.map((p, j) => {
                 let part;
                 const prompt = p.prompt;
                 const mmFlag = prompt?.match('manualmarking_builder') ? true : false;
@@ -46,21 +46,21 @@ class ExamFromJSON {
 
                 try {
                     if (mmFlag) {
-                         part = new ManualMarkingPart(p, i+1, this._errorLog);
+                         part = new ManualMarkingPart(p, j+1, this._errorLog);
                     }else if (ddFlag) {
-                        part = new DragAndDropPart(p, i+1, q.variables, this._errorLog);
+                        part = new DragAndDropPart(p, j+1, q.variables, this._errorLog);
                    
                     }else if (cmFlag){
-                        part = new CardMatch(p, i+1, q.variables, this._errorLog);
+                        part = new CardMatch(p, j+1, q.variables, this._errorLog);
                     }
                     else{
-                        part = new Part(p, i+1, this._errorLog);                        
+                        part = new Part(p, j+1, this._errorLog);                        
                     }            
              
                     question.addPart(part);
                 } catch (err) {
                     
-                    this.reportError(err, `unable to get inforamtion for custom part type` );
+                    this.reportError(err, `unable to get inforamtion for custom part type ${q.name} part ${j+1}` );
                     
 
                 }
