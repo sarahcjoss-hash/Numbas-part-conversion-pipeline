@@ -13,7 +13,8 @@ reportError(err, additional){
 }
 updateExam(exam){
     if (exam.questions){
-    this._findPartsToReplace(exam.questions)
+    this._findAndReplaceParts(exam.questions);
+    console.log(`Finished updating exam ${exam.name}`);
     } else{
         this.reportError(new Error('No questions found trying to update exam. Process terminates'));
         return;
@@ -22,7 +23,7 @@ updateExam(exam){
 
 
 }
-_findPartsToReplace(questions){
+_findAndReplaceParts(questions){
 
     questions.forEach(question => {
         try{

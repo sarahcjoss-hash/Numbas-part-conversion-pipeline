@@ -19,6 +19,7 @@ const folder = "sample_exams/";
 
 const examFile = path + folder + 'source.exam';
 const filereader = new FileReader();
+const filewriter = new FileWriter();
 const reportWriter = new ReportWriter();
 const errorReporter = new ErrorReporter(true, `${examFile}`);
 
@@ -32,6 +33,8 @@ filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
   reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
   const examUpdater = new ExamUpdater(errorReporter);
   examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
+  const updatedJSON = new JSONFromExam(exam.exam, examData, errorReporter);
+  filewriter.writeJSONToFile(updatedJSON, `${path}${folder}updated_${examData.name}.exam`);
 }).catch(err => {
   console.error(err);
 });

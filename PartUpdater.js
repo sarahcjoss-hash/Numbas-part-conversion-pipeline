@@ -27,7 +27,7 @@ class PartUpdater {
                newPart = this.convertToDragAndDrop(part);
                 break;
             case "card_match":
-                newPart = new CardMatch(part.number);
+                newPart = CardMatch.createNewFromExisting(part, this.errorlog);
                 break;
             case "manual_marking":
                 newPart = this.convertToLongTextEntry(part);
@@ -44,6 +44,7 @@ class PartUpdater {
     }
     convertToLongTextEntry(part){
         let  newPart = LongTextEntry.createNewFromExisting(part,  this.errorlog);
+        return newPart;
 
     }
 

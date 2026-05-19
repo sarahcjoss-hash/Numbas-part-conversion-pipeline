@@ -26,7 +26,9 @@ class CardMatch extends Part {
         this._pairsVariableValue = pairsValues || "";
         this._newPartTypeMatch = "card-match";
         this._gaps = this.processGaps(data.gaps);
+        this._numberOfPairs = this._gaps.length;
         this._builder = new Builder(builder, logger);
+        this._l_c_type = this._builder.builderType||"text";
         const height = /cardmatch_cardHeight\(.+?\)/.exec(this.prompt) ? /cardmatch_cardHeight\(.+?\)/.exec(this.prompt)[0] : '50';
         const width = /cardmatch_cardWidth\(.+?\)/.exec(this.prompt) ? /cardmatch_cardWidth\(.+?\)/.exec(this.prompt)[0] : '120';
         this._cardHeight = extractValueFromBS(height, "cardmatch_cardHeight(") || '50';
@@ -35,6 +37,18 @@ class CardMatch extends Part {
 
     get needsReplacing(){
         return true;
+    }
+    get numberOfPairs() {
+        return this._numberOfPairs;     
+    }
+    get cardHeight() {
+        return this._cardHeight;
+    }
+    get cardWidth() {
+        return this._cardWidth;     
+    }
+    get leftCardType() {
+        return this._l_c_type;
     }
 
     processGaps(gaps) {
