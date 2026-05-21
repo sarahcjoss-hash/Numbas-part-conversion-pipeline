@@ -75,7 +75,7 @@ class JSONFromExam {
 
                         } catch (err) {
 
-                            this.reportError(err, `unable to get inforamtion for custom part type ${q.name} part ${j + 1}`);
+                            this.reportError(err, `unable to get information for custom part type ${q.name} part ${j + 1}`);
 
 
                         }

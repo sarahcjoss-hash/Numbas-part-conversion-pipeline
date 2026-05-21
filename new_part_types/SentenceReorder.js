@@ -38,6 +38,10 @@ class SentenceReorder extends NewDragAndDrop {
         this.updateSetting('how_many_drags',num);
     }
 
+    get type() {
+        return this._type;
+    }
+
      static createNewFromExisting(part, errorLog) {
         try {
             //there are issue converting the pixels sizes to text area sizes

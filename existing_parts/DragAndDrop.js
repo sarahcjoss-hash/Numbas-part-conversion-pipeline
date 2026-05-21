@@ -23,7 +23,7 @@ class DragAndDropPart extends Part {
         }
         try {
             data.gaps.map((data, i) => {
-                super.addGap(new DragGap(data, i + 1));
+                this.addGap(new DragGap(data, i + 1));
             });
         } catch (error) {
             this.reportError(error, `Error processing gaps in drag and drop part {num}:`)

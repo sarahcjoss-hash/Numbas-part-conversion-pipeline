@@ -35,7 +35,7 @@ class DropInBucket extends NewDragAndDrop {
 
     }
     set how_many_matches(num){
-        this.how_many_matches = num;
+        this._how_many_matches = num;
         this.updateSetting('how_many_matches',num)
     }
 
@@ -51,7 +51,9 @@ class DropInBucket extends NewDragAndDrop {
         this._targetText = text;
         this.updateSetting('drop_zone',text);
     }
-    
+    get type() {
+        return this._type;
+    }
 
 
 
