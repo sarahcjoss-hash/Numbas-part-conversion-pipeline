@@ -14,7 +14,7 @@ class NewDragAndDrop extends NewPart {
         this._templateJson;
         this._templateSettings;
         this._dragItems = [];
-        this.settings = NewDragAndDrop.getDefaultSettings();
+        this._settings = NewDragAndDrop.getDefaultSettings();
    
     }
 
@@ -26,7 +26,7 @@ class NewDragAndDrop extends NewPart {
 
     }
     set type(type) {
-        super._type = type;
+        super.type = type;
     }
     set prompt(prompt) {
         this._prompt = prompt;

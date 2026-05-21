@@ -17,13 +17,13 @@ class ExamFromJSON {
         this.processExamData(this.data);
     }
     reportError(err, additional){
-        err.message= `${additional} : ${err.message}`
+        err.message= `${this.constructor && this.constructor.name ? this.constructor.name : 'ExamFromJSON'}: ${additional} : ${err.message}`
         this._errorLog.reportError(err);
     }
 
     processExamData(config) {
         this.exam = new Exam(config.name, config.tags, config.description, this.errorLog);    
-        this.exam.extensions = config.extensions;
+        this.exam.existingExtensions = config.extensions;
         const qGroups = config.question_groups;
         const questions = qGroups.map(qg => qg.questions).flat();//need flat here as the questions are themselves an array
         try {

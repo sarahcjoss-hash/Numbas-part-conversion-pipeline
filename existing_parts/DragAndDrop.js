@@ -42,8 +42,6 @@ class DragAndDropPart extends Part {
         this._dragWidth = extractValueFromBS(width, builderPrefix + 'width(') || '';
         this._builder = new Builder(builder, logger);
         this._convertedPrompt = this.processPrompt(prompt);
-
-
         this._subType = this.builder.builderType;
         super.marks = this.marksFromGaps;
 
@@ -53,7 +51,7 @@ class DragAndDropPart extends Part {
         return ['bucket', 'reorder', '1-2-1'];
     }
     static verifySubType(type) {
-        return DragAndDropPart.dndSubTypes.contains(type);
+        return DragAndDropPart.dndSubTypes.indexOf(type)>-1;
     }
 
     get needsReplacing() {
@@ -92,7 +90,7 @@ class DragAndDropPart extends Part {
         }
     }
     reportError(err, additional) {
-        err.message = `${additional} : ${err.message}`;
+        err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'DragAndDropPart'}: ${additional} : ${err.message}`;
         super.reportError(err);
     }
 
@@ -166,6 +164,7 @@ class DragAndDropPart extends Part {
             return 'bucket';
         }
         let newPartType = 'reorder';
+        console.log(`drag and drop sub type is ${this._subType}`);
         switch (this._subType) {
             case 'reorder':
             case 'text':
@@ -175,7 +174,7 @@ class DragAndDropPart extends Part {
                 newPartType = '1-2-1';
                 break;
             default:
-                newPartType = null;
+                newPartType = 'reorder';
         }
         //check it is valid
         if (DragAndDropPart.verifySubType(newPartType)) {

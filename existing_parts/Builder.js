@@ -12,7 +12,7 @@ class Builder {
                 if (bitInBrackets) {
                     const contents = bitInBrackets[0].split(',').map(s => s.trim());
                     partLetter = contents[0].replace(/(\(|\))/g, '').trim();
-                    type = contents.length > 1 ? contents[1].trim() : '';
+                    type = contents.length > 1 ? contents[1].replace(')', '').trim() : '' ;
                     variableName = contents.length > 2 ? contents[2].replace(')', '').trim() : '';
                 }
 

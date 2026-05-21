@@ -7,7 +7,7 @@ class ErrorReporter{
     }
     
     reportError(err){
-        if (this.logToConsole){
+        if (this._logToConsole){
             console.error(`Error via logger : ${err.message}`);
         }
         this._errors.push(err)

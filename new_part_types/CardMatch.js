@@ -93,13 +93,8 @@ class CardMatch extends NewPart {
         this.updateSetting('l_c_type',type);
     }
 
-    /*partReport() {
-        let partString = super.partReport();
-        partString += `drag height: ${this._dragHeight} `;
-        partString += `drag width: ${this._dragWidth}\n`;
-        partString += `drag variables: name ${this._dragsVariableName}, value ${this._dragsVariableValue}\n`;
-        partString += `builder : ${this._builder.report()}\n`;
-        return partString;
-    }*/
+    partJson() {
+        
+    }
 }
 export { CardMatch };

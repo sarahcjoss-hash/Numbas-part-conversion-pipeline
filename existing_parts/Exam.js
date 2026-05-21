@@ -5,8 +5,9 @@ class Exam {
         this._questions = [];
         this._tags = tags;
         this._description = description;
-        this._extensions = [];
-        this.errorLog = errorReporter;
+        this._existingExtensions = [];
+        this._newExtensions = [];
+        this._errorReporter = errorReporter;
     }
 
 
@@ -18,10 +19,23 @@ class Exam {
     get numberOfQuestions(){
         return this._numOfQuestions;
     }
-
-
-
-
+    set existingExtensions(exts){
+        this._existingExtensions = exts;
+    }
+    get extensionsFromQuestions(){
+        const extensions = new Set();   
+        this._questions.forEach(q => {
+            q.extensions.forEach(ext => extensions.add(ext));
+        });
+        this._newExtensions = Array.from(extensions);
+        return Array.from(extensions);
+    }
+    addExtension(name){
+        if (!this._extensions.includes(name)){
+            this._extensions.push(name);
+        }
+        
+    }
 
     addQuestion(question){
         this._questions.push(question);

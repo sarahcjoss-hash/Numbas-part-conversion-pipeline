@@ -46,7 +46,7 @@ class ManualMarkingPart extends Part {
 
     }
     reportError(err, additional){
-        err.message = `${additional} : ${err.message}`;
+        err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'ManualMarkingPart'}: ${additional} : ${err.message}`;
         super.reportError(err);
     }
     get prompt() {

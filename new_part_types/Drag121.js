@@ -3,9 +3,9 @@ import { NewDragAndDrop } from "./NewDragAndDrop.js";
 class Drag121 extends NewDragAndDrop {
     constructor(errorLogger) {
         super(errorLogger);
-        super._type = "scholar_drag_1_2_1";
-        super._templateJson = "drag121Part.json"
-        super._templateSettings = {
+        this._type = "scholar_drag_1_2_1";
+        this._templateJson = "drag121Part.json"
+        this._templateSettings = {
                                 "target_text": "<p>&lt;p&gt;Write some &lt;strong&gt;text&lt;/strong&gt; with the %[targets]% marked up using %[your item here]%. &lt;/p&gt;\",</p>",
                                 "how_many_gaps": "6",
                                 "distractors": [],

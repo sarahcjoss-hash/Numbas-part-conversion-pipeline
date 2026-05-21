@@ -7,15 +7,15 @@ class NewPart {
     constructor(errorLogger) {
         this._type = "";
         this._marks = 1;
-        this._errorLogger;
+        this._errorReporter = errorLogger;
         this._fileReader = new PartJSONFileReader(errorLogger);
         this._customPartFileName = '';
         this._templateJsonFileName = '';
         this._settings = {};
     }
     reportError(err, additional){
-        err.message= `${additional} : ${err.message}`
-        this._errorLog.reportError(err);
+        err.message= `${this.constructor && this.constructor.name ? this.constructor.name : 'NewPart'}: ${additional} : ${err.message}`
+        this._errorReporter.reportError(err);
 }
 
     set type(type) {
@@ -52,7 +52,7 @@ updateSetting(setting, val) {
         if (this._settings.hasOwnProperty(setting)) {
             this._settings[setting] = val;
         } else {
-            this._errorLogger.reportError(new Error(`Setting '${setting}' does not exist`));
+            this._errorReporter.reportError(new Error(`Setting '${setting}' does not exist`));
         }
 }
  get settings(){

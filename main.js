@@ -4,6 +4,7 @@ import { ReportWriter } from './ReportWriter.js';
 import { ErrorReporter } from './ErrorReporter.js';
 import { ExamUpdater } from './ExamUpdater.js';
 import { JSONFromExam } from './JSONFromExam.js';
+import { FileWriter } from './FileWriter.js';
 
 
 // to do

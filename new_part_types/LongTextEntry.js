@@ -3,9 +3,9 @@ import { NewPart } from "./NewPart.js";
 class LongTextEntry extends NewPart {
     constructor(errorLogger) {
         super(errorLogger);
-        super._type = "scholar_self_marked_text";
-        super._templateJson = "selfMarkedTextPart.json";
-        super._customPartFileName = 'selfMarkedTextCP.json';
+        this._type = "scholar_self_marked_text";
+        this._templateJson = "selfMarkedTextPart.json";
+        this._customPartFileName = 'selfMarkedTextCP.json';
         this._settings = LongTextEntry.getDefaultSettings();
         this._prompt = '';
         this._cols = 50;

@@ -62,7 +62,7 @@ class CardMatch extends Part {
         }
     }
     reportError(err, additional){
-        err.message = `${additional} : ${err.message}`;
+        err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'CardMatch'}: ${additional} : ${err.message}`;
         super.reportError(err);
     }
     get prompt() {

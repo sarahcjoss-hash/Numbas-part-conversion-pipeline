@@ -1,0 +1,3879 @@
+{
+  "_examToUpdate": {
+    "_name": "example question types taken from scholar archive for testing part converter",
+    "_numOfQuestions": 10,
+    "_questions": [
+      {
+        "_name": "Gene mutations",
+        "_tags": [
+          "hg_cbio1_6etq3"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "drag_and_drop"
+        ],
+        "_qNumber": 1,
+        "_parts": [
+          {
+            "_type": "drag_and_drop",
+            "_prompt": "<p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>\n<p><img src=\"resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png\" alt=\"Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN.\"/></p>\n<p>In the order A to C, what are the different types of mutations shown in the figure?</p>\n<p>A: [[0]]</p>\n<p>B: [[1]]</p>\n<p>C: [[2]]</p>\n<p>{dnd_builder('a','text',drags_a)}{dnd_render()}</p>",
+            "_gaps": [
+              {
+                "showCorrectAnswer": true,
+                "variableReplacements": [],
+                "answer": "{drags_a[0]}",
+                "fixedHeight": "0px",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "unitTests": [],
+                "marks": 1,
+                "fixedWidth": "0px",
+                "matchMode": "regex",
+                "displayAnswer": "{drags_a[0]}",
+                "type": "patternmatch",
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "showCorrectAnswer": true,
+                "variableReplacements": [],
+                "answer": "{drags_a[1]}",
+                "fixedHeight": "0px",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "unitTests": [],
+                "marks": 1,
+                "fixedWidth": "0px",
+                "matchMode": "regex",
+                "displayAnswer": "{drags_a[1]}",
+                "type": "patternmatch",
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "showCorrectAnswer": true,
+                "variableReplacements": [],
+                "answer": "{drags_a[2]}",
+                "fixedHeight": "0px",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "unitTests": [],
+                "marks": 1,
+                "fixedWidth": "0px",
+                "matchMode": "regex",
+                "displayAnswer": "{drags_a[2]}",
+                "type": "patternmatch",
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "_answer": "{drags_a[0]}",
+                "_marks": 1,
+                "_gapNumber": 1,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[1]}",
+                "_marks": 1,
+                "_gapNumber": 2,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[2]}",
+                "_marks": 1,
+                "_gapNumber": 3,
+                "_type": "patternmatch"
+              }
+            ],
+            "_marks": 6,
+            "_pNumber": 1,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": "",
+            "_dragsListAsJSONString": "[\"Insertion\",\"Deletion\",\"Substitution\"]",
+            "_dragsVariableName": [
+              "drags_a"
+            ],
+            "_dragHeight": "auto",
+            "_dragWidth": "auto",
+            "_builder": {
+              "_errorLog": {
+                "_errors": [
+                  {},
+                  {}
+                ],
+                "_logToConsole": true,
+                "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+              },
+              "_errorString": "",
+              "_partLetter": "'a'",
+              "_type": "'text'",
+              "_variableName": "drags_a"
+            },
+            "_convertedPrompt": "<p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>\n<p><img src=\"resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png\" alt=\"Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN.\"/></p>\n<p>In the order A to C, what are the different types of mutations shown in the figure?</p>\n<p>A: %[Insertion]%</p>\n<p>B: %[Deletion]%</p>\n<p>C: %[Substitution]%</p>\n",
+            "_subType": "'text'"
+          },
+          {
+            "_type": "patternmatch",
+            "_prompt": "<p>What word is used to describe a mutation which results in the addition of a premature stop codon?</p>",
+            "_marks": 1,
+            "_pNumber": 2,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          },
+          {
+            "_type": "patternmatch",
+            "_prompt": "<p>What word is used to describe a mutation which results in the addition of an incorrect amino acid into a protein?</p>",
+            "_marks": 1,
+            "_pNumber": 3,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          }
+        ]
+      },
+      {
+        "_name": "Human genomics",
+        "_tags": [
+          "base",
+          "bioinformatics",
+          "disease",
+          "DNA probe",
+          "DNA profiling",
+          "DNA sequencing",
+          "gene",
+          "hg_chbi1_6etq1",
+          "medicine",
+          "primer"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "drag_and_drop"
+        ],
+        "_qNumber": 2,
+        "_parts": [
+          {
+            "_type": "drag_and_drop",
+            "_prompt": "<p>[[0]] DNA sequencing.</p>\n<p>[[1]] bioinformatics.</p>\n<p>[[2]] personalised medicine.</p>\n<p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>",
+            "_gaps": [
+              {
+                "unitTests": [],
+                "type": "patternmatch",
+                "answer": "{drags_a[0]}",
+                "fixedHeight": "0px",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "showCorrectAnswer": true,
+                "marks": 1,
+                "scripts": {},
+                "fixedWidth": "0px",
+                "matchMode": "exact",
+                "displayAnswer": "{drags_a[0]}",
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "unitTests": [],
+                "type": "patternmatch",
+                "answer": "{drags_a[1]}",
+                "fixedHeight": "0px",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "showCorrectAnswer": true,
+                "marks": 1,
+                "scripts": {},
+                "fixedWidth": "0px",
+                "matchMode": "exact",
+                "displayAnswer": "{drags_a[1]}",
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "unitTests": [],
+                "type": "patternmatch",
+                "answer": "{drags_a[2]}",
+                "fixedHeight": "0px",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "showCorrectAnswer": true,
+                "marks": 1,
+                "scripts": {},
+                "fixedWidth": "0px",
+                "matchMode": "exact",
+                "displayAnswer": "{drags_a[2]}",
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "_answer": "{drags_a[0]}",
+                "_marks": 1,
+                "_gapNumber": 1,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[1]}",
+                "_marks": 1,
+                "_gapNumber": 2,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[2]}",
+                "_marks": 1,
+                "_gapNumber": 3,
+                "_type": "patternmatch"
+              }
+            ],
+            "_marks": 6,
+            "_pNumber": 1,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": "",
+            "_dragsListAsJSONString": "[ \"The sequence of bases can be determined for individual genes by using\", \"The use of computer technology to identify DNA sequences is known as\", \"An understanding of the genetic component of the risk of disease is required for\" ]",
+            "_dragsVariableName": [
+              "drags_a"
+            ],
+            "_dragHeight": "auto",
+            "_dragWidth": "auto",
+            "_builder": {
+              "_errorLog": {
+                "_errors": [
+                  {},
+                  {}
+                ],
+                "_logToConsole": true,
+                "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+              },
+              "_errorString": "",
+              "_partLetter": "'a'",
+              "_type": "'reorder'",
+              "_variableName": "drags_a"
+            },
+            "_convertedPrompt": "<p>%[The sequence of bases can be determined for individual genes by using]% DNA sequencing.</p>\n<p>%[The use of computer technology to identify DNA sequences is known as]% bioinformatics.</p>\n<p>%[An understanding of the genetic component of the risk of disease is required for]% personalised medicine.</p>\n",
+            "_subType": "'reorder'"
+          }
+        ]
+      },
+      {
+        "_name": "Slow and fast twitch muscle fibres",
+        "_tags": [
+          "colour",
+          "fast twitch",
+          "hg_chbi1_9etq3",
+          "muscle fibre",
+          "slow twitch"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "manual_marking"
+        ],
+        "_qNumber": 3,
+        "_parts": [
+          {
+            "_type": "scholar_self_marked_text",
+            "_marks": "6",
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "selfMarkedTextCP.json",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "modelAnswer": " Slow twitch fibres are dark red because they have a high concentration of myoglobin which stores oxygen for aerobic respiration. Fast twitch fibres are pale pink because they contain low concentrations of myoglobin as they mainly rely on anaerobic form of respiration (creatine phosphate and lactic acid metabolism).",
+              "markIncrement": 1,
+              "cols": 50,
+              "rows": 4,
+              "howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+              "markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+              "correctFeedback": "Well done. ",
+              "partialCorrect": "You were partially correct. ",
+              "incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+            },
+            "_templateJson": "selfMarkedTextPart.json",
+            "_prompt": "<p>Explain the difference between the colour of slow and fast twitch muscle fibres.</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('a')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>",
+            "_cols": 50,
+            "_rows": 4,
+            "_modelAnswer": " Slow twitch fibres are dark red because they have a high concentration of myoglobin which stores oxygen for aerobic respiration. Fast twitch fibres are pale pink because they contain low concentrations of myoglobin as they mainly rely on anaerobic form of respiration (creatine phosphate and lactic acid metabolism).",
+            "_markIncrement": 1,
+            "_howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+            "_markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+            "_correctFeedback": "Well done. ",
+            "_partialCorrect": "You were partially correct. ",
+            "_incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+          }
+        ]
+      },
+      {
+        "_name": "Menstrual cycle 2",
+        "_tags": [
+          "blastocyst",
+          "hg_chbi2_2etq7",
+          "hormone",
+          "menstrual cycle",
+          "ovulation"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "manual_marking"
+        ],
+        "_qNumber": 4,
+        "_parts": [
+          {
+            "_type": "scholar_self_marked_text",
+            "_marks": 1,
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "selfMarkedTextCP.json",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "modelAnswer": "The high concentration of oestrogen (hormone A)  stimulates the pituitary to release a high concentration of LH which stimulates ovulation.",
+              "markIncrement": 1,
+              "cols": 30,
+              "rows": 4,
+              "howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+              "markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+              "correctFeedback": "Well done. ",
+              "partialCorrect": "You were partially correct. ",
+              "incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+            },
+            "_templateJson": "selfMarkedTextPart.json",
+            "_prompt": "<p>What causes ovulation?</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('a')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>",
+            "_cols": 30,
+            "_rows": 4,
+            "_modelAnswer": "The high concentration of oestrogen (hormone A)  stimulates the pituitary to release a high concentration of LH which stimulates ovulation.",
+            "_markIncrement": 1,
+            "_howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+            "_markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+            "_correctFeedback": "Well done. ",
+            "_partialCorrect": "You were partially correct. ",
+            "_incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+          },
+          {
+            "_type": "scholar_self_marked_text",
+            "_marks": "3",
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "selfMarkedTextCP.json",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "modelAnswer": "Description:  concentration increases from days 1 to 4, then falls from days 5 to 12. Explanation: the pituitary releases an increasing concentration of FSH on days 1 to 4; the increase from day 1 to 4 is  caused by a low level of oestrogen/A;  the decrease from day 5 to 12 is caused by an  increase in secretion of oestrogen/A; which causes a reduction in the secretion of FSH/C.",
+              "markIncrement": 1,
+              "cols": 50,
+              "rows": 4,
+              "howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+              "markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+              "correctFeedback": "Well done. ",
+              "partialCorrect": "You were partially correct. ",
+              "incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+            },
+            "_templateJson": "selfMarkedTextPart.json",
+            "_prompt": "<p>Describe and explain the change in concentration of hormone C during the first 12 days of the cycle.</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('b')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>",
+            "_cols": 50,
+            "_rows": 4,
+            "_modelAnswer": "Description:  concentration increases from days 1 to 4, then falls from days 5 to 12. Explanation: the pituitary releases an increasing concentration of FSH on days 1 to 4; the increase from day 1 to 4 is  caused by a low level of oestrogen/A;  the decrease from day 5 to 12 is caused by an  increase in secretion of oestrogen/A; which causes a reduction in the secretion of FSH/C.",
+            "_markIncrement": 1,
+            "_howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+            "_markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+            "_correctFeedback": "Well done. ",
+            "_partialCorrect": "You were partially correct. ",
+            "_incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+          },
+          {
+            "_type": "scholar_self_marked_text",
+            "_marks": 1,
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "selfMarkedTextCP.json",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "modelAnswer": "High levels of progesterone have a negative feedback effect on the pituitary gland, resulting in the inhibition of FSH and LH.",
+              "markIncrement": 1,
+              "cols": 30,
+              "rows": 4,
+              "howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+              "markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+              "correctFeedback": "Well done. ",
+              "partialCorrect": "You were partially correct. ",
+              "incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+            },
+            "_templateJson": "selfMarkedTextPart.json",
+            "_prompt": "<p>What is the effect of the high level of hormone B between days 18 to 26?</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('c')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>",
+            "_cols": 30,
+            "_rows": 4,
+            "_modelAnswer": "High levels of progesterone have a negative feedback effect on the pituitary gland, resulting in the inhibition of FSH and LH.",
+            "_markIncrement": 1,
+            "_howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+            "_markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+            "_correctFeedback": "Well done. ",
+            "_partialCorrect": "You were partially correct. ",
+            "_incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+          },
+          {
+            "_type": "scholar_self_marked_text",
+            "_marks": 1,
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "selfMarkedTextCP.json",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "modelAnswer": "Hormone B is progesterone which promotes the further proliferation of the endometrium.",
+              "markIncrement": 1,
+              "cols": 30,
+              "rows": 4,
+              "howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+              "markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+              "correctFeedback": "Well done. ",
+              "partialCorrect": "You were partially correct. ",
+              "incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+            },
+            "_templateJson": "selfMarkedTextPart.json",
+            "_prompt": "<p>In what way does hormone B contribute to the survival of the blastocyst?</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('d')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>",
+            "_cols": 30,
+            "_rows": 4,
+            "_modelAnswer": "Hormone B is progesterone which promotes the further proliferation of the endometrium.",
+            "_markIncrement": 1,
+            "_howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+            "_markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+            "_correctFeedback": "Well done. ",
+            "_partialCorrect": "You were partially correct. ",
+            "_incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+          },
+          {
+            "_type": "scholar_self_marked_text",
+            "_marks": "4",
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "selfMarkedTextCP.json",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "modelAnswer": "Hormone B is progesterone released by the corpus luteum. The corpus luteum is only present after ovulation. The corpus luteum grows from days 16 to 22 and degenerates from days 23 to 28. This is caused by an increase then decrease in secretion of LH by pituitary.",
+              "markIncrement": 1,
+              "cols": 50,
+              "rows": 4,
+              "howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+              "markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+              "correctFeedback": "Well done. ",
+              "partialCorrect": "You were partially correct. ",
+              "incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+            },
+            "_templateJson": "selfMarkedTextPart.json",
+            "_prompt": "<p>Explain the changes in the concentration of hormone B during the cycle.</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('e')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>",
+            "_cols": 50,
+            "_rows": 4,
+            "_modelAnswer": "Hormone B is progesterone released by the corpus luteum. The corpus luteum is only present after ovulation. The corpus luteum grows from days 16 to 22 and degenerates from days 23 to 28. This is caused by an increase then decrease in secretion of LH by pituitary.",
+            "_markIncrement": 1,
+            "_howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+            "_markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+            "_correctFeedback": "Well done. ",
+            "_partialCorrect": "You were partially correct. ",
+            "_incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+          }
+        ]
+      },
+      {
+        "_name": "Ion-electron equation",
+        "_tags": [
+          "balance",
+          "charge",
+          "electron",
+          "hg_cche1_6etq12",
+          "hydrogen",
+          "ion",
+          "ion-electron equation",
+          "molecule",
+          "product",
+          "reactant",
+          "water"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [],
+        "_qNumber": 5,
+        "_parts": [
+          {
+            "_type": "patternmatch",
+            "_prompt": "<p>How many water molecules have to be added to the product side?</p>",
+            "_marks": 1,
+            "_pNumber": 1,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          },
+          {
+            "_type": "patternmatch",
+            "_prompt": "<p>How many hydrogen ions have to be added to the reactant side?</p>",
+            "_marks": 1,
+            "_pNumber": 2,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          },
+          {
+            "_type": "patternmatch",
+            "_prompt": "<p>How many electrons have to be added to balance the charge?</p>",
+            "_marks": 1,
+            "_pNumber": 3,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          },
+          {
+            "_type": "1_n_2",
+            "_prompt": "<p>On which side do the electrons get added?</p>",
+            "_marks": 0,
+            "_pNumber": 4,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          },
+          {
+            "_type": "gapfill",
+            "_prompt": "<p>The completed ion-electron equation is&nbsp;[[0]]</p>",
+            "_gaps": [
+              {
+                "maxMarks": 0,
+                "choices": [
+                  "an oxidation.",
+                  "a reduction"
+                ],
+                "extendBaseMarkingAlgorithm": true,
+                "scripts": {},
+                "distractors": [
+                  "",
+                  ""
+                ],
+                "matrix": [
+                  0,
+                  "1"
+                ],
+                "showCorrectAnswer": true,
+                "minMarks": 0,
+                "unitTests": [],
+                "shuffleChoices": true,
+                "customMarkingAlgorithm": "",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "variableReplacements": [],
+                "displayType": "dropdownlist",
+                "marks": 0,
+                "displayColumns": 0,
+                "type": "1_n_2"
+              }
+            ],
+            "_marks": 0,
+            "_pNumber": 5,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          }
+        ]
+      },
+      {
+        "_name": "Precedence tables and network diagrams",
+        "_tags": [
+          "critical path",
+          "n5_app4_0euq6",
+          "network diagrams",
+          "precedence tables"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "drag_and_drop"
+        ],
+        "_qNumber": 6,
+        "_parts": [
+          null,
+          {
+            "_type": "gapfill",
+            "_prompt": "<p>The siblings believe they can complete the task within&nbsp;{expectedtime} minutes. Are they correct?</p>\n<p>[[0]]</p>\n<p>What is the shortest possible time (in minutes) to complete all of the tasks for washing and cleaning the car?</p>\n<p>[[1]] minutes</p>",
+            "_gaps": [
+              {
+                "variableReplacementStrategy": "originalfirst",
+                "shuffleChoices": false,
+                "displayType": "radiogroup",
+                "unitTests": [],
+                "type": "1_n_2",
+                "choices": [
+                  "Yes",
+                  "No"
+                ],
+                "maxMarks": 0,
+                "marks": 0,
+                "customMarkingAlgorithm": "",
+                "scripts": {},
+                "variableReplacements": [],
+                "matrix": [
+                  "marks[1]",
+                  "marks[0]"
+                ],
+                "minMarks": 0,
+                "showCorrectAnswer": true,
+                "showFeedbackIcon": true,
+                "displayColumns": "1",
+                "extendBaseMarkingAlgorithm": true,
+                "distractors": [
+                  "",
+                  ""
+                ]
+              },
+              {
+                "mustBeReducedPC": 0,
+                "unitTests": [],
+                "type": "numberentry",
+                "fixedHeight": "0px",
+                "allowFractions": false,
+                "correctAnswerFraction": false,
+                "marks": 1,
+                "minValue": "{criticalpath}",
+                "fixedWidth": "0px",
+                "correctAnswerStyle": "plain",
+                "mustBeReduced": false,
+                "variableReplacements": [],
+                "maxValue": "{criticalpath}",
+                "variableReplacementStrategy": "originalfirst",
+                "customMarkingAlgorithm": "",
+                "showFeedbackIcon": true,
+                "scripts": {},
+                "showCorrectAnswer": true,
+                "extendBaseMarkingAlgorithm": true,
+                "notationStyles": [
+                  "plain",
+                  "en",
+                  "si-en"
+                ]
+              }
+            ],
+            "_marks": 0,
+            "_pNumber": 2,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          }
+        ]
+      },
+      {
+        "_name": "Useful phrases",
+        "_tags": [
+          "hg_cgae1_3ex11"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "drag_and_drop"
+        ],
+        "_qNumber": 7,
+        "_parts": [
+          {
+            "_type": "drag_and_drop",
+            "_prompt": "<table>\n<tbody>\n<tr>\n<td>Tha mi den bheachd/bharail</td>\n<td>[[0]]</td>\n</tr>\n<tr>\n<td>Chanainn</td>\n<td>[[1]]</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>\n<td>[[2]]</td>\n</tr>\n<tr>\n<td>Tha mi an d&ograve;chas</td>\n<td>[[3]]</td>\n</tr>\n<tr>\n<td>Saoilidh mi</td>\n<td>[[4]]</td>\n</tr>\n<tr>\n<td>Feumaidh</td>\n<td>[[5]]</td>\n</tr>\n<tr>\n<td>Thathar ag r&agrave;dh</td>\n<td>[[6]]</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; creidsinn</td>\n<td>[[7]]</td>\n</tr>\n</tbody>\n</table>\n<p>{dnd_builder(\"a\",\"text\",drags_a)}{dnd_dragHeight(30)}{dnd_render()}</p>",
+            "_gaps": [
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "fixedHeight": "0px",
+                "matchMode": "exact",
+                "showCorrectAnswer": true,
+                "answer": "{drags_a[0]}",
+                "type": "patternmatch",
+                "marks": 1,
+                "displayAnswer": "{drags_a[0]}",
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "variableReplacements": []
+              },
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "fixedHeight": "0px",
+                "matchMode": "exact",
+                "showCorrectAnswer": true,
+                "answer": "{drags_a[1]}",
+                "type": "patternmatch",
+                "marks": 1,
+                "displayAnswer": "{drags_a[1]}",
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "variableReplacements": []
+              },
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "fixedHeight": "0px",
+                "matchMode": "exact",
+                "showCorrectAnswer": true,
+                "answer": "{drags_a[2]}",
+                "type": "patternmatch",
+                "marks": 1,
+                "displayAnswer": "{drags_a[2]}",
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "variableReplacements": []
+              },
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "fixedHeight": "0px",
+                "matchMode": "exact",
+                "showCorrectAnswer": true,
+                "answer": "{drags_a[3]}",
+                "type": "patternmatch",
+                "marks": 1,
+                "displayAnswer": "{drags_a[3]}",
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "variableReplacements": []
+              },
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "fixedHeight": "0px",
+                "matchMode": "exact",
+                "showCorrectAnswer": true,
+                "answer": "{drags_a[4]}",
+                "type": "patternmatch",
+                "marks": 1,
+                "displayAnswer": "{drags_a[4]}",
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "variableReplacements": []
+              },
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "fixedHeight": "0px",
+                "matchMode": "exact",
+                "showCorrectAnswer": true,
+                "answer": "{drags_a[5]}",
+                "type": "patternmatch",
+                "marks": 1,
+                "displayAnswer": "{drags_a[5]}",
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "variableReplacements": []
+              },
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "fixedHeight": "0px",
+                "matchMode": "exact",
+                "showCorrectAnswer": true,
+                "answer": "{drags_a[6]}",
+                "type": "patternmatch",
+                "marks": 1,
+                "displayAnswer": "{drags_a[6]}",
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "variableReplacements": []
+              },
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "fixedHeight": "0px",
+                "matchMode": "exact",
+                "showCorrectAnswer": true,
+                "answer": "{drags_a[7]}",
+                "type": "patternmatch",
+                "marks": 1,
+                "displayAnswer": "{drags_a[7]}",
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "variableReplacements": []
+              },
+              {
+                "_answer": "{drags_a[0]}",
+                "_marks": 1,
+                "_gapNumber": 1,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[1]}",
+                "_marks": 1,
+                "_gapNumber": 2,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[2]}",
+                "_marks": 1,
+                "_gapNumber": 3,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[3]}",
+                "_marks": 1,
+                "_gapNumber": 4,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[4]}",
+                "_marks": 1,
+                "_gapNumber": 5,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[5]}",
+                "_marks": 1,
+                "_gapNumber": 6,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[6]}",
+                "_marks": 1,
+                "_gapNumber": 7,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[7]}",
+                "_marks": 1,
+                "_gapNumber": 8,
+                "_type": "patternmatch"
+              }
+            ],
+            "_marks": 16,
+            "_pNumber": 1,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": "",
+            "_dragsListAsJSONString": "[\"I am of the opinion\", \"I would say\", \"I think\", \"I hope\", \"I suppose\", \"Must\", \"It is said (passive voice)\", \"I believe\"]",
+            "_dragsVariableName": [
+              "drags_a"
+            ],
+            "_dragHeight": "dnd_dragHeight(30)",
+            "_dragWidth": "auto",
+            "_builder": {
+              "_errorLog": {
+                "_errors": [
+                  {},
+                  {}
+                ],
+                "_logToConsole": true,
+                "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+              },
+              "_errorString": "",
+              "_partLetter": "\"a\"",
+              "_type": "\"text\"",
+              "_variableName": "drags_a"
+            },
+            "_convertedPrompt": "<table>\n<tbody>\n<tr>\n<td>Tha mi den bheachd/bharail</td>\n<td>%[I am of the opinion]%</td>\n</tr>\n<tr>\n<td>Chanainn</td>\n<td>%[I would say]%</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>\n<td>%[I think]%</td>\n</tr>\n<tr>\n<td>Tha mi an d&ograve;chas</td>\n<td>%[I hope]%</td>\n</tr>\n<tr>\n<td>Saoilidh mi</td>\n<td>%[I suppose]%</td>\n</tr>\n<tr>\n<td>Feumaidh</td>\n<td>%[Must]%</td>\n</tr>\n<tr>\n<td>Thathar ag r&agrave;dh</td>\n<td>%[It is said (passive voice)]%</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; creidsinn</td>\n<td>%[I believe]%</td>\n</tr>\n</tbody>\n</table>\n",
+            "_subType": "\"text\""
+          }
+        ]
+      },
+      {
+        "_name": "An làmh",
+        "_tags": [
+          "hg_cgae1_2_23anatomy5words",
+          "hg_cgae1_2ex23"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "card_match"
+        ],
+        "_qNumber": 8,
+        "_parts": [
+          null
+        ]
+      },
+      {
+        "_name": "Blas-chainnt 2",
+        "_tags": [
+          "hg_cgae1_4et1q2"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "manual_marking"
+        ],
+        "_qNumber": 9,
+        "_parts": [
+          {
+            "_type": "m_n_2",
+            "_prompt": "<p>Which of these statements apply to the writer's situation?</p>",
+            "_marks": 0,
+            "_pNumber": 1,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": ""
+          },
+          {
+            "_type": "scholar_self_marked_text",
+            "_marks": 1,
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "selfMarkedTextCP.json",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "modelAnswer": "They were not sure why the answers were wrong.",
+              "markIncrement": 1,
+              "cols": 50,
+              "rows": 4,
+              "howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+              "markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+              "correctFeedback": "Well done. ",
+              "partialCorrect": "You were partially correct. ",
+              "incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+            },
+            "_templateJson": "selfMarkedTextPart.json",
+            "_prompt": "<p>What did the writer express to her teacher?</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('a')}{manualmarking_render()}</p>",
+            "_cols": 50,
+            "_rows": 4,
+            "_modelAnswer": "They were not sure why the answers were wrong.",
+            "_markIncrement": 1,
+            "_howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+            "_markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+            "_correctFeedback": "Well done. ",
+            "_partialCorrect": "You were partially correct. ",
+            "_incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+          }
+        ]
+      },
+      {
+        "_name": "Reordering with 'S ann (1)",
+        "_tags": [
+          "hg_cgae1_4ex29_1"
+        ],
+        "_containsCustomParts": true,
+        "_extensions": [
+          "drag_and_drop"
+        ],
+        "_qNumber": 10,
+        "_parts": [
+          {
+            "_type": "drag_and_drop",
+            "_prompt": "<p>Tha mi ag obair anns a&rsquo; bhanca.</p>\n<p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]].</p>\n<p>{dnd_builder(\"a\",\"reorder\",drags_a)}{dnd_dragWidth(90)}{dnd_dragHeight(30)}{dnd_render()}</p>",
+            "_gaps": [
+              {
+                "marks": "",
+                "showCorrectAnswer": true,
+                "extendBaseMarkingAlgorithm": true,
+                "type": "patternmatch",
+                "showFeedbackIcon": false,
+                "unitTests": [],
+                "fixedWidth": "0px",
+                "displayAnswer": "{drags_a[0]}",
+                "customMarkingAlgorithm": "",
+                "matchMode": "exact",
+                "fixedHeight": "0px",
+                "variableReplacementStrategy": "originalfirst",
+                "answer": "{drags_a[0]}",
+                "variableReplacements": [],
+                "scripts": {
+                  "constructor": {
+                    "script": "this.marks = 1/7;",
+                    "order": "after"
+                  }
+                }
+              },
+              {
+                "marks": "",
+                "showCorrectAnswer": true,
+                "extendBaseMarkingAlgorithm": true,
+                "type": "patternmatch",
+                "showFeedbackIcon": false,
+                "unitTests": [],
+                "fixedWidth": "0px",
+                "displayAnswer": "{drags_a[1]}",
+                "customMarkingAlgorithm": "",
+                "matchMode": "exact",
+                "fixedHeight": "0px",
+                "variableReplacementStrategy": "originalfirst",
+                "answer": "{drags_a[1]}",
+                "variableReplacements": [],
+                "scripts": {
+                  "constructor": {
+                    "script": "this.marks = 1/7;",
+                    "order": "after"
+                  }
+                }
+              },
+              {
+                "marks": "",
+                "showCorrectAnswer": true,
+                "extendBaseMarkingAlgorithm": true,
+                "type": "patternmatch",
+                "showFeedbackIcon": false,
+                "unitTests": [],
+                "fixedWidth": "0px",
+                "displayAnswer": "{drags_a[2]}",
+                "customMarkingAlgorithm": "",
+                "matchMode": "exact",
+                "fixedHeight": "0px",
+                "variableReplacementStrategy": "originalfirst",
+                "answer": "{drags_a[2]}",
+                "variableReplacements": [],
+                "scripts": {
+                  "constructor": {
+                    "script": "this.marks = 1/7;",
+                    "order": "after"
+                  }
+                }
+              },
+              {
+                "marks": "",
+                "showCorrectAnswer": true,
+                "extendBaseMarkingAlgorithm": true,
+                "type": "patternmatch",
+                "showFeedbackIcon": false,
+                "unitTests": [],
+                "fixedWidth": "0px",
+                "displayAnswer": "{drags_a[3]}",
+                "customMarkingAlgorithm": "",
+                "matchMode": "exact",
+                "fixedHeight": "0px",
+                "variableReplacementStrategy": "originalfirst",
+                "answer": "{drags_a[3]}",
+                "variableReplacements": [],
+                "scripts": {
+                  "constructor": {
+                    "script": "this.marks = 1/7;",
+                    "order": "after"
+                  }
+                }
+              },
+              {
+                "marks": "",
+                "showCorrectAnswer": true,
+                "extendBaseMarkingAlgorithm": true,
+                "type": "patternmatch",
+                "showFeedbackIcon": false,
+                "unitTests": [],
+                "fixedWidth": "0px",
+                "displayAnswer": "{drags_a[4]}",
+                "customMarkingAlgorithm": "",
+                "matchMode": "exact",
+                "fixedHeight": "0px",
+                "variableReplacementStrategy": "originalfirst",
+                "answer": "{drags_a[4]}",
+                "variableReplacements": [],
+                "scripts": {
+                  "constructor": {
+                    "script": "this.marks = 1/7;",
+                    "order": "after"
+                  }
+                }
+              },
+              {
+                "marks": "",
+                "showCorrectAnswer": true,
+                "extendBaseMarkingAlgorithm": true,
+                "type": "patternmatch",
+                "showFeedbackIcon": false,
+                "unitTests": [],
+                "fixedWidth": "0px",
+                "displayAnswer": "{drags_a[5]}",
+                "customMarkingAlgorithm": "",
+                "matchMode": "exact",
+                "fixedHeight": "0px",
+                "variableReplacementStrategy": "originalfirst",
+                "answer": "{drags_a[5]}",
+                "variableReplacements": [],
+                "scripts": {
+                  "constructor": {
+                    "script": "this.marks = 1/7;",
+                    "order": "after"
+                  }
+                }
+              },
+              {
+                "marks": "",
+                "showCorrectAnswer": true,
+                "extendBaseMarkingAlgorithm": true,
+                "type": "patternmatch",
+                "showFeedbackIcon": true,
+                "unitTests": [],
+                "fixedWidth": "0px",
+                "displayAnswer": "{drags_a[6]}",
+                "customMarkingAlgorithm": "",
+                "matchMode": "exact",
+                "fixedHeight": "0px",
+                "variableReplacementStrategy": "originalfirst",
+                "answer": "{drags_a[6]}",
+                "variableReplacements": [],
+                "scripts": {
+                  "mark": {
+                    "script": "var allCorrect = true;\nthis.parentPart.gaps.forEach(function(gap, gapIndex){\n allCorrect = allCorrect && !(gap.credit === 0);\n});\nif (!allCorrect){\n this.parentPart.gaps.forEach(function(gap, gapIndex){\n  gap.credit = 0;\n });\n}",
+                    "order": "after"
+                  },
+                  "constructor": {
+                    "script": "this.marks = 1/7;",
+                    "order": "after"
+                  }
+                }
+              },
+              {
+                "_answer": "{drags_a[0]}",
+                "_marks": 0,
+                "_gapNumber": 1,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[1]}",
+                "_marks": 0,
+                "_gapNumber": 2,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[2]}",
+                "_marks": 0,
+                "_gapNumber": 3,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[3]}",
+                "_marks": 0,
+                "_gapNumber": 4,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[4]}",
+                "_marks": 0,
+                "_gapNumber": 5,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[5]}",
+                "_marks": 0,
+                "_gapNumber": 6,
+                "_type": "patternmatch"
+              },
+              {
+                "_answer": "{drags_a[6]}",
+                "_marks": 0,
+                "_gapNumber": 7,
+                "_type": "patternmatch"
+              }
+            ],
+            "_marks": "00000000",
+            "_pNumber": 1,
+            "_errorLog": {
+              "_errors": [
+                {},
+                {}
+              ],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_errorString": "",
+            "_dragsListAsJSONString": "[\"'S ann\",\"anns\",\"a' bhanca\",\"a\",\"tha\",\"mi\",\"ag obair\"]",
+            "_dragsVariableName": [
+              "drags_a"
+            ],
+            "_dragHeight": "dnd_dragHeight(30)",
+            "_dragWidth": "dnd_dragWidth(90)",
+            "_builder": {
+              "_errorLog": {
+                "_errors": [
+                  {},
+                  {}
+                ],
+                "_logToConsole": true,
+                "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+              },
+              "_errorString": "",
+              "_partLetter": "\"a\"",
+              "_type": "\"reorder\"",
+              "_variableName": "drags_a"
+            },
+            "_convertedPrompt": "<p>Tha mi ag obair anns a&rsquo; bhanca.</p>\n<p>%['S ann]%%[anns]%%[a' bhanca]%%[a]%%[tha]%%[mi]%%[ag obair]%.</p>\n",
+            "_subType": "\"reorder\""
+          }
+        ]
+      }
+    ],
+    "_extensions": [],
+    "extensions": []
+  },
+  "_jsonObjToUpdate": {
+    "name": "example question types taken from scholar archive for testing part converter",
+    "metadata": {
+      "description": "",
+      "licence": "None specified"
+    },
+    "duration": 0,
+    "percentPass": 0,
+    "showQuestionGroupNames": false,
+    "shuffleQuestionGroups": false,
+    "showstudentname": true,
+    "question_groups": [
+      {
+        "name": "Group",
+        "pickingStrategy": "all-ordered",
+        "pickQuestions": 1,
+        "questionNames": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "variable_overrides": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "questions": [
+          {
+            "name": "Gene mutations",
+            "extensions": [
+              "drag_and_drop"
+            ],
+            "custom_part_types": [],
+            "resources": [
+              "question-resources/hg-cbio1-6etq6-mutations.png",
+              "question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png"
+            ],
+            "navigation": {
+              "preventleave": false,
+              "showfrontpage": false,
+              "allowregen": true
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Sarah Hirstwood",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/6/"
+              },
+              {
+                "name": "Mandy Tait",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/15/"
+              }
+            ],
+            "functions": {},
+            "metadata": {
+              "licence": "All rights reserved",
+              "description": "<p>hg_cbio1_6etq3</p>"
+            },
+            "tags": [
+              "hg_cbio1_6etq3"
+            ],
+            "advice": "",
+            "rulesets": {},
+            "preamble": {
+              "js": "",
+              "css": ""
+            },
+            "parts": [
+              {
+                "sortAnswers": false,
+                "variableReplacements": [],
+                "prompt": "<p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>\n<p><img src=\"resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png\" alt=\"Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN.\"/></p>\n<p>In the order A to C, what are the different types of mutations shown in the figure?</p>\n<p>A: [[0]]</p>\n<p>B: [[1]]</p>\n<p>C: [[2]]</p>\n<p>{dnd_builder('a','text',drags_a)}{dnd_render()}</p>",
+                "gaps": [
+                  {
+                    "showCorrectAnswer": true,
+                    "variableReplacements": [],
+                    "answer": "{drags_a[0]}",
+                    "fixedHeight": "0px",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "unitTests": [],
+                    "marks": 1,
+                    "fixedWidth": "0px",
+                    "matchMode": "regex",
+                    "displayAnswer": "{drags_a[0]}",
+                    "type": "patternmatch",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true
+                  },
+                  {
+                    "showCorrectAnswer": true,
+                    "variableReplacements": [],
+                    "answer": "{drags_a[1]}",
+                    "fixedHeight": "0px",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "unitTests": [],
+                    "marks": 1,
+                    "fixedWidth": "0px",
+                    "matchMode": "regex",
+                    "displayAnswer": "{drags_a[1]}",
+                    "type": "patternmatch",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true
+                  },
+                  {
+                    "showCorrectAnswer": true,
+                    "variableReplacements": [],
+                    "answer": "{drags_a[2]}",
+                    "fixedHeight": "0px",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "unitTests": [],
+                    "marks": 1,
+                    "fixedWidth": "0px",
+                    "matchMode": "regex",
+                    "displayAnswer": "{drags_a[2]}",
+                    "type": "patternmatch",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true
+                  },
+                  {
+                    "_answer": "{drags_a[0]}",
+                    "_marks": 1,
+                    "_gapNumber": 1,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[1]}",
+                    "_marks": 1,
+                    "_gapNumber": 2,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[2]}",
+                    "_marks": 1,
+                    "_gapNumber": 3,
+                    "_type": "patternmatch"
+                  }
+                ],
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "unitTests": [],
+                "marks": 0,
+                "showCorrectAnswer": true,
+                "type": "gapfill",
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "showCorrectAnswer": true,
+                "variableReplacements": [],
+                "prompt": "<p>What word is used to describe a mutation which results in the addition of a premature stop codon?</p>",
+                "answer": ".*nonsense.*",
+                "fixedHeight": "0px",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "unitTests": [],
+                "marks": 1,
+                "fixedWidth": "0px",
+                "matchMode": "regex",
+                "displayAnswer": "Nonsense",
+                "type": "patternmatch",
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "showCorrectAnswer": true,
+                "variableReplacements": [],
+                "prompt": "<p>What word is used to describe a mutation which results in the addition of an incorrect amino acid into a protein?</p>",
+                "answer": ".*missense.*",
+                "fixedHeight": "0px",
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "unitTests": [],
+                "marks": 1,
+                "fixedWidth": "0px",
+                "matchMode": "regex",
+                "displayAnswer": "Missense",
+                "type": "patternmatch",
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              }
+            ],
+            "ungrouped_variables": [
+              "drags_a"
+            ],
+            "variable_groups": [],
+            "statement": "",
+            "variables": {
+              "drags_a": {
+                "group": "Ungrouped variables",
+                "name": "drags_a",
+                "templateType": "anything",
+                "description": "",
+                "definition": "[\"Insertion\",\"Deletion\",\"Substitution\"]"
+              }
+            },
+            "variablesTest": {
+              "condition": "",
+              "maxRuns": 100
+            }
+          },
+          {
+            "name": "Human genomics",
+            "extensions": [
+              "drag_and_drop"
+            ],
+            "custom_part_types": [],
+            "resources": [],
+            "navigation": {
+              "preventleave": false,
+              "showfrontpage": false,
+              "allowregen": true
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Daniel Pacey",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/3/"
+              },
+              {
+                "name": "Stephen Pollock",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/20/"
+              }
+            ],
+            "functions": {},
+            "metadata": {
+              "licence": "All rights reserved",
+              "description": "<p>hg_chbi1_6etq1&nbsp;(previously hg_chbi1_7etq1v1)</p>"
+            },
+            "tags": [
+              "base",
+              "bioinformatics",
+              "disease",
+              "DNA probe",
+              "DNA profiling",
+              "DNA sequencing",
+              "gene",
+              "hg_chbi1_6etq1",
+              "medicine",
+              "primer"
+            ],
+            "advice": "",
+            "rulesets": {},
+            "preamble": {
+              "js": "",
+              "css": ""
+            },
+            "parts": [
+              {
+                "sortAnswers": false,
+                "type": "gapfill",
+                "prompt": "<p>[[0]] DNA sequencing.</p>\n<p>[[1]] bioinformatics.</p>\n<p>[[2]] personalised medicine.</p>\n<p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>",
+                "gaps": [
+                  {
+                    "unitTests": [],
+                    "type": "patternmatch",
+                    "answer": "{drags_a[0]}",
+                    "fixedHeight": "0px",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "showCorrectAnswer": true,
+                    "marks": 1,
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "matchMode": "exact",
+                    "displayAnswer": "{drags_a[0]}",
+                    "variableReplacements": [],
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true
+                  },
+                  {
+                    "unitTests": [],
+                    "type": "patternmatch",
+                    "answer": "{drags_a[1]}",
+                    "fixedHeight": "0px",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "showCorrectAnswer": true,
+                    "marks": 1,
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "matchMode": "exact",
+                    "displayAnswer": "{drags_a[1]}",
+                    "variableReplacements": [],
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true
+                  },
+                  {
+                    "unitTests": [],
+                    "type": "patternmatch",
+                    "answer": "{drags_a[2]}",
+                    "fixedHeight": "0px",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "showCorrectAnswer": true,
+                    "marks": 1,
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "matchMode": "exact",
+                    "displayAnswer": "{drags_a[2]}",
+                    "variableReplacements": [],
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true
+                  },
+                  {
+                    "_answer": "{drags_a[0]}",
+                    "_marks": 1,
+                    "_gapNumber": 1,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[1]}",
+                    "_marks": 1,
+                    "_gapNumber": 2,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[2]}",
+                    "_marks": 1,
+                    "_gapNumber": 3,
+                    "_type": "patternmatch"
+                  }
+                ],
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "unitTests": [],
+                "marks": 0,
+                "showCorrectAnswer": true,
+                "scripts": {},
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true
+              }
+            ],
+            "variables": {
+              "drags_a": {
+                "group": "Ungrouped variables",
+                "name": "drags_a",
+                "templateType": "list of strings",
+                "description": "",
+                "definition": "[ \"The sequence of bases can be determined for individual genes by using\", \"The use of computer technology to identify DNA sequences is known as\", \"An understanding of the genetic component of the risk of disease is required for\" ]"
+              }
+            },
+            "variable_groups": [],
+            "statement": "<p>Complete the sentences by dragging and dropping.</p>",
+            "ungrouped_variables": [
+              "drags_a"
+            ],
+            "variablesTest": {
+              "condition": "",
+              "maxRuns": 100
+            }
+          },
+          {
+            "name": "Slow and fast twitch muscle fibres",
+            "extensions": [
+              "manual_marking"
+            ],
+            "custom_part_types": [],
+            "resources": [],
+            "navigation": {
+              "showfrontpage": false,
+              "allowregen": true,
+              "preventleave": false
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Daniel Pacey",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/3/"
+              }
+            ],
+            "rulesets": {},
+            "variablesTest": {
+              "maxRuns": 100,
+              "condition": ""
+            },
+            "tags": [
+              "colour",
+              "fast twitch",
+              "hg_chbi1_9etq3",
+              "muscle fibre",
+              "slow twitch"
+            ],
+            "functions": {},
+            "variables": {},
+            "ungrouped_variables": [],
+            "metadata": {
+              "description": "<p>hg_chbi1_9etq3&nbsp;(previously hg_chbi1_12etq4v1)</p>",
+              "licence": "All rights reserved"
+            },
+            "parts": [
+              {
+                "type": "gapfill",
+                "sortAnswers": false,
+                "unitTests": [],
+                "showFeedbackIcon": true,
+                "showCorrectAnswer": true,
+                "gaps": [
+                  {
+                    "type": "patternmatch",
+                    "matchMode": "exact",
+                    "unitTests": [],
+                    "showFeedbackIcon": true,
+                    "showCorrectAnswer": true,
+                    "fixedHeight": "0px",
+                    "displayAnswer": " Slow twitch fibres are dark red because they have a high concentration of myoglobin which stores oxygen for aerobic respiration. Fast twitch fibres are pale pink because they contain low concentrations of myoglobin as they mainly rely on anaerobic form of respiration (creatine phosphate and lactic acid metabolism).",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacements": [],
+                    "variableReplacementStrategy": "originalfirst",
+                    "marks": "6",
+                    "scripts": {},
+                    "answer": "",
+                    "fixedWidth": "0px"
+                  }
+                ],
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "extendBaseMarkingAlgorithm": true,
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "prompt": "<p>Explain the difference between the colour of slow and fast twitch muscle fibres.</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('a')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>",
+                "marks": 0
+              }
+            ],
+            "statement": "",
+            "preamble": {
+              "js": "",
+              "css": ""
+            },
+            "variable_groups": [],
+            "advice": ""
+          },
+          {
+            "name": "Menstrual cycle 2",
+            "extensions": [
+              "manual_marking"
+            ],
+            "custom_part_types": [],
+            "resources": [
+              "question-resources/hg-chbi2-2etq6-menstrualCycle_9tnNfnB.png"
+            ],
+            "navigation": {
+              "showfrontpage": false,
+              "allowregen": true,
+              "preventleave": false
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Daniel Pacey",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/3/"
+              }
+            ],
+            "rulesets": {},
+            "variablesTest": {
+              "maxRuns": 100,
+              "condition": ""
+            },
+            "tags": [
+              "blastocyst",
+              "hg_chbi2_2etq7",
+              "hormone",
+              "menstrual cycle",
+              "ovulation"
+            ],
+            "functions": {},
+            "variables": {},
+            "ungrouped_variables": [],
+            "metadata": {
+              "description": "<p><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;hg_chbi2_2et&quot;}\">hg_chbi2_2etq7&nbsp;(previously hg_chbi2_2etq6)</span></p>",
+              "licence": "All rights reserved"
+            },
+            "parts": [
+              {
+                "type": "gapfill",
+                "sortAnswers": false,
+                "unitTests": [],
+                "showFeedbackIcon": true,
+                "showCorrectAnswer": true,
+                "gaps": [
+                  {
+                    "type": "patternmatch",
+                    "matchMode": "exact",
+                    "unitTests": [],
+                    "showFeedbackIcon": true,
+                    "showCorrectAnswer": true,
+                    "fixedHeight": "0px",
+                    "displayAnswer": "The high concentration of oestrogen (hormone A)  stimulates the pituitary to release a high concentration of LH which stimulates ovulation.",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacements": [],
+                    "variableReplacementStrategy": "originalfirst",
+                    "marks": 1,
+                    "scripts": {},
+                    "answer": "",
+                    "fixedWidth": "0px"
+                  }
+                ],
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "extendBaseMarkingAlgorithm": true,
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "prompt": "<p>What causes ovulation?</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('a')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>",
+                "marks": 0
+              },
+              {
+                "type": "gapfill",
+                "sortAnswers": false,
+                "unitTests": [],
+                "showFeedbackIcon": true,
+                "showCorrectAnswer": true,
+                "gaps": [
+                  {
+                    "type": "patternmatch",
+                    "matchMode": "exact",
+                    "unitTests": [],
+                    "showFeedbackIcon": true,
+                    "showCorrectAnswer": true,
+                    "fixedHeight": "0px",
+                    "displayAnswer": "Description:  concentration increases from days 1 to 4, then falls from days 5 to 12. Explanation: the pituitary releases an increasing concentration of FSH on days 1 to 4; the increase from day 1 to 4 is  caused by a low level of oestrogen/A;  the decrease from day 5 to 12 is caused by an  increase in secretion of oestrogen/A; which causes a reduction in the secretion of FSH/C.",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacements": [],
+                    "variableReplacementStrategy": "originalfirst",
+                    "marks": "3",
+                    "scripts": {},
+                    "answer": "",
+                    "fixedWidth": "0px"
+                  }
+                ],
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "extendBaseMarkingAlgorithm": true,
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "prompt": "<p>Describe and explain the change in concentration of hormone C during the first 12 days of the cycle.</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('b')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>",
+                "marks": 0
+              },
+              {
+                "type": "gapfill",
+                "sortAnswers": false,
+                "unitTests": [],
+                "showFeedbackIcon": true,
+                "showCorrectAnswer": true,
+                "gaps": [
+                  {
+                    "type": "patternmatch",
+                    "matchMode": "exact",
+                    "unitTests": [],
+                    "showFeedbackIcon": true,
+                    "showCorrectAnswer": true,
+                    "fixedHeight": "0px",
+                    "displayAnswer": "High levels of progesterone have a negative feedback effect on the pituitary gland, resulting in the inhibition of FSH and LH.",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacements": [],
+                    "variableReplacementStrategy": "originalfirst",
+                    "marks": 1,
+                    "scripts": {},
+                    "answer": "",
+                    "fixedWidth": "0px"
+                  }
+                ],
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "extendBaseMarkingAlgorithm": true,
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "prompt": "<p>What is the effect of the high level of hormone B between days 18 to 26?</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('c')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>",
+                "marks": 0
+              },
+              {
+                "type": "gapfill",
+                "sortAnswers": false,
+                "unitTests": [],
+                "showFeedbackIcon": true,
+                "showCorrectAnswer": true,
+                "gaps": [
+                  {
+                    "type": "patternmatch",
+                    "matchMode": "exact",
+                    "unitTests": [],
+                    "showFeedbackIcon": true,
+                    "showCorrectAnswer": true,
+                    "fixedHeight": "0px",
+                    "displayAnswer": "Hormone B is progesterone which promotes the further proliferation of the endometrium.",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacements": [],
+                    "variableReplacementStrategy": "originalfirst",
+                    "marks": 1,
+                    "scripts": {},
+                    "answer": "",
+                    "fixedWidth": "0px"
+                  }
+                ],
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "extendBaseMarkingAlgorithm": true,
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "prompt": "<p>In what way does hormone B contribute to the survival of the blastocyst?</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('d')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>",
+                "marks": 0
+              },
+              {
+                "type": "gapfill",
+                "sortAnswers": false,
+                "unitTests": [],
+                "showFeedbackIcon": true,
+                "showCorrectAnswer": true,
+                "gaps": [
+                  {
+                    "type": "patternmatch",
+                    "matchMode": "exact",
+                    "unitTests": [],
+                    "showFeedbackIcon": true,
+                    "showCorrectAnswer": true,
+                    "fixedHeight": "0px",
+                    "displayAnswer": "Hormone B is progesterone released by the corpus luteum. The corpus luteum is only present after ovulation. The corpus luteum grows from days 16 to 22 and degenerates from days 23 to 28. This is caused by an increase then decrease in secretion of LH by pituitary.",
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacements": [],
+                    "variableReplacementStrategy": "originalfirst",
+                    "marks": "4",
+                    "scripts": {},
+                    "answer": "",
+                    "fixedWidth": "0px"
+                  }
+                ],
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "extendBaseMarkingAlgorithm": true,
+                "variableReplacements": [],
+                "customMarkingAlgorithm": "",
+                "prompt": "<p>Explain the changes in the concentration of hormone B during the cycle.</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('e')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>",
+                "marks": 0
+              }
+            ],
+            "statement": "<p>The following graphs show the changes in concentration of four hormones in a woman's blood during one menstrual cycle.</p>\n<p><img src=\"resources/question-resources/hg-chbi2-2etq6-menstrualCycle_9tnNfnB.png\" alt=\"Graph of concentration versus days for four hormones A, B, C and D.\"/></p>",
+            "preamble": {
+              "js": "",
+              "css": ""
+            },
+            "variable_groups": [],
+            "advice": ""
+          },
+          {
+            "name": "Ion-electron equation",
+            "extensions": [],
+            "custom_part_types": [],
+            "resources": [],
+            "navigation": {
+              "preventleave": false,
+              "allowregen": true,
+              "showfrontpage": false
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Daniel Pacey",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/3/"
+              }
+            ],
+            "functions": {},
+            "ungrouped_variables": [
+              "scholar_reveal_e"
+            ],
+            "statement": "<p>Look at the following incomplete ion-electron equation.</p>\n<p style=\"text-align: center;\">XeO<sub>3</sub> &rarr; Xe</p>",
+            "tags": [
+              "balance",
+              "charge",
+              "electron",
+              "hg_cche1_6etq12",
+              "hydrogen",
+              "ion",
+              "ion-electron equation",
+              "molecule",
+              "product",
+              "reactant",
+              "water"
+            ],
+            "rulesets": {},
+            "variables": {
+              "scholar_reveal_e": {
+                "name": "scholar_reveal_e",
+                "templateType": "anything",
+                "definition": "true",
+                "group": "Ungrouped variables",
+                "description": ""
+              }
+            },
+            "variable_groups": [],
+            "metadata": {
+              "description": "<p>hg_cche1_6etq12</p>",
+              "licence": "All rights reserved"
+            },
+            "variablesTest": {
+              "maxRuns": 100,
+              "condition": ""
+            },
+            "parts": [
+              {
+                "extendBaseMarkingAlgorithm": true,
+                "scripts": {},
+                "showCorrectAnswer": true,
+                "variableReplacementStrategy": "originalfirst",
+                "unitTests": [],
+                "prompt": "<p>How many water molecules have to be added to the product side?</p>",
+                "matchMode": "regex",
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "showFeedbackIcon": true,
+                "displayAnswer": "3",
+                "variableReplacements": [],
+                "fixedHeight": "0px",
+                "marks": 1,
+                "answer": ".*(3|three).*",
+                "type": "patternmatch"
+              },
+              {
+                "extendBaseMarkingAlgorithm": true,
+                "scripts": {},
+                "showCorrectAnswer": true,
+                "variableReplacementStrategy": "originalfirst",
+                "unitTests": [],
+                "prompt": "<p>How many hydrogen ions have to be added to the reactant side?</p>",
+                "matchMode": "regex",
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "showFeedbackIcon": true,
+                "displayAnswer": "6",
+                "variableReplacements": [],
+                "fixedHeight": "0px",
+                "marks": 1,
+                "answer": ".*(6|six).*",
+                "type": "patternmatch"
+              },
+              {
+                "extendBaseMarkingAlgorithm": true,
+                "scripts": {},
+                "showCorrectAnswer": true,
+                "variableReplacementStrategy": "originalfirst",
+                "unitTests": [],
+                "prompt": "<p>How many electrons have to be added to balance the charge?</p>",
+                "matchMode": "regex",
+                "fixedWidth": "0px",
+                "customMarkingAlgorithm": "",
+                "showFeedbackIcon": true,
+                "displayAnswer": "6",
+                "variableReplacements": [],
+                "fixedHeight": "0px",
+                "marks": 1,
+                "answer": ".*(6|six).*",
+                "type": "patternmatch"
+              },
+              {
+                "maxMarks": 0,
+                "choices": [
+                  "Reactant",
+                  "Product"
+                ],
+                "variableReplacements": [],
+                "extendBaseMarkingAlgorithm": true,
+                "showFeedbackIcon": true,
+                "distractors": [
+                  "",
+                  ""
+                ],
+                "showCorrectAnswer": true,
+                "minMarks": 0,
+                "prompt": "<p>On which side do the electrons get added?</p>",
+                "unitTests": [],
+                "shuffleChoices": false,
+                "customMarkingAlgorithm": "",
+                "type": "1_n_2",
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "displayType": "radiogroup",
+                "marks": 0,
+                "displayColumns": "1",
+                "matrix": [
+                  "1",
+                  0
+                ]
+              },
+              {
+                "extendBaseMarkingAlgorithm": true,
+                "gaps": [
+                  {
+                    "maxMarks": 0,
+                    "choices": [
+                      "an oxidation.",
+                      "a reduction"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "scripts": {},
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "matrix": [
+                      0,
+                      "1"
+                    ],
+                    "showCorrectAnswer": true,
+                    "minMarks": 0,
+                    "unitTests": [],
+                    "shuffleChoices": true,
+                    "customMarkingAlgorithm": "",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "variableReplacements": [],
+                    "displayType": "dropdownlist",
+                    "marks": 0,
+                    "displayColumns": 0,
+                    "type": "1_n_2"
+                  }
+                ],
+                "showCorrectAnswer": true,
+                "variableReplacementStrategy": "originalfirst",
+                "sortAnswers": false,
+                "prompt": "<p>The completed ion-electron equation is&nbsp;[[0]]</p>",
+                "marks": 0,
+                "customMarkingAlgorithm": "",
+                "showFeedbackIcon": true,
+                "variableReplacements": [],
+                "unitTests": [],
+                "scripts": {},
+                "type": "gapfill"
+              }
+            ],
+            "preamble": {
+              "css": "",
+              "js": ""
+            },
+            "advice": ""
+          },
+          {
+            "name": "Precedence tables and network diagrams",
+            "extensions": [
+              "drag_and_drop"
+            ],
+            "custom_part_types": [],
+            "resources": [],
+            "navigation": {
+              "allowregen": true,
+              "showfrontpage": false,
+              "preventleave": false
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Mandy Tait",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/15/"
+              }
+            ],
+            "tags": [
+              "critical path",
+              "n5_app4_0euq6",
+              "network diagrams",
+              "precedence tables"
+            ],
+            "rulesets": {},
+            "variablesTest": {
+              "condition": "",
+              "maxRuns": 100
+            },
+            "ungrouped_variables": [
+              "time_A",
+              "time_B",
+              "time_C",
+              "time_D",
+              "time_E",
+              "time_F",
+              "time_G",
+              "time_H",
+              "time_I",
+              "time_J",
+              "time_K",
+              "total_mark_for_whole_part_a",
+              "drags_a"
+            ],
+            "variables": {
+              "noncriticalpath1": {
+                "name": "noncriticalpath1",
+                "definition": "time_A + time_F + time_B + time_H + time_G + time_I + time_E + time_J",
+                "group": "part b",
+                "description": "",
+                "templateType": "anything"
+              },
+              "time_C": {
+                "name": "time_C",
+                "definition": "random(15..17)",
+                "group": "Ungrouped variables",
+                "description": "<p>15</p>",
+                "templateType": "anything"
+              },
+              "time_D": {
+                "name": "time_D",
+                "definition": "random(18..22)",
+                "group": "Ungrouped variables",
+                "description": "<p>20</p>",
+                "templateType": "anything"
+              },
+              "time_F": {
+                "name": "time_F",
+                "definition": "random(2..3)",
+                "group": "Ungrouped variables",
+                "description": "<p>3</p>",
+                "templateType": "anything"
+              },
+              "time_G": {
+                "name": "time_G",
+                "definition": "random(4..6)",
+                "group": "Ungrouped variables",
+                "description": "<p>5</p>",
+                "templateType": "anything"
+              },
+              "noncriticalpath2": {
+                "name": "noncriticalpath2",
+                "definition": "time_A + time_F + time_B + time_H + time_G + time_C + time_E + time_J",
+                "group": "part b",
+                "description": "",
+                "templateType": "anything"
+              },
+              "m1": {
+                "name": "m1",
+                "definition": "if(criticalpath>expectedtime,1,0)",
+                "group": "part b",
+                "description": "<p>The critical path has to be less than the expected time for the answer to be Yes to multiple choice question.</p>",
+                "templateType": "anything"
+              },
+              "marks": {
+                "name": "marks",
+                "definition": "[m1,1-m1]",
+                "group": "part b",
+                "description": "",
+                "templateType": "anything"
+              },
+              "noncriticalpath3": {
+                "name": "noncriticalpath3",
+                "definition": "time_A + time_F + time_K + time_D + time_G + time_I + time_E + time_J",
+                "group": "part b",
+                "description": "",
+                "templateType": "anything"
+              },
+              "time_I": {
+                "name": "time_I",
+                "definition": "random(12..14)",
+                "group": "Ungrouped variables",
+                "description": "<p>14</p>",
+                "templateType": "anything"
+              },
+              "time_B": {
+                "name": "time_B",
+                "definition": "random(13..15)",
+                "group": "Ungrouped variables",
+                "description": "<p>13</p>",
+                "templateType": "anything"
+              },
+              "time_A": {
+                "name": "time_A",
+                "definition": "random(1..2)",
+                "group": "Ungrouped variables",
+                "description": "<p>2</p>",
+                "templateType": "anything"
+              },
+              "time_K": {
+                "name": "time_K",
+                "definition": "random(26..29) - time_D",
+                "group": "Ungrouped variables",
+                "description": "<p>7</p>",
+                "templateType": "anything"
+              },
+              "criticalpath": {
+                "name": "criticalpath",
+                "definition": "time_A + time_F + time_K + time_D + time_G + time_C + time_E + time_J",
+                "group": "part b",
+                "description": "",
+                "templateType": "anything"
+              },
+              "total_mark_for_whole_part_a": {
+                "name": "total_mark_for_whole_part_a",
+                "definition": "2",
+                "group": "Ungrouped variables",
+                "description": "",
+                "templateType": "anything"
+              },
+              "time_E": {
+                "name": "time_E",
+                "definition": "random(2..3)",
+                "group": "Ungrouped variables",
+                "description": "<p>3</p>",
+                "templateType": "anything"
+              },
+              "expectedtime": {
+                "name": "expectedtime",
+                "definition": "random(55..60)",
+                "group": "part b",
+                "description": "<p>55</p>",
+                "templateType": "anything"
+              },
+              "drags_a": {
+                "name": "drags_a",
+                "definition": "[\"A\",\"F\",\"B\",\"K\",\"D\",\"G\",\"C\",\"I\",\"E\",\"J\"]",
+                "group": "Ungrouped variables",
+                "description": "",
+                "templateType": "anything"
+              },
+              "time_J": {
+                "name": "time_J",
+                "definition": "random(1..2)",
+                "group": "Ungrouped variables",
+                "description": "<p>2</p>",
+                "templateType": "anything"
+              },
+              "time_H": {
+                "name": "time_H",
+                "definition": "random(23..25) - time_B",
+                "group": "Ungrouped variables",
+                "description": "<p>12</p>",
+                "templateType": "anything"
+              }
+            },
+            "metadata": {
+              "licence": "All rights reserved",
+              "description": "<p>n5_app4_0euq6</p>"
+            },
+            "advice": "<p><em>Working</em></p>\n<p>b)</p>\n<p>The times in&nbsp;minutes are shown below each task.</p>\n<div id=\"relativeDiv\" style=\"width: 512px; height: 242px; border: 1px solid #000000; position: relative; max-width: 100%;\"><span class=\"absgf\" id=\"absgf0\" style=\"top: 118px; left: 26px; position: absolute;\">{time_A}</span> <span class=\"absgf\" id=\"absgf1\" style=\"top: 118px; left: 81px; position: absolute;\">{time_F}</span> <span class=\"absgf\" id=\"absgf2\" style=\"top: 68px; left: 148px; position: absolute;\">{time_B}</span> <span class=\"absgf\" id=\"absgf3\" style=\"top: 175px; left: 148px; position: absolute;\">{time_K}</span> <span class=\"absgf\" id=\"absgf4\" style=\"top: 68px; left: 208px; position: absolute;\">{time_H}</span> <span class=\"absgf\" id=\"absgf5\" style=\"top: 175px; left: 208px; position: absolute;\">{time_D}</span> <span class=\"absgf\" id=\"absgf6\" style=\"top: 118px; left: 275px; position: absolute;\">{time_G}</span> <span class=\"absgf\" id=\"absgf7\" style=\"top: 68px; left: 341px; position: absolute;\">{time_C}</span> <span class=\"absgf\" id=\"absgf8\" style=\"top: 175px; left: 341px; position: absolute;\">{time_I}</span> <span class=\"absgf\" id=\"absgf9\" style=\"top: 118px; left: 410px; position: absolute;\">{time_E}</span> <span class=\"absgf\" id=\"absgf10\" style=\"top: 118px; left: 465px; position: absolute;\">{time_J}</span> <img src=\"resources/question-resources/n5-app4-0-euq6networkdiagramanswer2.png\" alt=\"network diagram with times added for each of the 11 tasks and critical path shown\"/></div>\n<p>You can see from the diagram that the route with the longest time follows the path: A, F, K, D, G, C, E, J so this is our critical path.</p>\n<p>Critical path = {time_A} + {time_F} + {time_K} + {time_D} + {time_G} + {time_C} + {time_E} + {time_J} = {criticalpath} minutes.</p>\n<p>The other routes are:</p>\n<p>A, F, B, H, G, I, E, J has a total time of {noncriticalpath1} minutes.</p>\n<p>A, F, B, H, G, C, E, J has a total time of {noncriticalpath2} minutes.</p>\n<p>A, F, K, D, G, I, E, J has a total time of {noncriticalpath3} minutes.</p>\n<p>We need to take the longer route to allow time for tasks H and D to all be completed before we can start task G, and tasks C and I to be completed before we can start task E.</p>\n<p><strong>Answer:</strong> {criticalpath} minutes.</p>\n<p><span data-jme-visible=\"m1 = 0\">Yes they are correct, it would take {criticalpath} minutes which is&nbsp;within the expected {expectedtime} minutes.</span></p>\n<p><span data-jme-visible=\"m1 = 1\">No, they are not correct, it would take {criticalpath} minutes which is longer than the expected {expectedtime} minutes.</span></p>",
+            "functions": {},
+            "variable_groups": [
+              {
+                "variables": [
+                  "criticalpath",
+                  "noncriticalpath1",
+                  "noncriticalpath2",
+                  "noncriticalpath3",
+                  "expectedtime",
+                  "m1",
+                  "marks"
+                ],
+                "name": "part b"
+              }
+            ],
+            "statement": "<p>Two siblings decide to wash and clean their parents' car before they go on holiday. The list of tasks required to wash and clean the car is detailed in the following table:</p>\n<table border=\"1\" cellpadding=\"3\" cellspacing=\"1\" style=\"float: left;\">\n<tbody>\n<tr>\n<th>Task</th>\n<th>Description</th>\n<th>Preceding task</th>\n<th>Time (minutes)</th>\n</tr>\n<tr>\n<td style=\"text-align: center;\">A</td>\n<td>Collect equipment</td>\n<td style=\"text-align: center;\">None</td>\n<td style=\"text-align: center;\">{time_A}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">B</td>\n<td>Wash outside of car</td>\n<td style=\"text-align: center;\">F</td>\n<td style=\"text-align: center;\">{time_B}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">C</td>\n<td>Polish outside of car</td>\n<td style=\"text-align: center;\">G</td>\n<td style=\"text-align: center;\">{time_C}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">D</td>\n<td>Clean inside of windows</td>\n<td style=\"text-align: center;\">K</td>\n<td style=\"text-align: center;\">{time_D}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">E</td>\n<td>Rinse buckets</td>\n<td style=\"text-align: center;\">C / I</td>\n<td style=\"text-align: center;\">{time_E}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">F</td>\n<td>Fill buckets with water and soap</td>\n<td style=\"text-align: center;\">A</td>\n<td style=\"text-align: center;\">{time_F}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">G</td>\n<td>Rinse outside of car</td>\n<td style=\"text-align: center;\">H / D</td>\n<td style=\"text-align: center;\">{time_G}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">H</td>\n<td>Wash wheels</td>\n<td style=\"text-align: center;\">B</td>\n<td style=\"text-align: center;\">{time_H}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">I</td>\n<td>Vacuum inside of car</td>\n<td style=\"text-align: center;\">G</td>\n<td style=\"text-align: center;\">{time_I}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">J</td>\n<td>Return equipment</td>\n<td style=\"text-align: center;\">E</td>\n<td style=\"text-align: center;\">{time_J}</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">K</td>\n<td>Dust inside of car</td>\n<td style=\"text-align: center;\">F</td>\n<td style=\"text-align: center;\">{time_K}</td>\n</tr>\n</tbody>\n</table>",
+            "preamble": {
+              "js": "",
+              "css": ""
+            },
+            "parts": [
+              {
+                "unitTests": [],
+                "type": "gapfill",
+                "showFeedbackIcon": true,
+                "sortAnswers": false,
+                "marks": 0,
+                "stepsPenalty": 0,
+                "steps": [
+                  {
+                    "variableReplacements": [],
+                    "type": "information",
+                    "unitTests": [],
+                    "showCorrectAnswer": true,
+                    "prompt": "<p>Use the preceding task column to help you put the tasks in the correct order:</p>\n<ul>\n<li>Find the task that has no preceding task, this goes in box 1.</li>\n<li>The task in box 7 must have 2 preceding tasks.</li>\n<li>The task in box 10 must have 2 preceding tasks.</li>\n<li>Box 2 must be filled by a task that follows on from the task in box 1. Repeat this process with the remaining tasks.</li>\n</ul>",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "marks": 0,
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "scripts": {}
+                  }
+                ],
+                "prompt": "<p>Using the information given in the precedence table complete the network diagram, by putting the letters into place in the correct order.</p>\n<div id=\"relativeDiv\" style=\"width: 512px; height: 197px; border: 1px solid #000000; position: relative; max-width: 100%;\"><span class=\"absgf\" id=\"absgf0\" style=\"top: 90px; left: 26px; position: absolute;\">[[0]]</span> <span class=\"absgf\" id=\"absgf1\" style=\"top: 90px; left: 81px; position: absolute;\">[[1]]</span> <span class=\"absgf\" id=\"absgf2\" style=\"top: 40px; left: 148px; position: absolute;\">[[2]]</span> <span class=\"absgf\" id=\"absgf3\" style=\"top: 147px; left: 148px; position: absolute;\">[[3]]</span> <span class=\"absgf\" id=\"absgf5\" style=\"top: 147px; left: 208px; position: absolute;\">[[4]]</span> <span class=\"absgf\" id=\"absgf6\" style=\"top: 90px; left: 275px; position: absolute;\">[[5]]</span> <span class=\"absgf\" id=\"absgf7\" style=\"top: 40px; left: 341px; position: absolute;\">[[6]]</span> <span class=\"absgf\" id=\"absgf8\" style=\"top: 147px; left: 341px; position: absolute;\">[[7]]</span> <span class=\"absgf\" id=\"absgf9\" style=\"top: 90px; left: 410px; position: absolute;\">[[8]]</span> <span class=\"absgf\" id=\"absgf10\" style=\"top: 90px; left: 465px; position: absolute;\">[[9]]</span> <img src=\"resources/question-resources/n5-app4-0-euq6networkdiagram_5rf3AhZ.png\" alt=\"blank network diagram with 11 tasks and task h in box 5\"/></div>\n<p>{dnd_builder(\"a\",\"text\",drags_a)}{dnd_dragHeight(25)}{dnd_dragWidth(20)}{dnd_render()}</p>",
+                "scripts": {},
+                "variableReplacements": [],
+                "showCorrectAnswer": true,
+                "gaps": [
+                  {
+                    "displayAnswer": "{drags_a[0]}",
+                    "unitTests": [],
+                    "matchMode": "exact",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "{drags_a[0]}",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[1]}",
+                    "unitTests": [],
+                    "matchMode": "exact",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "{drags_a[1]}",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[2]}",
+                    "unitTests": [],
+                    "matchMode": "exact",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "{drags_a[2]}",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[3]}",
+                    "unitTests": [],
+                    "matchMode": "exact",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "{drags_a[3]}",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[4]}",
+                    "unitTests": [],
+                    "matchMode": "exact",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "{drags_a[4]}",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[5]}",
+                    "unitTests": [],
+                    "matchMode": "exact",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "{drags_a[5]}",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[6]}",
+                    "unitTests": [],
+                    "matchMode": "regex",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "({drags_a[6]}|{drags_a[7]})",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[7]}",
+                    "unitTests": [],
+                    "matchMode": "regex",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "({drags_a[7]}|{drags_a[6]})",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[8]}",
+                    "unitTests": [],
+                    "matchMode": "exact",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "{drags_a[8]}",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "displayAnswer": "{drags_a[9]}",
+                    "unitTests": [],
+                    "matchMode": "exact",
+                    "showFeedbackIcon": true,
+                    "type": "patternmatch",
+                    "fixedWidth": "0px",
+                    "answer": "{drags_a[9]}",
+                    "marks": "0",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "fixedHeight": "0px",
+                    "customMarkingAlgorithm": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "variableReplacementStrategy": "originalfirst"
+                  },
+                  {
+                    "_answer": "{drags_a[0]}",
+                    "_marks": "0",
+                    "_gapNumber": 1,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[1]}",
+                    "_marks": "0",
+                    "_gapNumber": 2,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[2]}",
+                    "_marks": "0",
+                    "_gapNumber": 3,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[3]}",
+                    "_marks": "0",
+                    "_gapNumber": 4,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[4]}",
+                    "_marks": "0",
+                    "_gapNumber": 5,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[5]}",
+                    "_marks": "0",
+                    "_gapNumber": 6,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "({drags_a[6]}|{drags_a[7]})",
+                    "_marks": "0",
+                    "_gapNumber": 7,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "({drags_a[7]}|{drags_a[6]})",
+                    "_marks": "0",
+                    "_gapNumber": 8,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[8]}",
+                    "_marks": "0",
+                    "_gapNumber": 9,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[9]}",
+                    "_marks": "0",
+                    "_gapNumber": 10,
+                    "_type": "patternmatch"
+                  }
+                ],
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true,
+                "variableReplacementStrategy": "originalfirst"
+              },
+              {
+                "unitTests": [],
+                "type": "gapfill",
+                "showFeedbackIcon": true,
+                "sortAnswers": false,
+                "marks": 0,
+                "stepsPenalty": 0,
+                "steps": [
+                  {
+                    "variableReplacements": [],
+                    "type": "information",
+                    "unitTests": [],
+                    "showCorrectAnswer": true,
+                    "prompt": "<ul>\n<li>Calculate the time for each route through the diagram.</li>\n<li>Choose the route with the longest time.</li>\n</ul>",
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "marks": 0,
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "scripts": {}
+                  }
+                ],
+                "prompt": "<p>The siblings believe they can complete the task within&nbsp;{expectedtime} minutes. Are they correct?</p>\n<p>[[0]]</p>\n<p>What is the shortest possible time (in minutes) to complete all of the tasks for washing and cleaning the car?</p>\n<p>[[1]] minutes</p>",
+                "scripts": {},
+                "variableReplacements": [],
+                "showCorrectAnswer": true,
+                "gaps": [
+                  {
+                    "variableReplacementStrategy": "originalfirst",
+                    "shuffleChoices": false,
+                    "displayType": "radiogroup",
+                    "unitTests": [],
+                    "type": "1_n_2",
+                    "choices": [
+                      "Yes",
+                      "No"
+                    ],
+                    "maxMarks": 0,
+                    "marks": 0,
+                    "customMarkingAlgorithm": "",
+                    "scripts": {},
+                    "variableReplacements": [],
+                    "matrix": [
+                      "marks[1]",
+                      "marks[0]"
+                    ],
+                    "minMarks": 0,
+                    "showCorrectAnswer": true,
+                    "showFeedbackIcon": true,
+                    "displayColumns": "1",
+                    "extendBaseMarkingAlgorithm": true,
+                    "distractors": [
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "mustBeReducedPC": 0,
+                    "unitTests": [],
+                    "type": "numberentry",
+                    "fixedHeight": "0px",
+                    "allowFractions": false,
+                    "correctAnswerFraction": false,
+                    "marks": 1,
+                    "minValue": "{criticalpath}",
+                    "fixedWidth": "0px",
+                    "correctAnswerStyle": "plain",
+                    "mustBeReduced": false,
+                    "variableReplacements": [],
+                    "maxValue": "{criticalpath}",
+                    "variableReplacementStrategy": "originalfirst",
+                    "customMarkingAlgorithm": "",
+                    "showFeedbackIcon": true,
+                    "scripts": {},
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "notationStyles": [
+                      "plain",
+                      "en",
+                      "si-en"
+                    ]
+                  }
+                ],
+                "customMarkingAlgorithm": "",
+                "extendBaseMarkingAlgorithm": true,
+                "variableReplacementStrategy": "originalfirst"
+              }
+            ]
+          },
+          {
+            "name": "Useful phrases",
+            "extensions": [
+              "drag_and_drop"
+            ],
+            "custom_part_types": [],
+            "resources": [],
+            "navigation": {
+              "allowregen": true,
+              "showfrontpage": false,
+              "preventleave": false,
+              "typeendtoleave": false
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Mandy Tait",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/15/"
+              },
+              {
+                "name": "Stuart Simpson",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/1/"
+              },
+              {
+                "name": "Daniel Pacey",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/3/"
+              }
+            ],
+            "preamble": {
+              "js": "",
+              "css": ""
+            },
+            "tags": [
+              "hg_cgae1_3ex11"
+            ],
+            "variablesTest": {
+              "condition": "",
+              "maxRuns": 100
+            },
+            "variables": {
+              "drags_a": {
+                "group": "Ungrouped variables",
+                "definition": "[\"I am of the opinion\", \"I would say\", \"I think\", \"I hope\", \"I suppose\", \"Must\", \"It is said (passive voice)\", \"I believe\"]",
+                "name": "drags_a",
+                "description": "",
+                "templateType": "anything"
+              }
+            },
+            "variable_groups": [],
+            "parts": [
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "customMarkingAlgorithm": "",
+                "prompt": "<table>\n<tbody>\n<tr>\n<td>Tha mi den bheachd/bharail</td>\n<td>[[0]]</td>\n</tr>\n<tr>\n<td>Chanainn</td>\n<td>[[1]]</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>\n<td>[[2]]</td>\n</tr>\n<tr>\n<td>Tha mi an d&ograve;chas</td>\n<td>[[3]]</td>\n</tr>\n<tr>\n<td>Saoilidh mi</td>\n<td>[[4]]</td>\n</tr>\n<tr>\n<td>Feumaidh</td>\n<td>[[5]]</td>\n</tr>\n<tr>\n<td>Thathar ag r&agrave;dh</td>\n<td>[[6]]</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; creidsinn</td>\n<td>[[7]]</td>\n</tr>\n</tbody>\n</table>\n<p>{dnd_builder(\"a\",\"text\",drags_a)}{dnd_dragHeight(30)}{dnd_render()}</p>",
+                "showCorrectAnswer": true,
+                "type": "gapfill",
+                "gaps": [
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "customMarkingAlgorithm": "",
+                    "fixedHeight": "0px",
+                    "matchMode": "exact",
+                    "showCorrectAnswer": true,
+                    "answer": "{drags_a[0]}",
+                    "type": "patternmatch",
+                    "marks": 1,
+                    "displayAnswer": "{drags_a[0]}",
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "variableReplacements": []
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "customMarkingAlgorithm": "",
+                    "fixedHeight": "0px",
+                    "matchMode": "exact",
+                    "showCorrectAnswer": true,
+                    "answer": "{drags_a[1]}",
+                    "type": "patternmatch",
+                    "marks": 1,
+                    "displayAnswer": "{drags_a[1]}",
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "variableReplacements": []
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "customMarkingAlgorithm": "",
+                    "fixedHeight": "0px",
+                    "matchMode": "exact",
+                    "showCorrectAnswer": true,
+                    "answer": "{drags_a[2]}",
+                    "type": "patternmatch",
+                    "marks": 1,
+                    "displayAnswer": "{drags_a[2]}",
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "variableReplacements": []
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "customMarkingAlgorithm": "",
+                    "fixedHeight": "0px",
+                    "matchMode": "exact",
+                    "showCorrectAnswer": true,
+                    "answer": "{drags_a[3]}",
+                    "type": "patternmatch",
+                    "marks": 1,
+                    "displayAnswer": "{drags_a[3]}",
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "variableReplacements": []
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "customMarkingAlgorithm": "",
+                    "fixedHeight": "0px",
+                    "matchMode": "exact",
+                    "showCorrectAnswer": true,
+                    "answer": "{drags_a[4]}",
+                    "type": "patternmatch",
+                    "marks": 1,
+                    "displayAnswer": "{drags_a[4]}",
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "variableReplacements": []
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "customMarkingAlgorithm": "",
+                    "fixedHeight": "0px",
+                    "matchMode": "exact",
+                    "showCorrectAnswer": true,
+                    "answer": "{drags_a[5]}",
+                    "type": "patternmatch",
+                    "marks": 1,
+                    "displayAnswer": "{drags_a[5]}",
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "variableReplacements": []
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "customMarkingAlgorithm": "",
+                    "fixedHeight": "0px",
+                    "matchMode": "exact",
+                    "showCorrectAnswer": true,
+                    "answer": "{drags_a[6]}",
+                    "type": "patternmatch",
+                    "marks": 1,
+                    "displayAnswer": "{drags_a[6]}",
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "variableReplacements": []
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "scripts": {},
+                    "fixedWidth": "0px",
+                    "customMarkingAlgorithm": "",
+                    "fixedHeight": "0px",
+                    "matchMode": "exact",
+                    "showCorrectAnswer": true,
+                    "answer": "{drags_a[7]}",
+                    "type": "patternmatch",
+                    "marks": 1,
+                    "displayAnswer": "{drags_a[7]}",
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "variableReplacements": []
+                  },
+                  {
+                    "_answer": "{drags_a[0]}",
+                    "_marks": 1,
+                    "_gapNumber": 1,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[1]}",
+                    "_marks": 1,
+                    "_gapNumber": 2,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[2]}",
+                    "_marks": 1,
+                    "_gapNumber": 3,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[3]}",
+                    "_marks": 1,
+                    "_gapNumber": 4,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[4]}",
+                    "_marks": 1,
+                    "_gapNumber": 5,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[5]}",
+                    "_marks": 1,
+                    "_gapNumber": 6,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[6]}",
+                    "_marks": 1,
+                    "_gapNumber": 7,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[7]}",
+                    "_marks": 1,
+                    "_gapNumber": 8,
+                    "_type": "patternmatch"
+                  }
+                ],
+                "marks": 0,
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "sortAnswers": false,
+                "variableReplacements": []
+              }
+            ],
+            "statement": "<p>Match&nbsp;the English translations with the Gaelic words.</p>",
+            "ungrouped_variables": [
+              "drags_a"
+            ],
+            "rulesets": {},
+            "metadata": {
+              "licence": "All rights reserved",
+              "description": "<p>hg_cgae1_3_11usefulphrase.swf</p>\n<p>hg_cgae1_3ex11</p>"
+            },
+            "functions": {},
+            "advice": ""
+          },
+          {
+            "name": "An làmh",
+            "extensions": [
+              "card_match"
+            ],
+            "custom_part_types": [],
+            "resources": [],
+            "navigation": {
+              "allowregen": true,
+              "showfrontpage": false,
+              "preventleave": false,
+              "typeendtoleave": false
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Susen Rabold",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/8/"
+              },
+              {
+                "name": "Daniel Pacey",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/3/"
+              }
+            ],
+            "preamble": {
+              "js": "",
+              "css": ""
+            },
+            "tags": [
+              "hg_cgae1_2_23anatomy5words",
+              "hg_cgae1_2ex23"
+            ],
+            "variablesTest": {
+              "condition": "",
+              "maxRuns": 100
+            },
+            "variables": {
+              "show_confirm_on_reveal": {
+                "group": "Ungrouped variables",
+                "definition": "true",
+                "name": "show_confirm_on_reveal",
+                "description": "",
+                "templateType": "anything"
+              },
+              "pairs_a": {
+                "group": "Ungrouped variables",
+                "definition": "[[\"&igrave;nean\",\"fingernails\"],\n  [\"an &ograve;rdag\",\"the thumb\"],\n  [\"an gunna fada\",\"the middle finger\"],\n  [\"an sgealbag\",\"the 2nd finger\"],\n  [\"luideag bheag an airgid\",\"the pinkie finger\"],\n  [\"mac an aba\",\"the 4th finger\"],\n  [\"corragan\",\"fingers\"],\n  [\"bas\",\"palm\"],\n  [\"d&ograve;rn\",\"fist\"]]",
+                "name": "pairs_a",
+                "description": "",
+                "templateType": "anything"
+              }
+            },
+            "variable_groups": [],
+            "parts": [
+              {
+                "showFeedbackIcon": true,
+                "variableReplacementStrategy": "originalfirst",
+                "scripts": {},
+                "customMarkingAlgorithm": "",
+                "prompt": "<p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]][[7]][[8]]</p>\n<p>{cardmatch_builder('a','text',pairs_a)}{cardmatch_cardWidth(120)}{cardmatch_cardHeight(50)}{cardmatch_render()}</p>",
+                "showCorrectAnswer": true,
+                "type": "gapfill",
+                "gaps": [
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[0][0]}",
+                      "{pairs_a[0][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[0][1]}",
+                      "{pairs_a[1][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[2][0]}",
+                      "{pairs_a[2][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[3][0]}",
+                      "{pairs_a[3][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[4][0]}",
+                      "{pairs_a[4][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[5][0]}",
+                      "{pairs_a[5][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[6][0]}",
+                      "{pairs_a[6][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[7][0]}",
+                      "{pairs_a[7][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  },
+                  {
+                    "showFeedbackIcon": true,
+                    "variableReplacementStrategy": "originalfirst",
+                    "displayColumns": 0,
+                    "minMarks": 0,
+                    "scripts": {},
+                    "shuffleChoices": false,
+                    "type": "m_n_2",
+                    "maxMarks": 0,
+                    "variableReplacements": [],
+                    "displayType": "checkbox",
+                    "customMarkingAlgorithm": "",
+                    "distractors": [
+                      "",
+                      ""
+                    ],
+                    "showCorrectAnswer": true,
+                    "marks": 0,
+                    "maxAnswers": 0,
+                    "warningType": "none",
+                    "choices": [
+                      "{pairs_a[8][0]}",
+                      "{pairs_a[8][1]}"
+                    ],
+                    "extendBaseMarkingAlgorithm": true,
+                    "unitTests": [],
+                    "matrix": [
+                      "0.5",
+                      "0.5"
+                    ],
+                    "minAnswers": 0
+                  }
+                ],
+                "marks": 0,
+                "extendBaseMarkingAlgorithm": true,
+                "unitTests": [],
+                "sortAnswers": false,
+                "variableReplacements": []
+              }
+            ],
+            "statement": "<div class=\"row statement\">\n<div class=\"col-sm-9\">\n<div localise-data-jme-context-description=\"question.statement\">\n<p>Find&nbsp;nine pairs that have the same meaning by selecting two at a time.</p>\n</div>\n</div>\n<div class=\"col-sm-3 invisible\" data-bind=\"visible:showInstructions\" disabled=\"disabled\"></div>\n</div>",
+            "ungrouped_variables": [
+              "pairs_a",
+              "show_confirm_on_reveal"
+            ],
+            "rulesets": {},
+            "metadata": {
+              "licence": "All rights reserved",
+              "description": "<p><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;hg_cgae1_2_23anatomy5words&quot;}\">hg_cgae1_2_23anatomy5words</span></p>\n<p><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;hg_cgae1_2_23anatomy5words&quot;}\">hg_cgae1_2ex23</span></p>"
+            },
+            "functions": {},
+            "advice": ""
+          },
+          {
+            "name": "Blas-chainnt 2",
+            "extensions": [
+              "manual_marking"
+            ],
+            "custom_part_types": [],
+            "resources": [],
+            "navigation": {
+              "preventleave": false,
+              "allowregen": true,
+              "showfrontpage": false
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Susen Rabold",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/8/"
+              }
+            ],
+            "variablesTest": {
+              "maxRuns": 100,
+              "condition": ""
+            },
+            "metadata": {
+              "licence": "All rights reserved",
+              "description": "<p><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;hg_cgae1_4et1&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:14589,&quot;3&quot;:{&quot;1&quot;:0,&quot;3&quot;:1},&quot;5&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:[null,2,0]},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:[null,2,0]},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;7&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:[null,2,0]},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:[null,2,0]},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;9&quot;:1,&quot;10&quot;:1,&quot;14&quot;:[null,2,0],&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:11}\">hg_cgae1_4et1q2</span></p>"
+            },
+            "statement": "<p><i>Section 2</i></p>\n<p>Bha mi a' smaoineachadh nach robh mi air adhartas sam bith a dh&egrave;anamh leis a' ch&agrave;nan ann an c&ograve;ig bliadhna anns an &agrave;rd-sgoil. Bha an obair a' f&agrave;s na bu chruaidhe is na bu chruaidhe agus cha do ch&ograve;rd &egrave;isteachd rium idir. Rachainn dhachaigh aig deireadh an latha fo mhulad oir cha robh mi a' d&egrave;anamh ro mhath anns na measaidhean a bha mi a' d&egrave;anamh sa chlas.</p>\n<p>Cha b' urrainn dhomh deiligeadh ris na bu mhotha agus aon l&agrave; dh'fh&agrave;s mi troimh-ch&egrave;ile anns a' chlas, a' r&agrave;naich agus a' gal. Dh'fhaighnich mo thidsear rium ann an guth s&egrave;imh socair \"D&egrave; tha ce&agrave;rr?\". Thuirt mi nach robh mi cinnteach carson a bha mi a' faighinn fhreagairtean ce&agrave;rr.</p>",
+            "preamble": {
+              "css": "",
+              "js": ""
+            },
+            "tags": [
+              "hg_cgae1_4et1q2"
+            ],
+            "variables": {},
+            "parts": [
+              {
+                "maxMarks": "6",
+                "maxAnswers": "6",
+                "distractors": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "choices": [
+                  "Looked at grammar",
+                  "Would go home sad at end of day",
+                  "Work getting harder",
+                  "Enjoyed listening",
+                  "Worked hard every night",
+                  "Did not feel progress being made",
+                  "Had spent ten years learning the language",
+                  "Doing well in assessments",
+                  "Revised vocabulary"
+                ],
+                "showCorrectAnswer": true,
+                "shuffleChoices": true,
+                "unitTests": [],
+                "displayType": "checkbox",
+                "prompt": "<p>Which of these statements apply to the writer's situation?</p>",
+                "marks": 0,
+                "scripts": {},
+                "type": "m_n_2",
+                "variableReplacementStrategy": "originalfirst",
+                "matrix": [
+                  "1",
+                  "1",
+                  "1",
+                  0,
+                  "1",
+                  "1",
+                  0,
+                  0,
+                  "1"
+                ],
+                "variableReplacements": [],
+                "minAnswers": 0,
+                "minMarks": 0,
+                "customMarkingAlgorithm": "",
+                "displayColumns": "1",
+                "showFeedbackIcon": true,
+                "warningType": "prevent",
+                "extendBaseMarkingAlgorithm": true
+              },
+              {
+                "variableReplacementStrategy": "originalfirst",
+                "variableReplacements": [],
+                "unitTests": [],
+                "showCorrectAnswer": true,
+                "customMarkingAlgorithm": "",
+                "prompt": "<p>What did the writer express to her teacher?</p>\n<p>[[0]]</p>\n<p>{manualmarking_builder('a')}{manualmarking_render()}</p>",
+                "marks": 0,
+                "scripts": {},
+                "type": "gapfill",
+                "showFeedbackIcon": true,
+                "sortAnswers": false,
+                "gaps": [
+                  {
+                    "variableReplacementStrategy": "originalfirst",
+                    "variableReplacements": [],
+                    "showCorrectAnswer": true,
+                    "scripts": {},
+                    "answer": "",
+                    "fixedWidth": "0px",
+                    "unitTests": [],
+                    "marks": 1,
+                    "customMarkingAlgorithm": "",
+                    "extendBaseMarkingAlgorithm": true,
+                    "type": "patternmatch",
+                    "showFeedbackIcon": true,
+                    "fixedHeight": "0px",
+                    "matchMode": "regex",
+                    "displayAnswer": "They were not sure why the answers were wrong."
+                  }
+                ],
+                "extendBaseMarkingAlgorithm": true
+              }
+            ],
+            "variable_groups": [],
+            "functions": {},
+            "advice": "",
+            "ungrouped_variables": [],
+            "rulesets": {}
+          },
+          {
+            "name": "Reordering with 'S ann (1)",
+            "extensions": [
+              "drag_and_drop"
+            ],
+            "custom_part_types": [],
+            "resources": [],
+            "navigation": {
+              "allowregen": true,
+              "showfrontpage": false,
+              "preventleave": false,
+              "typeendtoleave": false
+            },
+            "contributors": [
+              {
+                "name": "Oormi Khaled",
+                "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/985/"
+              },
+              {
+                "name": "Mandy Tait",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/15/"
+              },
+              {
+                "name": "Stuart Simpson",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/1/"
+              },
+              {
+                "name": "Daniel Pacey",
+                "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/3/"
+              }
+            ],
+            "tags": [
+              "hg_cgae1_4ex29_1"
+            ],
+            "statement": "<p>Reorganise the following sentence so that it can be used with 'S ann.</p>",
+            "variable_groups": [],
+            "rulesets": {},
+            "parts": [
+              {
+                "gaps": [
+                  {
+                    "marks": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "type": "patternmatch",
+                    "showFeedbackIcon": false,
+                    "unitTests": [],
+                    "fixedWidth": "0px",
+                    "displayAnswer": "{drags_a[0]}",
+                    "customMarkingAlgorithm": "",
+                    "matchMode": "exact",
+                    "fixedHeight": "0px",
+                    "variableReplacementStrategy": "originalfirst",
+                    "answer": "{drags_a[0]}",
+                    "variableReplacements": [],
+                    "scripts": {
+                      "constructor": {
+                        "script": "this.marks = 1/7;",
+                        "order": "after"
+                      }
+                    }
+                  },
+                  {
+                    "marks": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "type": "patternmatch",
+                    "showFeedbackIcon": false,
+                    "unitTests": [],
+                    "fixedWidth": "0px",
+                    "displayAnswer": "{drags_a[1]}",
+                    "customMarkingAlgorithm": "",
+                    "matchMode": "exact",
+                    "fixedHeight": "0px",
+                    "variableReplacementStrategy": "originalfirst",
+                    "answer": "{drags_a[1]}",
+                    "variableReplacements": [],
+                    "scripts": {
+                      "constructor": {
+                        "script": "this.marks = 1/7;",
+                        "order": "after"
+                      }
+                    }
+                  },
+                  {
+                    "marks": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "type": "patternmatch",
+                    "showFeedbackIcon": false,
+                    "unitTests": [],
+                    "fixedWidth": "0px",
+                    "displayAnswer": "{drags_a[2]}",
+                    "customMarkingAlgorithm": "",
+                    "matchMode": "exact",
+                    "fixedHeight": "0px",
+                    "variableReplacementStrategy": "originalfirst",
+                    "answer": "{drags_a[2]}",
+                    "variableReplacements": [],
+                    "scripts": {
+                      "constructor": {
+                        "script": "this.marks = 1/7;",
+                        "order": "after"
+                      }
+                    }
+                  },
+                  {
+                    "marks": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "type": "patternmatch",
+                    "showFeedbackIcon": false,
+                    "unitTests": [],
+                    "fixedWidth": "0px",
+                    "displayAnswer": "{drags_a[3]}",
+                    "customMarkingAlgorithm": "",
+                    "matchMode": "exact",
+                    "fixedHeight": "0px",
+                    "variableReplacementStrategy": "originalfirst",
+                    "answer": "{drags_a[3]}",
+                    "variableReplacements": [],
+                    "scripts": {
+                      "constructor": {
+                        "script": "this.marks = 1/7;",
+                        "order": "after"
+                      }
+                    }
+                  },
+                  {
+                    "marks": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "type": "patternmatch",
+                    "showFeedbackIcon": false,
+                    "unitTests": [],
+                    "fixedWidth": "0px",
+                    "displayAnswer": "{drags_a[4]}",
+                    "customMarkingAlgorithm": "",
+                    "matchMode": "exact",
+                    "fixedHeight": "0px",
+                    "variableReplacementStrategy": "originalfirst",
+                    "answer": "{drags_a[4]}",
+                    "variableReplacements": [],
+                    "scripts": {
+                      "constructor": {
+                        "script": "this.marks = 1/7;",
+                        "order": "after"
+                      }
+                    }
+                  },
+                  {
+                    "marks": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "type": "patternmatch",
+                    "showFeedbackIcon": false,
+                    "unitTests": [],
+                    "fixedWidth": "0px",
+                    "displayAnswer": "{drags_a[5]}",
+                    "customMarkingAlgorithm": "",
+                    "matchMode": "exact",
+                    "fixedHeight": "0px",
+                    "variableReplacementStrategy": "originalfirst",
+                    "answer": "{drags_a[5]}",
+                    "variableReplacements": [],
+                    "scripts": {
+                      "constructor": {
+                        "script": "this.marks = 1/7;",
+                        "order": "after"
+                      }
+                    }
+                  },
+                  {
+                    "marks": "",
+                    "showCorrectAnswer": true,
+                    "extendBaseMarkingAlgorithm": true,
+                    "type": "patternmatch",
+                    "showFeedbackIcon": true,
+                    "unitTests": [],
+                    "fixedWidth": "0px",
+                    "displayAnswer": "{drags_a[6]}",
+                    "customMarkingAlgorithm": "",
+                    "matchMode": "exact",
+                    "fixedHeight": "0px",
+                    "variableReplacementStrategy": "originalfirst",
+                    "answer": "{drags_a[6]}",
+                    "variableReplacements": [],
+                    "scripts": {
+                      "mark": {
+                        "script": "var allCorrect = true;\nthis.parentPart.gaps.forEach(function(gap, gapIndex){\n allCorrect = allCorrect && !(gap.credit === 0);\n});\nif (!allCorrect){\n this.parentPart.gaps.forEach(function(gap, gapIndex){\n  gap.credit = 0;\n });\n}",
+                        "order": "after"
+                      },
+                      "constructor": {
+                        "script": "this.marks = 1/7;",
+                        "order": "after"
+                      }
+                    }
+                  },
+                  {
+                    "_answer": "{drags_a[0]}",
+                    "_marks": 0,
+                    "_gapNumber": 1,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[1]}",
+                    "_marks": 0,
+                    "_gapNumber": 2,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[2]}",
+                    "_marks": 0,
+                    "_gapNumber": 3,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[3]}",
+                    "_marks": 0,
+                    "_gapNumber": 4,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[4]}",
+                    "_marks": 0,
+                    "_gapNumber": 5,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[5]}",
+                    "_marks": 0,
+                    "_gapNumber": 6,
+                    "_type": "patternmatch"
+                  },
+                  {
+                    "_answer": "{drags_a[6]}",
+                    "_marks": 0,
+                    "_gapNumber": 7,
+                    "_type": "patternmatch"
+                  }
+                ],
+                "marks": 0,
+                "extendBaseMarkingAlgorithm": true,
+                "showFeedbackIcon": true,
+                "unitTests": [],
+                "sortAnswers": false,
+                "prompt": "<p>Tha mi ag obair anns a&rsquo; bhanca.</p>\n<p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]].</p>\n<p>{dnd_builder(\"a\",\"reorder\",drags_a)}{dnd_dragWidth(90)}{dnd_dragHeight(30)}{dnd_render()}</p>",
+                "showCorrectAnswer": true,
+                "customMarkingAlgorithm": "",
+                "type": "gapfill",
+                "variableReplacementStrategy": "originalfirst",
+                "variableReplacements": [],
+                "scripts": {}
+              }
+            ],
+            "preamble": {
+              "js": "",
+              "css": ""
+            },
+            "ungrouped_variables": [
+              "drags_a"
+            ],
+            "metadata": {
+              "description": "<p>hg_cgae1_4_29sanna.swf</p>\n<p>hg_cgae1_4ex29_1</p>",
+              "licence": "All rights reserved"
+            },
+            "variablesTest": {
+              "condition": "",
+              "maxRuns": 100
+            },
+            "functions": {},
+            "advice": "",
+            "variables": {
+              "drags_a": {
+                "definition": "[\"'S ann\",\"anns\",\"a' bhanca\",\"a\",\"tha\",\"mi\",\"ag obair\"]",
+                "description": "",
+                "name": "drags_a",
+                "group": "Ungrouped variables",
+                "templateType": "anything"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "allowPrinting": true,
+    "navigation": {
+      "allowregen": true,
+      "reverse": true,
+      "browse": true,
+      "allowsteps": true,
+      "showfrontpage": true,
+      "navigatemode": "sequence",
+      "onleave": {
+        "action": "none",
+        "message": ""
+      },
+      "preventleave": true,
+      "typeendtoleave": false,
+      "startpassword": "",
+      "autoSubmit": true,
+      "allowAttemptDownload": false,
+      "downloadEncryptionKey": "",
+      "showresultspage": "oncompletion"
+    },
+    "timing": {
+      "allowPause": true,
+      "timeout": {
+        "action": "none",
+        "message": ""
+      },
+      "timedwarning": {
+        "action": "none",
+        "message": ""
+      }
+    },
+    "feedback": {
+      "enterreviewmodeimmediately": true,
+      "showactualmarkwhen": "always",
+      "showtotalmarkwhen": "always",
+      "showanswerstatewhen": "always",
+      "showpartfeedbackmessageswhen": "always",
+      "showexpectedanswerswhen": "inreview",
+      "showadvicewhen": "inreview",
+      "allowrevealanswer": true,
+      "intro": "",
+      "end_message": "",
+      "results_options": {
+        "printquestions": true,
+        "printadvice": true
+      },
+      "feedbackmessages": [],
+      "reviewshowexpectedanswer": true,
+      "showanswerstate": true,
+      "reviewshowfeedback": true,
+      "showactualmark": true,
+      "showtotalmark": true,
+      "reviewshowscore": true,
+      "reviewshowadvice": true
+    },
+    "diagnostic": {
+      "knowledge_graph": {
+        "topics": [],
+        "learning_objectives": []
+      },
+      "script": "diagnosys",
+      "customScript": ""
+    },
+    "contributors": [
+      {
+        "name": "Joss Joss",
+        "profile_url": "https://numbas.mathcentre.ac.uk/accounts/profile/258/"
+      }
+    ],
+    "extensions": [],
+    "custom_part_types": [],
+    "resources": [
+      [
+        "question-resources/hg-chbi2-2etq6-menstrualCycle_9tnNfnB.png",
+        "/srv/numbas/media/question-resources/resources/question-resources/hg-chbi2-2etq6-menstrualCycle_9tnNfnB.png"
+      ],
+      [
+        "question-resources/hg-cbio1-6etq6-mutations.png",
+        "/srv/numbas/media/question-resources/resources/question-resources/hg-cbio1-6etq6-mutations_iclR4mA.png"
+      ],
+      [
+        "question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png",
+        "/srv/numbas/media/question-resources/resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4_yvKCmPe.png"
+      ]
+    ]
+  }
+}
