@@ -1,0 +1,429 @@
+Exam file report: example question types taken from scholar archive for testing part converter
+ Exam name: example question types taken from scholar archive for testing part converter
+Exam tags: None
+Exam description: None
+Number of questions: 10
+
+QUESTIONS
+ ________________________________
+Question 1 : Gene mutations
+ Tags hg_cbio1_6etq3 
+Extensions drag_and_drop
+
+Number of parts : 3
+part number: 1
+part type: drag_and_drop marks: 6
+prompt: <p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>
+<p><img src="resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png" alt="Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN."/></p>
+<p>In the order A to C, what are the different types of mutations shown in the figure?</p>
+<p>A: [[0]]</p>
+<p>B: [[1]]</p>
+<p>C: [[2]]</p>
+<p>{dnd_builder('a','text',drags_a)}{dnd_render()}</p>
+Converted prompt: <p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>
+<p><img src="resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png" alt="Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN."/></p>
+<p>In the order A to C, what are the different types of mutations shown in the figure?</p>
+<p>A: %[Insertion]%</p>
+<p>B: %[Deletion]%</p>
+<p>C: %[Substitution]%</p>
+
+drag height: auto drag width: auto
+drag variables: name drags_a, value undefined
+builder : ,builder string: undefined
+part letter: 'a'
+type: 'text'
+variable name: drags_a
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 1
+,Gap 1: answer {drags_a[1]} Marks: 1
+,Gap 2: answer {drags_a[2]} Marks: 1
+,Gap 3: answer {drags_a[0]} Marks: 1
+,Gap 4: answer {drags_a[1]} Marks: 1
+,Gap 5: answer {drags_a[2]} Marks: 1
+
+,part number: 2
+part type: patternmatch marks: 1
+
+,part number: 3
+part type: patternmatch marks: 1
+
+
+-------------------------------------
+,Question 2 : Human genomics
+ Tags base,bioinformatics,disease,DNA probe,DNA profiling,DNA sequencing,gene,hg_chbi1_6etq1,medicine,primer 
+Extensions drag_and_drop
+
+Number of parts : 1
+part number: 1
+part type: drag_and_drop marks: 6
+prompt: <p>[[0]] DNA sequencing.</p>
+<p>[[1]] bioinformatics.</p>
+<p>[[2]] personalised medicine.</p>
+<p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>
+Converted prompt: <p>%[The sequence of bases can be determined for individual genes by using]% DNA sequencing.</p>
+<p>%[The use of computer technology to identify DNA sequences is known as]% bioinformatics.</p>
+<p>%[An understanding of the genetic component of the risk of disease is required for]% personalised medicine.</p>
+
+drag height: auto drag width: auto
+drag variables: name drags_a, value undefined
+builder : ,builder string: undefined
+part letter: 'a'
+type: 'reorder'
+variable name: drags_a
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 1
+,Gap 1: answer {drags_a[1]} Marks: 1
+,Gap 2: answer {drags_a[2]} Marks: 1
+,Gap 3: answer {drags_a[0]} Marks: 1
+,Gap 4: answer {drags_a[1]} Marks: 1
+,Gap 5: answer {drags_a[2]} Marks: 1
+
+
+-------------------------------------
+,Question 3 : Slow and fast twitch muscle fibres
+ Tags colour,fast twitch,hg_chbi1_9etq3,muscle fibre,slow twitch 
+Extensions manual_marking
+
+Number of parts : 1
+part number: 1
+part type: manual_marking marks: 6
+prompt: <p>Explain the difference between the colour of slow and fast twitch muscle fibres.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('a')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>
+text area width: '500px' text area height: auto
+answer:  Slow twitch fibres are dark red because they have a high concentration of myoglobin which stores oxygen for aerobic respiration. Fast twitch fibres are pale pink because they contain low concentrations of myoglobin as they mainly rely on anaerobic form of respiration (creatine phosphate and lactic acid metabolism).
+Marks:6 Answer  Slow twitch fibres are dark red because they have a high concentration of myoglobin which stores oxygen for aerobic respiration. Fast twitch fibres are pale pink because they contain low concentrations of myoglobin as they mainly rely on anaerobic form of respiration (creatine phosphate and lactic acid metabolism).
+,builder string: undefined
+part letter: 'a'
+type: 
+variable name: 
+
+-------------------------------------
+,Question 4 : Menstrual cycle 2
+ Tags blastocyst,hg_chbi2_2etq7,hormone,menstrual cycle,ovulation 
+Extensions manual_marking
+
+Number of parts : 5
+part number: 1
+part type: manual_marking marks: 1
+prompt: <p>What causes ovulation?</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('a')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
+text area width: '300px' text area height: auto
+answer: The high concentration of oestrogen (hormone A)  stimulates the pituitary to release a high concentration of LH which stimulates ovulation.
+Marks:1 Answer The high concentration of oestrogen (hormone A)  stimulates the pituitary to release a high concentration of LH which stimulates ovulation.
+,builder string: undefined
+part letter: 'a'
+type: 
+variable name: 
+,part number: 2
+part type: manual_marking marks: 3
+prompt: <p>Describe and explain the change in concentration of hormone C during the first 12 days of the cycle.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('b')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>
+text area width: '500px' text area height: auto
+answer: Description:  concentration increases from days 1 to 4, then falls from days 5 to 12. Explanation: the pituitary releases an increasing concentration of FSH on days 1 to 4; the increase from day 1 to 4 is  caused by a low level of oestrogen/A;  the decrease from day 5 to 12 is caused by an  increase in secretion of oestrogen/A; which causes a reduction in the secretion of FSH/C.
+Marks:3 Answer Description:  concentration increases from days 1 to 4, then falls from days 5 to 12. Explanation: the pituitary releases an increasing concentration of FSH on days 1 to 4; the increase from day 1 to 4 is  caused by a low level of oestrogen/A;  the decrease from day 5 to 12 is caused by an  increase in secretion of oestrogen/A; which causes a reduction in the secretion of FSH/C.
+,builder string: undefined
+part letter: 'b'
+type: 
+variable name: 
+,part number: 3
+part type: manual_marking marks: 1
+prompt: <p>What is the effect of the high level of hormone B between days 18 to 26?</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('c')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
+text area width: '300px' text area height: auto
+answer: High levels of progesterone have a negative feedback effect on the pituitary gland, resulting in the inhibition of FSH and LH.
+Marks:1 Answer High levels of progesterone have a negative feedback effect on the pituitary gland, resulting in the inhibition of FSH and LH.
+,builder string: undefined
+part letter: 'c'
+type: 
+variable name: 
+,part number: 4
+part type: manual_marking marks: 1
+prompt: <p>In what way does hormone B contribute to the survival of the blastocyst?</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('d')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
+text area width: '300px' text area height: auto
+answer: Hormone B is progesterone which promotes the further proliferation of the endometrium.
+Marks:1 Answer Hormone B is progesterone which promotes the further proliferation of the endometrium.
+,builder string: undefined
+part letter: 'd'
+type: 
+variable name: 
+,part number: 5
+part type: manual_marking marks: 4
+prompt: <p>Explain the changes in the concentration of hormone B during the cycle.</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('e')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>
+text area width: '500px' text area height: auto
+answer: Hormone B is progesterone released by the corpus luteum. The corpus luteum is only present after ovulation. The corpus luteum grows from days 16 to 22 and degenerates from days 23 to 28. This is caused by an increase then decrease in secretion of LH by pituitary.
+Marks:4 Answer Hormone B is progesterone released by the corpus luteum. The corpus luteum is only present after ovulation. The corpus luteum grows from days 16 to 22 and degenerates from days 23 to 28. This is caused by an increase then decrease in secretion of LH by pituitary.
+,builder string: undefined
+part letter: 'e'
+type: 
+variable name: 
+
+-------------------------------------
+,Question 5 : Ion-electron equation
+ Tags balance,charge,electron,hg_cche1_6etq12,hydrogen,ion,ion-electron equation,molecule,product,reactant,water 
+Extensions 
+
+Number of parts : 5
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: patternmatch marks: 1
+
+,part number: 3
+part type: patternmatch marks: 1
+
+,part number: 4
+part type: 1_n_2 marks: 0
+
+,part number: 5
+part type: gapfill marks: 0
+
+
+-------------------------------------
+,Question 6 : Precedence tables and network diagrams
+ Tags critical path,n5_app4_0euq6,network diagrams,precedence tables 
+Extensions drag_and_drop
+
+Number of parts : 2
+part number: 1
+part type: drag_and_drop marks: 000000000000000000000
+prompt: <p>Using the information given in the precedence table complete the network diagram, by putting the letters into place in the correct order.</p>
+<div id="relativeDiv" style="width: 512px; height: 197px; border: 1px solid #000000; position: relative; max-width: 100%;"><span class="absgf" id="absgf0" style="top: 90px; left: 26px; position: absolute;">[[0]]</span> <span class="absgf" id="absgf1" style="top: 90px; left: 81px; position: absolute;">[[1]]</span> <span class="absgf" id="absgf2" style="top: 40px; left: 148px; position: absolute;">[[2]]</span> <span class="absgf" id="absgf3" style="top: 147px; left: 148px; position: absolute;">[[3]]</span> <span class="absgf" id="absgf5" style="top: 147px; left: 208px; position: absolute;">[[4]]</span> <span class="absgf" id="absgf6" style="top: 90px; left: 275px; position: absolute;">[[5]]</span> <span class="absgf" id="absgf7" style="top: 40px; left: 341px; position: absolute;">[[6]]</span> <span class="absgf" id="absgf8" style="top: 147px; left: 341px; position: absolute;">[[7]]</span> <span class="absgf" id="absgf9" style="top: 90px; left: 410px; position: absolute;">[[8]]</span> <span class="absgf" id="absgf10" style="top: 90px; left: 465px; position: absolute;">[[9]]</span> <img src="resources/question-resources/n5-app4-0-euq6networkdiagram_5rf3AhZ.png" alt="blank network diagram with 11 tasks and task h in box 5"/></div>
+<p>{dnd_builder("a","text",drags_a)}{dnd_dragHeight(25)}{dnd_dragWidth(20)}{dnd_render()}</p>
+Converted prompt: <p>Using the information given in the precedence table complete the network diagram, by putting the letters into place in the correct order.</p>
+<div id="relativeDiv" style="width: 512px; height: 197px; border: 1px solid #000000; position: relative; max-width: 100%;"><span class="absgf" id="absgf0" style="top: 90px; left: 26px; position: absolute;">%[A]%</span> <span class="absgf" id="absgf1" style="top: 90px; left: 81px; position: absolute;">%[F]%</span> <span class="absgf" id="absgf2" style="top: 40px; left: 148px; position: absolute;">%[B]%</span> <span class="absgf" id="absgf3" style="top: 147px; left: 148px; position: absolute;">%[K]%</span> <span class="absgf" id="absgf5" style="top: 147px; left: 208px; position: absolute;">%[D]%</span> <span class="absgf" id="absgf6" style="top: 90px; left: 275px; position: absolute;">%[G]%</span> <span class="absgf" id="absgf7" style="top: 40px; left: 341px; position: absolute;">%[C]%</span> <span class="absgf" id="absgf8" style="top: 147px; left: 341px; position: absolute;">%[I]%</span> <span class="absgf" id="absgf9" style="top: 90px; left: 410px; position: absolute;">%[E]%</span> <span class="absgf" id="absgf10" style="top: 90px; left: 465px; position: absolute;">%[J]%</span> <img src="resources/question-resources/n5-app4-0-euq6networkdiagram_5rf3AhZ.png" alt="blank network diagram with 11 tasks and task h in box 5"/></div>
+
+drag height: dnd_dragHeight(25) drag width: dnd_dragWidth(20)
+drag variables: name drags_a, value undefined
+builder : ,builder string: undefined
+part letter: "a"
+type: "text"
+variable name: drags_a
+!THIS PART APPEARS TO BE A DROP IN BUCKET TYPE. Please check this is correct and appropriate part type has been chosen!
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 0
+,Gap 1: answer {drags_a[1]} Marks: 0
+,Gap 2: answer {drags_a[2]} Marks: 0
+,Gap 3: answer {drags_a[3]} Marks: 0
+,Gap 4: answer {drags_a[4]} Marks: 0
+,Gap 5: answer {drags_a[5]} Marks: 0
+,Gap 6: answer ({drags_a[6]}|{drags_a[7]}) Marks: 0
+,Gap 7: answer ({drags_a[7]}|{drags_a[6]}) Marks: 0
+,Gap 8: answer {drags_a[8]} Marks: 0
+,Gap 9: answer {drags_a[9]} Marks: 0
+,Gap 10: answer {drags_a[0]} Marks: 0
+,Gap 11: answer {drags_a[1]} Marks: 0
+,Gap 12: answer {drags_a[2]} Marks: 0
+,Gap 13: answer {drags_a[3]} Marks: 0
+,Gap 14: answer {drags_a[4]} Marks: 0
+,Gap 15: answer {drags_a[5]} Marks: 0
+,Gap 16: answer ({drags_a[6]}|{drags_a[7]}) Marks: 0
+,Gap 17: answer ({drags_a[7]}|{drags_a[6]}) Marks: 0
+,Gap 18: answer {drags_a[8]} Marks: 0
+,Gap 19: answer {drags_a[9]} Marks: 0
+
+,part number: 2
+part type: gapfill marks: 0
+
+
+-------------------------------------
+,Question 7 : Useful phrases
+ Tags hg_cgae1_3ex11 
+Extensions drag_and_drop
+
+Number of parts : 1
+part number: 1
+part type: drag_and_drop marks: 16
+prompt: <table>
+<tbody>
+<tr>
+<td>Tha mi den bheachd/bharail</td>
+<td>[[0]]</td>
+</tr>
+<tr>
+<td>Chanainn</td>
+<td>[[1]]</td>
+</tr>
+<tr>
+<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>
+<td>[[2]]</td>
+</tr>
+<tr>
+<td>Tha mi an d&ograve;chas</td>
+<td>[[3]]</td>
+</tr>
+<tr>
+<td>Saoilidh mi</td>
+<td>[[4]]</td>
+</tr>
+<tr>
+<td>Feumaidh</td>
+<td>[[5]]</td>
+</tr>
+<tr>
+<td>Thathar ag r&agrave;dh</td>
+<td>[[6]]</td>
+</tr>
+<tr>
+<td>Tha mi a&rsquo; creidsinn</td>
+<td>[[7]]</td>
+</tr>
+</tbody>
+</table>
+<p>{dnd_builder("a","text",drags_a)}{dnd_dragHeight(30)}{dnd_render()}</p>
+Converted prompt: <table>
+<tbody>
+<tr>
+<td>Tha mi den bheachd/bharail</td>
+<td>%[I am of the opinion]%</td>
+</tr>
+<tr>
+<td>Chanainn</td>
+<td>%[I would say]%</td>
+</tr>
+<tr>
+<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>
+<td>%[I think]%</td>
+</tr>
+<tr>
+<td>Tha mi an d&ograve;chas</td>
+<td>%[I hope]%</td>
+</tr>
+<tr>
+<td>Saoilidh mi</td>
+<td>%[I suppose]%</td>
+</tr>
+<tr>
+<td>Feumaidh</td>
+<td>%[Must]%</td>
+</tr>
+<tr>
+<td>Thathar ag r&agrave;dh</td>
+<td>%[It is said (passive voice)]%</td>
+</tr>
+<tr>
+<td>Tha mi a&rsquo; creidsinn</td>
+<td>%[I believe]%</td>
+</tr>
+</tbody>
+</table>
+
+drag height: dnd_dragHeight(30) drag width: auto
+drag variables: name drags_a, value undefined
+builder : ,builder string: undefined
+part letter: "a"
+type: "text"
+variable name: drags_a
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 1
+,Gap 1: answer {drags_a[1]} Marks: 1
+,Gap 2: answer {drags_a[2]} Marks: 1
+,Gap 3: answer {drags_a[3]} Marks: 1
+,Gap 4: answer {drags_a[4]} Marks: 1
+,Gap 5: answer {drags_a[5]} Marks: 1
+,Gap 6: answer {drags_a[6]} Marks: 1
+,Gap 7: answer {drags_a[7]} Marks: 1
+,Gap 8: answer {drags_a[0]} Marks: 1
+,Gap 9: answer {drags_a[1]} Marks: 1
+,Gap 10: answer {drags_a[2]} Marks: 1
+,Gap 11: answer {drags_a[3]} Marks: 1
+,Gap 12: answer {drags_a[4]} Marks: 1
+,Gap 13: answer {drags_a[5]} Marks: 1
+,Gap 14: answer {drags_a[6]} Marks: 1
+,Gap 15: answer {drags_a[7]} Marks: 1
+
+
+-------------------------------------
+,Question 8 : An làmh
+ Tags hg_cgae1_2_23anatomy5words,hg_cgae1_2ex23 
+Extensions card_match
+
+Number of parts : 1
+part number: 1
+part type: card_match marks: 0
+scholar type:card match
+prompt: <p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]][[7]][[8]]</p>
+<p>{cardmatch_builder('a','text',pairs_a)}{cardmatch_cardWidth(120)}{cardmatch_cardHeight(50)}{cardmatch_render()}</p>
+pairs variables: name pairs_a, value [["&igrave;nean","fingernails"],
+  ["an &ograve;rdag","the thumb"],
+  ["an gunna fada","the middle finger"],
+  ["an sgealbag","the 2nd finger"],
+  ["luideag bheag an airgid","the pinkie finger"],
+  ["mac an aba","the 4th finger"],
+  ["corragan","fingers"],
+  ["bas","palm"],
+  ["d&ograve;rn","fist"]]
+
+
+-------------------------------------
+,Question 9 : Blas-chainnt 2
+ Tags hg_cgae1_4et1q2 
+Extensions manual_marking
+
+Number of parts : 2
+part number: 1
+part type: m_n_2 marks: 0
+
+,part number: 2
+part type: manual_marking marks: 1
+prompt: <p>What did the writer express to her teacher?</p>
+<p>[[0]]</p>
+<p>{manualmarking_builder('a')}{manualmarking_render()}</p>
+text area width: auto text area height: auto
+answer: They were not sure why the answers were wrong.
+Marks:1 Answer They were not sure why the answers were wrong.
+,builder string: undefined
+part letter: 'a'
+type: 
+variable name: 
+
+-------------------------------------
+,Question 10 : Reordering with 'S ann (1)
+ Tags hg_cgae1_4ex29_1 
+Extensions drag_and_drop
+
+Number of parts : 1
+part number: 1
+part type: drag_and_drop marks: 00000000
+prompt: <p>Tha mi ag obair anns a&rsquo; bhanca.</p>
+<p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]].</p>
+<p>{dnd_builder("a","reorder",drags_a)}{dnd_dragWidth(90)}{dnd_dragHeight(30)}{dnd_render()}</p>
+Converted prompt: <p>Tha mi ag obair anns a&rsquo; bhanca.</p>
+<p>%['S ann]%%[anns]%%[a' bhanca]%%[a]%%[tha]%%[mi]%%[ag obair]%.</p>
+
+drag height: dnd_dragHeight(30) drag width: dnd_dragWidth(90)
+drag variables: name drags_a, value undefined
+builder : ,builder string: undefined
+part letter: "a"
+type: "reorder"
+variable name: drags_a
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 
+,Gap 1: answer {drags_a[1]} Marks: 
+,Gap 2: answer {drags_a[2]} Marks: 
+,Gap 3: answer {drags_a[3]} Marks: 
+,Gap 4: answer {drags_a[4]} Marks: 
+,Gap 5: answer {drags_a[5]} Marks: 
+,Gap 6: answer {drags_a[6]} Marks: 
+,Gap 7: answer {drags_a[0]} Marks: 0
+,Gap 8: answer {drags_a[1]} Marks: 0
+,Gap 9: answer {drags_a[2]} Marks: 0
+,Gap 10: answer {drags_a[3]} Marks: 0
+,Gap 11: answer {drags_a[4]} Marks: 0
+,Gap 12: answer {drags_a[5]} Marks: 0
+,Gap 13: answer {drags_a[6]} Marks: 0
+
+
+-------------------------------------

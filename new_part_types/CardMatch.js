@@ -49,7 +49,7 @@ class CardMatch extends NewPart {
             newPart.howManyPairs = part.numberOfPairs || 3;
             newPart.card_width = part.cardWidth || 120;
             newPart.card_height = part.cardHeight || 80;
-            newPart.l_c_type = part.leftCardType? this.convertLeftCardType(part.leftCardType) : ["word"];
+            newPart.l_c_type = part.leftCardType? part.leftCardType : ["word"];
             newPart.reorderOnReveal = part.reorderOnReveal || false;
             return newPart;
         } catch (err) {

@@ -44,7 +44,7 @@ _findAndReplaceParts(questions){
                 if (newPart){  
                 parts[i] = newPart;  
                 console.log(`replaced part ${part.number} in question ${question.number} with new part type ${newPart.type}`); 
-                question.addExtensions(newPart.type);  
+                question.addExtensions([newPart.type]);  
                 } else{
                     this.reportError(new Error(`PartUpdater was not able to convert part ${part.number} in question ${question.number}. Original part retained`), `PartUpdater was not able to convert part ${part.number} in question ${question.number}`);
                 }        
