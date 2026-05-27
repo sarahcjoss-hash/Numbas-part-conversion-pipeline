@@ -10,117 +10,47 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "drag_and_drop"
+          "drag_and_drop",
+          "scholar_sentence_reorder"
         ],
         "_qNumber": 1,
         "_parts": [
           {
-            "_type": "drag_and_drop",
-            "_prompt": "<p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>\n<p><img src=\"resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png\" alt=\"Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN.\"/></p>\n<p>In the order A to C, what are the different types of mutations shown in the figure?</p>\n<p>A: [[0]]</p>\n<p>B: [[1]]</p>\n<p>C: [[2]]</p>\n<p>{dnd_builder('a','text',drags_a)}{dnd_render()}</p>",
-            "_gaps": [
-              {
-                "showCorrectAnswer": true,
-                "variableReplacements": [],
-                "answer": "{drags_a[0]}",
-                "fixedHeight": "0px",
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "unitTests": [],
-                "marks": 1,
-                "fixedWidth": "0px",
-                "matchMode": "regex",
-                "displayAnswer": "{drags_a[0]}",
-                "type": "patternmatch",
-                "customMarkingAlgorithm": "",
-                "extendBaseMarkingAlgorithm": true
-              },
-              {
-                "showCorrectAnswer": true,
-                "variableReplacements": [],
-                "answer": "{drags_a[1]}",
-                "fixedHeight": "0px",
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "unitTests": [],
-                "marks": 1,
-                "fixedWidth": "0px",
-                "matchMode": "regex",
-                "displayAnswer": "{drags_a[1]}",
-                "type": "patternmatch",
-                "customMarkingAlgorithm": "",
-                "extendBaseMarkingAlgorithm": true
-              },
-              {
-                "showCorrectAnswer": true,
-                "variableReplacements": [],
-                "answer": "{drags_a[2]}",
-                "fixedHeight": "0px",
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "unitTests": [],
-                "marks": 1,
-                "fixedWidth": "0px",
-                "matchMode": "regex",
-                "displayAnswer": "{drags_a[2]}",
-                "type": "patternmatch",
-                "customMarkingAlgorithm": "",
-                "extendBaseMarkingAlgorithm": true
-              },
-              {
-                "_answer": "{drags_a[0]}",
-                "_marks": 1,
-                "_gapNumber": 1,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[1]}",
-                "_marks": 1,
-                "_gapNumber": 2,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[2]}",
-                "_marks": 1,
-                "_gapNumber": 3,
-                "_type": "patternmatch"
-              }
-            ],
+            "_type": "scholar_sentence_reorder",
             "_marks": 6,
-            "_pNumber": 1,
-            "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+            "_errorReporter": {
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
-            "_errorString": "",
-            "_dragsListAsJSONString": "[\"Insertion\",\"Deletion\",\"Substitution\"]",
-            "_dragsVariableName": [
-              "drags_a"
-            ],
-            "_dragHeight": "auto",
-            "_dragWidth": "auto",
-            "_builder": {
-              "_errorLog": {
-                "_errors": [
-                  {},
-                  {}
-                ],
-                "_logToConsole": true,
-                "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
-              },
-              "_errorString": "",
-              "_partLetter": "'a'",
-              "_type": "'text'",
-              "_variableName": "drags_a"
+            "_fileReader": {
+              "_fileReader": {}
             },
-            "_convertedPrompt": "<p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>\n<p><img src=\"resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png\" alt=\"Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN.\"/></p>\n<p>In the order A to C, what are the different types of mutations shown in the figure?</p>\n<p>A: %[Insertion]%</p>\n<p>B: %[Deletion]%</p>\n<p>C: %[Substitution]%</p>\n",
-            "_subType": "'text'"
+            "_customPartFileName": "",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "target_text": "<p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>\n<p><img src=\"resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png\" alt=\"Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN.\"/></p>\n<p>In the order A to C, what are the different types of mutations shown in the figure?</p>\n<p>A: %[Insertion]%</p>\n<p>B: %[Deletion]%</p>\n<p>C: %[Substitution]%</p>\n",
+              "distractors": [],
+              "target_height": "auto",
+              "all_or_nothing": false
+            },
+            "_prompt": "<p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>\n<p><img src=\"resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png\" alt=\"Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN.\"/></p>\n<p>In the order A to C, what are the different types of mutations shown in the figure?</p>\n<p>A: [[0]]</p>\n<p>B: [[1]]</p>\n<p>C: [[2]]</p>\n<p>{dnd_builder('a','text',drags_a)}{dnd_render()}</p>",
+            "_dragsVariableName": "",
+            "_dragsVariableValue": "",
+            "_distractors": [],
+            "_targetHeight": "auto",
+            "_allOrNothing": false,
+            "_dragItems": [],
+            "_templateJson": "sentenceReorder.json",
+            "_templateSettings": {
+              "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
+              "how_many_drags": "6",
+              "distractors": [],
+              "target_height": "35",
+              "all_or_nothing": false
+            },
+            "_targetText": "<p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>\n<p><img src=\"resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png\" alt=\"Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN.\"/></p>\n<p>In the order A to C, what are the different types of mutations shown in the figure?</p>\n<p>A: %[Insertion]%</p>\n<p>B: %[Deletion]%</p>\n<p>C: %[Substitution]%</p>\n",
+            "item_width": "auto"
           },
           {
             "_type": "patternmatch",
@@ -128,10 +58,7 @@
             "_marks": 1,
             "_pNumber": 2,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -143,10 +70,7 @@
             "_marks": 1,
             "_pNumber": 3,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -170,117 +94,47 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "drag_and_drop"
+          "drag_and_drop",
+          "scholar_sentence_reorder"
         ],
         "_qNumber": 2,
         "_parts": [
           {
-            "_type": "drag_and_drop",
-            "_prompt": "<p>[[0]] DNA sequencing.</p>\n<p>[[1]] bioinformatics.</p>\n<p>[[2]] personalised medicine.</p>\n<p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>",
-            "_gaps": [
-              {
-                "unitTests": [],
-                "type": "patternmatch",
-                "answer": "{drags_a[0]}",
-                "fixedHeight": "0px",
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "showCorrectAnswer": true,
-                "marks": 1,
-                "scripts": {},
-                "fixedWidth": "0px",
-                "matchMode": "exact",
-                "displayAnswer": "{drags_a[0]}",
-                "variableReplacements": [],
-                "customMarkingAlgorithm": "",
-                "extendBaseMarkingAlgorithm": true
-              },
-              {
-                "unitTests": [],
-                "type": "patternmatch",
-                "answer": "{drags_a[1]}",
-                "fixedHeight": "0px",
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "showCorrectAnswer": true,
-                "marks": 1,
-                "scripts": {},
-                "fixedWidth": "0px",
-                "matchMode": "exact",
-                "displayAnswer": "{drags_a[1]}",
-                "variableReplacements": [],
-                "customMarkingAlgorithm": "",
-                "extendBaseMarkingAlgorithm": true
-              },
-              {
-                "unitTests": [],
-                "type": "patternmatch",
-                "answer": "{drags_a[2]}",
-                "fixedHeight": "0px",
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "showCorrectAnswer": true,
-                "marks": 1,
-                "scripts": {},
-                "fixedWidth": "0px",
-                "matchMode": "exact",
-                "displayAnswer": "{drags_a[2]}",
-                "variableReplacements": [],
-                "customMarkingAlgorithm": "",
-                "extendBaseMarkingAlgorithm": true
-              },
-              {
-                "_answer": "{drags_a[0]}",
-                "_marks": 1,
-                "_gapNumber": 1,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[1]}",
-                "_marks": 1,
-                "_gapNumber": 2,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[2]}",
-                "_marks": 1,
-                "_gapNumber": 3,
-                "_type": "patternmatch"
-              }
-            ],
+            "_type": "scholar_sentence_reorder",
             "_marks": 6,
-            "_pNumber": 1,
-            "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+            "_errorReporter": {
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
-            "_errorString": "",
-            "_dragsListAsJSONString": "[ \"The sequence of bases can be determined for individual genes by using\", \"The use of computer technology to identify DNA sequences is known as\", \"An understanding of the genetic component of the risk of disease is required for\" ]",
-            "_dragsVariableName": [
-              "drags_a"
-            ],
-            "_dragHeight": "auto",
-            "_dragWidth": "auto",
-            "_builder": {
-              "_errorLog": {
-                "_errors": [
-                  {},
-                  {}
-                ],
-                "_logToConsole": true,
-                "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
-              },
-              "_errorString": "",
-              "_partLetter": "'a'",
-              "_type": "'reorder'",
-              "_variableName": "drags_a"
+            "_fileReader": {
+              "_fileReader": {}
             },
-            "_convertedPrompt": "<p>%[The sequence of bases can be determined for individual genes by using]% DNA sequencing.</p>\n<p>%[The use of computer technology to identify DNA sequences is known as]% bioinformatics.</p>\n<p>%[An understanding of the genetic component of the risk of disease is required for]% personalised medicine.</p>\n",
-            "_subType": "'reorder'"
+            "_customPartFileName": "",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "target_text": "<p>%[The sequence of bases can be determined for individual genes by using]% DNA sequencing.</p>\n<p>%[The use of computer technology to identify DNA sequences is known as]% bioinformatics.</p>\n<p>%[An understanding of the genetic component of the risk of disease is required for]% personalised medicine.</p>\n",
+              "distractors": [],
+              "target_height": "auto",
+              "all_or_nothing": false
+            },
+            "_prompt": "<p>[[0]] DNA sequencing.</p>\n<p>[[1]] bioinformatics.</p>\n<p>[[2]] personalised medicine.</p>\n<p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>",
+            "_dragsVariableName": "",
+            "_dragsVariableValue": "",
+            "_distractors": [],
+            "_targetHeight": "auto",
+            "_allOrNothing": false,
+            "_dragItems": [],
+            "_templateJson": "sentenceReorder.json",
+            "_templateSettings": {
+              "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
+              "how_many_drags": "6",
+              "distractors": [],
+              "target_height": "35",
+              "all_or_nothing": false
+            },
+            "_targetText": "<p>%[The sequence of bases can be determined for individual genes by using]% DNA sequencing.</p>\n<p>%[The use of computer technology to identify DNA sequences is known as]% bioinformatics.</p>\n<p>%[An understanding of the genetic component of the risk of disease is required for]% personalised medicine.</p>\n",
+            "item_width": "auto"
           }
         ]
       },
@@ -295,13 +149,19 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "manual_marking"
+          "manual_marking",
+          "scholar_self_marked_text"
         ],
         "_qNumber": 3,
         "_parts": [
           {
             "_type": "scholar_self_marked_text",
             "_marks": "6",
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
             "_fileReader": {
               "_fileReader": {}
             },
@@ -343,13 +203,23 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "manual_marking"
+          "manual_marking",
+          "scholar_self_marked_text",
+          "scholar_self_marked_text",
+          "scholar_self_marked_text",
+          "scholar_self_marked_text",
+          "scholar_self_marked_text"
         ],
         "_qNumber": 4,
         "_parts": [
           {
             "_type": "scholar_self_marked_text",
             "_marks": 1,
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
             "_fileReader": {
               "_fileReader": {}
             },
@@ -381,6 +251,11 @@
           {
             "_type": "scholar_self_marked_text",
             "_marks": "3",
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
             "_fileReader": {
               "_fileReader": {}
             },
@@ -412,6 +287,11 @@
           {
             "_type": "scholar_self_marked_text",
             "_marks": 1,
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
             "_fileReader": {
               "_fileReader": {}
             },
@@ -443,6 +323,11 @@
           {
             "_type": "scholar_self_marked_text",
             "_marks": 1,
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
             "_fileReader": {
               "_fileReader": {}
             },
@@ -474,6 +359,11 @@
           {
             "_type": "scholar_self_marked_text",
             "_marks": "4",
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
             "_fileReader": {
               "_fileReader": {}
             },
@@ -529,10 +419,7 @@
             "_marks": 1,
             "_pNumber": 1,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -544,10 +431,7 @@
             "_marks": 1,
             "_pNumber": 2,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -559,10 +443,7 @@
             "_marks": 1,
             "_pNumber": 3,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -574,10 +455,7 @@
             "_marks": 0,
             "_pNumber": 4,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -620,10 +498,7 @@
             "_marks": 0,
             "_pNumber": 5,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -641,11 +516,54 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "drag_and_drop"
+          "drag_and_drop",
+          "scholar_drop_in_bucket"
         ],
         "_qNumber": 6,
         "_parts": [
-          null,
+          {
+            "_type": "scholar_drop_in_bucket",
+            "_marks": "000000000000000000000",
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "drop_zone": "<p>Using the information given in the precedence table complete the network diagram, by putting the letters into place in the correct order.</p>\n<div id=\"relativeDiv\" style=\"width: 512px; height: 197px; border: 1px solid #000000; position: relative; max-width: 100%;\"><span class=\"absgf\" id=\"absgf0\" style=\"top: 90px; left: 26px; position: absolute;\">%[A]%</span> <span class=\"absgf\" id=\"absgf1\" style=\"top: 90px; left: 81px; position: absolute;\">%[F]%</span> <span class=\"absgf\" id=\"absgf2\" style=\"top: 40px; left: 148px; position: absolute;\">%[B]%</span> <span class=\"absgf\" id=\"absgf3\" style=\"top: 147px; left: 148px; position: absolute;\">%[K]%</span> <span class=\"absgf\" id=\"absgf5\" style=\"top: 147px; left: 208px; position: absolute;\">%[D]%</span> <span class=\"absgf\" id=\"absgf6\" style=\"top: 90px; left: 275px; position: absolute;\">%[G]%</span> <span class=\"absgf\" id=\"absgf7\" style=\"top: 40px; left: 341px; position: absolute;\">%[C]%</span> <span class=\"absgf\" id=\"absgf8\" style=\"top: 147px; left: 341px; position: absolute;\">%[I]%</span> <span class=\"absgf\" id=\"absgf9\" style=\"top: 90px; left: 410px; position: absolute;\">%[E]%</span> <span class=\"absgf\" id=\"absgf10\" style=\"top: 90px; left: 465px; position: absolute;\">%[J]%</span> <img src=\"resources/question-resources/n5-app4-0-euq6networkdiagram_5rf3AhZ.png\" alt=\"blank network diagram with 11 tasks and task h in box 5\"/></div>\n",
+              "distractors": [],
+              "item_width": "dnd_dragWidth(20)",
+              "item_height": "dnd_dragHeight(25)",
+              "all_or_nothing": false,
+              "mark_on_match": false
+            },
+            "_prompt": "<p>Using the information given in the precedence table complete the network diagram, by putting the letters into place in the correct order.</p>\n<div id=\"relativeDiv\" style=\"width: 512px; height: 197px; border: 1px solid #000000; position: relative; max-width: 100%;\"><span class=\"absgf\" id=\"absgf0\" style=\"top: 90px; left: 26px; position: absolute;\">[[0]]</span> <span class=\"absgf\" id=\"absgf1\" style=\"top: 90px; left: 81px; position: absolute;\">[[1]]</span> <span class=\"absgf\" id=\"absgf2\" style=\"top: 40px; left: 148px; position: absolute;\">[[2]]</span> <span class=\"absgf\" id=\"absgf3\" style=\"top: 147px; left: 148px; position: absolute;\">[[3]]</span> <span class=\"absgf\" id=\"absgf5\" style=\"top: 147px; left: 208px; position: absolute;\">[[4]]</span> <span class=\"absgf\" id=\"absgf6\" style=\"top: 90px; left: 275px; position: absolute;\">[[5]]</span> <span class=\"absgf\" id=\"absgf7\" style=\"top: 40px; left: 341px; position: absolute;\">[[6]]</span> <span class=\"absgf\" id=\"absgf8\" style=\"top: 147px; left: 341px; position: absolute;\">[[7]]</span> <span class=\"absgf\" id=\"absgf9\" style=\"top: 90px; left: 410px; position: absolute;\">[[8]]</span> <span class=\"absgf\" id=\"absgf10\" style=\"top: 90px; left: 465px; position: absolute;\">[[9]]</span> <img src=\"resources/question-resources/n5-app4-0-euq6networkdiagram_5rf3AhZ.png\" alt=\"blank network diagram with 11 tasks and task h in box 5\"/></div>\n<p>{dnd_builder(\"a\",\"text\",drags_a)}{dnd_dragHeight(25)}{dnd_dragWidth(20)}{dnd_render()}</p>",
+            "_dragsVariableName": "",
+            "_dragsVariableValue": "",
+            "_howManyDrags": "",
+            "_distractors": [],
+            "_targetHeight": "",
+            "_allOrNothing": false,
+            "_dragItems": [],
+            "_templateJson": "dropInBucket.json",
+            "_templateSettings": {
+              "drop_zone": "<table width=\"356\" height=\"225\">\n<tbody>\n<tr>\n<td style=\"width: 123.859px;\">Animal</td>\n<td style=\"width: 91.5625px;\">Vegetable</td>\n<td style=\"width: 91.5781px;\">Mineral</td>\n</tr>\n<tr>\n<td style=\"width: 123.859px;\">\n<p>@[</p>\n<p>%[Pangolin]%</p>\n<p>%[Muntjac]%</p>\n<p>%[Mangalica]%</p>\n<p>]@</p>\n</td>\n<td style=\"width: 91.5625px;\">\n<p>@[</p>\n<p>%[Mangelwurzel]%</p>\n<p>%[Rubber]%</p>\n<p>%[Ebony]%</p>\n<p>]@</p>\n</td>\n<td style=\"width: 91.5781px;\">\n<p>@[</p>\n<p>%[Manganese]%</p>\n<p>%[Jade]%</p>\n<p>]@</p>\n</td>\n</tr>\n</tbody>\n</table>",
+              "how_many_matches": "9",
+              "distractors": [],
+              "item_width": "120",
+              "item_height": "80",
+              "all_or_nothing": false,
+              "mark_on_match": false
+            },
+            "_item_width": "dnd_dragWidth(20)",
+            "_item_height": "dnd_dragHeight(25)",
+            "_targetText": "<p>Using the information given in the precedence table complete the network diagram, by putting the letters into place in the correct order.</p>\n<div id=\"relativeDiv\" style=\"width: 512px; height: 197px; border: 1px solid #000000; position: relative; max-width: 100%;\"><span class=\"absgf\" id=\"absgf0\" style=\"top: 90px; left: 26px; position: absolute;\">%[A]%</span> <span class=\"absgf\" id=\"absgf1\" style=\"top: 90px; left: 81px; position: absolute;\">%[F]%</span> <span class=\"absgf\" id=\"absgf2\" style=\"top: 40px; left: 148px; position: absolute;\">%[B]%</span> <span class=\"absgf\" id=\"absgf3\" style=\"top: 147px; left: 148px; position: absolute;\">%[K]%</span> <span class=\"absgf\" id=\"absgf5\" style=\"top: 147px; left: 208px; position: absolute;\">%[D]%</span> <span class=\"absgf\" id=\"absgf6\" style=\"top: 90px; left: 275px; position: absolute;\">%[G]%</span> <span class=\"absgf\" id=\"absgf7\" style=\"top: 40px; left: 341px; position: absolute;\">%[C]%</span> <span class=\"absgf\" id=\"absgf8\" style=\"top: 147px; left: 341px; position: absolute;\">%[I]%</span> <span class=\"absgf\" id=\"absgf9\" style=\"top: 90px; left: 410px; position: absolute;\">%[E]%</span> <span class=\"absgf\" id=\"absgf10\" style=\"top: 90px; left: 465px; position: absolute;\">%[J]%</span> <img src=\"resources/question-resources/n5-app4-0-euq6networkdiagram_5rf3AhZ.png\" alt=\"blank network diagram with 11 tasks and task h in box 5\"/></div>\n"
+          },
           {
             "_type": "gapfill",
             "_prompt": "<p>The siblings believe they can complete the task within&nbsp;{expectedtime} minutes. Are they correct?</p>\n<p>[[0]]</p>\n<p>What is the shortest possible time (in minutes) to complete all of the tasks for washing and cleaning the car?</p>\n<p>[[1]] minutes</p>",
@@ -709,10 +627,7 @@
             "_marks": 0,
             "_pNumber": 2,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -727,232 +642,47 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "drag_and_drop"
+          "drag_and_drop",
+          "scholar_sentence_reorder"
         ],
         "_qNumber": 7,
         "_parts": [
           {
-            "_type": "drag_and_drop",
-            "_prompt": "<table>\n<tbody>\n<tr>\n<td>Tha mi den bheachd/bharail</td>\n<td>[[0]]</td>\n</tr>\n<tr>\n<td>Chanainn</td>\n<td>[[1]]</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>\n<td>[[2]]</td>\n</tr>\n<tr>\n<td>Tha mi an d&ograve;chas</td>\n<td>[[3]]</td>\n</tr>\n<tr>\n<td>Saoilidh mi</td>\n<td>[[4]]</td>\n</tr>\n<tr>\n<td>Feumaidh</td>\n<td>[[5]]</td>\n</tr>\n<tr>\n<td>Thathar ag r&agrave;dh</td>\n<td>[[6]]</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; creidsinn</td>\n<td>[[7]]</td>\n</tr>\n</tbody>\n</table>\n<p>{dnd_builder(\"a\",\"text\",drags_a)}{dnd_dragHeight(30)}{dnd_render()}</p>",
-            "_gaps": [
-              {
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "fixedWidth": "0px",
-                "customMarkingAlgorithm": "",
-                "fixedHeight": "0px",
-                "matchMode": "exact",
-                "showCorrectAnswer": true,
-                "answer": "{drags_a[0]}",
-                "type": "patternmatch",
-                "marks": 1,
-                "displayAnswer": "{drags_a[0]}",
-                "extendBaseMarkingAlgorithm": true,
-                "unitTests": [],
-                "variableReplacements": []
-              },
-              {
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "fixedWidth": "0px",
-                "customMarkingAlgorithm": "",
-                "fixedHeight": "0px",
-                "matchMode": "exact",
-                "showCorrectAnswer": true,
-                "answer": "{drags_a[1]}",
-                "type": "patternmatch",
-                "marks": 1,
-                "displayAnswer": "{drags_a[1]}",
-                "extendBaseMarkingAlgorithm": true,
-                "unitTests": [],
-                "variableReplacements": []
-              },
-              {
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "fixedWidth": "0px",
-                "customMarkingAlgorithm": "",
-                "fixedHeight": "0px",
-                "matchMode": "exact",
-                "showCorrectAnswer": true,
-                "answer": "{drags_a[2]}",
-                "type": "patternmatch",
-                "marks": 1,
-                "displayAnswer": "{drags_a[2]}",
-                "extendBaseMarkingAlgorithm": true,
-                "unitTests": [],
-                "variableReplacements": []
-              },
-              {
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "fixedWidth": "0px",
-                "customMarkingAlgorithm": "",
-                "fixedHeight": "0px",
-                "matchMode": "exact",
-                "showCorrectAnswer": true,
-                "answer": "{drags_a[3]}",
-                "type": "patternmatch",
-                "marks": 1,
-                "displayAnswer": "{drags_a[3]}",
-                "extendBaseMarkingAlgorithm": true,
-                "unitTests": [],
-                "variableReplacements": []
-              },
-              {
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "fixedWidth": "0px",
-                "customMarkingAlgorithm": "",
-                "fixedHeight": "0px",
-                "matchMode": "exact",
-                "showCorrectAnswer": true,
-                "answer": "{drags_a[4]}",
-                "type": "patternmatch",
-                "marks": 1,
-                "displayAnswer": "{drags_a[4]}",
-                "extendBaseMarkingAlgorithm": true,
-                "unitTests": [],
-                "variableReplacements": []
-              },
-              {
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "fixedWidth": "0px",
-                "customMarkingAlgorithm": "",
-                "fixedHeight": "0px",
-                "matchMode": "exact",
-                "showCorrectAnswer": true,
-                "answer": "{drags_a[5]}",
-                "type": "patternmatch",
-                "marks": 1,
-                "displayAnswer": "{drags_a[5]}",
-                "extendBaseMarkingAlgorithm": true,
-                "unitTests": [],
-                "variableReplacements": []
-              },
-              {
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "fixedWidth": "0px",
-                "customMarkingAlgorithm": "",
-                "fixedHeight": "0px",
-                "matchMode": "exact",
-                "showCorrectAnswer": true,
-                "answer": "{drags_a[6]}",
-                "type": "patternmatch",
-                "marks": 1,
-                "displayAnswer": "{drags_a[6]}",
-                "extendBaseMarkingAlgorithm": true,
-                "unitTests": [],
-                "variableReplacements": []
-              },
-              {
-                "showFeedbackIcon": true,
-                "variableReplacementStrategy": "originalfirst",
-                "scripts": {},
-                "fixedWidth": "0px",
-                "customMarkingAlgorithm": "",
-                "fixedHeight": "0px",
-                "matchMode": "exact",
-                "showCorrectAnswer": true,
-                "answer": "{drags_a[7]}",
-                "type": "patternmatch",
-                "marks": 1,
-                "displayAnswer": "{drags_a[7]}",
-                "extendBaseMarkingAlgorithm": true,
-                "unitTests": [],
-                "variableReplacements": []
-              },
-              {
-                "_answer": "{drags_a[0]}",
-                "_marks": 1,
-                "_gapNumber": 1,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[1]}",
-                "_marks": 1,
-                "_gapNumber": 2,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[2]}",
-                "_marks": 1,
-                "_gapNumber": 3,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[3]}",
-                "_marks": 1,
-                "_gapNumber": 4,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[4]}",
-                "_marks": 1,
-                "_gapNumber": 5,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[5]}",
-                "_marks": 1,
-                "_gapNumber": 6,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[6]}",
-                "_marks": 1,
-                "_gapNumber": 7,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[7]}",
-                "_marks": 1,
-                "_gapNumber": 8,
-                "_type": "patternmatch"
-              }
-            ],
+            "_type": "scholar_sentence_reorder",
             "_marks": 16,
-            "_pNumber": 1,
-            "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+            "_errorReporter": {
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
-            "_errorString": "",
-            "_dragsListAsJSONString": "[\"I am of the opinion\", \"I would say\", \"I think\", \"I hope\", \"I suppose\", \"Must\", \"It is said (passive voice)\", \"I believe\"]",
-            "_dragsVariableName": [
-              "drags_a"
-            ],
-            "_dragHeight": "dnd_dragHeight(30)",
-            "_dragWidth": "auto",
-            "_builder": {
-              "_errorLog": {
-                "_errors": [
-                  {},
-                  {}
-                ],
-                "_logToConsole": true,
-                "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
-              },
-              "_errorString": "",
-              "_partLetter": "\"a\"",
-              "_type": "\"text\"",
-              "_variableName": "drags_a"
+            "_fileReader": {
+              "_fileReader": {}
             },
-            "_convertedPrompt": "<table>\n<tbody>\n<tr>\n<td>Tha mi den bheachd/bharail</td>\n<td>%[I am of the opinion]%</td>\n</tr>\n<tr>\n<td>Chanainn</td>\n<td>%[I would say]%</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>\n<td>%[I think]%</td>\n</tr>\n<tr>\n<td>Tha mi an d&ograve;chas</td>\n<td>%[I hope]%</td>\n</tr>\n<tr>\n<td>Saoilidh mi</td>\n<td>%[I suppose]%</td>\n</tr>\n<tr>\n<td>Feumaidh</td>\n<td>%[Must]%</td>\n</tr>\n<tr>\n<td>Thathar ag r&agrave;dh</td>\n<td>%[It is said (passive voice)]%</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; creidsinn</td>\n<td>%[I believe]%</td>\n</tr>\n</tbody>\n</table>\n",
-            "_subType": "\"text\""
+            "_customPartFileName": "",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "target_text": "<table>\n<tbody>\n<tr>\n<td>Tha mi den bheachd/bharail</td>\n<td>%[I am of the opinion]%</td>\n</tr>\n<tr>\n<td>Chanainn</td>\n<td>%[I would say]%</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>\n<td>%[I think]%</td>\n</tr>\n<tr>\n<td>Tha mi an d&ograve;chas</td>\n<td>%[I hope]%</td>\n</tr>\n<tr>\n<td>Saoilidh mi</td>\n<td>%[I suppose]%</td>\n</tr>\n<tr>\n<td>Feumaidh</td>\n<td>%[Must]%</td>\n</tr>\n<tr>\n<td>Thathar ag r&agrave;dh</td>\n<td>%[It is said (passive voice)]%</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; creidsinn</td>\n<td>%[I believe]%</td>\n</tr>\n</tbody>\n</table>\n",
+              "distractors": [],
+              "target_height": "dnd_dragHeight(30)",
+              "all_or_nothing": false
+            },
+            "_prompt": "<table>\n<tbody>\n<tr>\n<td>Tha mi den bheachd/bharail</td>\n<td>[[0]]</td>\n</tr>\n<tr>\n<td>Chanainn</td>\n<td>[[1]]</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>\n<td>[[2]]</td>\n</tr>\n<tr>\n<td>Tha mi an d&ograve;chas</td>\n<td>[[3]]</td>\n</tr>\n<tr>\n<td>Saoilidh mi</td>\n<td>[[4]]</td>\n</tr>\n<tr>\n<td>Feumaidh</td>\n<td>[[5]]</td>\n</tr>\n<tr>\n<td>Thathar ag r&agrave;dh</td>\n<td>[[6]]</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; creidsinn</td>\n<td>[[7]]</td>\n</tr>\n</tbody>\n</table>\n<p>{dnd_builder(\"a\",\"text\",drags_a)}{dnd_dragHeight(30)}{dnd_render()}</p>",
+            "_dragsVariableName": "",
+            "_dragsVariableValue": "",
+            "_distractors": [],
+            "_targetHeight": "dnd_dragHeight(30)",
+            "_allOrNothing": false,
+            "_dragItems": [],
+            "_templateJson": "sentenceReorder.json",
+            "_templateSettings": {
+              "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
+              "how_many_drags": "6",
+              "distractors": [],
+              "target_height": "35",
+              "all_or_nothing": false
+            },
+            "_targetText": "<table>\n<tbody>\n<tr>\n<td>Tha mi den bheachd/bharail</td>\n<td>%[I am of the opinion]%</td>\n</tr>\n<tr>\n<td>Chanainn</td>\n<td>%[I would say]%</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>\n<td>%[I think]%</td>\n</tr>\n<tr>\n<td>Tha mi an d&ograve;chas</td>\n<td>%[I hope]%</td>\n</tr>\n<tr>\n<td>Saoilidh mi</td>\n<td>%[I suppose]%</td>\n</tr>\n<tr>\n<td>Feumaidh</td>\n<td>%[Must]%</td>\n</tr>\n<tr>\n<td>Thathar ag r&agrave;dh</td>\n<td>%[It is said (passive voice)]%</td>\n</tr>\n<tr>\n<td>Tha mi a&rsquo; creidsinn</td>\n<td>%[I believe]%</td>\n</tr>\n</tbody>\n</table>\n",
+            "item_width": "auto"
           }
         ]
       },
@@ -964,11 +694,61 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "card_match"
+          "card_match",
+          "card-match"
         ],
         "_qNumber": 8,
         "_parts": [
-          null
+          {
+            "_type": "card-match",
+            "_marks": 1,
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
+            "_fileReader": {
+              "_fileReader": {}
+            },
+            "_customPartFileName": "cardMatchCP.json",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "list_of_pairs": "[[\"&igrave;nean\",\"fingernails\"],\n  [\"an &ograve;rdag\",\"the thumb\"],\n  [\"an gunna fada\",\"the middle finger\"],\n  [\"an sgealbag\",\"the 2nd finger\"],\n  [\"luideag bheag an airgid\",\"the pinkie finger\"],\n  [\"mac an aba\",\"the 4th finger\"],\n  [\"corragan\",\"fingers\"],\n  [\"bas\",\"palm\"],\n  [\"d&ograve;rn\",\"fist\"]]",
+              "howManyPairs": 9,
+              "markOnMatch": true,
+              "card_width": "120",
+              "card_height": "80",
+              "lineBoxWidth": "240",
+              "l_c_type": "'text'",
+              "r_c_type": [
+                "word"
+              ],
+              "reorderOnReveal": false
+            },
+            "_templateJson": "cardMatchPart.json",
+            "_templateSettings": {
+              "list_of_pairs": "[[\"a\",\"A\"],[\"b\",\"B\"],[\"c\",\"C\"]]",
+              "howManyPairs": "3",
+              "markOnMatch": true,
+              "card_width": "120",
+              "card_height": "80",
+              "lineBoxWidth": "240",
+              "l_c_type": [
+                "word"
+              ],
+              "r_c_type": [
+                "word"
+              ],
+              "reorderOnReveal": false
+            },
+            "_prompt": "<p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]][[7]][[8]]</p>\n<p>{cardmatch_builder('a','text',pairs_a)}{cardmatch_cardWidth(120)}{cardmatch_cardHeight(50)}{cardmatch_render()}</p>",
+            "_list_of_pairs": "[[\"&igrave;nean\",\"fingernails\"],\n  [\"an &ograve;rdag\",\"the thumb\"],\n  [\"an gunna fada\",\"the middle finger\"],\n  [\"an sgealbag\",\"the 2nd finger\"],\n  [\"luideag bheag an airgid\",\"the pinkie finger\"],\n  [\"mac an aba\",\"the 4th finger\"],\n  [\"corragan\",\"fingers\"],\n  [\"bas\",\"palm\"],\n  [\"d&ograve;rn\",\"fist\"]]",
+            "_howManyPairs": 9,
+            "card_width": "120",
+            "card_height": "50",
+            "_l_c_type": "'text'",
+            "reorderOnReveal": false
+          }
         ]
       },
       {
@@ -978,7 +758,8 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "manual_marking"
+          "manual_marking",
+          "scholar_self_marked_text"
         ],
         "_qNumber": 9,
         "_parts": [
@@ -988,10 +769,7 @@
             "_marks": 0,
             "_pNumber": 1,
             "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
@@ -1000,6 +778,11 @@
           {
             "_type": "scholar_self_marked_text",
             "_marks": 1,
+            "_errorReporter": {
+              "_errors": [],
+              "_logToConsole": true,
+              "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+            },
             "_fileReader": {
               "_fileReader": {}
             },
@@ -1037,254 +820,61 @@
         ],
         "_containsCustomParts": true,
         "_extensions": [
-          "drag_and_drop"
+          "drag_and_drop",
+          "scholar_sentence_reorder"
         ],
         "_qNumber": 10,
         "_parts": [
           {
-            "_type": "drag_and_drop",
-            "_prompt": "<p>Tha mi ag obair anns a&rsquo; bhanca.</p>\n<p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]].</p>\n<p>{dnd_builder(\"a\",\"reorder\",drags_a)}{dnd_dragWidth(90)}{dnd_dragHeight(30)}{dnd_render()}</p>",
-            "_gaps": [
-              {
-                "marks": "",
-                "showCorrectAnswer": true,
-                "extendBaseMarkingAlgorithm": true,
-                "type": "patternmatch",
-                "showFeedbackIcon": false,
-                "unitTests": [],
-                "fixedWidth": "0px",
-                "displayAnswer": "{drags_a[0]}",
-                "customMarkingAlgorithm": "",
-                "matchMode": "exact",
-                "fixedHeight": "0px",
-                "variableReplacementStrategy": "originalfirst",
-                "answer": "{drags_a[0]}",
-                "variableReplacements": [],
-                "scripts": {
-                  "constructor": {
-                    "script": "this.marks = 1/7;",
-                    "order": "after"
-                  }
-                }
-              },
-              {
-                "marks": "",
-                "showCorrectAnswer": true,
-                "extendBaseMarkingAlgorithm": true,
-                "type": "patternmatch",
-                "showFeedbackIcon": false,
-                "unitTests": [],
-                "fixedWidth": "0px",
-                "displayAnswer": "{drags_a[1]}",
-                "customMarkingAlgorithm": "",
-                "matchMode": "exact",
-                "fixedHeight": "0px",
-                "variableReplacementStrategy": "originalfirst",
-                "answer": "{drags_a[1]}",
-                "variableReplacements": [],
-                "scripts": {
-                  "constructor": {
-                    "script": "this.marks = 1/7;",
-                    "order": "after"
-                  }
-                }
-              },
-              {
-                "marks": "",
-                "showCorrectAnswer": true,
-                "extendBaseMarkingAlgorithm": true,
-                "type": "patternmatch",
-                "showFeedbackIcon": false,
-                "unitTests": [],
-                "fixedWidth": "0px",
-                "displayAnswer": "{drags_a[2]}",
-                "customMarkingAlgorithm": "",
-                "matchMode": "exact",
-                "fixedHeight": "0px",
-                "variableReplacementStrategy": "originalfirst",
-                "answer": "{drags_a[2]}",
-                "variableReplacements": [],
-                "scripts": {
-                  "constructor": {
-                    "script": "this.marks = 1/7;",
-                    "order": "after"
-                  }
-                }
-              },
-              {
-                "marks": "",
-                "showCorrectAnswer": true,
-                "extendBaseMarkingAlgorithm": true,
-                "type": "patternmatch",
-                "showFeedbackIcon": false,
-                "unitTests": [],
-                "fixedWidth": "0px",
-                "displayAnswer": "{drags_a[3]}",
-                "customMarkingAlgorithm": "",
-                "matchMode": "exact",
-                "fixedHeight": "0px",
-                "variableReplacementStrategy": "originalfirst",
-                "answer": "{drags_a[3]}",
-                "variableReplacements": [],
-                "scripts": {
-                  "constructor": {
-                    "script": "this.marks = 1/7;",
-                    "order": "after"
-                  }
-                }
-              },
-              {
-                "marks": "",
-                "showCorrectAnswer": true,
-                "extendBaseMarkingAlgorithm": true,
-                "type": "patternmatch",
-                "showFeedbackIcon": false,
-                "unitTests": [],
-                "fixedWidth": "0px",
-                "displayAnswer": "{drags_a[4]}",
-                "customMarkingAlgorithm": "",
-                "matchMode": "exact",
-                "fixedHeight": "0px",
-                "variableReplacementStrategy": "originalfirst",
-                "answer": "{drags_a[4]}",
-                "variableReplacements": [],
-                "scripts": {
-                  "constructor": {
-                    "script": "this.marks = 1/7;",
-                    "order": "after"
-                  }
-                }
-              },
-              {
-                "marks": "",
-                "showCorrectAnswer": true,
-                "extendBaseMarkingAlgorithm": true,
-                "type": "patternmatch",
-                "showFeedbackIcon": false,
-                "unitTests": [],
-                "fixedWidth": "0px",
-                "displayAnswer": "{drags_a[5]}",
-                "customMarkingAlgorithm": "",
-                "matchMode": "exact",
-                "fixedHeight": "0px",
-                "variableReplacementStrategy": "originalfirst",
-                "answer": "{drags_a[5]}",
-                "variableReplacements": [],
-                "scripts": {
-                  "constructor": {
-                    "script": "this.marks = 1/7;",
-                    "order": "after"
-                  }
-                }
-              },
-              {
-                "marks": "",
-                "showCorrectAnswer": true,
-                "extendBaseMarkingAlgorithm": true,
-                "type": "patternmatch",
-                "showFeedbackIcon": true,
-                "unitTests": [],
-                "fixedWidth": "0px",
-                "displayAnswer": "{drags_a[6]}",
-                "customMarkingAlgorithm": "",
-                "matchMode": "exact",
-                "fixedHeight": "0px",
-                "variableReplacementStrategy": "originalfirst",
-                "answer": "{drags_a[6]}",
-                "variableReplacements": [],
-                "scripts": {
-                  "mark": {
-                    "script": "var allCorrect = true;\nthis.parentPart.gaps.forEach(function(gap, gapIndex){\n allCorrect = allCorrect && !(gap.credit === 0);\n});\nif (!allCorrect){\n this.parentPart.gaps.forEach(function(gap, gapIndex){\n  gap.credit = 0;\n });\n}",
-                    "order": "after"
-                  },
-                  "constructor": {
-                    "script": "this.marks = 1/7;",
-                    "order": "after"
-                  }
-                }
-              },
-              {
-                "_answer": "{drags_a[0]}",
-                "_marks": 0,
-                "_gapNumber": 1,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[1]}",
-                "_marks": 0,
-                "_gapNumber": 2,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[2]}",
-                "_marks": 0,
-                "_gapNumber": 3,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[3]}",
-                "_marks": 0,
-                "_gapNumber": 4,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[4]}",
-                "_marks": 0,
-                "_gapNumber": 5,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[5]}",
-                "_marks": 0,
-                "_gapNumber": 6,
-                "_type": "patternmatch"
-              },
-              {
-                "_answer": "{drags_a[6]}",
-                "_marks": 0,
-                "_gapNumber": 7,
-                "_type": "patternmatch"
-              }
-            ],
+            "_type": "scholar_sentence_reorder",
             "_marks": "00000000",
-            "_pNumber": 1,
-            "_errorLog": {
-              "_errors": [
-                {},
-                {}
-              ],
+            "_errorReporter": {
+              "_errors": [],
               "_logToConsole": true,
               "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
             },
-            "_errorString": "",
-            "_dragsListAsJSONString": "[\"'S ann\",\"anns\",\"a' bhanca\",\"a\",\"tha\",\"mi\",\"ag obair\"]",
-            "_dragsVariableName": [
-              "drags_a"
-            ],
-            "_dragHeight": "dnd_dragHeight(30)",
-            "_dragWidth": "dnd_dragWidth(90)",
-            "_builder": {
-              "_errorLog": {
-                "_errors": [
-                  {},
-                  {}
-                ],
-                "_logToConsole": true,
-                "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
-              },
-              "_errorString": "",
-              "_partLetter": "\"a\"",
-              "_type": "\"reorder\"",
-              "_variableName": "drags_a"
+            "_fileReader": {
+              "_fileReader": {}
             },
-            "_convertedPrompt": "<p>Tha mi ag obair anns a&rsquo; bhanca.</p>\n<p>%['S ann]%%[anns]%%[a' bhanca]%%[a]%%[tha]%%[mi]%%[ag obair]%.</p>\n",
-            "_subType": "\"reorder\""
+            "_customPartFileName": "",
+            "_templateJsonFileName": "",
+            "_settings": {
+              "target_text": "<p>Tha mi ag obair anns a&rsquo; bhanca.</p>\n<p>%['S ann]%%[anns]%%[a' bhanca]%%[a]%%[tha]%%[mi]%%[ag obair]%.</p>\n",
+              "distractors": [],
+              "target_height": "dnd_dragHeight(30)",
+              "all_or_nothing": false
+            },
+            "_prompt": "<p>Tha mi ag obair anns a&rsquo; bhanca.</p>\n<p>[[0]][[1]][[2]][[3]][[4]][[5]][[6]].</p>\n<p>{dnd_builder(\"a\",\"reorder\",drags_a)}{dnd_dragWidth(90)}{dnd_dragHeight(30)}{dnd_render()}</p>",
+            "_dragsVariableName": "",
+            "_dragsVariableValue": "",
+            "_distractors": [],
+            "_targetHeight": "dnd_dragHeight(30)",
+            "_allOrNothing": false,
+            "_dragItems": [],
+            "_templateJson": "sentenceReorder.json",
+            "_templateSettings": {
+              "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
+              "how_many_drags": "6",
+              "distractors": [],
+              "target_height": "35",
+              "all_or_nothing": false
+            },
+            "_targetText": "<p>Tha mi ag obair anns a&rsquo; bhanca.</p>\n<p>%['S ann]%%[anns]%%[a' bhanca]%%[a]%%[tha]%%[mi]%%[ag obair]%.</p>\n",
+            "item_width": "dnd_dragWidth(90)"
           }
         ]
       }
     ],
-    "_extensions": [],
-    "extensions": []
+    "_existingExtensions": [],
+    "_newExtensions": [
+      "drag_and_drop",
+      "scholar_sentence_reorder",
+      "manual_marking",
+      "scholar_self_marked_text",
+      "scholar_drop_in_bucket",
+      "card_match",
+      "card-match"
+    ]
   },
   "_jsonObjToUpdate": {
     "name": "example question types taken from scholar archive for testing part converter",
@@ -3875,5 +3465,11 @@
         "/srv/numbas/media/question-resources/resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4_yvKCmPe.png"
       ]
     ]
-  }
+  },
+  "_errorReporter": {
+    "_errors": [],
+    "_logToConsole": true,
+    "_name": "C:/work/UTL-Numbas_Part_Converter/sample_exams/source.exam"
+  },
+  "fileReader": {}
 }

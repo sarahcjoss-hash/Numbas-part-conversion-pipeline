@@ -1,3 +1,5 @@
+import { FileReader } from './fileReader.js';
+
 class JSONFromExam {
     constructor(exam, data, errorReporter) {
         this._examToUpdate = exam;
