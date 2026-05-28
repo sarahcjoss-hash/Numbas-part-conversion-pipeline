@@ -100,7 +100,7 @@ class SentenceReorder extends NewDragAndDrop {
         return settings;
     }
 
-    get jsonForThisPart(){
+    get jsonObjForThisPart(){
         let json = SentenceReorder.jsonForThisPart;
         json.settings = this.filledSettings;
         return json;

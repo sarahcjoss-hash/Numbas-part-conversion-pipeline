@@ -1,61 +1,40 @@
 import { FileReader } from './fileReader.js';
+import { CustomPartJsonProvider } from './custom_part_json/CustomPartJsonProvider.js';
 
 class JSONFromExam {
-    constructor(exam, data, errorReporter) {
-        this._examToUpdate = exam;
-        this._jsonObjToUpdate = data;
+    constructor(errorReporter) {
+
         this._errorReporter = errorReporter;
-        this._updatedJSON;
-        this.processExam(exam);
         this.fileReader = new FileReader();
     }
 
-    static extensionLookUp(extensionName) {
-        //this is where we decide which extensions we need to add to the JSON based on the extensions used in the questions/parts
-        switch (
-        extensionName
-        ) {
-            case "cardmatch":
-                return "cardMatchCPJson.json";
-            case "drag1-2-1":
-                return "drag121CPJson.json";
-            case "dropInBucket":
-                return "dropInBucketCPJson.json";
-            case "selfMarkedText":
-                return "selfMarkedTextCPJson.json";
-            case "sentenceReorder":
-                return "sentenceReorderCPJson.json";
-            default:
-                return null;
-        }
-    }
+
 
     reportError(err, additional) {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'JSONFromExam'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
     }
-    addNewExtensionsToJSON(exam) {
+    addNewExtensionsToJSON(exam, examData) {
         const newExtensions = exam.extensionsFromQuestions;
         const pathToJSON = "./custom_part_jsons/";
         try {
             newExtensions.forEach(ext => {
 
-                const CPJson = JSONFromExam.extensionLookUp(ext);
+                const CPJson = CustomPartJsonProvider.getCustomPartJson(ext);
                 if (CPJson) {
-                    const json = this.fileReader.readJSONFile(pathToJSON + CPJson);
-                    this._jsonObjToUpdate.extensions.push(json);
+                    examData.extensions.push(CPJson);
                 }
        
         });
+        return examData;
         } catch (err) {
             this.reportError(err, `Unable to add extension ${ext} to JSON`);
         }
 
     }
 
-    processExam(exam) {
-
-
+    processExam(exam, examData) {
+        this.addNewExtensionsToJSON(exam, examData);
         const questions = exam.questions;//need flat here as the questions are themselves an array
         try {
             questions.map((q, i) => {
