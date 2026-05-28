@@ -25,6 +25,31 @@ class SentenceReorder extends NewDragAndDrop {
         settings.all_or_nothing = false;
         return settings;
     }
+    static customPartSettings = {
+                            "type": "scholar-sentence-reorder",
+                            "useCustomName": false,
+                            "customName": "",
+                            "marks": 1,
+                            "scripts": {},
+                            "customMarkingAlgorithm": "",
+                            "extendBaseMarkingAlgorithm": true,
+                            "unitTests": [],
+                            "showCorrectAnswer": true,
+                            "showFeedbackIcon": true,
+                            "variableReplacements": [],
+                            "variableReplacementStrategy": "originalfirst",
+                            "nextParts": [],
+                            "suggestGoingBack": false,
+                            "adaptiveMarkingPenalty": 0,
+                            "exploreObjective": null,
+                            "settings": {
+                                "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
+                                "how_many_drags": "6",
+                                "distractors": [],
+                                "target_height": "35",
+                                "all_or_nothing": false
+                            }
+                        }
     set targetText(text) {
         this._targetText = text;
         this.updateSetting('target_text',text);
@@ -73,6 +98,12 @@ class SentenceReorder extends NewDragAndDrop {
         settings.target_height = this._targetHeight;
         settings.all_or_nothing = this._allOrNothing;
         return settings;
+    }
+
+    get jsonForThisPart(){
+        let json = SentenceReorder.jsonForThisPart;
+        json.settings = this.filledSettings;
+        return json;
     }
 
     /*partReport() {

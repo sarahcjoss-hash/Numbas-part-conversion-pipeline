@@ -54,7 +54,9 @@ class DropInBucket extends NewDragAndDrop {
     get type() {
         return this._type;
     }
-
+    get filledSettings() {
+        return this._settings;
+    }
 
 
 
