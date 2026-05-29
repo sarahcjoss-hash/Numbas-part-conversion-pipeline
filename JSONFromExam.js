@@ -67,6 +67,7 @@ class JSONFromExam {
 
 
             });
+            return examData;
         } catch (err) {
 
             this.reportError(err, "");

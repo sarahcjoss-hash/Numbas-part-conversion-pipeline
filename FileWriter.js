@@ -14,8 +14,19 @@ class FileWriter {
             throw new Error(`Error writing file ${fileName}`);
         }
     }
+    //synchronous make directory
+    createFolder(folderName) {
+        try {
+            if (!fs.existsSync(folderName)) {
+                fs.mkdirSync(folderName);
+            }
+        } catch (err) {
+            console.error(`${err} error creating folder ${folderName}`);
+            throw new Error(`Error creating folder ${folderName}`);
+        }
+    }
 }
-           
+
 
 
 
