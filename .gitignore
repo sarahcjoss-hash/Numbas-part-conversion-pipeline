@@ -480,3 +480,145 @@ sample_exams/exam-249880-example-question-types-taken-from-scholar-archive-for-t
 sample_exams/exam-249880-example-question-types-taken-from-scholar-archive-for-testing-part-converter - Copy/vocab/custom.xsd
 sample_exams/exam-249880-example-question-types-taken-from-scholar-archive-for-testing-part-converter - Copy/vocab/loose.xsd
 sample_exams/exam-249880-example-question-types-taken-from-scholar-archive-for-testing-part-converter - Copy/vocab/strict.xsd
+sample_exams/cp.json
+sample_exams/test zips/adlcp_v1p3.xsd
+sample_exams/test zips/adlnav_v1p3.xsd
+sample_exams/test zips/adlseq_v1p3.xsd
+sample_exams/test zips/datatypes.dtd
+sample_exams/test zips/downloaded-from.txt
+sample_exams/test zips/ims_xml.xsd
+sample_exams/test zips/imscp_v1p1.xsd
+sample_exams/test zips/imsmanifest.xml
+sample_exams/test zips/imsss_v1p0.xsd
+sample_exams/test zips/imsss_v1p0auxresource.xsd
+sample_exams/test zips/imsss_v1p0control.xsd
+sample_exams/test zips/imsss_v1p0delivery.xsd
+sample_exams/test zips/imsss_v1p0limit.xsd
+sample_exams/test zips/imsss_v1p0objective.xsd
+sample_exams/test zips/imsss_v1p0random.xsd
+sample_exams/test zips/imsss_v1p0rollup.xsd
+sample_exams/test zips/imsss_v1p0seqrule.xsd
+sample_exams/test zips/imsss_v1p0util.xsd
+sample_exams/test zips/index.html
+sample_exams/test zips/lom.xsd
+sample_exams/test zips/lomCustom.xsd
+sample_exams/test zips/lomLoose.xsd
+sample_exams/test zips/lomStrict.xsd
+sample_exams/test zips/numbas-manifest.json
+sample_exams/test zips/numbas.css
+sample_exams/test zips/numbas.js
+sample_exams/test zips/readme.txt
+sample_exams/test zips/source.exam
+sample_exams/test zips/test.zip
+sample_exams/test zips/xml.xsd
+sample_exams/test zips/XMLSchema.dtd
+sample_exams/test zips/common/anyElement.xsd
+sample_exams/test zips/common/dataTypes.xsd
+sample_exams/test zips/common/elementNames.xsd
+sample_exams/test zips/common/elementTypes.xsd
+sample_exams/test zips/common/rootElement.xsd
+sample_exams/test zips/common/vocabTypes.xsd
+sample_exams/test zips/common/vocabValues.xsd
+sample_exams/test zips/extend/custom.xsd
+sample_exams/test zips/extend/strict.xsd
+sample_exams/test zips/extensions/extensions.json
+sample_exams/test zips/extensions/drop-in-bucket/drag-and-drop.css
+sample_exams/test zips/extensions/drop-in-bucket/README.md
+sample_exams/test zips/extensions/drop-in-bucket/scholar-drop-in-bucket.js
+sample_exams/test zips/resources/numbas-icon.png
+sample_exams/test zips/resources/numbas-logo.svg
+sample_exams/test zips/resources/iconfont/fontawesome.eot
+sample_exams/test zips/resources/iconfont/fontawesome.svg
+sample_exams/test zips/resources/iconfont/fontawesome.ttf
+sample_exams/test zips/resources/iconfont/fontawesome.woff
+sample_exams/test zips/resources/iconfont/generator_config.txt
+sample_exams/test zips/resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png
+sample_exams/test zips/resources/question-resources/hg-cbio1-6etq6-mutations.png
+sample_exams/test zips/resources/question-resources/hg-chbi2-2etq6-menstrualCycle_9tnNfnB.png
+sample_exams/test zips/scripts/standalone_scripts/numbas-mathjax.js
+sample_exams/test zips/unique/loose.xsd
+sample_exams/test zips/unique/strict.xsd
+sample_exams/test zips/vocab/custom.xsd
+sample_exams/test zips/vocab/loose.xsd
+sample_exams/test zips/vocab/strict.xsd
+sample_exams/updated_example question types taken from scholar archive for testing part converter/source.exam
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts.zip
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/adlcp_v1p3.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/adlnav_v1p3.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/adlseq_v1p3.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/datatypes.dtd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/downloaded-from.txt
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/ims_xml.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imscp_v1p1.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsmanifest.xml
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0auxresource.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0control.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0delivery.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0limit.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0objective.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0random.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0rollup.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0seqrule.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/imsss_v1p0util.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/index.html
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/lom.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/lomCustom.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/lomLoose.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/lomStrict.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/numbas-manifest.json
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/numbas.css
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/numbas.js
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/readme.txt
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/source.exam
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/xml.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/XMLSchema.dtd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/common/anyElement.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/common/dataTypes.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/common/elementNames.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/common/elementTypes.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/common/rootElement.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/common/vocabTypes.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/common/vocabValues.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extend/custom.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extend/strict.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/extensions.json
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/card-match-beta2/card-match-beta2.css
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/card-match-beta2/card-match-beta2.js
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/card-match-beta2/README.md
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/drop-in-bucket/drag-and-drop.css
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/drop-in-bucket/README.md
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/drop-in-bucket/scholar-drop-in-bucket.js
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/scholar-drag-1-to-1/README.md
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/scholar-drag-1-to-1/scholar-drag-1-to-1.css
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/scholar-drag-1-to-1/scholar-drag-1-to-1.js
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/self-marked-text-beta/README.md
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/self-marked-text-beta/self-marked-text-beta.css
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/self-marked-text-beta/self-marked-text-beta.js
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/sentence-reorder/drag-and-drop.css
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/sentence-reorder/README.md
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/extensions/sentence-reorder/sentence-reorder.js
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/numbas-icon.png
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/numbas-logo.svg
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/iconfont/fontawesome.eot
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/iconfont/fontawesome.svg
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/iconfont/fontawesome.ttf
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/iconfont/fontawesome.woff
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/iconfont/generator_config.txt
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/chicken.jpg
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/fox.jpg
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/goat.jpg
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/meiosis_A.png
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/meiosis_E.png
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/meiosis_G.png
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/meiosis_S.png
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/meiosis_T.png
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/n5-csm1-2-3listening3.mp3
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/n5-csm1-2-3listening5.mp3
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/resources/question-resources/n5-csm1-2-3listening8.mp3
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/scripts/standalone_scripts/numbas-mathjax.js
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/unique/loose.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/unique/strict.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/vocab/custom.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/vocab/loose.xsd
+sample_exams/with custom parts/exam-250655-exam-with-new-custom-parts/vocab/strict.xsd

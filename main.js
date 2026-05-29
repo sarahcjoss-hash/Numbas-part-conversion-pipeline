@@ -38,9 +38,11 @@ filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
   const updatedJSON = JSON.stringify(updatedJsonObj);
   const folderName = `updated_${examData.name}`;
   filewriter.createFolder(`${path}${folder}/${folderName}`);
-  //these are async but not dependent    filewriter.writeJSONToFile(updatedJSON, `${path}${folder}/${folderName}/source.exam`);
+  //these are async but not dependent    
+  filewriter.writeJSONToFile(updatedJSON, `${path}${folder}/${folderName}/source.exam`);
   reportWriter.writeReportToFile(report, 'exam_report.txt');
   reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
+  console.log(`Finished processing exam ${examData.name}. Updated exam file, report and error report (if applicable) can be found in folder ${folderName}`);  
 
 
 }).catch(err => {

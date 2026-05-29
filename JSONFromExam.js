@@ -1,5 +1,6 @@
 import { FileReader } from './fileReader.js';
 import { CustomPartJsonProvider } from './custom_part_json/CustomPartJsonProvider.js';
+import { ExtensionNameProvider } from './ExtensionNameProvider.js';
 
 class JSONFromExam {
     constructor(errorReporter) {
@@ -20,9 +21,13 @@ class JSONFromExam {
         try {
             newExtensions.forEach(ext => {
 
-                const CPJson = CustomPartJsonProvider.getCustomPartJson(ext);
-                if (CPJson) {
-                    examData.extensions.push(CPJson);
+                const extensionsName = ExtensionNameProvider.getExtensionName(ext);
+                const CPJSON = CustomPartJsonProvider.getCustomPartJson(ext);
+                if (extensionsName) {
+                    examData.extensions.push(extensionsName);
+                }
+                if (CPJSON) {
+                    examData.custom_part_types.push(CPJSON);
                 }
        
         });
@@ -39,7 +44,7 @@ class JSONFromExam {
         try {
             questions.map((q, i) => {
                 if (q.hasCustomParts) {
-
+//add code in here to add the CPs and ext names to each question
                     const parts = q.parts;
                     parts.map((p, j) => {
                         let part = p;
