@@ -27,21 +27,22 @@ const errorReporter = new ErrorReporter(true, `${examFile}`);
 filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
 
   const examData = JSON.parse(line);
-  const exam = new ExamFromJSON(examData, errorReporter);
+  /*const exam = new ExamFromJSON(examData, errorReporter);
   const report = reportWriter.createReport(exam.exam);
   //console.log(report);
 
   const examUpdater = new ExamUpdater(errorReporter);
   examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
   const updatedJSONMaker = new JSONFromExam(errorReporter);
-  const updatedJsonObj = updatedJSONMaker.processExam(exam.exam, examData);
-  const updatedJSON = JSON.stringify(updatedJsonObj);
+  const updatedJsonObj = updatedJSONMaker.processExam(exam.exam, examData);*/
+ 
   const folderName = `updated_${examData.name}`;
   filewriter.createFolder(`${path}${folder}/${folderName}`);
   //these are async but not dependent    
-  filewriter.writeJSONToFile(updatedJSON, `${path}${folder}/${folderName}/source.exam`);
-  reportWriter.writeReportToFile(report, 'exam_report.txt');
-  reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
+  filewriter.stringifyJSONAndwriteToFile(examData, `${path}${folder}/${folderName}/source.exam`);
+  //filewriter.writeJSONToFile(updatedJSON, `${path}${folder}/${folderName}/source.exam`);
+  //reportWriter.writeReportToFile(report, 'exam_report.txt');
+  //reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
   console.log(`Finished processing exam ${examData.name}. Updated exam file, report and error report (if applicable) can be found in folder ${folderName}`);  
 
 

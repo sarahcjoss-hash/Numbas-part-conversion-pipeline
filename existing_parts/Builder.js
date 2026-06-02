@@ -1,3 +1,7 @@
+//this class is NOT a builder in the semnse of Builder pattern.
+//there was a builder object in the original code
+//and thie class represents and parses that object
+
 class Builder {
     constructor(str, logger) {
         function processbuilderString(str, logger) {

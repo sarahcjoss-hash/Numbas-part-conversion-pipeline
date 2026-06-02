@@ -5,10 +5,11 @@ class FileWriter {
 
     constructor() {
     }
-    async writeJSONToFile(jsonData, fileName) {
+    async stringifyJSONAndwriteToFile(jsonData, fileName) {
         try {
-           //const data = JSON.stringify(jsonData, null, 2);
-           const data = "// Numbas version: finer_feedback_settings\n" +jsonData
+           const stringifiedData = JSON.stringify(jsonData, null, 2);
+           console.log(stringifiedData);
+           const data = "// Numbas version: finer_feedback_settings\n" + stringifiedData;
             await fsPromises.writeFile(fileName, data, 'utf8');
         } catch (err) {
             console.error(`${err} error writing file`);

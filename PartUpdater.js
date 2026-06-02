@@ -1,8 +1,7 @@
-import { LongTextEntry } from './new_part_types/LongTextEntry.js';
-import { Drag121 } from './new_part_types/Drag121.js';
-import { DropInBucket } from './new_part_types/DropInBucket.js';
-import { CardMatch } from './new_part_types/CardMatch.js';
-import { SentenceReorder } from './new_part_types/SentenceReorder.js';
+
+import { LongTextEntryBuilder } from './new_part_types/builders/LongTextEntryBuilder.js';
+import { CardMatchBuilder } from './new_part_types/builders/CardMatchBuilder.js';
+import {DragAndDropBuilder} from './new_part_types/builders/DragAndDropBuilder.js';
 
 /* Class to take an old part and convert it to a new part. 
 It will use the type of the old part to determine which new part type to convert to and 
@@ -47,7 +46,8 @@ class PartUpdater {
         }
     }
     convertToLongTextEntry(part) {
-        let newPart = LongTextEntry.createNewFromExisting(part, this._errorReporter);
+        let builder = new LongTextEntryBuilder(this._errorReporter);
+        let newPart = builder.buildNewLongTextEntryFromExisting(part);
         return newPart;
 
     }
@@ -58,17 +58,18 @@ class PartUpdater {
             const prompt = oldPart.prompt;
             const targetText = oldPart.convertedPrompt;
             let newPart = oldPart;
+            let builder = new DragAndDropBuilder(this._errorReporter);
             console.log(`converting drag and drop part with  sub-type ${dndSubType}`);
             switch (dndSubType) {
                 case "1-2-1":
                     //
-                    newPart = new Drag121(oldPart, this._errorReporter);
+                    newPart = builder.buildNewDrag121FromExisting(oldPart);
                     break;
                 case "bucket":
-                    newPart = DropInBucket.createNewFromExisting(oldPart, this._errorReporter);
+                    newPart = builder.buildNewDropInBucketFromExisting(oldPart);
                     break;
                 case "reorder":
-                    newPart = SentenceReorder.createNewFromExisting(oldPart, this._errorReporter);
+                    newPart = builder.buildNewSentenceReorderFromExisting(oldPart);
                     break;
                 default:
                     this.reportError(new Error(`no conversion for drag_and_drop sub-type ${dndSubType}`))

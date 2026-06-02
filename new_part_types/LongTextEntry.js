@@ -56,24 +56,7 @@ class LongTextEntry extends NewPart {
     }
 
 
-    static createNewFromExisting(part, errorLog) {
-        try {
-            //there are issue converting the pixels sizes to text area sizes
-            //don;t worry too much about this for this iteration just get it working but for future using 
-            // field-sizing where available
-            let newPart = new LongTextEntry(errorLog);
-            newPart.marks = part.marks || 1;
-            newPart.prompt = part.prompt;
-            newPart.cols = LongTextEntry.convertPixelsToColumns(part.textAreaWidth || 50);
-            newPart.rows = LongTextEntry.convertEmsToRows(part.textAreaHeight || 4);
-            newPart.modelAnswer = part.answer ;
-            newPart.howManyChecks = part.numberofGaps             
-            return newPart;
-        } catch (err) {
-            err.message = `Error creating new Long text entry part from existing part ${part.type}: ${err.message}`;
-            errorLog.reportError(err);//have to report directly to log as in this case it may have gone so wrong we cannot call reportError on super
-        }
-    }
+
     static convertEmsToRows(ems) {
         //convert a value in ems to a number of rows for a text area. This is a bit of a guess but we can adjust as needed
         //first check the string value contains ems and if so convert to a number

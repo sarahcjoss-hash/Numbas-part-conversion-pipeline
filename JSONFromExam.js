@@ -1,6 +1,6 @@
 import { FileReader } from './fileReader.js';
 import { CustomPartJsonProvider } from './custom_part_json/CustomPartJsonProvider.js';
-import { ExtensionNameProvider } from './ExtensionNameProvider.js';
+import { ExtensionNameProvider } from './custom_part_json/ExtensionNameProvider.js';
 
 class JSONFromExam {
     constructor(errorReporter) {

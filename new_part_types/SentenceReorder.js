@@ -67,27 +67,7 @@ class SentenceReorder extends NewDragAndDrop {
         return this._type;
     }
 
-     static createNewFromExisting(part, errorLog) {
-        try {
-            //there are issue converting the pixels sizes to text area sizes
-            //don;t worry too much about this for this iteration just get it working but for future using 
-            // field-sizing where available
-            let newPart = new SentenceReorder(errorLog);
-            newPart.prompt = part.prompt;
-            newPart.targetText = part.convertedPrompt;
-            newPart.marks = part.marks || 1;
-            newPart.howManyDrags = part.numberofGaps;  
-            newPart.item_width = part.dragWidth || 120;
-            newPart.targetHeight = part.dragHeight || 80;
-            newPart.distractors = part.distractors || [];
-            newPart.dragItems = part.dragItems || [];
-            return newPart;
-        }catch (err) {
-            err.message = `Error creating new SentenceReorder part from existing part ${part.type}: ${err.message}`;
-            errorLog.reportError(err);//have to report directly to log as in this case it may have gone so wrong we cannot call reportError on super
-            throw err;
-        }
-    }
+
 
 
     get filledSettings(){
