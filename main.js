@@ -5,6 +5,8 @@ import { ErrorReporter } from './ErrorReporter.js';
 import { ExamUpdater } from './ExamUpdater.js';
 import { JSONFromExam } from './JSONFromExam.js';
 import { FileWriter } from './FileWriter.js';
+import { FolderWorker } from './FolderWorker.js';
+import { Exam } from './existing_parts/Exam.js';
 
 
 // to do
@@ -23,6 +25,10 @@ const filereader = new FileReader();
 const filewriter = new FileWriter();
 const reportWriter = new ReportWriter();
 const errorReporter = new ErrorReporter(true, `${examFile}`);
+
+//open folder and find source.exam files
+//copy the directory including all files to a new folder called updated_examname
+//create a new exam file in the new folder with the updated JSON
 
 filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
 
