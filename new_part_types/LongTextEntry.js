@@ -4,7 +4,7 @@ class LongTextEntry extends NewPart {
     constructor(errorLogger) {
         super(errorLogger);
         this._type = "scholar_self_marked_text";
-        this._templateJson = "selfMarkedTextPart.json";
+        this._templateJsonFileName = "selfMarkedTextPart.json";
         this._customPartFileName = 'selfMarkedTextCP.json';
         this._settings = LongTextEntry.getDefaultSettings();
         this._prompt = '';
@@ -18,6 +18,7 @@ class LongTextEntry extends NewPart {
         this._correctFeedback = this._settings.correctFeedback;
         this._partialCorrect = this._settings.partialCorrect;
         this._incorrectFeedback = this._settings.incorrectFeedback;
+
 
 
     }

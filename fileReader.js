@@ -3,17 +3,24 @@ import fsPromises from 'fs/promises';
 
 class FileReader {
 
-    constructor() {
+    constructor(errorReporter) {
+        this._errorReporter = errorReporter;    
     }
+    
+reportError(err, additional) {
+        err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'FileReader'}: ${additional} : ${err.message}`
+        this._errorReporter.reportError(err);
+    }
+    
     async readFileAsync(fileName) {
         try {
             const data = await fsPromises.readFile(fileName, 'utf8');
             return (data);
         } catch (err) {
             if (err.code === 'ENOENT') {
-                return new Error(`Config file ${filename} not found`);
+                this._errorReporter.reportError(new Error(`Config file ${fileName} not found`), 'File not found');
             } else if (err.code === 'EACCES') {
-                return new Error(`No permission to read ${filename}`);
+                this._errorReporter.reportError(new Error(`No permission to read ${fileName}`), 'Permission denied');
             }
             return err;
         }
@@ -30,7 +37,7 @@ class FileReader {
                 return fs.readdirSync(folderName);
             }
         } catch (err) {
-            console.error(`${err} error finding files in folder`);
+            this.reportError(err, 'Error finding files in folder');
             return [];
         }
     }
@@ -60,11 +67,14 @@ class FileReader {
             if (err) {
                 // Handle specific error types
                 if (err.code === 'ENOENT') {
-                    return callback(new Error(`Config file ${filename} not found`));
+                    this._errorReporter.reportError(new Error(`Config file ${filename} not found`), 'File not found');
+                    return callback(err);
                 } else if (err.code === 'EACCES') {
-                    return callback(new Error(`No permission to read ${filename}`));
+                    this._errorReporter.reportError(new Error(`No permission to read ${filename}`), 'Permission denied');
+                    return callback(err);
                 }
                 // For all other errors
+                this._errorReporter.reportError(new Error(`Error reading file ${filename}`), 'Error reading file');
                 return callback(err);
             }
 

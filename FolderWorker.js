@@ -4,12 +4,12 @@ import fsPromises from 'fs/promises';
 class FolderWorker {
     constructor(errorReporter) {
         this._errorReporter = errorReporter;
-    }   
+    }
     reportError(err, additional) {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'FolderWorker'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
-    }  
-    
+    }
+
     //function to copy a folder and all its contents to a new location
     async copyFolder(source, destination) {
         try {
@@ -19,7 +19,7 @@ class FolderWorker {
             this.reportError(err, `Error copying folder from ${source} to ${destination}`);
             throw new Error(`Error copying folder from ${source} to ${destination}`);
             return false;
-        }   
+        }
     }
     //function to open a folder find all files with a certain name and return an array of their paths
     async findFilesInFolder(folderPath, fileName) {
@@ -30,12 +30,12 @@ class FolderWorker {
         } catch (err) {
             this.reportError(err, `Error finding files in folder ${folderPath}`);
             throw new Error(`Error finding files in folder ${folderPath}`);
-        }   
+        }
     }
     //function to copy all files in a folder to a new location
-        async copyFilesInFolder(sourceFolder, destinationFolder) {  
+    async copyFilesInFolder(sourceFolder, destinationFolder) {
         try {
-            const files = await fsPromises.readdir(sourceFolder);   
+            const files = await fsPromises.readdir(sourceFolder);
             for (const file of files) {
                 const sourcePath = `${sourceFolder}/${file}`;
                 const destinationPath = `${destinationFolder}/${file}`;

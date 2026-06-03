@@ -21,10 +21,11 @@ const path = "C:/work/sample_exams/";
 const folder = "examples-exam-source/";
 const examFolder = `${path}${folder}`;
 //const examFile = path + folder + 'source.exam';
-const filereader = new FileReader();
-const filewriter = new FileWriter();
-const reportWriter = new ReportWriter();
 const errorReporter = new ErrorReporter(true, `${folder}`);
+const filereader = new FileReader(errorReporter);
+const filewriter = new FileWriter(errorReporter);
+const reportWriter = new ReportWriter();
+
 const folderWorker = new FolderWorker(errorReporter);
 
 //open folder and find source.exam files
@@ -42,7 +43,7 @@ async function processExam() {
     const examUpdater = new ExamUpdater(errorReporter);
     examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
     const updatedJSONMaker = new JSONFromExam(errorReporter);
-    const updatedJsonObj = updatedJSONMaker.processExam(exam.exam, examData);
+    const updatedJsonObj = await updatedJSONMaker.processExam(exam.exam, examData);
 
     const folderName = `${examFolder}/updated_exam`;
     //filewriter.createFolder(`${path}${folder}/${folderName}`);

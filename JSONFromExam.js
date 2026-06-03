@@ -50,12 +50,15 @@ class JSONFromExam {
             this.reportError(err, `Unable to add custom part info for question ${index + 1}`);
         }
     }
-    replacePartWithCustomPart(question, p, partIndex, examData) {
+    async replacePartWithCustomPart(question, p, partIndex, examData) {
         try {
-            const type = part.type;
+   
             const type = p.type;
             const subType = p.newPartTypeMatch;
-            const templateJSON = p.templateJsonAsObject;
+            const templateJSON = await p.templateJsonAsObject();
+            //fix this here so that we get th settings object, replace the settings in json witth the settings object
+            //dstich in any other data
+            //may require a custom stitcher per part
             const settings = p.settingsJSON;
             const prompt = p.prompt;
         } catch (err) {
@@ -63,7 +66,7 @@ class JSONFromExam {
         }
     }
 
-    processExam(exam, examData) {
+     processExam(exam, examData) {
         this.addNewExtensionsToJSON(exam, examData);
         const questions = exam.questions;//need flat here as the questions are themselves an array
         try {
@@ -72,11 +75,12 @@ class JSONFromExam {
                     this.addCustomPartInfoToQuestion(q, i, examData);
 
                     const parts = q.parts;
-                    parts.map((p, j) => {
+                    //remember to put async here as the map function is the one that is calling an asymn function
+                    parts.map(async(p, j) => {
                         try {
                             let part = p;
                             if (part.needsReplacing) {
-                                this.replacePartWithCustomPart(q, p, j, examData);
+                                await this.replacePartWithCustomPart(q, p, j, examData);
                             }
 
                         } catch (err) {

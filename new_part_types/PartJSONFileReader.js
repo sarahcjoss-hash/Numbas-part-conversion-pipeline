@@ -1,14 +1,20 @@
 import {FileReader} from '../fileReader.js';
-class PartJSONFileReader{
-    constructor(){
-        this._fileReader = new FileReader();
-    }
-    reportError(err, additional){
-        err.message= `${this.constructor && this.constructor.name ? this.constructor.name : 'PartJSONFileReader'}: ${additional} : ${err.message}`
-        this._errorLog.reportError(err);
+class PartJSONFileReader extends FileReader {
+    constructor(errorReporter) {
+        super(errorReporter);
+       
     }
 
-    _readPartJSONFile(fileName){
+
+    async readPartJSONFile(fileName){
+        const pathToJSON = `./custom_part_json/${fileName}`;
+        try {
+            const json = await this.readFileAsync(pathToJSON);
+            return json;
+        } catch (err) {
+            this.reportError(err, `Unable to read JSON file ${fileName}`);
+            return null;
+        }
 
     }
 

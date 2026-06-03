@@ -3,7 +3,7 @@ class CardMatch extends NewPart {
     constructor(errorLogger) {
         super(errorLogger);
         this._type = "card-match";
-        this._templateJson = "cardMatchPart.json";
+        this._templateJsonFileName = "cardMatchPart.json";
         this._customPartFileName = 'cardMatchCP.json';
         this._templateSettings =     {"list_of_pairs": '[["a","A"],["b","B"],["c","C"]]',
                                     "howManyPairs": "3",

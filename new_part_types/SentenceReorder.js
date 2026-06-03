@@ -5,7 +5,7 @@ class SentenceReorder extends NewDragAndDrop {
     constructor(errorLogger) {
         super(errorLogger);
         super.type = "scholar_sentence_reorder";
-        this._templateJson = "sentenceReorder.json"
+        this._templateJsonFileName = "sentenceReorder.json";
         this._templateSettings = {
                                 "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
                                 "how_many_drags": "6",

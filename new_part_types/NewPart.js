@@ -1,4 +1,4 @@
-import {PartJSONFileReader} from './PartJSONFileReader.js';
+import { PartJSONFileReader } from './PartJSONFileReader.js';
 
 class NewPart {
     //although all parts have a prompt and 0 to many gaps 
@@ -13,52 +13,64 @@ class NewPart {
         this._templateJsonFileName = '';
         this._settings = {};
     }
-    reportError(err, additional){
-        err.message= `${this.constructor && this.constructor.name ? this.constructor.name : 'NewPart'}: ${additional} : ${err.message}`
+    reportError(err, additional) {
+        err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'NewPart'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
-}
-
+    }
+    get needsReplacing() {
+        return true;
+    }
     set type(type) {
         this._type = type;
     }
     get type() {
         return this._type;
     }
-    get customPartFileName(){
+    get customPartFileName() {
         return this.__customPartFileName;
     }
-    get templateJsonFileName(){
+    get templateJsonFileName() {
         return this._templateJsonFileName
     }
 
-    get templateJsonAsObject(){
-        //function here to get filereader to open read and parse correct JSONFile
+    async templateJsonAsObject() {
+        try {
+            if (this.templateJsonFileName) {
+                return JSON.parse(await this._fileReader.readPartJSONFile(this._templateJsonFileName) || '{}'  );
+            } else {
+                return null;
+            }
+        } catch (err) {
+            this.reportError(err, `Unable to get template JSON as object for file ${this._templateJsonFileName}`);
+            return null;
+        }
+
     }
-    set marks(mark){
+    set marks(mark) {
         this._marks = mark;
     }
-    get marks (){
+    get marks() {
         return this._marks;
     }
-    set prompt (p){
-    this._prompt = p;
- }
- get prompt(){
-    return this._prompt;
- }
+    set prompt(p) {
+        this._prompt = p;
+    }
+    get prompt() {
+        return this._prompt;
+    }
 
-updateSetting(setting, val) {
+    updateSetting(setting, val) {
         //check the setting exists and if so update it otherwise report an error
         if (this._settings.hasOwnProperty(setting)) {
             this._settings[setting] = val;
         } else {
             this._errorReporter.reportError(new Error(`Setting '${setting}' does not exist`));
         }
-}
- get settings(){
-    return this._settings;
- }
-    createNewFromExisting(part){
+    }
+    get settings() {
+        return this._settings;
+    }
+    createNewFromExisting(part) {
         let newPart = new NewPart()
         newPart.marks = part.marks;
         return newPart;
@@ -67,7 +79,7 @@ updateSetting(setting, val) {
 
     partReport() {
         let partString = `Replacement Part \npart number: ${this._pNumber}\n`;
-        partString += `part type: ${this._type} marks: ${this._marks}\n`; 
+        partString += `part type: ${this._type} marks: ${this._marks}\n`;
         return partString;
     }
 }
