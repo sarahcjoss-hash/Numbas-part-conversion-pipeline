@@ -14,9 +14,11 @@ class FolderWorker {
     async copyFolder(source, destination) {
         try {
             await fsPromises.cp(source, destination, { recursive: true });
+            return true;
         } catch (err) {
             this.reportError(err, `Error copying folder from ${source} to ${destination}`);
             throw new Error(`Error copying folder from ${source} to ${destination}`);
+            return false;
         }   
     }
     //function to open a folder find all files with a certain name and return an array of their paths

@@ -17,41 +17,50 @@ import { Exam } from './existing_parts/Exam.js';
 //handle no exam files found
 //create a folder to outout the new exam files
 //create somewhere for files we could not process
-const path = "C:/work/UTL-Numbas_Part_Converter/";
-const folder = "sample_exams/";
-
-const examFile = path + folder + 'source.exam';
+const path = "C:/work/sample_exams/";
+const folder = "examples-exam-source/";
+const examFolder = `${path}${folder}`;
+//const examFile = path + folder + 'source.exam';
 const filereader = new FileReader();
 const filewriter = new FileWriter();
 const reportWriter = new ReportWriter();
-const errorReporter = new ErrorReporter(true, `${examFile}`);
+const errorReporter = new ErrorReporter(true, `${folder}`);
+const folderWorker = new FolderWorker(errorReporter);
 
 //open folder and find source.exam files
 //copy the directory including all files to a new folder called updated_examname
 //create a new exam file in the new folder with the updated JSON
 
-filereader.getSpecifiedLineInFileAsync(examFile, 2).then(line => {
+async function processExam() {
+  try {
+    const examFiles = await folderWorker.findFilesInFolder(examFolder, 'source.exam');
+    const line = await filereader.getSpecifiedLineInFileAsync(examFiles[0], 2);
+    const success = await folderWorker.copyFolder(examFolder, `${path}updated_exam`);
+    const examData = JSON.parse(line);
+    const exam = new ExamFromJSON(examData, errorReporter);
+    const report = reportWriter.createReport(exam.exam);
+    const examUpdater = new ExamUpdater(errorReporter);
+    examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
+    const updatedJSONMaker = new JSONFromExam(errorReporter);
+    const updatedJsonObj = updatedJSONMaker.processExam(exam.exam, examData);
 
-  const examData = JSON.parse(line);
-  /*const exam = new ExamFromJSON(examData, errorReporter);
-  const report = reportWriter.createReport(exam.exam);
-  //console.log(report);
-
-  const examUpdater = new ExamUpdater(errorReporter);
-  examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
-  const updatedJSONMaker = new JSONFromExam(errorReporter);
-  const updatedJsonObj = updatedJSONMaker.processExam(exam.exam, examData);*/
- 
-  const folderName = `updated_${examData.name}`;
-  filewriter.createFolder(`${path}${folder}/${folderName}`);
-  //these are async but not dependent    
-  filewriter.stringifyJSONAndwriteToFile(examData, `${path}${folder}/${folderName}/source.exam`);
-  //filewriter.writeJSONToFile(updatedJSON, `${path}${folder}/${folderName}/source.exam`);
-  //reportWriter.writeReportToFile(report, 'exam_report.txt');
-  //reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
-  console.log(`Finished processing exam ${examData.name}. Updated exam file, report and error report (if applicable) can be found in folder ${folderName}`);  
+    const folderName = `${examFolder}/updated_exam`;
+    //filewriter.createFolder(`${path}${folder}/${folderName}`);
+    //these are async but not dependent
+    if (success && updatedJsonObj) {
+      filewriter.stringifyJSONAndwriteToFile(examData, `${path}updated_exam/source.exam`);
+    } else {
+      errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
+    }
+    //filewriter.writeJSONToFile(updatedJSON, `${path}${folder}/${folderName}/source.exam`);
+    reportWriter.writeReportToFile(report, 'exam_report.txt');
+    reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
+    //console.log(report);
+  } catch (error) {
+    console.error('Error occurred while processing exam:', error);
+  }
+}   //console.log(report);
 
 
-}).catch(err => {
-  console.error(err);
-});
+processExam()
+

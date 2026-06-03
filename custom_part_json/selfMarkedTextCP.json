@@ -1,17 +1,17 @@
 {
                             "source": {
-                                "pk": 269,
+                                "pk": 281,
                                 "author": {
-                                    "name": "Joss Joss",
-                                    "pk": 258
+                                    "name": "Scholar Team",
+                                    "pk": 31784
                                 },
-                                "edit_page": "/part_type/269/edit"
+                                "edit_page": "/part_type/281/edit"
                             },
-                            "name": "self marked text",
-                            "short_name": "self-marked-text",
-                            "description": "<p>a long text entry question where the user checks off the parts they have got correct. Relies on the ed devs writing the correct answer in a very specific way</p>",
+                            "name": "Scholar self marked text test (for team testing)",
+                            "short_name": "self-marked-text-test",
+                            "description": "<p>a long text entry question where the user checks off the parts they have got correct. Relies on the ed devs marking up the correct answer with [check] where they would like user to be able to tick (or not) if they got the answer</p>",
                             "help_url": "",
-                            "input_widget": "selfmark",
+                            "input_widget": "selfmarkbeta",
                             "input_options": {
                                 "correctAnswer": "settings['howManyChecks']",
                                 "hint": {
@@ -20,7 +20,11 @@
                                 },
                                 "modelAnswer": {
                                     "static": false,
-                                    "value": "settings['modelAnswer']"
+                                    "value": "settings[\"modelAnswer\"]"
+                                },
+                                "howManyChecks": {
+                                    "static": false,
+                                    "value": "settings['howManyChecks']"
                                 },
                                 "markIncrement": {
                                     "static": false,
@@ -83,7 +87,7 @@
                                     "hint": "<p>The model answer should show the student what they should have put. Points that would get the student marks should have a [check] next to them. Each [check] will be replaced with a checkbox for the student to use for marking. You can have more checks than marks- e.g. if you ahve 3 checks, 2 marks and a marking increment of 1 then any 2 or more out of 3 will get full marks.</p>\n<p>Remember if the format is you could have this OR this and that OR that (2 marks) then checks need to go here: pigs OR hogs [check]; cows or cattle[check];&nbsp;</p>",
                                     "input_type": "html",
                                     "default_value": "<p>This answer will get a point [check], so will this [check] and this [check]</p>",
-                                    "subvars": false
+                                    "subvars": true
                                 },
                                 {
                                     "name": "howManyChecks",
@@ -107,7 +111,7 @@
                                     "name": "cols",
                                     "label": "Text entry width in cols",
                                     "help_url": "",
-                                    "hint": "Text entry width in cols",
+                                    "hint": "Text entry width in cols which is very roughly 10px per col",
                                     "input_type": "string",
                                     "default_value": "50",
                                     "subvars": false
@@ -116,7 +120,7 @@
                                     "name": "rows",
                                     "label": "Text entry height in rows",
                                     "help_url": "",
-                                    "hint": "Text entry height is set in rows",
+                                    "hint": "Height of text entry in rows- very roughly 20px per row.",
                                     "input_type": "string",
                                     "default_value": "4",
                                     "subvars": false
@@ -125,7 +129,7 @@
                                     "name": "howTo",
                                     "label": "instruction for user",
                                     "help_url": "",
-                                    "hint": "",
+                                    "hint": "Give the user any special instructions on how they should answer",
                                     "input_type": "string",
                                     "default_value": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
                                     "subvars": false
@@ -134,14 +138,14 @@
                                     "name": "markInstruction",
                                     "label": "User instruction for marking",
                                     "help_url": "",
-                                    "hint": "Tell the user how to work the markking part of the question.",
+                                    "hint": "User instructions on how to mark themselves.&nbsp;",
                                     "input_type": "string",
                                     "default_value": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
                                     "subvars": false
                                 },
                                 {
                                     "name": "correctFeedback",
-                                    "label": "Feedback if the user is correct",
+                                    "label": "Correct answer feedback",
                                     "help_url": "",
                                     "hint": "",
                                     "input_type": "string",
@@ -150,7 +154,7 @@
                                 },
                                 {
                                     "name": "partialCorrect",
-                                    "label": "Feedback message if the user is partially correct",
+                                    "label": "Partially correct answer feedback",
                                     "help_url": "",
                                     "hint": "",
                                     "input_type": "string",
@@ -159,17 +163,17 @@
                                 },
                                 {
                                     "name": "incorrectFeedback",
-                                    "label": "Feedback message for the wrong answer",
+                                    "label": "Incorrect answer feedback",
                                     "help_url": "",
-                                    "hint": "this allows you to give user advice on what to look for if they got teh wrong answer",
+                                    "hint": "the default for this answer includes a space to insert topic to review- remember to edit this or remove it",
                                     "input_type": "string",
                                     "default_value": "You did not get any marks this time. You might want to revise [topic]",
                                     "subvars": false
                                 }
                             ],
-                            "public_availability": "restricted",
-                            "published": false,
+                            "public_availability": "always",
+                            "published": true,
                             "extensions": [
-                                "self-marked-text"
+                                "self-marked-text-beta"
                             ]
                         }

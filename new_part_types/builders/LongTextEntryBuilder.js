@@ -7,7 +7,7 @@ class LongTextEntryBuilder extends NewPartBuilder {
         this._type = "long-text-entry-builder";
     }
 
-    buildFromExisting(part) {
+    buildFromExistingPart(part) {
         try {
             //there are issue converting the pixels sizes to text area sizes
             //don;t worry too much about this for this iteration just get it working but for future using 

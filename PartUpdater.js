@@ -1,7 +1,7 @@
 
 import { LongTextEntryBuilder } from './new_part_types/builders/LongTextEntryBuilder.js';
 import { CardMatchBuilder } from './new_part_types/builders/CardMatchBuilder.js';
-import {DragAndDropBuilder} from './new_part_types/builders/DragAndDropBuilder.js';
+import { DragAndDropBuilder } from './new_part_types/builders/DragAndDropBuilder.js';
 
 /* Class to take an old part and convert it to a new part. 
 It will use the type of the old part to determine which new part type to convert to and 
@@ -28,7 +28,8 @@ class PartUpdater {
                     newPart = this.convertToDragAndDrop(part);
                     break;
                 case "card_match":
-                    newPart = CardMatch.createNewFromExisting(part, this._errorReporter);
+                    const builder = new CardMatchBuilder(this._errorReporter);
+                    newPart = builder.buildFromExistingPart(part);
                     break;
                 case "manual_marking":
                     newPart = this.convertToLongTextEntry(part);
@@ -46,9 +47,15 @@ class PartUpdater {
         }
     }
     convertToLongTextEntry(part) {
-        let builder = new LongTextEntryBuilder(this._errorReporter);
-        let newPart = builder.buildNewLongTextEntryFromExisting(part);
-        return newPart;
+        try {
+            const builder = new LongTextEntryBuilder(this._errorReporter);;
+            return builder.buildFromExistingPart(part);
+        } catch (err) {
+            err.message = `Error converting to long text entry: ${err.message}`;
+            this.reportError(err, "Error converting to long text entry");
+            console.error(err);
+            return part;
+        }
 
     }
 
