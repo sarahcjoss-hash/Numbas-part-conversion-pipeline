@@ -51,6 +51,7 @@ class JSONFromExam {
                 const i = questions.indexOf(q);
                 if (q.hasCustomParts) {
                     questionStitcher.addCustomPartInfoToQuestion(q, i, examJSONObj);
+                    questionStitcher.removeUnwantedVariables(q, i, examJSONObj);
                     questionStitcher.findAndReplaceParts(q, i, examJSONObj);             
                 }
             };

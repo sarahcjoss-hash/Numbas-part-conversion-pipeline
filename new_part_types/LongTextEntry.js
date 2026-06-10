@@ -7,7 +7,7 @@ class LongTextEntry extends NewPart {
         this._templateJsonFileName = "selfMarkedTextPart.json";
         this._customPartFileName = 'selfMarkedTextCP.json';
         this._settings = LongTextEntry.getDefaultSettings();
-        this._prompt = '';
+        this._prompt = 'default prompt';
         this._cols = 50;
         this._rows = 4;
         this._modelAnswer = this._settings.modelAnswer ||"<p>Model answer</p>";
@@ -39,6 +39,21 @@ class LongTextEntry extends NewPart {
         return settings;
 
     }
+    set prompt(p){
+        //remove any builder info from the prompt and just keep the text
+        let newPrompt = p.replace(/{manualmarking_builder\(.+?\)}/, '').trim();
+        newPrompt = newPrompt.replace(/{manualmarking_textarea_width\(.+?\)}/, '').trim();
+        newPrompt = newPrompt.replace(/{manualmarking_render\(\)}/, '').trim();   
+        //remove gaps
+        newPrompt = newPrompt.replace(/\[\[\d+\]\]/, '');
+        //remove empty p tags
+        newPrompt= newPrompt.replace(/<p><\/p>/gi, '');
+        this._prompt = newPrompt;
+    }
+    get prompt() {
+        return this._prompt;    
+    }
+
     set cols(val) {
         this._cols = val;
         this.updateSetting('cols', val)

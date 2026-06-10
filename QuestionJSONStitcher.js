@@ -26,6 +26,25 @@ class QuestionJSONStitcher {
             return false;
         }
     }
+    removeUnwantedVariables(question, index, examData) {
+        try{
+            const variables =  examData.question_groups[0].questions[index].variables;
+            const customPartTypes = question.extensions;
+            if (variables && customPartTypes) {
+                for (const v in variables) {
+                    console.log(`Checking variable ${v} for question ${index + 1} variable name is ${variables[v].name}`);
+                    if (variables[v].name.startsWith('manualmarking_') || variables[v].name.startsWith('cardmatch_') || variables[v].name.startsWith('dnd_')) {
+                        console.log(`deleting variable ${v} `);
+                        delete examData.question_groups[0].questions[index].variables[v];
+                    }
+                }
+            }
+
+        }catch(err) {
+            this.reportError(err, `Unable to remove unwanted variables for question ${index + 1}`);
+            return false;
+        }
+    }
      findAndReplaceParts(question, index, examJSONObj) {
         try {
             let parts = question.parts;
@@ -56,13 +75,25 @@ class QuestionJSONStitcher {
             return false;
         }
     }
+    replacePrompt(p, templateJSONObj) {
+        const prompt = p.prompt;  
+        console.log(`Replacing prompt with ${prompt}`);  
+        if (templateJSONObj && prompt) {
+            templateJSONObj.prompt = prompt;
+            return true;
+        } else {
+            this.reportError(new Error("Unable to insert new prompt"), `Difficulty setting up custom part  ${p.type}`)
+            return false;
+        }   
+    }
      replacePartWithCustomPart(question, p, partIndex, examJSONObj) {
         try {
             const type = p.type;
             const subType = p.newPartTypeMatch;
             const templateJSONObj = JSONTemplateProvider.getTemplate(type);
+            const promptSuccess = this.replacePrompt(p, templateJSONObj);
             const success = this.replacePartSettings(p, templateJSONObj);
-            if (success) {
+            if (success && promptSuccess && templateJSONObj) {
                 let bitToReplace = examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex];
                 console.log(bitToReplace)
                 console.log(templateJSONObj)

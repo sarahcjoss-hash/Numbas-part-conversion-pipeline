@@ -8,7 +8,7 @@ class FileWriter {
     async stringifyJSONAndwriteToFile(jsonData, fileName) {
         try {
            const stringifiedData = JSON.stringify(jsonData, null, 2);
-           console.log(stringifiedData);
+           //console.log(stringifiedData);
            const data = "// Numbas version: finer_feedback_settings\n" + stringifiedData;
             await fsPromises.writeFile(fileName, data, 'utf8');
         } catch (err) {

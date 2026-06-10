@@ -43,13 +43,13 @@ async function processExam() {
     const examUpdater = new ExamUpdater(errorReporter);
     examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
     const examJSONStitcher = new JSONFromExam(errorReporter);
-    const success =examJSONStitcher.processExam(exam.exam, examJSONObj);//this is probably hte same JSON object
-    console.log(`Exam processing ${success ? 'succeeded' : 'failed'}`);
+    const processSuccess =examJSONStitcher.processExam(exam.exam, examJSONObj);//this is probably hte same JSON object
+    console.log(`Exam processing ${processSuccess ? 'succeeded' : 'failed'}`);
 
     const folderName = `${examFolder}/updated_exam`;
     //filewriter.createFolder(`${path}${folder}/${folderName}`);
     //these are async but not dependent
-    if (success) {
+    if (success && processSuccess) {
       filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${path}updated_exam/source.exam`);
     } else {
       errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
