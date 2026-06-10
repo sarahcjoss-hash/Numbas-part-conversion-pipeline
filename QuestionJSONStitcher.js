@@ -1,0 +1,86 @@
+
+import { CustomPartJsonProvider } from './custom_part_json/CustomPartJsonProvider.js';
+import { JSONTemplateProvider } from './custom_part_json/JSONTemplateProvider.js';
+class QuestionJSONStitcher {
+    constructor(errorReporter) {
+        this._errorReporter = errorReporter;
+    }
+
+    reportError(err, additional) {
+        err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'JSONFromExam'}: ${additional} : ${err.message}`
+        this._errorReporter.reportError(err);
+    }
+
+    addCustomPartInfoToQuestion(question, index, examData) {
+        try {
+            const customPartTypes = question.extensions;
+            customPartTypes.forEach(cpt => {
+                const CPJSON = CustomPartJsonProvider.getCustomPartJson(cpt);
+                if (CPJSON) {
+                    examData.question_groups[0].questions[index].custom_part_types.push(CPJSON);
+                }
+            });
+            return true;
+        } catch (err) {
+            this.reportError(err, `Unable to add custom part info for question ${index + 1}`);
+            return false;
+        }
+    }
+     findAndReplaceParts(question, index, examJSONObj) {
+        try {
+            let parts = question.parts;
+            let success = false;
+            for (const part of parts) {
+                const j = parts.indexOf(part);
+                if (part.needsReplacing) {
+                    //not currently consuming success
+                    success =  this.replacePartWithCustomPart(question, part, j, examJSONObj);
+                }
+            }
+        } catch (err) {
+            this.reportError(err, `Unable to find and replace parts for question ${index + 1}`);
+            return false;
+        }
+    }
+    replacePartSettings(p, templateJSONObj) {
+        //fix this here so that we get th settings object, replace the settings in json witth the settings object
+        //dstich in any other data
+        //may require a custom stitcher per part
+        const settings = p.settings;
+        const prompt = p.prompt;
+        if (templateJSONObj && templateJSONObj.settings && settings) {
+            templateJSONObj.settings = settings;
+            return true;
+        } else {
+            this.reportError(new Error("Unable to insert new settings"), `Difficulty setting up custom part ${question.name} ${p.type}`)
+            return false;
+        }
+    }
+     replacePartWithCustomPart(question, p, partIndex, examJSONObj) {
+        try {
+            const type = p.type;
+            const subType = p.newPartTypeMatch;
+            const templateJSONObj = JSONTemplateProvider.getTemplate(type);
+            const success = this.replacePartSettings(p, templateJSONObj);
+            if (success) {
+                let bitToReplace = examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex];
+                console.log(bitToReplace)
+                console.log(templateJSONObj)
+                console.log(examJSONObj.question_groups[0].questions[question.number - 1].parts)
+                examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = {};
+                examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = templateJSONObj;
+                console.log(`Replaced part ${p.number} in question ${question.number} with custom part of type ${type} and sub type ${subType}`);
+                console.log(examJSONObj.question_groups[0].questions[question.number - 1].parts);
+                return true;
+            } else {
+                this.reportError(new Error("Unable to get template JSON object"), `Difficulty setting up custom part ${question.name} ${p.type}`)
+                return false;
+            }
+
+        } catch (err) {
+            this.reportError(err, `Unable to replace part with custom part for question ${question.name}`);
+        }
+    }
+
+}
+export { QuestionJSONStitcher }

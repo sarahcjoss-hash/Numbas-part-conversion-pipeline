@@ -37,25 +37,26 @@ async function processExam() {
     const examFiles = await folderWorker.findFilesInFolder(examFolder, 'source.exam');
     const line = await filereader.getSpecifiedLineInFileAsync(examFiles[0], 2);
     const success = await folderWorker.copyFolder(examFolder, `${path}updated_exam`);
-    const examData = JSON.parse(line);
-    const exam = new ExamFromJSON(examData, errorReporter);
+    const examJSONObj = JSON.parse(line);
+    const exam = new ExamFromJSON(examJSONObj, errorReporter);
     const report = reportWriter.createReport(exam.exam);
     const examUpdater = new ExamUpdater(errorReporter);
     examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
-    const updatedJSONMaker = new JSONFromExam(errorReporter);
-    const updatedJsonObj = await updatedJSONMaker.processExam(exam.exam, examData);
+    const examJSONStitcher = new JSONFromExam(errorReporter);
+    const success =examJSONStitcher.processExam(exam.exam, examJSONObj);//this is probably hte same JSON object
+    console.log(`Exam processing ${success ? 'succeeded' : 'failed'}`);
 
     const folderName = `${examFolder}/updated_exam`;
     //filewriter.createFolder(`${path}${folder}/${folderName}`);
     //these are async but not dependent
-    if (success && updatedJsonObj) {
-      filewriter.stringifyJSONAndwriteToFile(examData, `${path}updated_exam/source.exam`);
+    if (success) {
+      filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${path}updated_exam/source.exam`);
     } else {
       errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
     }
     //filewriter.writeJSONToFile(updatedJSON, `${path}${folder}/${folderName}/source.exam`);
     reportWriter.writeReportToFile(report, 'exam_report.txt');
-    reportWriter.writeReportToFile(reportWriter.createErrorReport(examData.name, errorReporter), 'error_report.txt');
+    reportWriter.writeReportToFile(reportWriter.createErrorReport(examJSONObj.name, errorReporter), 'error_report.txt');
     //console.log(report);
   } catch (error) {
     console.error('Error occurred while processing exam:', error);

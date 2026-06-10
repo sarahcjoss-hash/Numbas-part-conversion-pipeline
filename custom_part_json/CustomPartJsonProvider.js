@@ -1,6 +1,6 @@
 //This class only returns teh cutom part generic template JSON which teh exam file requires to signal a prt amd extension must be included with the exam.
 //no settings are required for this jusdt a list of extensions to include
-import { FileReader } from '../FileReader.js';
+
 class CustomPartJsonProvider {
     constructor() {
     }
