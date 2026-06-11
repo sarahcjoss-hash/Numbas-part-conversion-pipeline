@@ -17,8 +17,10 @@ class LongTextEntryBuilder extends NewPartBuilder {
             newPart.prompt = part.prompt;
             newPart.cols = LongTextEntry.convertPixelsToColumns(part.textAreaWidth || 50);
             newPart.rows = LongTextEntry.convertEmsToRows(part.textAreaHeight || 4);
+            //do marks first so we know how many checks to add to model answer
+            newPart.howManyChecks = part.marks;
             newPart.modelAnswer = part.answer ;
-            newPart.howManyChecks = part.numberofGaps;           
+           
             return newPart;
         } catch (err) {
             err.message = `Error creating new Long text entry part from existing part ${part.type}: ${err.message}`;

@@ -92,16 +92,14 @@ class QuestionJSONStitcher {
             const subType = p.newPartTypeMatch;
             const templateJSONObj = JSONTemplateProvider.getTemplate(type);
             const promptSuccess = this.replacePrompt(p, templateJSONObj);
+            templateJSONObj.marks = p.marks;
             const success = this.replacePartSettings(p, templateJSONObj);
             if (success && promptSuccess && templateJSONObj) {
-                let bitToReplace = examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex];
-                console.log(bitToReplace)
-                console.log(templateJSONObj)
-                console.log(examJSONObj.question_groups[0].questions[question.number - 1].parts)
+                
                 examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = {};
                 examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = templateJSONObj;
                 console.log(`Replaced part ${p.number} in question ${question.number} with custom part of type ${type} and sub type ${subType}`);
-                console.log(examJSONObj.question_groups[0].questions[question.number - 1].parts);
+   
                 return true;
             } else {
                 this.reportError(new Error("Unable to get template JSON object"), `Difficulty setting up custom part ${question.name} ${p.type}`)

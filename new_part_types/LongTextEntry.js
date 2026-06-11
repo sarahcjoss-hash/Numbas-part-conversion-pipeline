@@ -44,10 +44,12 @@ class LongTextEntry extends NewPart {
         let newPrompt = p.replace(/{manualmarking_builder\(.+?\)}/, '').trim();
         newPrompt = newPrompt.replace(/{manualmarking_textarea_width\(.+?\)}/, '').trim();
         newPrompt = newPrompt.replace(/{manualmarking_render\(\)}/, '').trim();   
-        //remove gaps
+        //remove gaps 
         newPrompt = newPrompt.replace(/\[\[\d+\]\]/, '');
         //remove empty p tags
         newPrompt= newPrompt.replace(/<p><\/p>/gi, '');
+        
+
         this._prompt = newPrompt;
     }
     get prompt() {
@@ -63,11 +65,14 @@ class LongTextEntry extends NewPart {
         this.updateSetting('rows', val)
     }
     set modelAnswer(val) {
-        this._modelAnswer = val;
-        this.updateSetting('modelAnswer', val);
+        //add at least one check 
+        const checkStr = this._howManyChecks? '[check]'.repeat(this._howManyChecks): '[check]'
+        this._modelAnswer = `${val} ${checkStr}` ;
+        
+        this.updateSetting('modelAnswer', this._modelAnswer);
     }
     set howManyChecks(val) {
-        this._howManyChecks = val;
+        this._howManyChecks = parseInt(val)||1;
         this.updateSetting('howManyChecks', val);
     }
 
