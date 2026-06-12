@@ -1,27 +1,52 @@
-Exam file report: single q
- Exam name: single q
+Exam file report: test a single drag question
+ Exam name: test a single drag question
 Exam tags: None
 Exam description: None
 Number of questions: 1
 
 QUESTIONS
  ________________________________
-Question 1 : Slow and fast twitch muscle fibres
- Tags colour,fast twitch,hg_chbi1_9etq3,muscle fibre,slow twitch 
-Extensions 
+Question 1 : Gene mutations
+ Tags hg_cbio1_6etq3 
+Extensions drag_and_drop
 
-Number of parts : 1
+Number of parts : 3
 part number: 1
-part type: manual_marking marks: 6
-prompt: <p>Explain the difference between the colour of slow and fast twitch muscle fibres.</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('a')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>
-text area width: '500px' text area height: auto
-answer:  Slow twitch fibres are dark red because they have a high concentration of myoglobin which stores oxygen for aerobic respiration. Fast twitch fibres are pale pink because they contain low concentrations of myoglobin as they mainly rely on anaerobic form of respiration (creatine phosphate and lactic acid metabolism).
-Marks:6 Answer  Slow twitch fibres are dark red because they have a high concentration of myoglobin which stores oxygen for aerobic respiration. Fast twitch fibres are pale pink because they contain low concentrations of myoglobin as they mainly rely on anaerobic form of respiration (creatine phosphate and lactic acid metabolism).
-,builder string: undefined
+part type: drag_and_drop marks: 6
+prompt: <p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>
+<p><img src="resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png" alt="Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN."/></p>
+<p>In the order A to C, what are the different types of mutations shown in the figure?</p>
+<p>A: [[0]]</p>
+<p>B: [[1]]</p>
+<p>C: [[2]]</p>
+<p>{dnd_builder('a','text',drags_a)}{dnd_render()}</p>
+Converted prompt: <p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>
+<p><img src="resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png" alt="Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN."/></p>
+<p>In the order A to C, what are the different types of mutations shown in the figure?</p>
+<p>A: %[Insertion]%</p>
+<p>B: %[Deletion]%</p>
+<p>C: %[Substitution]%</p>
+
+drag height: auto drag width: auto
+drag variables: name drags_a, value undefined
+builder : ,builder string: undefined
 part letter: 'a'
-type: 
-variable name: 
+type: 'text'
+variable name: drags_a
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 1
+,Gap 1: answer {drags_a[1]} Marks: 1
+,Gap 2: answer {drags_a[2]} Marks: 1
+,Gap 3: answer {drags_a[0]} Marks: 1
+,Gap 4: answer {drags_a[1]} Marks: 1
+,Gap 5: answer {drags_a[2]} Marks: 1
+
+,part number: 2
+part type: patternmatch marks: 1
+
+,part number: 3
+part type: patternmatch marks: 1
+
 
 -------------------------------------

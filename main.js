@@ -18,7 +18,7 @@ import { Exam } from './existing_parts/Exam.js';
 //create a folder to outout the new exam files
 //create somewhere for files we could not process
 const path = "C:/work/sample_exams/";
-const folder = "examples-exam-source/";
+const folder = "drag-examples-exam-source/";
 const examFolder = `${path}${folder}`;
 //const examFile = path + folder + 'source.exam';
 const errorReporter = new ErrorReporter(true, `${folder}`);

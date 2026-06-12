@@ -15,9 +15,29 @@ class JSONFromExam {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'JSONFromExam'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
     }
+        removeUnwantedExtensions(examData){
+        //use splice to remove 'drag_and_drop' and 'card_match' extensions from the question extensions in the JSON, as these are the ones we are replacing with custom parts and don't want the old extensions causing conflicts
+        try {
+            const extensions = examData.extensions;
+            const dragAndDropIndex = extensions.indexOf('drag_and_drop');
+            const cardMatchIndex = extensions.indexOf('card_match');
+            if (dragAndDropIndex !== -1) {
+                extensions.splice(dragAndDropIndex, 1);
+            }
+            if (cardMatchIndex !== -1) {
+                extensions.splice(cardMatchIndex, 1);
+            }
+            return extensions;
+        } catch (err) {
+            this.reportError(err, `Unable to remove unwanted extensions for question ${index + 1}`);
+        }
+    }
     addNewExtensionsToJSON(exam, examJSONObj) {
         const newExtensions = exam.extensionsFromQuestions;
         const pathToJSON = "./custom_part_jsons/";
+        //remove the existing extensions so we don;t get old extensions causing conflicts
+        examJSONObj.extensions = this.removeUnwantedExtensions(examJSONObj);//are here extensions we might want to keep? if so, add code here that just removes the specifics
+        examJSONObj.custom_part_types = [];
         try {
             newExtensions.forEach(ext => {
 
@@ -51,6 +71,7 @@ class JSONFromExam {
                 const i = questions.indexOf(q);
                 if (q.hasCustomParts) {
                     questionStitcher.addCustomPartInfoToQuestion(q, i, examJSONObj);
+                    questionStitcher.removeUnwantedExtensions(q, i, examJSONObj);
                     questionStitcher.removeUnwantedVariables(q, i, examJSONObj);
                     questionStitcher.findAndReplaceParts(q, i, examJSONObj);             
                 }

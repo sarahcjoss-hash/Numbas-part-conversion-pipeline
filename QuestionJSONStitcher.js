@@ -10,6 +10,22 @@ class QuestionJSONStitcher {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'JSONFromExam'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
     }
+    removeUnwantedExtensions(question, index, examData){
+        //use splice to remove 'drag_and_drop' and 'card_match' extensions from the question extensions in the JSON, as these are the ones we are replacing with custom parts and don't want the old extensions causing conflicts
+        try {
+            const extensions = examData.question_groups[0].questions[index].extensions;
+            const dragAndDropIndex = extensions.indexOf('drag_and_drop');
+            const cardMatchIndex = extensions.indexOf('card_match');
+            if (dragAndDropIndex !== -1) {
+                extensions.splice(dragAndDropIndex, 1);
+            }
+            if (cardMatchIndex !== -1) {
+                extensions.splice(cardMatchIndex, 1);
+            }
+        } catch (err) {
+            this.reportError(err, `Unable to remove unwanted extensions for question ${index + 1}`);
+        }
+    }
 
     addCustomPartInfoToQuestion(question, index, examData) {
         try {
@@ -66,7 +82,7 @@ class QuestionJSONStitcher {
         //dstich in any other data
         //may require a custom stitcher per part
         const settings = p.settings;
-        const prompt = p.prompt;
+        
         if (templateJSONObj && templateJSONObj.settings && settings) {
             templateJSONObj.settings = settings;
             return true;
