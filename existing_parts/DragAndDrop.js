@@ -1,7 +1,7 @@
 import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
 import { DragGap } from "./DragGap.js";
-import { ErrorReporter } from "../ErrorReporter.js";
+import { ErrorReporter } from "../utils/ErrorReporter.js";
 class DragAndDropPart extends Part {
     constructor(data, num, variables, logger) {
 

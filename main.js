@@ -1,12 +1,12 @@
-import { FileReader } from './fileReader.js';
-import { ExamFromJSON } from './ExamFromJSON.js';
-import { ReportWriter } from './ReportWriter.js';
-import { ErrorReporter } from './ErrorReporter.js';
+import { FileReader } from './utils/FileReader.js';
+import { ExamFromJSON } from './JSON_providers_and_workers/ExamFromJSON.js';
+import { JSONFromExam } from './JSON_providers_and_workers/JSONFromExam.js';
+import { ReportWriter } from './utils/ReportWriter.js';
+import { ErrorReporter } from './utils/ErrorReporter.js';
 import { ExamUpdater } from './ExamUpdater.js';
-import { JSONFromExam } from './JSONFromExam.js';
-import { FileWriter } from './FileWriter.js';
-import { FolderWorker } from './FolderWorker.js';
-import { Exam } from './existing_parts/Exam.js';
+import { FileWriter } from './utils/FileWriter.js';
+import { FolderWorker } from './utils/FolderWorker.js';
+
 
 
 // to do

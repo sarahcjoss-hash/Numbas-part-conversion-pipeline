@@ -1,12 +1,14 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Reads a numbas v7 or greater exam file - source.exam, finds all the deprecated part and extensions, and replaces these with new custom parts, and outputs the result to a new folder ready for import into NUMBAS.
 
 # Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Exams to be updated should be in a folder. if they were downloaded zipped they should be unzipped (there may be a separate .bat to do this)
+A front end tool will allow users to browse to the folder
+The app will look for source.exam files, make  a copy of the folder and put the updated source exam file into the new folder.
+
+in addition a report text file and an error report file will be created and these will be put _______
+
+there are still manual processes to be acarried out to teh updated NUMBAS exams including side by side testing.
 
 # Build and Test
 TODO: Describe and show how to build your code and run the tests. 

@@ -1,4 +1,4 @@
-import { PartJSONFileReader } from './PartJSONFileReader.js';
+
 
 class NewPart {
     //although all parts have a prompt and 0 to many gaps 
@@ -8,7 +8,7 @@ class NewPart {
         this._type = "";
         this._marks = 1;
         this._errorReporter = errorLogger;
-        this._fileReader = new PartJSONFileReader(errorLogger);
+   
         this._customPartFileName = '';
         this._templateJsonFileName = '';
         this._settings = {};
@@ -33,19 +33,7 @@ class NewPart {
         return this._templateJsonFileName
     }
 
-    async templateJsonAsObject() {
-        try {
-            if (this.templateJsonFileName) {
-                return JSON.parse(await this._fileReader.readPartJSONFile(this._templateJsonFileName) || '{}'  );
-            } else {
-                return null;
-            }
-        } catch (err) {
-            this.reportError(err, `Unable to get template JSON as object for file ${this._templateJsonFileName}`);
-            return null;
-        }
 
-    }
     set marks(mark) {
         this._marks = mark;
     }
