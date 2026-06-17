@@ -1,9 +1,9 @@
-import { Exam } from './existing_parts/Exam.js';
-import { Question } from "./existing_parts/Question.js";
-import { Part } from "./existing_parts/Part.js";
-import { ManualMarkingPart } from "./existing_parts/manualmarkingpart.js";
-import { DragAndDropPart } from "./existing_parts/DragAndDrop.js";
-import { CardMatch } from "./existing_parts/CardMatch.js";
+import { Exam } from '../existing_parts/Exam.js';
+import { Question } from "../existing_parts/Question.js";
+import { Part } from "../existing_parts/Part.js";
+import { ManualMarkingPart } from "../existing_parts/ManualMarkingPart.js";
+import { DragAndDropPart } from "../existing_parts/DragAndDrop.js";
+import { CardMatch } from "../existing_parts/CardMatch.js";
 
 
 

@@ -11,12 +11,9 @@ import { FolderWorker } from './utils/FolderWorker.js';
 
 // to do
 //create a UI that allows user to browse to a folder
-//find all the folder in the path and look for exam files
-//or if the folder contains question.exam i.e. single exam files- use those 
-//but for single exam files we need to alter converter to read without all the exam, questions groups etc.
-//handle no exam files found
-//create a folder to outout the new exam files
+
 //create somewhere for files we could not process
+//create somewhere for the reports
 const path = "C:/work/sample_exams/";
 const folder = "drag-examples-exam-source/";
 const examFolder = `${path}${folder}`;
