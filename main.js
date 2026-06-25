@@ -15,7 +15,7 @@ import { FolderWorker } from './utils/FolderWorker.js';
 //create somewhere for files we could not process
 //create somewhere for the reports
 const path = "C:/work/sample_exams/";
-const folder = "drag-examples-exam-source/";
+const folder = "sample-exam/";
 const examFolder = `${path}${folder}`;
 //const examFile = path + folder + 'source.exam';
 const errorReporter = new ErrorReporter(true, `${folder}`);
@@ -31,9 +31,10 @@ const folderWorker = new FolderWorker(errorReporter);
 
 async function processExam() {
   try {
+    const updatedExamFolderName =`${path}updated_${folder}`
     const examFiles = await folderWorker.findFilesInFolder(examFolder, 'source.exam');
     const line = await filereader.getSpecifiedLineInFileAsync(examFiles[0], 2);
-    const success = await folderWorker.copyFolder(examFolder, `${path}updated_exam`);
+    const success = await folderWorker.copyFolder(examFolder, updatedExamFolderName);
     const examJSONObj = JSON.parse(line);
     const exam = new ExamFromJSON(examJSONObj, errorReporter);
     const report = reportWriter.createReport(exam.exam);
@@ -43,11 +44,11 @@ async function processExam() {
     const processSuccess =examJSONStitcher.processExam(exam.exam, examJSONObj);//this is probably hte same JSON object
     console.log(`Exam processing ${processSuccess ? 'succeeded' : 'failed'}`);
 
-    const folderName = `${examFolder}/updated_exam`;
+    const folderName = `${examFolder}/updated_exam_${folder}`;
     //filewriter.createFolder(`${path}${folder}/${folderName}`);
     //these are async but not dependent
     if (success && processSuccess) {
-      filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${path}updated_exam/source.exam`);
+      filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${updatedExamFolderName}/source.exam`);
     } else {
       errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
     }

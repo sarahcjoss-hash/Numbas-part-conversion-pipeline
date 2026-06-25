@@ -124,11 +124,13 @@ class JSONTemplateProvider {
             "markIncrement": "1",
             "cols": "50",
             "rows": "4",
-            "howTo": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
-            "markInstruction": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
-            "correctFeedback": "Well done. ",
-            "partialCorrect": "You were partially correct. ",
-            "incorrectFeedback": "You did not get any marks this time. You might want to revise [topic]"
+            "howTo": "This is a self marked question. When you are ready, select 'Check your answer'.",
+            "markInstruction": "Check the box for each item covered in your answer or select 'My answer does not contain any of the items listed'. When you have finished marking your answer, select 'Save answer'.",
+            "correctFeedback": "Your answer is correct.",
+            "partialCorrect": "You answer is partially correct.",
+            "incorrectFeedback": "Your answer is incorrect.",
+            "noMarksInstruction":"My answer does not contain any of the items listed."
+                        
         }
     }
     static drag121Template = {

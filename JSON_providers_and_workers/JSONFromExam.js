@@ -64,7 +64,8 @@ class JSONFromExam {
 
         try {
         const success = this.addNewExtensionsToJSON(exam, examJSONObj);
- 
+            //rename exam
+            examJSONObj.name = examJSONObj.name + "_updated";
         const questions = exam.questions;//need flat here as the questions are themselves an array
             const questionStitcher = new QuestionJSONStitcher(this._errorReporter);
             for (const q of questions) {

@@ -52,7 +52,7 @@ class CustomPartJsonProvider {
         },
         "name": "scholar sentence reorder",
         "short_name": "scholar-sentence-reorder",
-        "description": "<p>Thbis part will move drag items to the available space</p>",
+        "description": "<p>This part will move drag items to the available space</p>",
         "help_url": "",
         "input_widget": "SentenceReorder",
         "input_options": {
@@ -383,7 +383,7 @@ class CustomPartJsonProvider {
             "correctAnswer": "settings['howManyChecks']",
             "hint": {
                 "static": true,
-                "value": "You should write your answer as a sentence, paragraph or short essay, depending onhte amount of inforamtion teh question requires. When you are done hit 'compare' to check your answer."
+                "value": "This is a self-marked question. When you are ready, select 'Check your answer' ."
             },
             "modelAnswer": {
                 "static": false,
@@ -494,7 +494,7 @@ class CustomPartJsonProvider {
                 "help_url": "",
                 "hint": "",
                 "input_type": "string",
-                "default_value": "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.",
+                "default_value": "This is a self-marked question. When you are ready, select 'Check your answer' .",
                 "subvars": false
             },
             {
@@ -503,7 +503,7 @@ class CustomPartJsonProvider {
                 "help_url": "",
                 "hint": "Tell the user how to work the markking part of the question.",
                 "input_type": "string",
-                "default_value": "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'",
+                "default_value": "Check the box for each item covered in your answer or select 'My answer does not contain any of the items listed'. When you have finished marking your answer, select 'Save answer'.",
                 "subvars": false
             },
             {
@@ -512,7 +512,7 @@ class CustomPartJsonProvider {
                 "help_url": "",
                 "hint": "",
                 "input_type": "string",
-                "default_value": "Well done. ",
+                "default_value": "Your answer is correct. ",
                 "subvars": false
             },
             {
@@ -521,7 +521,7 @@ class CustomPartJsonProvider {
                 "help_url": "",
                 "hint": "",
                 "input_type": "string",
-                "default_value": "You were partially correct. ",
+                "default_value": "Your answer is partially correct.",
                 "subvars": false
             },
             {
@@ -530,9 +530,14 @@ class CustomPartJsonProvider {
                 "help_url": "",
                 "hint": "this allows you to give user advice on what to look for if they got the wrong answer",
                 "input_type": "string",
-                "default_value": "You did not get any marks this time.",
+                "default_value": "Your answer is incorrect.",
                 "subvars": false
-            }
+            },{
+                            name: 'noMarksInstruction',
+                            label: 'The instruction next to the check box for no correct answers matched',
+                            input_type: 'string',
+                            default_value: "My answer does not contain any of the items listed."
+                        }
         ],
         "public_availability": "restricted",
         "published": false,

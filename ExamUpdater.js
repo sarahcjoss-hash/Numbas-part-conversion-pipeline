@@ -11,6 +11,7 @@ reportError(err, additional){
     err.message= `${this.constructor && this.constructor.name ? this.constructor.name : 'ExamUpdater'}: ${additional} : ${err.message}`
     this._errorReporter.reportError(err);
 }
+
 updateExam(exam){
     try{
     if (exam.questions){
