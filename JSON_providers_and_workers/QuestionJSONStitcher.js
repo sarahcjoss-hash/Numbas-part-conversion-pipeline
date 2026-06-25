@@ -46,7 +46,8 @@ class QuestionJSONStitcher {
         try{
             const variables =  examData.question_groups[0].questions[index].variables;
             const customPartTypes = question.extensions;
-            if (variables && customPartTypes) {
+            const ungroupedVariables = examData.question_groups[0].questions[index].ungrouped_variables;
+            if (variables|| ungroupedVariables && customPartTypes) {
                 for (const v in variables) {
                     console.log(`Checking variable ${v} for question ${index + 1} variable name is ${variables[v].name}`);
                     if (variables[v].name.startsWith('manualmarking_') || variables[v].name.startsWith('cardmatch_') || variables[v].name.startsWith('dnd_')) {
@@ -54,7 +55,16 @@ class QuestionJSONStitcher {
                         delete examData.question_groups[0].questions[index].variables[v];
                     }
                 }
+                for (const uv in ungroupedVariables) {
+                    //ungrouped varaibles do not ahve a name prop
+                    console.log(`Checking ungrouped variable ${uv} for question ${index + 1}`); 
+                    if (ungroupedVariables[uv].startsWith('manualmarking_') || ungroupedVariables[uv].startsWith('cardmatch_') || ungroupedVariables[uv].startsWith('dnd_')) {
+                        console.log(`deleting ungrouped variable ${uv} `);
+                        examData.question_groups[0].questions[index].ungrouped_variables.splice(uv,1);
+                    }
+                }
             }
+            
 
         }catch(err) {
             this.reportError(err, `Unable to remove unwanted variables for question ${index + 1}`);
@@ -94,7 +104,7 @@ class QuestionJSONStitcher {
     replacePrompt(p, templateJSONObj) {
         const prompt = p.prompt;  
         console.log(`Replacing prompt with ${prompt}`);  
-        if (templateJSONObj && prompt) {
+        if (templateJSONObj && undefined != prompt) {
             templateJSONObj.prompt = prompt;
             return true;
         } else {

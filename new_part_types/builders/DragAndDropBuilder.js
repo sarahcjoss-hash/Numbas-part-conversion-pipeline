@@ -34,7 +34,7 @@ class DragAndDropBuilder extends NewPartBuilder {
             //don;t worry too much about this for this iteration just get it working but for future using 
             // field-sizing where available
             let newPart = new DropInBucket(this._errorLogger);
-            newPart.prompt = part.prompt;
+            newPart.prompt = "";
             newPart.targetText = part.convertedPrompt;
             newPart.marks = part.marks || 1;
             newPart.how_many_matches = part.numberofGaps;
@@ -56,7 +56,7 @@ class DragAndDropBuilder extends NewPartBuilder {
             //don;t worry too much about this for this iteration just get it working but for future using 
             // field-sizing where available
             let newPart = new SentenceReorder(this._errorLogger);
-            newPart.prompt = part.prompt;
+            newPart.prompt = "";
             newPart.targetText = part.convertedPrompt;
             newPart.marks = part.marks || 1;
             newPart.howManyDrags = part.numberofGaps;  
