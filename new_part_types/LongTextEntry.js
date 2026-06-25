@@ -31,11 +31,12 @@ class LongTextEntry extends NewPart {
         settings.markIncrement = 1;
         settings.cols = 50;
         settings.rows = 4;
-        settings.howTo = "This is a self marked question. You should write your answer as one or more sentences. When you are ready use the button to 'Check your answer'.";
-        settings.markInstruction = "Tick each of the items that matches something in your answer. Or choose 'I did not get the correct answer(s)'. When you have finished click 'Save answer'";
-        settings.correctFeedback = "Well done. ";
-        settings.partialCorrect = "You were partially correct. ";
-        settings.incorrectFeedback = "You did not get any marks this time. You might want to revise [topic]";
+        settings.howTo = "This is a self-marked question. When you are ready, select 'Check your answer' .";
+        settings.markInstruction = "Check the box for each item covered in your answer or select ‘My answer does not contain any of the items listed’. When you have finished marking your answer, select ‘Save answer’.";
+        settings.correctFeedback = "Your answer is correct.";
+        settings.partialCorrect = "Your answer is partially correct.";
+        settings.incorrectFeedback = "Your answer is incorrect.";
+        settings.noMarksInstruction = "My answer does not contain any of the items listed.";
         return settings;
 
     }

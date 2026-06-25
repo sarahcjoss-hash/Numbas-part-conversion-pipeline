@@ -87,25 +87,25 @@ class QuestionJSONStitcher {
             return false;
         }
     }
-    replacePartSettings(p, templateJSONObj) {
+    replacePartSettings(p, clonedJSONObj) {
         //fix this here so that we get th settings object, replace the settings in json witth the settings object
         //dstich in any other data
         //may require a custom stitcher per part
         const settings = p.settings;
         
-        if (templateJSONObj && templateJSONObj.settings && settings) {
-            templateJSONObj.settings = settings;
+        if (clonedJSONObj && clonedJSONObj.settings && settings) {
+            clonedJSONObj.settings = settings;
             return true;
         } else {
             this.reportError(new Error("Unable to insert new settings"), `Difficulty setting up custom part ${question.name} ${p.type}`)
             return false;
         }
     }
-    replacePrompt(p, templateJSONObj) {
+    replacePrompt(p, clonedJSONObj) {
         const prompt = p.prompt;  
         console.log(`Replacing prompt with ${prompt}`);  
-        if (templateJSONObj && undefined != prompt) {
-            templateJSONObj.prompt = prompt;
+        if (clonedJSONObj && undefined != prompt) {
+            clonedJSONObj.prompt = prompt;
             return true;
         } else {
             this.reportError(new Error("Unable to insert new prompt"), `Difficulty setting up custom part  ${p.type}`)
@@ -117,13 +117,14 @@ class QuestionJSONStitcher {
             const type = p.type;
             const subType = p.newPartTypeMatch;
             const templateJSONObj = JSONTemplateProvider.getTemplate(type);
-            const promptSuccess = this.replacePrompt(p, templateJSONObj);
-            templateJSONObj.marks = p.marks;
-            const success = this.replacePartSettings(p, templateJSONObj);
-            if (success && promptSuccess && templateJSONObj) {
+            const clonedTemplateJSONObj = templateJSONObj ? structuredClone(templateJSONObj) : null;
+            const promptSuccess = this.replacePrompt(p, clonedTemplateJSONObj);
+            clonedTemplateJSONObj.marks = p.marks;
+            const success = this.replacePartSettings(p, clonedTemplateJSONObj);
+            if (success && promptSuccess && clonedTemplateJSONObj) {
                 
                 examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = {};
-                examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = templateJSONObj;
+                examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = clonedTemplateJSONObj;
                 console.log(`Replaced part ${p.number} in question ${question.number} with custom part of type ${type} and sub type ${subType}`);
    
                 return true;
