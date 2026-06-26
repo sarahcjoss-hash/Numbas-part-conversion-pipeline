@@ -62,7 +62,7 @@ Extensions drag_and_drop
 
 Number of parts : 5
 part number: 1
-part type: drag_and_drop marks: 0100001
+part type: drag_and_drop marks: 2
 prompt: <p>&nbsp;I rarely go window shopping / shopping.</p>
 <p>[[0]] [[1]] [[2]] [[3]] [[4]] 。</p>
 <p>{dnd_builder("a","reorder",drags_a)}{dnd_dragHeight(40)}{dnd_render()}</p>
@@ -89,7 +89,7 @@ Gap 0: answer {drags_a[0]} Marks:
 ,Gap 9: answer {drags_a[4]} Marks: 1
 
 ,part number: 2
-part type: drag_and_drop marks: 010000001
+part type: drag_and_drop marks: 2
 prompt: <p>Drinking is bad for health.</p>
 <p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] 。</p>
 <p>{dnd_builder("b","reorder",drags_b)}{dnd_dragHeight(40)}{dnd_render()}</p>
@@ -120,7 +120,7 @@ Gap 0: answer {drags_b[0]} Marks:
 ,Gap 13: answer {drags_b[6]} Marks: 1
 
 ,part number: 3
-part type: drag_and_drop marks: 010000000001
+part type: drag_and_drop marks: 2
 prompt: <p>I think that leisure time is very important.</p>
 <p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] 。</p>
 <p>{dnd_builder("c","reorder",drags_c)}{dnd_dragHeight(40)}{dnd_render()}</p>
@@ -157,7 +157,7 @@ Gap 0: answer {drags_c[0]} Marks:
 ,Gap 19: answer {drags_c[9]} Marks: 1
 
 ,part number: 4
-part type: drag_and_drop marks: 0100000000001
+part type: drag_and_drop marks: 2
 prompt: <p>I take a walk for 20 minutes every day.</p>
 <p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] [[10]] 。</p>
 <p>{dnd_builder("d","reorder",drags_d)}{dnd_dragHeight(40)}{dnd_render()}</p>
@@ -196,7 +196,7 @@ Gap 0: answer {drags_d[0]} Marks:
 ,Gap 21: answer {drags_d[10]} Marks: 1
 
 ,part number: 5
-part type: drag_and_drop marks: 0100000000001
+part type: drag_and_drop marks: 2
 prompt: <p>What do you like doing in your free time?</p>
 <p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] [[10]] ？</p>
 <p>{dnd_builder("e","reorder",drags_e)}{dnd_dragHeight(40)}{dnd_render()}</p>

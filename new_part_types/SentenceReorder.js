@@ -59,8 +59,7 @@ class SentenceReorder extends NewDragAndDrop {
         //remove gaps 
         newPrompt = newPrompt.replace(/\[\[\d+\]\]/g, '');
         //remove empty p tags
-        newPrompt= newPrompt.replace(/<p><\/p>/gi, '');
-        
+        newPrompt= newPrompt.replace(/<p><\/p>/gi, '');       
 
         this._prompt = newPrompt;
     }

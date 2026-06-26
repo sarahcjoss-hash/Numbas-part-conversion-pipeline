@@ -154,7 +154,7 @@ class DragAndDropPart extends Part {
     get marksFromGaps() {
         try {
             const marks = this._gaps.map(g => { return g.marks }).reduce(
-                (accumulator, currentValue) => accumulator + currentValue,
+                (accumulator, currentValue) => accumulator + Number(currentValue),
                 0,
             );
             return marks ? marks : 0;
