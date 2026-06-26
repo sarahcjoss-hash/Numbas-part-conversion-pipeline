@@ -32,6 +32,29 @@ class FolderWorker {
             throw new Error(`Error finding files in folder ${folderPath}`);
         }
     }
+    async findFoldersInFolder(folderPath) {
+        try {
+            const files = await fsPromises.readdir(folderPath);
+            const matchingFiles = files.filter(file => fsPromises.stat(`${folderPath}/${file}`).then(stat => stat.isDirectory()));
+            return matchingFiles.map(file => `${folderPath}/${file}`);
+        } catch (err) {
+            this.reportError(err, `Error finding folders in folder ${folderPath}`);
+            throw new Error(`Error finding folders in folder ${folderPath}`);
+        }
+    }
+    async createNewFolderStructure(folderPath) {
+        //create 3 folders within the target folder, output, error_files, reports
+        try {
+            await fsPromises.mkdir(`${folderPath}/output`, { recursive: true });
+            await fsPromises.mkdir(`${folderPath}/error_files`, { recursive: true });
+            await fsPromises.mkdir(`${folderPath}/reports`, { recursive: true });
+            return true;     
+            
+        } catch (err) {
+            this.reportError(err, `Error creating new folder structure ${folderPath}`);
+            throw new Error(`Error creating new folder structure ${folderPath}`);
+        }
+    }
     //function to copy all files in a folder to a new location
     async copyFilesInFolder(sourceFolder, destinationFolder) {
         try {

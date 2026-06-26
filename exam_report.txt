@@ -1,26 +1,28 @@
-Exam file report: End of Topic 2 Test: Lifestyle
- Exam name: End of Topic 2 Test: Lifestyle
+Exam file report: Formulae
+ Exam name: Formulae
 Exam tags: None
 Exam description: None
-Number of questions: 3
+Number of questions: 1
 
 QUESTIONS
  ________________________________
-Question 1 : Complete the Sentence
- Tags lifestyle,n5csm1_2etq1,society 
+Question 1 : Formulae
+ Tags formulae,full structural formula,molecular formula,n5_che2_2ex1 
 Extensions 
 
-Number of parts : 5
+Number of parts : 3
 part number: 1
-part type: gapfill marks: 0
+part type: 1_n_2 marks: 0
 
 ,part number: 2
 part type: gapfill marks: 0
 
 ,part number: 3
-part type: gapfill marks: 0
+part type: m_n_2 marks: 0
 
-,part number: 4
+
+-------------------------------------
+r: 4
 part type: gapfill marks: 0
 
 ,part number: 5
@@ -234,5 +236,19 @@ Gap 0: answer {drags_e[0]} Marks:
 ,Gap 20: answer {drags_e[9]} Marks: 0
 ,Gap 21: answer {drags_e[10]} Marks: 1
 
+
+-------------------------------------
+mpression that volunteering is worthwhile? Give details from the text to justify your answer.</p>
+<p>[[0]]</p>
+<p></p>
+<p></p>
+<p>{manualmarking_builder('a')}{manualmarking_render()}</p>
+text area width: auto text area height: auto
+answer: Mais, il y a davantage de choix en Europe pour les mineurs.  - But there is more choice for young people in Europe. (2 marks) Aucune compétence particulière, ni diplôme ne sont demandés. - No particular skill nor qualification are required/asked for. (2 marks) Les ados travaillent en moyenne 20 heures par semaine - The teenagers/young people work on average for 20 hours a/per week. (2 marks) La répartition entre jours travaillés et jours chômés se fait, - The division between/of days worked and days off is done, (2 marks) le plus souvent, sur place, avec l'équipe et les animateurs. - most often, on the spot by the team and the leaders. (2 marks)   
+Marks:10 Answer Mais, il y a davantage de choix en Europe pour les mineurs.  - But there is more choice for young people in Europe. (2 marks) Aucune compétence particulière, ni diplôme ne sont demandés. - No particular skill nor qualification are required/asked for. (2 marks) Les ados travaillent en moyenne 20 heures par semaine - The teenagers/young people work on average for 20 hours a/per week. (2 marks) La répartition entre jours travaillés et jours chômés se fait, - The division between/of days worked and days off is done, (2 marks) le plus souvent, sur place, avec l'équipe et les animateurs. - most often, on the spot by the team and the leaders. (2 marks)   
+,builder string: undefined
+part letter: 'a'
+type: 
+variable name: 
 
 -------------------------------------

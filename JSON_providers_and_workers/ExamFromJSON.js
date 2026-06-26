@@ -46,7 +46,7 @@ class ExamFromJSON {
 
                 try {
                     if (mmFlag) {
-                         part = new ManualMarkingPart(p, j+1, this._errorLog);
+                         part = new ManualMarkingPart(p, j+1, q.advice, this._errorLog);
                     }else if (ddFlag) {
                         part = new DragAndDropPart(p, j+1, q.variables, this._errorLog);
                    

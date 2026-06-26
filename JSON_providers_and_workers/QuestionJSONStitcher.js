@@ -16,11 +16,15 @@ class QuestionJSONStitcher {
             const extensions = examData.question_groups[0].questions[index].extensions;
             const dragAndDropIndex = extensions.indexOf('drag_and_drop');
             const cardMatchIndex = extensions.indexOf('card_match');
+            const manualMarkIndex = extensions.indexOf('manual_marking');
             if (dragAndDropIndex !== -1) {
                 extensions.splice(dragAndDropIndex, 1);
             }
             if (cardMatchIndex !== -1) {
                 extensions.splice(cardMatchIndex, 1);
+            }
+            if (manualMarkIndex !== -1) {
+                extensions.splice(manualMarkIndex, 1);
             }
         } catch (err) {
             this.reportError(err, `Unable to remove unwanted extensions for question ${index + 1}`);

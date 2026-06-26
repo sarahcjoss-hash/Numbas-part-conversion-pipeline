@@ -2,7 +2,7 @@ import { Part } from "./Part.js";
 import { Builder } from "./Builder.js";
 
 class ManualMarkingPart extends Part {
-    constructor(data, num, errorReporter) {
+    constructor(data, num, advice, errorReporter) {
         super(data, num, errorReporter);
         super._type = "manual_marking";
         function extractValueFromBS(val, prefix) {
@@ -30,7 +30,7 @@ class ManualMarkingPart extends Part {
         this._textAreaWidth = extractValueFromBS(width, builderPrefix+'width(')|| 'auto';
         this._textAreaHeight = extractValueFromBS(height,builderPrefix+'height(' ) || 'auto';
         //console.log(`this._textAreaWidth ${this._textAreaWidth} _textAreaHeight ${this._textAreaHeight}`)
-        this._answer = gap.displayAnswer || "";
+        this._answer = gap.displayAnswer + advice || "";
         this._builder = new Builder(builder, errorReporter);
         this._marks = gap.marks || 0;
         

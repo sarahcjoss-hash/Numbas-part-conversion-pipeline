@@ -6,6 +6,8 @@ import { ErrorReporter } from './utils/ErrorReporter.js';
 import { ExamUpdater } from './ExamUpdater.js';
 import { FileWriter } from './utils/FileWriter.js';
 import { FolderWorker } from './utils/FolderWorker.js';
+import fs from 'fs';
+import fsPromises from 'fs/promises';
 
 
 
@@ -15,26 +17,34 @@ import { FolderWorker } from './utils/FolderWorker.js';
 //create somewhere for files we could not process
 //create somewhere for the reports
 const path = "C:/work/sample_exams/";
-const folder = "n5_csm1_2et/";
-const examFolder = `${path}${folder}`;
-//const examFile = path + folder + 'source.exam';
+const folder = "files_to_convert/";
+const inputFolder = `${path}${folder}`;
+
+const outputPath = `${path}output`;
+const errorFilePath = `${path}error_files`;
+const reportFilePath = `${path}reports`;
 const errorReporter = new ErrorReporter(true, `${folder}`);
 const filereader = new FileReader(errorReporter);
 const filewriter = new FileWriter(errorReporter);
 const reportWriter = new ReportWriter();
-
 const folderWorker = new FolderWorker(errorReporter);
+const folders = await folderWorker.findFoldersInFolder(inputFolder);//find the folders first
+//set up output folder structure
+await fsPromises.mkdir(`${outputPath}`, { recursive: true });
+await fsPromises.mkdir(`${errorFilePath}`, { recursive: true });
+await fsPromises.mkdir(`${reportFilePath}`, { recursive: true });
 
 //open folder and find source.exam files
 //copy the directory including all files to a new folder called updated_examname
 //create a new exam file in the new folder with the updated JSON
 
-async function processExam() {
+async function processExam(workingFolder) {
   try {
-    const updatedExamFolderName =`${path}updated_${folder}`
-    const examFiles = await folderWorker.findFilesInFolder(examFolder, 'source.exam');
+    const examFolderName = `${workingFolder}`.replace(`${inputFolder}/`,'');
+    const updatedExamFolderName =`${outputPath}/${examFolderName}`
+    const examFiles = await folderWorker.findFilesInFolder(workingFolder, 'source.exam');
     const line = await filereader.getSpecifiedLineInFileAsync(examFiles[0], 2);
-    const success = await folderWorker.copyFolder(examFolder, updatedExamFolderName);
+    const success = await folderWorker.copyFolder(workingFolder, updatedExamFolderName);
     const examJSONObj = JSON.parse(line);
     const exam = new ExamFromJSON(examJSONObj, errorReporter);
     const report = reportWriter.createReport(exam.exam);
@@ -44,23 +54,30 @@ async function processExam() {
     const processSuccess =examJSONStitcher.processExam(exam.exam, examJSONObj);//this is probably hte same JSON object
     console.log(`Exam processing ${processSuccess ? 'succeeded' : 'failed'}`);
 
-    const folderName = `${examFolder}/updated_exam_${folder}`;
-    //filewriter.createFolder(`${path}${folder}/${folderName}`);
+ 
     //these are async but not dependent
     if (success && processSuccess) {
       filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${updatedExamFolderName}/source.exam`);
     } else {
       errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
     }
-    //filewriter.writeJSONToFile(updatedJSON, `${path}${folder}/${folderName}/source.exam`);
-    reportWriter.writeReportToFile(report, 'exam_report.txt');
-    reportWriter.writeReportToFile(reportWriter.createErrorReport(examJSONObj.name, errorReporter), 'error_report.txt');
+  
+    reportWriter.writeReportToFile(report, `${reportFilePath}\\${examFolderName}_report.txt`);
+    reportWriter.writeReportToFile(reportWriter.createErrorReport(examJSONObj.name, errorReporter), errorFilePath+`/${examFolderName}_error.txt`);
     //console.log(report);
   } catch (error) {
     console.error('Error occurred while processing exam:', error);
+    return false;
   }
+  return true;
 }   //console.log(report);
+//could do this as a promise but it is not going to be so slow we need to run synchronoulsy
 
 
-processExam()
+for (const examFolder of folders) {
+    const processed = await await processExam(examFolder);
+    console.log(processed);
+    //add an overall log here
+  }
+
 

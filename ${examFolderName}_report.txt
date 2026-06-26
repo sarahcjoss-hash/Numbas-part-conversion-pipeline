@@ -1,0 +1,238 @@
+Exam file report: End of Topic 2 Test: Lifestyle
+ Exam name: End of Topic 2 Test: Lifestyle
+Exam tags: None
+Exam description: None
+Number of questions: 3
+
+QUESTIONS
+ ________________________________
+Question 1 : Complete the Sentence
+ Tags lifestyle,n5csm1_2etq1,society 
+Extensions 
+
+Number of parts : 5
+part number: 1
+part type: gapfill marks: 0
+
+,part number: 2
+part type: gapfill marks: 0
+
+,part number: 3
+part type: gapfill marks: 0
+
+,part number: 4
+part type: gapfill marks: 0
+
+,part number: 5
+part type: gapfill marks: 0
+
+
+-------------------------------------
+,Question 2 : Reading
+ Tags lifestyle,n5csm1_2etq2,society 
+Extensions 
+
+Number of parts : 7
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: patternmatch marks: 2
+
+,part number: 3
+part type: patternmatch marks: 1
+
+,part number: 4
+part type: patternmatch marks: 1
+
+,part number: 5
+part type: patternmatch marks: 1
+
+,part number: 6
+part type: patternmatch marks: 1
+
+,part number: 7
+part type: patternmatch marks: 1
+
+
+-------------------------------------
+,Question 3 : Translation
+ Tags lifestyle,n5csm1_2etq3,n5csm1_2etq3_sentencereorder1.swf,n5csm1_2etq3_sentencereorder2.swf,n5csm1_2etq3_sentencereorder3.swf,n5csm1_2etq3_sentencereorder4.swf,n5csm1_2etq3_sentencereorder5.swf,society 
+Extensions drag_and_drop
+
+Number of parts : 5
+part number: 1
+part type: drag_and_drop marks: 2
+prompt: <p>&nbsp;I rarely go window shopping / shopping.</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] 。</p>
+<p>{dnd_builder("a","reorder",drags_a)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>&nbsp;I rarely go window shopping / shopping.</p>
+<p>%[<strong style="font-size: 1.5em">&#x6211;</strong>]% %[<strong style="font-size: 1.5em">&#x5F88;</strong>]% %[<strong style="font-size: 1.5em">&#x5C11;</strong>]% %[<strong style="font-size: 1.5em">&#x901B;</strong>]% %[<strong style="font-size: 1.5em">&#x8857;</strong>]% 。</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_a, value undefined
+builder : ,builder string: undefined
+part letter: "a"
+type: "reorder"
+variable name: drags_a
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_a[0]} Marks: 
+,Gap 1: answer {drags_a[1]} Marks: 
+,Gap 2: answer {drags_a[2]} Marks: 
+,Gap 3: answer {drags_a[3]} Marks: 
+,Gap 4: answer {drags_a[4]} Marks: 1
+,Gap 5: answer {drags_a[0]} Marks: 0
+,Gap 6: answer {drags_a[1]} Marks: 0
+,Gap 7: answer {drags_a[2]} Marks: 0
+,Gap 8: answer {drags_a[3]} Marks: 0
+,Gap 9: answer {drags_a[4]} Marks: 1
+
+,part number: 2
+part type: drag_and_drop marks: 2
+prompt: <p>Drinking is bad for health.</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] 。</p>
+<p>{dnd_builder("b","reorder",drags_b)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>Drinking is bad for health.</p>
+<p>%[<strong style="font-size: 1.5em">&#x559D;</strong>]% %[<strong style="font-size: 1.5em">&#x9152;</strong>]% %[<strong style="font-size: 1.5em">&#x5BF9;</strong>]% %[<strong style="font-size: 1.5em">&#x8EAB;</strong>]% %[<strong style="font-size: 1.5em">&#x4F53;</strong>]% %[<strong style="font-size: 1.5em">&#x4E0D;</strong>]% %[<strong style="font-size: 1.5em">&#x597D;</strong>]% 。</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_b, value undefined
+builder : ,builder string: undefined
+part letter: "b"
+type: "reorder"
+variable name: drags_b
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_b[0]} Marks: 
+,Gap 1: answer {drags_b[1]} Marks: 
+,Gap 2: answer {drags_b[2]} Marks: 
+,Gap 3: answer {drags_b[3]} Marks: 
+,Gap 4: answer {drags_b[4]} Marks: 
+,Gap 5: answer {drags_b[5]} Marks: 
+,Gap 6: answer {drags_b[6]} Marks: 1
+,Gap 7: answer {drags_b[0]} Marks: 0
+,Gap 8: answer {drags_b[1]} Marks: 0
+,Gap 9: answer {drags_b[2]} Marks: 0
+,Gap 10: answer {drags_b[3]} Marks: 0
+,Gap 11: answer {drags_b[4]} Marks: 0
+,Gap 12: answer {drags_b[5]} Marks: 0
+,Gap 13: answer {drags_b[6]} Marks: 1
+
+,part number: 3
+part type: drag_and_drop marks: 2
+prompt: <p>I think that leisure time is very important.</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] 。</p>
+<p>{dnd_builder("c","reorder",drags_c)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>I think that leisure time is very important.</p>
+<p>%[<strong style="font-size: 1.5em">&#x6211;</strong>]% %[<strong style="font-size: 1.5em">&#x8BA4;</strong>]% %[<strong style="font-size: 1.5em">&#x4E3A;</strong>]% %[<strong style="font-size: 1.5em">&#x4F11;</strong>]% %[<strong style="font-size: 1.5em">&#x95F2;</strong>]% %[<strong style="font-size: 1.5em">&#x65F6;</strong>]% %[<strong style="font-size: 1.5em">&#x95F4;</strong>]% %[<strong style="font-size: 1.5em">&#x5F88;</strong>]% %[<strong style="font-size: 1.5em">&#x91CD;</strong>]% %[<strong style="font-size: 1.5em">&#x8981;</strong>]% 。</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_c, value undefined
+builder : ,builder string: undefined
+part letter: "c"
+type: "reorder"
+variable name: drags_c
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_c[0]} Marks: 
+,Gap 1: answer {drags_c[1]} Marks: 
+,Gap 2: answer {drags_c[2]} Marks: 
+,Gap 3: answer {drags_c[3]} Marks: 
+,Gap 4: answer {drags_c[4]} Marks: 
+,Gap 5: answer {drags_c[5]} Marks: 
+,Gap 6: answer {drags_c[6]} Marks: 
+,Gap 7: answer {drags_c[7]} Marks: 
+,Gap 8: answer {drags_c[8]} Marks: 
+,Gap 9: answer {drags_c[9]} Marks: 1
+,Gap 10: answer {drags_c[0]} Marks: 0
+,Gap 11: answer {drags_c[1]} Marks: 0
+,Gap 12: answer {drags_c[2]} Marks: 0
+,Gap 13: answer {drags_c[3]} Marks: 0
+,Gap 14: answer {drags_c[4]} Marks: 0
+,Gap 15: answer {drags_c[5]} Marks: 0
+,Gap 16: answer {drags_c[6]} Marks: 0
+,Gap 17: answer {drags_c[7]} Marks: 0
+,Gap 18: answer {drags_c[8]} Marks: 0
+,Gap 19: answer {drags_c[9]} Marks: 1
+
+,part number: 4
+part type: drag_and_drop marks: 2
+prompt: <p>I take a walk for 20 minutes every day.</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] [[10]] 。</p>
+<p>{dnd_builder("d","reorder",drags_d)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>I take a walk for 20 minutes every day.</p>
+<p>%[<strong style="font-size: 1.5em">&#x6211;</strong>]% %[<strong style="font-size: 1.5em">&#x6BCF;</strong>]% %[<strong style="font-size: 1.5em">&#x5929;</strong>]% %[<strong style="font-size: 1.5em">&#x90FD;</strong>]% %[<strong style="font-size: 1.5em">&#x6563;</strong>]% %[<strong style="font-size: 1.5em">&#x4E8C;</strong>]% %[<strong style="font-size: 1.5em">&#x5341;</strong>]% %[<strong style="font-size: 1.5em">&#x5206;</strong>]% %[<strong style="font-size: 1.5em">&#x949F;</strong>]% %[<strong style="font-size: 1.5em">&#x7684;</strong>]% %[<strong style="font-size: 1.5em">&#x6B65;</strong>]% 。</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_d, value undefined
+builder : ,builder string: undefined
+part letter: "d"
+type: "reorder"
+variable name: drags_d
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_d[0]} Marks: 
+,Gap 1: answer {drags_d[1]} Marks: 
+,Gap 2: answer {drags_d[2]} Marks: 
+,Gap 3: answer {drags_d[3]} Marks: 
+,Gap 4: answer {drags_d[4]} Marks: 
+,Gap 5: answer {drags_d[5]} Marks: 
+,Gap 6: answer {drags_d[6]} Marks: 
+,Gap 7: answer {drags_d[7]} Marks: 
+,Gap 8: answer {drags_d[8]} Marks: 
+,Gap 9: answer {drags_d[9]} Marks: 
+,Gap 10: answer {drags_d[10]} Marks: 1
+,Gap 11: answer {drags_d[0]} Marks: 0
+,Gap 12: answer {drags_d[1]} Marks: 0
+,Gap 13: answer {drags_d[2]} Marks: 0
+,Gap 14: answer {drags_d[3]} Marks: 0
+,Gap 15: answer {drags_d[4]} Marks: 0
+,Gap 16: answer {drags_d[5]} Marks: 0
+,Gap 17: answer {drags_d[6]} Marks: 0
+,Gap 18: answer {drags_d[7]} Marks: 0
+,Gap 19: answer {drags_d[8]} Marks: 0
+,Gap 20: answer {drags_d[9]} Marks: 0
+,Gap 21: answer {drags_d[10]} Marks: 1
+
+,part number: 5
+part type: drag_and_drop marks: 2
+prompt: <p>What do you like doing in your free time?</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] [[10]] ？</p>
+<p>{dnd_builder("e","reorder",drags_e)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>What do you like doing in your free time?</p>
+<p>%[<strong style="font-size: 1.5em">&#x7A7A;</strong>]% %[<strong style="font-size: 1.5em">&#x95F2;</strong>]% %[<strong style="font-size: 1.5em">&#x7684;</strong>]% %[<strong style="font-size: 1.5em">&#x65F6;</strong>]% %[<strong style="font-size: 1.5em">&#x5019;</strong>]% %[<strong style="font-size: 1.5em">&#x4F60;</strong>]% %[<strong style="font-size: 1.5em">&#x559C;</strong>]% %[<strong style="font-size: 1.5em">&#x6B22;</strong>]% %[<strong style="font-size: 1.5em">&#x505A;</strong>]% %[<strong style="font-size: 1.5em">&#x4EC0;</strong>]% %[<strong style="font-size: 1.5em">&#x4E48;</strong>]% ？</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_e, value undefined
+builder : ,builder string: undefined
+part letter: "e"
+type: "reorder"
+variable name: drags_e
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_e[0]} Marks: 
+,Gap 1: answer {drags_e[1]} Marks: 
+,Gap 2: answer {drags_e[2]} Marks: 
+,Gap 3: answer {drags_e[3]} Marks: 
+,Gap 4: answer {drags_e[4]} Marks: 
+,Gap 5: answer {drags_e[5]} Marks: 
+,Gap 6: answer {drags_e[6]} Marks: 
+,Gap 7: answer {drags_e[7]} Marks: 
+,Gap 8: answer {drags_e[8]} Marks: 
+,Gap 9: answer {drags_e[9]} Marks: 
+,Gap 10: answer {drags_e[10]} Marks: 1
+,Gap 11: answer {drags_e[0]} Marks: 0
+,Gap 12: answer {drags_e[1]} Marks: 0
+,Gap 13: answer {drags_e[2]} Marks: 0
+,Gap 14: answer {drags_e[3]} Marks: 0
+,Gap 15: answer {drags_e[4]} Marks: 0
+,Gap 16: answer {drags_e[5]} Marks: 0
+,Gap 17: answer {drags_e[6]} Marks: 0
+,Gap 18: answer {drags_e[7]} Marks: 0
+,Gap 19: answer {drags_e[8]} Marks: 0
+,Gap 20: answer {drags_e[9]} Marks: 0
+,Gap 21: answer {drags_e[10]} Marks: 1
+
+
+-------------------------------------
