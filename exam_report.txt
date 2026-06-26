@@ -1,259 +1,238 @@
-Exam file report: unconverted originals
- Exam name: unconverted originals
+Exam file report: End of Topic 2 Test: Lifestyle
+ Exam name: End of Topic 2 Test: Lifestyle
 Exam tags: None
 Exam description: None
-Number of questions: 4
+Number of questions: 3
 
 QUESTIONS
  ________________________________
-Question 1 : Gene mutations
- Tags hg_cbio1_6etq3 
-Extensions 
-
-Number of parts : 3
-part number: 1
-part type: drag_and_drop marks: 6
-prompt: <p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>
-<p><img src="resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png" alt="Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN."/></p>
-<p>In the order A to C, what are the different types of mutations shown in the figure?</p>
-<p>A: [[0]]</p>
-<p>B: [[1]]</p>
-<p>C: [[2]]</p>
-<p>{dnd_builder('a','text',drags_a)}{dnd_render()}</p>
-Converted prompt: <p>The figure below shows part of the normal nucleotide sequence of a gene.<br/>N refers to an unknown nucleotide. The figure also shows the effects of different types of mutations, indicated by A to C, on the nucleotide sequence.</p>
-<p><img src="resources/question-resources/hg-cbio1-6etq6-mutations_Y8pj3j4.png" alt="Normal sequence is NNCACGTAACGTNN. A is NNCACGTAACCGTN. B is NNCAGTAACGTNNN. C is NNCACGAAACGTNN."/></p>
-<p>In the order A to C, what are the different types of mutations shown in the figure?</p>
-<p>A: %[Insertion]%</p>
-<p>B: %[Deletion]%</p>
-<p>C: %[Substitution]%</p>
-
-drag height: auto drag width: auto
-drag variables: name drags_a, value undefined
-builder : ,builder string: undefined
-part letter: 'a'
-type: 'text'
-variable name: drags_a
-This part does not appear drop in bucket type
-SETTINGS number of gaps undefined 
-Gap 0: answer {drags_a[0]} Marks: 1
-,Gap 1: answer {drags_a[1]} Marks: 1
-,Gap 2: answer {drags_a[2]} Marks: 1
-,Gap 3: answer {drags_a[0]} Marks: 1
-,Gap 4: answer {drags_a[1]} Marks: 1
-,Gap 5: answer {drags_a[2]} Marks: 1
-
-,part number: 2
-part type: patternmatch marks: 1
-
-,part number: 3
-part type: patternmatch marks: 1
-
-
--------------------------------------
-,Question 2 : Human genomics
- Tags base,bioinformatics,disease,DNA probe,DNA profiling,DNA sequencing,gene,hg_chbi1_6etq1,medicine,primer 
-Extensions 
-
-Number of parts : 1
-part number: 1
-part type: drag_and_drop marks: 6
-prompt: <p>[[0]] DNA sequencing.</p>
-<p>[[1]] bioinformatics.</p>
-<p>[[2]] personalised medicine.</p>
-<p>{dnd_builder('a','reorder',drags_a)}{dnd_render()}</p>
-Converted prompt: <p>%[The sequence of bases can be determined for individual genes by using]% DNA sequencing.</p>
-<p>%[The use of computer technology to identify DNA sequences is known as]% bioinformatics.</p>
-<p>%[An understanding of the genetic component of the risk of disease is required for]% personalised medicine.</p>
-
-drag height: auto drag width: auto
-drag variables: name drags_a, value undefined
-builder : ,builder string: undefined
-part letter: 'a'
-type: 'reorder'
-variable name: drags_a
-This part does not appear drop in bucket type
-SETTINGS number of gaps undefined 
-Gap 0: answer {drags_a[0]} Marks: 1
-,Gap 1: answer {drags_a[1]} Marks: 1
-,Gap 2: answer {drags_a[2]} Marks: 1
-,Gap 3: answer {drags_a[0]} Marks: 1
-,Gap 4: answer {drags_a[1]} Marks: 1
-,Gap 5: answer {drags_a[2]} Marks: 1
-
-
--------------------------------------
-,Question 3 : Menstrual cycle 2
- Tags blastocyst,hg_chbi2_2etq7,hormone,menstrual cycle,ovulation 
+Question 1 : Complete the Sentence
+ Tags lifestyle,n5csm1_2etq1,society 
 Extensions 
 
 Number of parts : 5
 part number: 1
-part type: manual_marking marks: 1
-prompt: <p>What causes ovulation?</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('a')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
-text area width: '300px' text area height: auto
-answer: The high concentration of oestrogen (hormone A)  stimulates the pituitary to release a high concentration of LH which stimulates ovulation.
-Marks:1 Answer The high concentration of oestrogen (hormone A)  stimulates the pituitary to release a high concentration of LH which stimulates ovulation.
-,builder string: undefined
-part letter: 'a'
-type: 
-variable name: 
+part type: gapfill marks: 0
+
 ,part number: 2
-part type: manual_marking marks: 3
-prompt: <p>Describe and explain the change in concentration of hormone C during the first 12 days of the cycle.</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('b')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>
-text area width: '500px' text area height: auto
-answer: Description:  concentration increases from days 1 to 4, then falls from days 5 to 12. Explanation: the pituitary releases an increasing concentration of FSH on days 1 to 4; the increase from day 1 to 4 is  caused by a low level of oestrogen/A;  the decrease from day 5 to 12 is caused by an  increase in secretion of oestrogen/A; which causes a reduction in the secretion of FSH/C.
-Marks:3 Answer Description:  concentration increases from days 1 to 4, then falls from days 5 to 12. Explanation: the pituitary releases an increasing concentration of FSH on days 1 to 4; the increase from day 1 to 4 is  caused by a low level of oestrogen/A;  the decrease from day 5 to 12 is caused by an  increase in secretion of oestrogen/A; which causes a reduction in the secretion of FSH/C.
-,builder string: undefined
-part letter: 'b'
-type: 
-variable name: 
+part type: gapfill marks: 0
+
 ,part number: 3
-part type: manual_marking marks: 1
-prompt: <p>What is the effect of the high level of hormone B between days 18 to 26?</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('c')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
-text area width: '300px' text area height: auto
-answer: High levels of progesterone have a negative feedback effect on the pituitary gland, resulting in the inhibition of FSH and LH.
-Marks:1 Answer High levels of progesterone have a negative feedback effect on the pituitary gland, resulting in the inhibition of FSH and LH.
-,builder string: undefined
-part letter: 'c'
-type: 
-variable name: 
+part type: gapfill marks: 0
+
 ,part number: 4
-part type: manual_marking marks: 1
-prompt: <p>In what way does hormone B contribute to the survival of the blastocyst?</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('d')}{manualmarking_textarea_width('300px')}{manualmarking_render()}</p>
-text area width: '300px' text area height: auto
-answer: Hormone B is progesterone which promotes the further proliferation of the endometrium.
-Marks:1 Answer Hormone B is progesterone which promotes the further proliferation of the endometrium.
-,builder string: undefined
-part letter: 'd'
-type: 
-variable name: 
+part type: gapfill marks: 0
+
 ,part number: 5
-part type: manual_marking marks: 4
-prompt: <p>Explain the changes in the concentration of hormone B during the cycle.</p>
-<p>[[0]]</p>
-<p>{manualmarking_builder('e')}{manualmarking_textarea_width('500px')}{manualmarking_render()}</p>
-text area width: '500px' text area height: auto
-answer: Hormone B is progesterone released by the corpus luteum. The corpus luteum is only present after ovulation. The corpus luteum grows from days 16 to 22 and degenerates from days 23 to 28. This is caused by an increase then decrease in secretion of LH by pituitary.
-Marks:4 Answer Hormone B is progesterone released by the corpus luteum. The corpus luteum is only present after ovulation. The corpus luteum grows from days 16 to 22 and degenerates from days 23 to 28. This is caused by an increase then decrease in secretion of LH by pituitary.
-,builder string: undefined
-part letter: 'e'
-type: 
-variable name: 
+part type: gapfill marks: 0
+
 
 -------------------------------------
-,Question 4 : Useful phrases
- Tags hg_cgae1_3ex11 
+,Question 2 : Reading
+ Tags lifestyle,n5csm1_2etq2,society 
+Extensions 
+
+Number of parts : 7
+part number: 1
+part type: patternmatch marks: 1
+
+,part number: 2
+part type: patternmatch marks: 2
+
+,part number: 3
+part type: patternmatch marks: 1
+
+,part number: 4
+part type: patternmatch marks: 1
+
+,part number: 5
+part type: patternmatch marks: 1
+
+,part number: 6
+part type: patternmatch marks: 1
+
+,part number: 7
+part type: patternmatch marks: 1
+
+
+-------------------------------------
+,Question 3 : Translation
+ Tags lifestyle,n5csm1_2etq3,n5csm1_2etq3_sentencereorder1.swf,n5csm1_2etq3_sentencereorder2.swf,n5csm1_2etq3_sentencereorder3.swf,n5csm1_2etq3_sentencereorder4.swf,n5csm1_2etq3_sentencereorder5.swf,society 
 Extensions drag_and_drop
 
-Number of parts : 1
+Number of parts : 5
 part number: 1
-part type: drag_and_drop marks: 16
-prompt: <table>
-<tbody>
-<tr>
-<td>Tha mi den bheachd/bharail</td>
-<td>[[0]]</td>
-</tr>
-<tr>
-<td>Chanainn</td>
-<td>[[1]]</td>
-</tr>
-<tr>
-<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>
-<td>[[2]]</td>
-</tr>
-<tr>
-<td>Tha mi an d&ograve;chas</td>
-<td>[[3]]</td>
-</tr>
-<tr>
-<td>Saoilidh mi</td>
-<td>[[4]]</td>
-</tr>
-<tr>
-<td>Feumaidh</td>
-<td>[[5]]</td>
-</tr>
-<tr>
-<td>Thathar ag r&agrave;dh</td>
-<td>[[6]]</td>
-</tr>
-<tr>
-<td>Tha mi a&rsquo; creidsinn</td>
-<td>[[7]]</td>
-</tr>
-</tbody>
-</table>
-<p>{dnd_builder("a","text",drags_a)}{dnd_dragHeight(30)}{dnd_render()}</p>
-Converted prompt: <table>
-<tbody>
-<tr>
-<td>Tha mi den bheachd/bharail</td>
-<td>%[I am of the opinion]%</td>
-</tr>
-<tr>
-<td>Chanainn</td>
-<td>%[I would say]%</td>
-</tr>
-<tr>
-<td>Tha mi a&rsquo; smaoineachadh/smaointinn</td>
-<td>%[I think]%</td>
-</tr>
-<tr>
-<td>Tha mi an d&ograve;chas</td>
-<td>%[I hope]%</td>
-</tr>
-<tr>
-<td>Saoilidh mi</td>
-<td>%[I suppose]%</td>
-</tr>
-<tr>
-<td>Feumaidh</td>
-<td>%[Must]%</td>
-</tr>
-<tr>
-<td>Thathar ag r&agrave;dh</td>
-<td>%[It is said (passive voice)]%</td>
-</tr>
-<tr>
-<td>Tha mi a&rsquo; creidsinn</td>
-<td>%[I believe]%</td>
-</tr>
-</tbody>
-</table>
+part type: drag_and_drop marks: 0100001
+prompt: <p>&nbsp;I rarely go window shopping / shopping.</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] 。</p>
+<p>{dnd_builder("a","reorder",drags_a)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>&nbsp;I rarely go window shopping / shopping.</p>
+<p>%[<strong style="font-size: 1.5em">&#x6211;</strong>]% %[<strong style="font-size: 1.5em">&#x5F88;</strong>]% %[<strong style="font-size: 1.5em">&#x5C11;</strong>]% %[<strong style="font-size: 1.5em">&#x901B;</strong>]% %[<strong style="font-size: 1.5em">&#x8857;</strong>]% 。</p>
 
-drag height: dnd_dragHeight(30) drag width: auto
+drag height: dnd_dragHeight(40) drag width: auto
 drag variables: name drags_a, value undefined
 builder : ,builder string: undefined
 part letter: "a"
-type: "text"
+type: "reorder"
 variable name: drags_a
 This part does not appear drop in bucket type
 SETTINGS number of gaps undefined 
-Gap 0: answer {drags_a[0]} Marks: 1
-,Gap 1: answer {drags_a[1]} Marks: 1
-,Gap 2: answer {drags_a[2]} Marks: 1
-,Gap 3: answer {drags_a[3]} Marks: 1
+Gap 0: answer {drags_a[0]} Marks: 
+,Gap 1: answer {drags_a[1]} Marks: 
+,Gap 2: answer {drags_a[2]} Marks: 
+,Gap 3: answer {drags_a[3]} Marks: 
 ,Gap 4: answer {drags_a[4]} Marks: 1
-,Gap 5: answer {drags_a[5]} Marks: 1
-,Gap 6: answer {drags_a[6]} Marks: 1
-,Gap 7: answer {drags_a[7]} Marks: 1
-,Gap 8: answer {drags_a[0]} Marks: 1
-,Gap 9: answer {drags_a[1]} Marks: 1
-,Gap 10: answer {drags_a[2]} Marks: 1
-,Gap 11: answer {drags_a[3]} Marks: 1
-,Gap 12: answer {drags_a[4]} Marks: 1
-,Gap 13: answer {drags_a[5]} Marks: 1
-,Gap 14: answer {drags_a[6]} Marks: 1
-,Gap 15: answer {drags_a[7]} Marks: 1
+,Gap 5: answer {drags_a[0]} Marks: 0
+,Gap 6: answer {drags_a[1]} Marks: 0
+,Gap 7: answer {drags_a[2]} Marks: 0
+,Gap 8: answer {drags_a[3]} Marks: 0
+,Gap 9: answer {drags_a[4]} Marks: 1
+
+,part number: 2
+part type: drag_and_drop marks: 010000001
+prompt: <p>Drinking is bad for health.</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] 。</p>
+<p>{dnd_builder("b","reorder",drags_b)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>Drinking is bad for health.</p>
+<p>%[<strong style="font-size: 1.5em">&#x559D;</strong>]% %[<strong style="font-size: 1.5em">&#x9152;</strong>]% %[<strong style="font-size: 1.5em">&#x5BF9;</strong>]% %[<strong style="font-size: 1.5em">&#x8EAB;</strong>]% %[<strong style="font-size: 1.5em">&#x4F53;</strong>]% %[<strong style="font-size: 1.5em">&#x4E0D;</strong>]% %[<strong style="font-size: 1.5em">&#x597D;</strong>]% 。</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_b, value undefined
+builder : ,builder string: undefined
+part letter: "b"
+type: "reorder"
+variable name: drags_b
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_b[0]} Marks: 
+,Gap 1: answer {drags_b[1]} Marks: 
+,Gap 2: answer {drags_b[2]} Marks: 
+,Gap 3: answer {drags_b[3]} Marks: 
+,Gap 4: answer {drags_b[4]} Marks: 
+,Gap 5: answer {drags_b[5]} Marks: 
+,Gap 6: answer {drags_b[6]} Marks: 1
+,Gap 7: answer {drags_b[0]} Marks: 0
+,Gap 8: answer {drags_b[1]} Marks: 0
+,Gap 9: answer {drags_b[2]} Marks: 0
+,Gap 10: answer {drags_b[3]} Marks: 0
+,Gap 11: answer {drags_b[4]} Marks: 0
+,Gap 12: answer {drags_b[5]} Marks: 0
+,Gap 13: answer {drags_b[6]} Marks: 1
+
+,part number: 3
+part type: drag_and_drop marks: 010000000001
+prompt: <p>I think that leisure time is very important.</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] 。</p>
+<p>{dnd_builder("c","reorder",drags_c)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>I think that leisure time is very important.</p>
+<p>%[<strong style="font-size: 1.5em">&#x6211;</strong>]% %[<strong style="font-size: 1.5em">&#x8BA4;</strong>]% %[<strong style="font-size: 1.5em">&#x4E3A;</strong>]% %[<strong style="font-size: 1.5em">&#x4F11;</strong>]% %[<strong style="font-size: 1.5em">&#x95F2;</strong>]% %[<strong style="font-size: 1.5em">&#x65F6;</strong>]% %[<strong style="font-size: 1.5em">&#x95F4;</strong>]% %[<strong style="font-size: 1.5em">&#x5F88;</strong>]% %[<strong style="font-size: 1.5em">&#x91CD;</strong>]% %[<strong style="font-size: 1.5em">&#x8981;</strong>]% 。</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_c, value undefined
+builder : ,builder string: undefined
+part letter: "c"
+type: "reorder"
+variable name: drags_c
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_c[0]} Marks: 
+,Gap 1: answer {drags_c[1]} Marks: 
+,Gap 2: answer {drags_c[2]} Marks: 
+,Gap 3: answer {drags_c[3]} Marks: 
+,Gap 4: answer {drags_c[4]} Marks: 
+,Gap 5: answer {drags_c[5]} Marks: 
+,Gap 6: answer {drags_c[6]} Marks: 
+,Gap 7: answer {drags_c[7]} Marks: 
+,Gap 8: answer {drags_c[8]} Marks: 
+,Gap 9: answer {drags_c[9]} Marks: 1
+,Gap 10: answer {drags_c[0]} Marks: 0
+,Gap 11: answer {drags_c[1]} Marks: 0
+,Gap 12: answer {drags_c[2]} Marks: 0
+,Gap 13: answer {drags_c[3]} Marks: 0
+,Gap 14: answer {drags_c[4]} Marks: 0
+,Gap 15: answer {drags_c[5]} Marks: 0
+,Gap 16: answer {drags_c[6]} Marks: 0
+,Gap 17: answer {drags_c[7]} Marks: 0
+,Gap 18: answer {drags_c[8]} Marks: 0
+,Gap 19: answer {drags_c[9]} Marks: 1
+
+,part number: 4
+part type: drag_and_drop marks: 0100000000001
+prompt: <p>I take a walk for 20 minutes every day.</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] [[10]] 。</p>
+<p>{dnd_builder("d","reorder",drags_d)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>I take a walk for 20 minutes every day.</p>
+<p>%[<strong style="font-size: 1.5em">&#x6211;</strong>]% %[<strong style="font-size: 1.5em">&#x6BCF;</strong>]% %[<strong style="font-size: 1.5em">&#x5929;</strong>]% %[<strong style="font-size: 1.5em">&#x90FD;</strong>]% %[<strong style="font-size: 1.5em">&#x6563;</strong>]% %[<strong style="font-size: 1.5em">&#x4E8C;</strong>]% %[<strong style="font-size: 1.5em">&#x5341;</strong>]% %[<strong style="font-size: 1.5em">&#x5206;</strong>]% %[<strong style="font-size: 1.5em">&#x949F;</strong>]% %[<strong style="font-size: 1.5em">&#x7684;</strong>]% %[<strong style="font-size: 1.5em">&#x6B65;</strong>]% 。</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_d, value undefined
+builder : ,builder string: undefined
+part letter: "d"
+type: "reorder"
+variable name: drags_d
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_d[0]} Marks: 
+,Gap 1: answer {drags_d[1]} Marks: 
+,Gap 2: answer {drags_d[2]} Marks: 
+,Gap 3: answer {drags_d[3]} Marks: 
+,Gap 4: answer {drags_d[4]} Marks: 
+,Gap 5: answer {drags_d[5]} Marks: 
+,Gap 6: answer {drags_d[6]} Marks: 
+,Gap 7: answer {drags_d[7]} Marks: 
+,Gap 8: answer {drags_d[8]} Marks: 
+,Gap 9: answer {drags_d[9]} Marks: 
+,Gap 10: answer {drags_d[10]} Marks: 1
+,Gap 11: answer {drags_d[0]} Marks: 0
+,Gap 12: answer {drags_d[1]} Marks: 0
+,Gap 13: answer {drags_d[2]} Marks: 0
+,Gap 14: answer {drags_d[3]} Marks: 0
+,Gap 15: answer {drags_d[4]} Marks: 0
+,Gap 16: answer {drags_d[5]} Marks: 0
+,Gap 17: answer {drags_d[6]} Marks: 0
+,Gap 18: answer {drags_d[7]} Marks: 0
+,Gap 19: answer {drags_d[8]} Marks: 0
+,Gap 20: answer {drags_d[9]} Marks: 0
+,Gap 21: answer {drags_d[10]} Marks: 1
+
+,part number: 5
+part type: drag_and_drop marks: 0100000000001
+prompt: <p>What do you like doing in your free time?</p>
+<p>[[0]] [[1]] [[2]] [[3]] [[4]] [[5]] [[6]] [[7]] [[8]] [[9]] [[10]] ？</p>
+<p>{dnd_builder("e","reorder",drags_e)}{dnd_dragHeight(40)}{dnd_render()}</p>
+Converted prompt: <p>What do you like doing in your free time?</p>
+<p>%[<strong style="font-size: 1.5em">&#x7A7A;</strong>]% %[<strong style="font-size: 1.5em">&#x95F2;</strong>]% %[<strong style="font-size: 1.5em">&#x7684;</strong>]% %[<strong style="font-size: 1.5em">&#x65F6;</strong>]% %[<strong style="font-size: 1.5em">&#x5019;</strong>]% %[<strong style="font-size: 1.5em">&#x4F60;</strong>]% %[<strong style="font-size: 1.5em">&#x559C;</strong>]% %[<strong style="font-size: 1.5em">&#x6B22;</strong>]% %[<strong style="font-size: 1.5em">&#x505A;</strong>]% %[<strong style="font-size: 1.5em">&#x4EC0;</strong>]% %[<strong style="font-size: 1.5em">&#x4E48;</strong>]% ？</p>
+
+drag height: dnd_dragHeight(40) drag width: auto
+drag variables: name drags_e, value undefined
+builder : ,builder string: undefined
+part letter: "e"
+type: "reorder"
+variable name: drags_e
+This part does not appear drop in bucket type
+SETTINGS number of gaps undefined 
+Gap 0: answer {drags_e[0]} Marks: 
+,Gap 1: answer {drags_e[1]} Marks: 
+,Gap 2: answer {drags_e[2]} Marks: 
+,Gap 3: answer {drags_e[3]} Marks: 
+,Gap 4: answer {drags_e[4]} Marks: 
+,Gap 5: answer {drags_e[5]} Marks: 
+,Gap 6: answer {drags_e[6]} Marks: 
+,Gap 7: answer {drags_e[7]} Marks: 
+,Gap 8: answer {drags_e[8]} Marks: 
+,Gap 9: answer {drags_e[9]} Marks: 
+,Gap 10: answer {drags_e[10]} Marks: 1
+,Gap 11: answer {drags_e[0]} Marks: 0
+,Gap 12: answer {drags_e[1]} Marks: 0
+,Gap 13: answer {drags_e[2]} Marks: 0
+,Gap 14: answer {drags_e[3]} Marks: 0
+,Gap 15: answer {drags_e[4]} Marks: 0
+,Gap 16: answer {drags_e[5]} Marks: 0
+,Gap 17: answer {drags_e[6]} Marks: 0
+,Gap 18: answer {drags_e[7]} Marks: 0
+,Gap 19: answer {drags_e[8]} Marks: 0
+,Gap 20: answer {drags_e[9]} Marks: 0
+,Gap 21: answer {drags_e[10]} Marks: 1
 
 
 -------------------------------------

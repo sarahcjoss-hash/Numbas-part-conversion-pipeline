@@ -107,7 +107,14 @@ class DragAndDropPart extends Part {
             if (dragValues) {
                 //relpacing double backslash with forward slash just now because replacing d back is not working
                 const cleanedValues = dragValues.replace(/\\/g, '\/');
+                try{
                 dragList = JSON.parse(cleanedValues);
+                } catch (error) {
+                    //going to catch this here and see if we can continue- if we can't then it will error out at the next error
+                    console.error("WARNING: problem with drag values detected\n${dragValues}");
+                    dragList = JSON.parse(dragValues);
+                    console.error("it looks like we survived");
+                }
             } else {
                 dragList = null;
                 console.warn(`Drag values not found for variable ${dragsVariableName}`);

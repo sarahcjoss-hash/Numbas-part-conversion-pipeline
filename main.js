@@ -15,7 +15,7 @@ import { FolderWorker } from './utils/FolderWorker.js';
 //create somewhere for files we could not process
 //create somewhere for the reports
 const path = "C:/work/sample_exams/";
-const folder = "sample-exam/";
+const folder = "n5_csm1_2et/";
 const examFolder = `${path}${folder}`;
 //const examFile = path + folder + 'source.exam';
 const errorReporter = new ErrorReporter(true, `${folder}`);
