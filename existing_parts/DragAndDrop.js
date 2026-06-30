@@ -38,8 +38,8 @@ class DragAndDropPart extends Part {
 
         this._dragsVariableName = dragsVariableName || "";
 
-        this._dragHeight = extractValueFromBS(height, builderPrefix + 'height(') || '';
-        this._dragWidth = extractValueFromBS(width, builderPrefix + 'width(') || '';
+        this._dragHeight = extractValueFromBS(height, builderPrefix + 'Height(') || '';
+        this._dragWidth = extractValueFromBS(width, builderPrefix + 'Width(') || '';
         this._builder = new Builder(builder, logger);
         this._convertedPrompt = this.processPrompt(prompt);
         this._subType = this.builder.builderType;

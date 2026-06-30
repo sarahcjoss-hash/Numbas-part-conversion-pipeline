@@ -69,6 +69,10 @@ class CustomPartJsonProvider {
                 "static": false,
                 "value": "settings['target_text']"
             },
+            "target_width": {
+                "static": false,
+                "value": "settings['target_width']"
+            },
             "how_many_drags": {
                 "static": false,
                 "value": "settings['how_many_drags']"
@@ -142,6 +146,15 @@ class CustomPartJsonProvider {
                 "hint": "do not leave blank",
                 "input_type": "string",
                 "default_value": "35",
+                "subvars": false
+            },
+            {
+                "name": "target_width",
+                "label": "Drop area width",
+                "help_url": "",
+                "hint": "if blank/auto it will try to use width of words, otherwise set to a value",
+                "input_type": "string",
+                "default_value": "auto",
                 "subvars": false
             },
             {

@@ -11,6 +11,7 @@ class SentenceReorder extends NewDragAndDrop {
             "how_many_drags": "6",
             "distractors": [],
             "target_height": "35",
+            "target_width": "auto",
             "all_or_nothing": false
         }
         this._settings = SentenceReorder.getDefaultSettings();
@@ -48,6 +49,7 @@ class SentenceReorder extends NewDragAndDrop {
             "how_many_drags": "6",
             "distractors": [],
             "target_height": "35",
+            "target_width": "auto",
             "all_or_nothing": false
         }
     }
