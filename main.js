@@ -29,6 +29,9 @@ const filewriter = new FileWriter(errorReporter);
 const reportWriter = new ReportWriter();
 const folderWorker = new FolderWorker(errorReporter);
 const folders = await folderWorker.findFoldersInFolder(inputFolder);//find the folders first
+
+const batchReportFilePath = `${reportFilePath}/batch_report.txt`;
+let batchReportEntries = "";
 //set up output folder structure
 await fsPromises.mkdir(`${outputPath}`, { recursive: true });
 await fsPromises.mkdir(`${errorFilePath}`, { recursive: true });
@@ -53,6 +56,15 @@ async function processExam(workingFolder) {
     const examJSONStitcher = new JSONFromExam(errorReporter);
     const processSuccess =examJSONStitcher.processExam(exam.exam, examJSONObj);//this is probably hte same JSON object
     console.log(`Exam processing ${processSuccess ? 'succeeded' : 'failed'}`);
+    if (!processSuccess) {
+      batchReportEntries +="\n There was an issue processing this exam\n";
+    }else{
+      if (exam.exam.extensionsFromQuestions && exam.exam.extensionsFromQuestions.length > 0){
+          batchReportEntries +="\n Exam contains custom parts\n";
+      }
+      
+    }
+
 
  
     //these are async but not dependent
@@ -77,7 +89,10 @@ async function processExam(workingFolder) {
 for (const examFolder of folders) {
     const processed = await await processExam(examFolder);
     console.log(processed);
+    batchReportEntries += `${processed ? '' : 'ERROR:'}Exam folder ${examFolder} processed ${processed ? 'successfully' : 'with errors'}\n`;
     //add an overall log here
   }
+  const batchReport = reportWriter.createBatchReport(folders, batchReportEntries);
+  reportWriter.writeReportToFile(batchReport, batchReportFilePath);
 
 

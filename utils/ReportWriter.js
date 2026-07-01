@@ -36,6 +36,12 @@ class ReportWriter {
 
         return reportString;
     };
+    createBatchReport(folders, entries){
+        let batchReportString = `Batch report for ${folders.length} folders\n`;
+        batchReportString += `-------------------------------------\n`;
+        batchReportString += entries;
+        return batchReportString;
+    }
 
     writeReportToFile(reportString, filePath) {
         fs.writeFile(filePath, reportString, (err) => {
