@@ -47,7 +47,7 @@ async function processExam(workingFolder) {
     const updatedExamFolderName =`${outputPath}/${examFolderName}`
     const examFiles = await folderWorker.findFilesInFolder(workingFolder, 'source.exam');
     const line = await filereader.getSpecifiedLineInFileAsync(examFiles[0], 2);
-    const success = await folderWorker.copyFolder(workingFolder, updatedExamFolderName);
+    
     const examJSONObj = JSON.parse(line);
     const exam = new ExamFromJSON(examJSONObj, errorReporter);
     const report = reportWriter.createReport(exam.exam);
@@ -56,10 +56,12 @@ async function processExam(workingFolder) {
     const examJSONStitcher = new JSONFromExam(errorReporter);
     const processSuccess =examJSONStitcher.processExam(exam.exam, examJSONObj);//this is probably hte same JSON object
     console.log(`Exam processing ${processSuccess ? 'succeeded' : 'failed'}`);
+    let hasCustomPartsFlag = false;
     if (!processSuccess) {
       batchReportEntries +="\n There was an issue processing this exam\n";
     }else{
       if (exam.exam.extensionsFromQuestions && exam.exam.extensionsFromQuestions.length > 0){
+        hasCustomPartsFlag = true;
           batchReportEntries +="\n Exam contains custom parts\n";
       }
       
@@ -68,10 +70,18 @@ async function processExam(workingFolder) {
 
  
     //these are async but not dependent
-    if (success && processSuccess) {
-      filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${updatedExamFolderName}/source.exam`);
+    if (processSuccess && hasCustomPartsFlag) {
+      const success = await folderWorker.copyFolder(workingFolder, updatedExamFolderName);//only do this if the folder actually contins cusomt parts
+      if (success){
+        filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${updatedExamFolderName}/source.exam`);
+      }
     } else {
-      errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
+      if (!hasCustomPartsFlag){
+        batchReportEntries+="Exam bypassed- no custom parts"
+      }else{
+         errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
+
+      }
     }
   
     reportWriter.writeReportToFile(report, `${reportFilePath}\\${examFolderName}_report.txt`);
@@ -89,7 +99,7 @@ async function processExam(workingFolder) {
 for (const examFolder of folders) {
     const processed = await await processExam(examFolder);
     console.log(processed);
-    batchReportEntries += `${processed ? '' : 'ERROR:'}Exam folder ${examFolder} processed ${processed ? 'successfully' : 'with errors'}\n`;
+    batchReportEntries += `${processed ? '' : 'ERROR:'}Exam folder ${examFolder} processed ${processed ? 'successfully\n' : 'with errors'}\n`;
     //add an overall log here
   }
   const batchReport = reportWriter.createBatchReport(folders, batchReportEntries);
