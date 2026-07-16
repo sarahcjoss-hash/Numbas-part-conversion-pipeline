@@ -67,39 +67,41 @@ class JSONTemplateProvider {
         }
     }
 
-    static cardMatchTemplate = {
-        "type": "card-match",
-        "useCustomName": false,
-        "customName": "",
-        "marks": 1,
-        "scripts": {},
-        "customMarkingAlgorithm": "",
-        "extendBaseMarkingAlgorithm": true,
-        "unitTests": [],
-        "showCorrectAnswer": true,
-        "showFeedbackIcon": true,
-        "variableReplacements": [],
-        "variableReplacementStrategy": "originalfirst",
-        "nextParts": [],
-        "suggestGoingBack": false,
-        "adaptiveMarkingPenalty": 0,
-        "exploreObjective": null,
-        "settings": {
-            "list_of_pairs": "[[\"a\",\"A\"],[\"b\",\"B\"],[\"c\",\"C\"]]",
-            "howManyPairs": "3",
-            "markOnMatch": true,
-            "card_width": "120",
-            "card_height": "80",
-            "lineBoxWidth": "240",
-            "l_c_type": [
-                "word"
-            ],
-            "r_c_type": [
-                "word"
-            ],
-            "reorderOnReveal": false
-        }
-    }
+    static cardMatchTemplate =   {
+                            "type": "scholar-card-match-test",
+                            "useCustomName": false,
+                            "customName": "",
+                            "marks": 1,
+                            "scripts": {},
+                            "customMarkingAlgorithm": "",
+                            "extendBaseMarkingAlgorithm": true,
+                            "unitTests": [],
+                            "showCorrectAnswer": true,
+                            "showFeedbackIcon": true,
+                            "variableReplacements": [],
+                            "variableReplacementStrategy": "originalfirst",
+                            "nextParts": [],
+                            "suggestGoingBack": false,
+                            "adaptiveMarkingPenalty": 0,
+                            "adaptiveMarkingUseCondition": "",
+                            "adaptiveMarkingNotUsedMessage": "",
+                            "exploreObjective": null,
+                            "settings": {
+                                "list_of_pairs": "[[\"a\",\"A\"],[\"b\",\"B\"],[\"c\",\"C\"]]",
+                                "howManyPairs": "3",
+                                "markOnMatch": false,
+                                "card_width": "120",
+                                "card_height": "80",
+                                "l_c_type": [
+                                    "word"
+                                ],
+                                "r_c_type": [
+                                    "word"
+                                ],
+                                "reorderOnReveal": false,
+                                "lineBoxWidth": "240"
+                            }
+                        }
 
     static selfMarkedTextTemplate = {
         "type": "self-marked-text-test",

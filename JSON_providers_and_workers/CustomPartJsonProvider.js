@@ -59,7 +59,7 @@ class CustomPartJsonProvider {
             "correctAnswer": "settings['how_many_drags']",
             "hint": {
                 "static": true,
-                "value": "Select the words in order."
+                "value": "Select the items in the order you would like to position them."
             },
             "target_height": {
                 "static": false,
@@ -88,12 +88,12 @@ class CustomPartJsonProvider {
         },
         "can_be_gap": true,
         "can_be_step": true,
-        "marking_script": "mark:\nif(interpreted_answer = 0, incorrect(\"You have not found any matches. Try again?\"),\nif(interpreted_answer < input_options[\"how_many_drags\"],if (input_options['all_or_nothing'],incorrect(\"You must find all matches to get the marks\") , apply(partialFeedback)),correct(\"Well done you matched them all.\"));end())\n\ninterpreted_answer:\nstudentAnswer\n\npartialFeedback:\nset_credit((interpreted_answer/input_options['how_many_drags']) , \"You found some but not all of the pairs\"); end()\n\nmarkPerGap:\n1/input_options[\"how_many_drags\"]",
+        "marking_script": "mark:\nif(interpreted_answer = 0, incorrect(\"Your\"),\nif(interpreted_answer < input_options[\"how_many_drags\"],if (input_options['all_or_nothing'],incorrect(\"You must find all matches to get the marks\") , apply(partialFeedback)),correct(\"Your answer is correct,\"));end())\n\ninterpreted_answer:\nstudentAnswer\n\npartialFeedback:\nset_credit((interpreted_answer/input_options['how_many_drags']) , \"Your answer is partially correct\"); end()\n\nmarkPerGap:\n1/input_options[\"how_many_drags\"]",
         "marking_notes": [
             {
                 "name": "mark",
                 "description": "This is the main marking note. It should award credit and provide feedback based on the student's answer.",
-                "definition": "if(interpreted_answer = 0, incorrect(\"You have not found any matches. Try again?\"),\nif(interpreted_answer < input_options[\"how_many_drags\"],if (input_options['all_or_nothing'],incorrect(\"You must find all matches to get the marks\") , apply(partialFeedback)),correct(\"Well done you matched them all.\"));end())"
+                "definition": "if(interpreted_answer = 0, incorrect(\"Your answer is incorrect\"),\nif(interpreted_answer < input_options[\"how_many_drags\"],if (input_options['all_or_nothing'],incorrect(\"You must find all matches to get the marks\") , apply(partialFeedback)),correct(\"Your answer is correct.\"));end())"
             },
             {
                 "name": "interpreted_answer",
@@ -103,7 +103,7 @@ class CustomPartJsonProvider {
             {
                 "name": "partialFeedback",
                 "description": "",
-                "definition": "set_credit((interpreted_answer/input_options['how_many_drags']) , \"You found some but not all of the pairs\"); end()"
+                "definition": "set_credit((interpreted_answer/input_options['how_many_drags']) , \"Your answer is partially correct.\"); end()"
             },
             {
                 "name": "markPerGap",
@@ -174,209 +174,206 @@ class CustomPartJsonProvider {
     }
 
     static cardMatchJson = {
-        "source": {
-            "pk": 265,
-            "author": {
-                "name": "Joss Joss",
-                "pk": 258
-            },
-            "edit_page": "/part_type/265/edit"
+    "source": {
+        "author": {
+            "name": "Scholar Team"
+        }
+    },
+    "name": "scholar card match",
+    "short_name": "scholar-card-match-test",
+    "description": "<p>match items on the left to items on the right. 1 to 1 matching. Can be text, images, or audio.</p>",
+    "help_url": "",
+    "input_widget": "scholar-card-match",
+    "input_options": {
+        "correctAnswer": "(settings['howManyPairs'] )",
+        "hint": {
+            "static": true,
+            "value": "Select the matching pairs"
         },
-        "name": "card match",
-        "short_name": "card-match",
-        "description": "<p>Click on two items, from a paired list, to match them.<br />You can match any combination of text, sound files and images e.g. images one the left to sounds on the right, images to images or most often text to text.<br />One to one match.</p>",
-        "help_url": "",
-        "input_widget": "cardmatch",
-        "input_options": {
-            "correctAnswer": "(settings['howManyPairs'] )",
-            "hint": {
-                "static": true,
-                "value": "Select the matching pairs of cards"
-            },
-            "list_of_pairs": {
-                "static": false,
-                "value": "settings['list_of_pairs']"
-            },
-            "howManyPairs": {
-                "static": false,
-                "value": "settings['howManyPairs']"
-            },
-            "markOnMatch": {
-                "static": false,
-                "value": "settings['markOnMatch']"
-            },
-            "card_width": {
-                "static": false,
-                "value": "settings['card_width']"
-            },
-            "card_height": {
-                "static": false,
-                "value": "settings['card_height']"
-            },
-            "l_c_type": {
-                "static": false,
-                "value": "settings['l_c_type']"
-            },
-            "r_c_type": {
-                "static": false,
-                "value": "settings['r_c_type']"
-            },
-            "lineBoxWidth": {
-                "static": false,
-                "value": "settings['lineBoxWidth']"
-            },
-            "reorderOnReveal": {
-                "static": false,
-                "value": "settings['reorderOnReveal']"
-            }
+        "list_of_pairs": {
+            "static": false,
+            "value": "settings['list_of_pairs']"
         },
-        "can_be_gap": true,
-        "can_be_step": true,
-        "marking_script": "mark:\nif(interpreted_answer = 0, incorrect(\"You have not found any matches. Try again?\"),\nif(interpreted_answer < howManyPairs, apply(partialFeedback),correct(\"Well done you matched them all.\"));end())\n\n\n\n\n  \n\n\nhowManyPairs:\ninput_options[\"howManyPairs\"]\n\ninterpreted_answer:\nstudentAnswer\n\npartialFeedback:\nset_credit(partialMark, \"You found some but not all of the pairs\"); end()\n\npartialMark:\nprecround(interpreted_answer *(marks / howManyPairs),2)",
-        "marking_notes": [
-            {
-                "name": "mark",
-                "description": "This is the main marking note. It should award credit and provide feedback based on the student's answer.",
-                "definition": "if(interpreted_answer = 0, incorrect(\"You have not found any matches. Try again?\"),\nif(interpreted_answer < howManyPairs, apply(partialFeedback),correct(\"Well done you matched them all.\"));end())\n\n\n\n\n  \n"
-            },
-            {
-                "name": "howManyPairs",
-                "description": "",
-                "definition": "input_options[\"howManyPairs\"]"
-            },
-            {
-                "name": "interpreted_answer",
-                "description": "A value representing the student's answer to this part.",
-                "definition": "studentAnswer"
-            },
-            {
-                "name": "partialFeedback",
-                "description": "",
-                "definition": "set_credit(partialMark, \"You found some but not all of the pairs\"); end()"
-            },
-            {
-                "name": "partialMark",
-                "description": "",
-                "definition": "precround(interpreted_answer *(marks / howManyPairs),2)"
-            }
-        ],
-        "settings": [
-            {
-                "name": "list_of_pairs",
-                "label": "List of key value pairs",
-                "help_url": "",
-                "hint": "<p>input values as key values pairs where key and value are separated by : and pairs are separated by , e.g. bing:bong, rick:rack</p>\n<p>if you are recreating the card match from an existing for now you will need to reformat from [[\"a\",\"A\"]...] to a:A - no quotation marks if yu need quotations marks then escape them.<br /><br />images can be incuded be reference string e.g. 'cow.jpg' or as a fully formed img tag with alt text &lt;img src=\"resources/question-resources/cow.jpg\" alt=\"a black and white cow\" /&gt;</p>\n<p>special characters-[]\" and ' might get stripped out if you include them.</p>",
-                "input_type": "string",
-                "default_value": "[[\"a\",\"A\"],[\"b\",\"B\"],[\"c\",\"C\"]]",
-                "subvars": false
-            },
-            {
-                "name": "howManyPairs",
-                "label": "How many of the pairs to display",
-                "help_url": "",
-                "hint": "",
-                "input_type": "code",
-                "default_value": "3",
-                "evaluate": true
-            },
-            {
-                "name": "markOnMatch",
-                "label": "Mark each match as it is found",
-                "help_url": "",
-                "hint": "<p>If set to true each match will be marked as it is found.</p>\n<p>If set to false the user can make one or more match and the press submit to see the feedback and marks</p>",
-                "input_type": "checkbox",
-                "default_value": true
-            },
-            {
-                "name": "card_width",
-                "label": "Width of the cards (in px)",
-                "help_url": "",
-                "hint": "",
-                "input_type": "string",
-                "default_value": "120",
-                "subvars": false
-            },
-            {
-                "name": "card_height",
-                "label": "Height of the cards (in px)",
-                "help_url": "",
-                "hint": "",
-                "input_type": "string",
-                "default_value": "80",
-                "subvars": false
-            },
-            {
-                "name": "lineBoxWidth",
-                "label": "Width between cards ",
-                "help_url": "",
-                "hint": "this determines have mauch space there is between the two columns of cards where teh lines are drawn- a greater width can be more readable",
-                "input_type": "string",
-                "default_value": "240",
-                "subvars": false
-            },
-            {
-                "name": "l_c_type",
-                "label": "Left card type",
-                "help_url": "",
-                "hint": "For audio questions you muct include an image called 'soundwave.jpg' in questions resources",
-                "input_type": "choose_several",
-                "choices": [
-                    {
-                        "value": "word",
-                        "label": "Text",
-                        "default_value": true
-                    },
-                    {
-                        "value": "image",
-                        "label": "Image",
-                        "default_value": false
-                    },
-                    {
-                        "value": "audio",
-                        "label": "Sound file",
-                        "default_value": false
-                    }
-                ]
-            },
-            {
-                "name": "r_c_type",
-                "label": "right card type",
-                "help_url": "",
-                "hint": "<p><br />For audio questions you muct include an image called 'soundwave.jpg' in questions resources</p>\n<p>You can select text, image or audio- setting this value let's the question know it has to search for a resource of the relevant type. default is text</p>",
-                "input_type": "choose_several",
-                "choices": [
-                    {
-                        "value": "word",
-                        "label": "Text",
-                        "default_value": true
-                    },
-                    {
-                        "value": "image",
-                        "label": "Image",
-                        "default_value": false
-                    },
-                    {
-                        "value": "audio",
-                        "label": "Sound file",
-                        "default_value": false
-                    }
-                ]
-            },
-            {
-                "name": "reorderOnReveal",
-                "label": "Reorder on reveal",
-                "help_url": "",
-                "hint": "If set to true, then when the user chooses to reveal the pairs will be reordered to put them in line- making all lines horizontal rather than criss cross",
-                "input_type": "checkbox",
-                "default_value": false
-            }
-        ],
-        "public_availability": "restricted",
-        "published": false,
-        "extensions": [
-            "card-match"
-        ]
-    }
+        "howManyPairs": {
+            "static": false,
+            "value": "settings['howManyPairs']"
+        },
+        "markOnMatch": {
+            "static": false,
+            "value": "settings['markOnMatch']"
+        },
+        "card_width": {
+            "static": false,
+            "value": "settings['card_width']"
+        },
+        "card_height": {
+            "static": false,
+            "value": "settings['card_height']"
+        },
+        "l_c_type": {
+            "static": false,
+            "value": "settings['l_c_type']"
+        },
+        "r_c_type": {
+            "static": false,
+            "value": "settings['r_c_type']"
+        },
+        "lineBoxWidth": {
+            "static": false,
+            "value": "settings['lineBoxWidth']"
+        },
+        "reorderOnReveal": {
+            "static": false,
+            "value": "settings['reorderOnReveal']"
+        }
+    },
+    "can_be_gap": true,
+    "can_be_step": true,
+    "marking_script": "mark:\nif(interpreted_answer = 0, incorrect(\"Your answer is incorrect.\"),\nif(interpreted_answer < howManyPairs, apply(partialFeedback),correct(\"Your answer is correct.\"));end())\n\ninterpreted_answer:\nstudentAnswer\n\nhowManyPairs:\ninput_options[\"howManyPairs\"]\n\npartialFeedback:\nset_credit(partialMark, \"Your answer is partially correct.\"); end()\n\npartialMark:\nprecround(interpreted_answer / howManyPairs, 2)",
+    "marking_notes": [
+        {
+            "name": "mark",
+            "description": "This is the main marking note. It should award credit and provide feedback based on the student's answer.",
+            "definition": "if(interpreted_answer = 0, incorrect(\"Your answer is incorrect.\"),\nif(interpreted_answer < howManyPairs, apply(partialFeedback),correct(\"Your answer is correct.\"));end())"
+        },
+        {
+            "name": "interpreted_answer",
+            "description": "A value representing the student's answer to this part.",
+            "definition": "studentAnswer"
+        },
+        {
+            "name": "howManyPairs",
+            "description": "",
+            "definition": "input_options[\"howManyPairs\"]"
+        },
+        {
+            "name": "partialFeedback",
+            "description": "",
+            "definition": "set_credit(partialMark, \"Your answer is partially correct.\"); end()"
+        },
+        {
+            "name": "partialMark",
+            "description": "",
+            "definition": "precround(interpreted_answer / howManyPairs, 2)"
+        }
+    ],
+    "settings": [
+        {
+            "name": "list_of_pairs",
+            "label": "List of key value pairs",
+            "help_url": "",
+            "hint": "<p>input values as key values pairs in square brackets within a list e.g. [['bing','bong'], ['rick',rack']]</p>\n<p>if you are recreating the card match from an existing for now you will need to reformat from [[\"a\",\"A\"]...] you may be bale to lift teh original list from the variables<br />images can be incuded be reference string e.g. \"my-gif.gif\" as long as that item is in resources<br />audio files should be mx4 format - additional formats could be added on request</p>\n<p>special characters-[]\" and ' might get stripped out if you include them.</p>",
+            "input_type": "string",
+            "default_value": "[[\"a\",\"A\"],[\"b\",\"B\"],[\"c\",\"C\"]]",
+            "subvars": false
+        },
+        {
+            "name": "howManyPairs",
+            "label": "How many of the pairs to display",
+            "help_url": "",
+            "hint": "Use this varibles to choose a random subset of pairs to display e.g. you could have 14 pairs and choose the shuffle and display 8.",
+            "input_type": "code",
+            "default_value": "3",
+            "evaluate": true
+        },
+        {
+            "name": "markOnMatch",
+            "label": "Mark each match as it is found",
+            "help_url": "",
+            "hint": "<p>If set to true each match will be marked as it is found.</p>\n<p>If set to false the user can make one or more match and the press submit to see the feedback and marks</p>",
+            "input_type": "checkbox",
+            "default_value": false
+        },
+        {
+            "name": "card_width",
+            "label": "Width of the cards (in px)",
+            "help_url": "",
+            "hint": "<p>At the moment there is one setting for all cards- if required we could have a size left and a size right- although for layout purposes it is helpful if heights are the same.</p>\n<p>if the content size exceeds card size you will end up with one card the wrong size</p>",
+            "input_type": "string",
+            "default_value": "120",
+            "subvars": false
+        },
+        {
+            "name": "card_height",
+            "label": "Height of the cards (in px)",
+            "help_url": "",
+            "hint": "",
+            "input_type": "string",
+            "default_value": "80",
+            "subvars": false
+        },
+        {
+            "name": "l_c_type",
+            "label": "Left card type",
+            "help_url": "",
+            "hint": "This is the type for all cards in left hand column<br />For audio questions you muct include an image called 'soundwave.jpg' in questions resources",
+            "input_type": "choose_several",
+            "choices": [
+                {
+                    "value": "word",
+                    "label": "text",
+                    "default_value": true
+                },
+                {
+                    "value": "image",
+                    "label": "image",
+                    "default_value": false
+                },
+                {
+                    "value": "audio",
+                    "label": "sound file",
+                    "default_value": false
+                }
+            ]
+        },
+        {
+            "name": "r_c_type",
+            "label": "Right card type",
+            "help_url": "",
+            "hint": "This is the type for all cards in righthand column<br />For audio questions you muct include an image called 'soundwave.jpg' in questions resources",
+            "input_type": "choose_several",
+            "choices": [
+                {
+                    "value": "word",
+                    "label": "text",
+                    "default_value": true
+                },
+                {
+                    "value": "image",
+                    "label": "image",
+                    "default_value": false
+                },
+                {
+                    "value": "audio",
+                    "label": "sound file",
+                    "default_value": false
+                }
+            ]
+        },
+        {
+            "name": "reorderOnReveal",
+            "label": "reorder the cards in reveal into pairs",
+            "help_url": "",
+            "hint": "if this is set to true then the revealed answer diaplyed below the question will have thte cards in apirs horizontally",
+            "input_type": "checkbox",
+            "default_value": false
+        },
+        {
+            "name": "lineBoxWidth",
+            "label": "The width box for lines",
+            "help_url": "",
+            "hint": "This sets the width of the box that contains the lines joining pairs- teh alrger the number the further appart the two rows will be. the more pairs there are you might want them further apart to make it less confusing",
+            "input_type": "string",
+            "default_value": "240",
+            "subvars": false
+        }
+    ],
+    "public_availability": "always",
+    "published": true,
+    "extensions": [
+        "scholar-card-match"
+    ]
+}
 
     static selfMarkedTextJson = {
         "source": {
@@ -514,7 +511,7 @@ class CustomPartJsonProvider {
                 "name": "markInstruction",
                 "label": "User instruction for marking",
                 "help_url": "",
-                "hint": "Tell the user how to work the markking part of the question.",
+                "hint": "Tell the user how to work the marking part of the question.",
                 "input_type": "string",
                 "default_value": "Check the box for each item covered in your answer or select 'My answer does not contain any of the items listed'. When you have finished marking your answer, select 'Save answer'.",
                 "subvars": false

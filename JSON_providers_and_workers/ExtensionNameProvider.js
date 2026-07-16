@@ -15,13 +15,13 @@ class ExtensionNameProvider {
                     return 'sentence-reorder';
                     break;
                 case 'scholar_self_marked_text':
-                    return 'self-marked-text-beta';
+                    return 'scholar-self-marked-text';
                     break;
                 case 'card-match':
-                    return 'card-match-beta2';
+                    return 'scholar-card-match';
                     break;
                 case 'scholar_drop_in_bucket':
-                    return 'drop-in-bucket';
+                    return 'scholar-drop-in-bucket';
                     break;
                 case 'scholar_drag_1_2_1 ':
                     return 'scholar-drag-1-to-1';
