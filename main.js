@@ -63,7 +63,7 @@ async function processExam(workingFolder) {
       batchReportEntries+=`\n Exam contains ${exam.exam.numberOfQuestions} questions\n`;
       if (exam.exam.extensionsFromQuestions && exam.exam.extensionsFromQuestions.length > 0){
         hasCustomPartsFlag = true;
-          batchReportEntries +="\n Exam contains custom parts\n";
+          batchReportEntries +=`\n Exam contains custom parts\n ${exam.exam.extensionsFromQuestions}\n`;
       }
       
     }
@@ -78,7 +78,7 @@ async function processExam(workingFolder) {
       }
     } else {
       if (!hasCustomPartsFlag){
-        batchReportEntries+="Exam bypassed- no custom parts"
+        batchReportEntries+="Exam bypassed- no custom parts\n"
       }else{
          errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
 

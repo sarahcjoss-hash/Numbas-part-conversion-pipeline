@@ -12,7 +12,7 @@ class ExtensionNameProvider {
 
             switch (partType) {
                 case 'scholar_sentence_reorder':
-                    return 'sentence-reorder';
+                    return 'scholar-click-in-order';
                     break;
                 case 'scholar_self_marked_text':
                     return 'scholar-self-marked-text';
