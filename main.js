@@ -60,6 +60,7 @@ async function processExam(workingFolder) {
     if (!processSuccess) {
       batchReportEntries +="\n There was an issue processing this exam\n";
     }else{
+      batchReportEntries+=`\n Exam contains ${exam.exam.numberOfQuestions} questions\n`;
       if (exam.exam.extensionsFromQuestions && exam.exam.extensionsFromQuestions.length > 0){
         hasCustomPartsFlag = true;
           batchReportEntries +="\n Exam contains custom parts\n";

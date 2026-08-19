@@ -8,9 +8,9 @@ class CardMatch extends NewPart {
         this._templateSettings =     {"list_of_pairs": '[["a","A"],["b","B"],["c","C"]]',
                                     "howManyPairs": "3",
                                 "markOnMatch": true,
-                                "card_width": "120",
-                                "card_height": "80",
-                                "lineBoxWidth": "240",
+                                "card_width": "7",
+                                "card_height": "4",
+                                "lineBoxWidth": "5",
                                 "l_c_type": [
                                     "word"
                                 ],
@@ -28,9 +28,9 @@ class CardMatch extends NewPart {
         settings.list_of_pairs = '[["a","A"],["b","B"],["c","C"]]';
         settings.howManyPairs = "3";
         settings.markOnMatch = true;    
-        settings.card_width = "120";
-        settings.card_height = "80";
-        settings.lineBoxWidth = "240";  
+        settings.card_width = "7";
+        settings.card_height = "4";
+        settings.lineBoxWidth = "5";  
         settings.l_c_type = ["word"];
         settings.r_c_type = ["word"];
         settings.reorderOnReveal = false;

@@ -29,8 +29,8 @@ class CardMatch extends Part {
         this._numberOfPairs = this._gaps.length;
         this._builder = new Builder(builder, logger);
         this._l_c_type = this._builder.builderType||"text";
-        const height = /cardmatch_cardHeight\(.+?\)/.exec(this.prompt) ? /cardmatch_cardHeight\(.+?\)/.exec(this.prompt)[0] : '50';
-        const width = /cardmatch_cardWidth\(.+?\)/.exec(this.prompt) ? /cardmatch_cardWidth\(.+?\)/.exec(this.prompt)[0] : '120';
+        const height = /cardmatch_cardHeight\(.+?\)/.exec(this.prompt) ? /cardmatch_cardHeight\(.+?\)/.exec(this.prompt)[0] : '5';
+        const width = /cardmatch_cardWidth\(.+?\)/.exec(this.prompt) ? /cardmatch_cardWidth\(.+?\)/.exec(this.prompt)[0] : '7';
         this._cardHeight = extractValueFromBS(height, "cardmatch_cardHeight(") || '50';
         this._cardWidth = extractValueFromBS(width, "cardmatch_cardWidth(") || '120';
     }

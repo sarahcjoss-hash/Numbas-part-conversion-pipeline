@@ -14,9 +14,11 @@ class CardMatchBuilder extends NewPartBuilder {
             newPart.marks = part.marks || 1;
             newPart.list_of_pairs = part.pairsVariableValue|| '[["a","A"],["b","B"],["c","C"]]';
             newPart.howManyPairs = part.numberOfPairs || 3;
-            newPart.card_width = part.cardWidth || 120;
-            newPart.card_height = part.cardHeight || 80;
+            newPart.card_width = part.cardWidth || 7;
+            newPart.card_height = part.cardHeight || 4;
+            newPart.lineBoxWidth = part.lineBoxWidth || 5;
             newPart.l_c_type = part.leftCardType? part.leftCardType : ["word"];
+            newPart.r_c_type = part.rightCardType? part.rightCardType : ["word"];
             newPart.reorderOnReveal = part.reorderOnReveal || false;
             return newPart;
         } catch (err) {
