@@ -10,19 +10,20 @@ class CustomPartJsonProvider {
             let json;
 
             switch (partType) {
-                case 'scholar_sentence_reorder':
+                case 'sentence-reorder':
                     json = CustomPartJsonProvider.sentenceReorderJson;
                     break;
-                case 'scholar_self_marked_text':
+                case 'self_marked_text':
+                case 'manual_marking':
                     json = CustomPartJsonProvider.selfMarkedTextJson;
                     break;
-                case 'card-match':
+                case 'card_match':
                     json = CustomPartJsonProvider.cardMatchJson;
                     break;
-                case 'scholar_drop_in_bucket':
+                case 'drop_in_bucket':
                     json = CustomPartJsonProvider.dropInBucketJson;
                     break;
-                case 'scholar_drag_1_2_1 ':
+                case 'drag_1_2_1 ':
                     json = CustomPartJsonProvider.drag121Json;
                     break;
                 default:

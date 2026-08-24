@@ -33,6 +33,10 @@ class Question {
     get tags() {
         return this._tags;
     }
+    //wipe existing extensions ready to add the new ones
+    removeAllExistingExtensions() {
+        this._extensions = [];
+    }
     addExtensions(extensions) {
         this._extensions.push(...extensions);
         this._containsCustomParts = true;

@@ -24,7 +24,8 @@ class Exam {
     }
     get extensionsFromQuestions(){
         const extensions = new Set();   
-        this._questions.forEach(q => {
+        this._questions.forEach((q,i) => {
+            
             q.extensions.forEach(ext => extensions.add(ext));
         });
         this._newExtensions = Array.from(extensions);

@@ -2,9 +2,7 @@ import { NewPart } from "./NewPart.js";
 class CardMatch extends NewPart {
     constructor(errorLogger) {
         super(errorLogger);
-        this._type = "card-match";
-        this._templateJsonFileName = "cardMatchPart.json";
-        this._customPartFileName = 'cardMatchCP.json';
+        this._type = "scholar_card_match";
         this._templateSettings =     {"list_of_pairs": '[["a","A"],["b","B"],["c","C"]]',
                                     "howManyPairs": "3",
                                 "markOnMatch": true,
@@ -30,7 +28,7 @@ class CardMatch extends NewPart {
         settings.markOnMatch = true;    
         settings.card_width = "7";
         settings.card_height = "4";
-        settings.lineBoxWidth = "5";  
+        settings.lineBoxWidth = "8";  
         settings.l_c_type = ["word"];
         settings.r_c_type = ["word"];
         settings.reorderOnReveal = false;

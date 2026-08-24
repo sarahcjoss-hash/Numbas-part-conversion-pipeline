@@ -21,6 +21,14 @@ class JSONFromExam {
             const extensions = examData.extensions;
             const dragAndDropIndex = extensions.indexOf('drag_and_drop');
             const cardMatchIndex = extensions.indexOf('card_match');
+            const sentenceReorderIndex = extensions.indexOf('sentence_reorder');
+            const manualMarkingIndex = extensions.indexOf('manual_marking');
+            if (sentenceReorderIndex !== -1) {
+                extensions.splice(sentenceReorderIndex, 1);
+            }
+            if (manualMarkingIndex !== -1) {
+                extensions.splice(manualMarkingIndex, 1);
+            }
             if (dragAndDropIndex !== -1) {
                 extensions.splice(dragAndDropIndex, 1);
             }

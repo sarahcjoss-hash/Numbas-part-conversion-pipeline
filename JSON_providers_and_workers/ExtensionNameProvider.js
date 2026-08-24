@@ -11,19 +11,19 @@ class ExtensionNameProvider {
             let json;
 
             switch (partType) {
-                case 'scholar_sentence_reorder':
+                case 'sentence-reorder':
                     return 'scholar-click-in-order';
                     break;
-                case 'scholar_self_marked_text':
+                case 'self_marked_text':
                     return 'scholar-self-marked-text';
                     break;
-                case 'card-match':
+                case 'card_match':
                     return 'scholar-card-match';
                     break;
-                case 'scholar_drop_in_bucket':
+                case 'drop_in_bucket':
                     return 'scholar-drop-in-bucket';
                     break;
-                case 'scholar_drag_1_2_1 ':
+                case 'drag_1_2_1 ':
                     return 'scholar-drag-1-to-1';
                     break;
                 default:

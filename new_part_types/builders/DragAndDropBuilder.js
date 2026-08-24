@@ -17,8 +17,8 @@ class DragAndDropBuilder extends NewPartBuilder {
             newPart.prompt = ""; //don;t include the prompt because the text goes in settings.targetText
             newPart.marks = part.marks || 1;
             newPart.how_many_gaps = part.numberofGaps;
-            newPart.target_width = part.dragWidth || 100;
-            newPart.target_height = part.dragHeight || 40;
+            newPart.target_width = part.dragWidth || 10;
+            newPart.target_height = part.dragHeight || 2;
             newPart.distractors = part.distractors || [];
             newPart.dragItems = part.dragItems || [];
             return newPart;
@@ -38,8 +38,8 @@ class DragAndDropBuilder extends NewPartBuilder {
             newPart.targetText = part.convertedPrompt;
             newPart.marks = part.marks || 1;
             newPart.how_many_matches = part.numberofGaps;
-            newPart.item_width = part.dragWidth || 120;
-            newPart.item_height = part.dragHeight || 80;
+            newPart.item_width = part.dragWidth || 12;
+            newPart.item_height = part.dragHeight || 2;
             newPart.distractors = part.distractors || [];
             newPart.dragItems = part.dragItems || [];
             return newPart;
@@ -60,8 +60,8 @@ class DragAndDropBuilder extends NewPartBuilder {
             newPart.targetText = part.convertedPrompt;
             newPart.marks = part.marks || 1;
             newPart.howManyDrags = part.numberofGaps;  
-            newPart.item_width = part.dragWidth || 120;
-            newPart.targetHeight = part.dragHeight || 80;
+            newPart.item_width = part.dragWidth || '';
+            newPart.targetHeight = part.dragHeight || 2;
             newPart.distractors = part.distractors || [];
             newPart.dragItems = part.dragItems || [];
             return newPart;

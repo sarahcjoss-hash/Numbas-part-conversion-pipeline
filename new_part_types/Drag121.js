@@ -3,17 +3,7 @@ import { NewDragAndDrop } from "./NewDragAndDrop.js";
 class Drag121 extends NewDragAndDrop {
     constructor(errorLogger) {
         super(errorLogger);
-        this._type = "scholar_drag_1_2_1";
-        this._templateJsonFileName = "drag121Part.json";
-        this._templateSettings = {
-                                "target_text": "<p>&lt;p&gt;Write some &lt;strong&gt;text&lt;/strong&gt; with the %[targets]% marked up using %[your item here]%. &lt;/p&gt;\",</p>",
-                                "how_many_gaps": "6",
-                                "distractors": [],
-                                "target_width": "100",
-                                "target_height": "40",
-                                "mark_on_match": false,
-                                "all_or_nothing": false
-                            }
+        this._type = "drag_1_2_1";   
 
 
     }
@@ -44,6 +34,9 @@ class Drag121 extends NewDragAndDrop {
         settings.distractors = this._distractors;
         settings.target_height = this._targetHeight;
         settings.all_or_nothing = this._allOrNothing;
+        settings.drags_position = true;
+        settings.scholarInstruction = "Select the items in the order you would like to position them or to place an item in a specific position, select the space before selecting the item.";
+        
         return settings;
     }
 

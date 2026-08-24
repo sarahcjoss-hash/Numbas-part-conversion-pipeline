@@ -4,16 +4,7 @@ import { NewDragAndDrop } from "./NewDragAndDrop.js";
 class SentenceReorder extends NewDragAndDrop {
     constructor(errorLogger) {
         super(errorLogger);
-        super.type = "scholar_sentence_reorder";
-        this._templateJsonFileName = "sentenceReorder.json";
-        this._templateSettings = {
-            "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
-            "how_many_drags": "6",
-            "distractors": [],
-            "target_height": "35",
-            "target_width": "auto",
-            "all_or_nothing": false
-        }
+        super.type = "sentence-reorder";
         this._settings = SentenceReorder.getDefaultSettings();
 
     }
@@ -25,34 +16,41 @@ class SentenceReorder extends NewDragAndDrop {
         settings.distractors = [];
         settings.target_height = "35";
         settings.all_or_nothing = false;
+        settings.drags_position = true;
+        settings.scholarInstruction = "Select the items in the order you would like to position them or to place an item in a specific position, select the space before selecting the item.";
+                            
         return settings;
     }
     static customPartSettings = {
-        "type": "scholar-sentence-reorder",
-        "useCustomName": false,
-        "customName": "",
-        "marks": 1,
-        "scripts": {},
-        "customMarkingAlgorithm": "",
-        "extendBaseMarkingAlgorithm": true,
-        "unitTests": [],
-        "showCorrectAnswer": true,
-        "showFeedbackIcon": true,
-        "variableReplacements": [],
-        "variableReplacementStrategy": "originalfirst",
-        "nextParts": [],
-        "suggestGoingBack": false,
-        "adaptiveMarkingPenalty": 0,
-        "exploreObjective": null,
-        "settings": {
-            "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
-            "how_many_drags": "6",
-            "distractors": [],
-            "target_height": "35",
-            "target_width": "auto",
-            "all_or_nothing": false
-        }
-    }
+                            "type": "scholar-sentence-reorder-click-in-order",
+                            "useCustomName": false,
+                            "customName": "",
+                            "marks": "4",
+                            "scripts": {},
+                            "customMarkingAlgorithm": "",
+                            "extendBaseMarkingAlgorithm": true,
+                            "unitTests": [],
+                            "showCorrectAnswer": true,
+                            "showFeedbackIcon": true,
+                            "variableReplacements": [],
+                            "variableReplacementStrategy": "originalfirst",
+                            "nextParts": [],
+                            "suggestGoingBack": false,
+                            "adaptiveMarkingPenalty": 0,
+                            "adaptiveMarkingUseCondition": "",
+                            "adaptiveMarkingNotUsedMessage": "",
+                            "exploreObjective": null,
+                            "settings": {
+                                "target_text": "<p>A %[!^!complete]% %[!^!sentence or paragraph]% %[in]% %[grammatical]% order.</p>",
+                                "how_many_drags": "4",
+                                "distractors": [],
+                                "target_height": "35",
+                                "target_width": "",
+                                "all_or_nothing": false,
+                                "drags_position": true,
+                                "scholarInstruction": "Select the items in the order you would like to position them or to place an item in a specific position, select the space before selecting the item."
+                            }
+                        }
     set prompt(p){
         //remove any builder info from the prompt and just keep the text
         let newPrompt = p.replace(/{dnd_builder\(.+?\)}/, '').trim();

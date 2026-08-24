@@ -10,19 +10,19 @@ class JSONTemplateProvider {
             let json;
 
             switch (partType) {
-                case 'scholar_sentence_reorder':
+                case 'sentence-reorder':
                     json = JSONTemplateProvider.sentenceReorderTemplate;
                     break;
-                case 'scholar_self_marked_text':
+                case 'self_marked_text':
                     json = JSONTemplateProvider.selfMarkedTextTemplate;
                     break;
                 case 'card-match':
                     json = JSONTemplateProvider.cardMatchTemplate;
                     break;
-                case 'scholar_drop_in_bucket':
+                case 'drop_in_bucket':
                     json = JSONTemplateProvider.dropInBucketTemplate;
                     break;
-                case 'scholar_drag_1_2_1 ':
+                case 'drag_1_2_1 ':
                     json = JSONTemplateProvider.drag121Template;
                     break;
                 default:
@@ -42,36 +42,10 @@ class JSONTemplateProvider {
     }
 
     static sentenceReorderTemplate = {
-        "type": "scholar-sentence-reorder",
-        "useCustomName": false,
-        "customName": "",
-        "marks": 1,
-        "scripts": {},
-        "customMarkingAlgorithm": "",
-        "extendBaseMarkingAlgorithm": true,
-        "unitTests": [],
-        "showCorrectAnswer": true,
-        "showFeedbackIcon": true,
-        "variableReplacements": [],
-        "variableReplacementStrategy": "originalfirst",
-        "nextParts": [],
-        "suggestGoingBack": false,
-        "adaptiveMarkingPenalty": 0,
-        "exploreObjective": null,
-        "settings": {
-            "target_text": "<p>A %[complete]% %[sentence or paragraph]% %[in]% %[grammatical}% order.&nbsp;</p>",
-            "how_many_drags": "6",
-            "distractors": [],
-            "target_height": "35",
-            "all_or_nothing": false
-        }
-    }
-
-    static cardMatchTemplate =   {
-                            "type": "scholar-card-match-test",
+                            "type": "scholar-sentence-reorder-click-in-order",
                             "useCustomName": false,
                             "customName": "",
-                            "marks": 1,
+                            "marks": "4",
                             "scripts": {},
                             "customMarkingAlgorithm": "",
                             "extendBaseMarkingAlgorithm": true,
@@ -87,11 +61,42 @@ class JSONTemplateProvider {
                             "adaptiveMarkingNotUsedMessage": "",
                             "exploreObjective": null,
                             "settings": {
-                                "list_of_pairs": "[[\"a\",\"A\"],[\"b\",\"B\"],[\"c\",\"C\"]]",
+                                "target_text": "<p>A %[!^!complete]% %[!^!sentence or paragraph]% %[in]% %[grammatical]% order.</p>",
+                                "how_many_drags": "4",
+                                "distractors": [],
+                                "target_height": "2",
+                                "target_width": "",
+                                "all_or_nothing": false,
+                                "drags_position": true,
+                                "scholarInstruction": "Select the items in the order you would like to position them or to place an item in a specific position, select the space before selecting the item."
+                            }
+                        }
+
+    static cardMatchTemplate =   {
+                            "type": "scholar-card-match-test",
+                            "useCustomName": false,
+                            "customName": "",
+                            "marks": "1",
+                            "scripts": {},
+                            "customMarkingAlgorithm": "",
+                            "extendBaseMarkingAlgorithm": true,
+                            "unitTests": [],
+                            "showCorrectAnswer": true,
+                            "showFeedbackIcon": true,
+                            "variableReplacements": [],
+                            "variableReplacementStrategy": "originalfirst",
+                            "nextParts": [],
+                            "suggestGoingBack": false,
+                            "adaptiveMarkingPenalty": 0,
+                            "adaptiveMarkingUseCondition": "",
+                            "adaptiveMarkingNotUsedMessage": "",
+                            "exploreObjective": null,
+                            "settings": {
+                                "list_of_pairs": "[[\"a\",\"A\"],[\"b\",\"B\"],[\"c\",\"C\"],[\"d\",\"D\"],[\"f\",\"F\"],[\"g\",\"G\"],[\"h\",\"H\"],[\"i\",\"I\"],[\"j\",\"J\"]]",
                                 "howManyPairs": "3",
                                 "markOnMatch": false,
-                                "card_width": "120",
-                                "card_height": "80",
+                                "card_width": "7",
+                                "card_height": "5",
                                 "l_c_type": [
                                     "word"
                                 ],
@@ -99,9 +104,13 @@ class JSONTemplateProvider {
                                     "word"
                                 ],
                                 "reorderOnReveal": false,
-                                "lineBoxWidth": "240"
+                                "lineBoxWidth": "8",
+                                "scholarInstruction": "Select an item and the location you would like to position it."
                             }
                         }
+
+
+
 
     static selfMarkedTextTemplate = {
         "type": "self-marked-text-test",
@@ -136,60 +145,68 @@ class JSONTemplateProvider {
         }
     }
     static drag121Template = {
-        "type": "drag-and-drop-text-1-to-1",
-        "useCustomName": false,
-        "customName": "",
-        "marks": 1,
-        "scripts": {},
-        "customMarkingAlgorithm": "",
-        "extendBaseMarkingAlgorithm": true,
-        "unitTests": [],
-        "showCorrectAnswer": true,
-        "showFeedbackIcon": true,
-        "variableReplacements": [],
-        "variableReplacementStrategy": "originalfirst",
-        "nextParts": [],
-        "suggestGoingBack": false,
-        "adaptiveMarkingPenalty": 0,
-        "exploreObjective": null,
-        "settings": {
-            "target_text": "<p>&lt;p&gt;Write some &lt;strong&gt;text&lt;/strong&gt; with the %[targets]% marked up using %[your item here]%. &lt;/p&gt;\",</p>",
-            "how_many_gaps": "6",
-            "distractors": [],
-            "target_width": "100",
-            "target_height": "40",
-            "mark_on_match": false,
-            "all_or_nothing": false
-        }
-    }
+                            "type": "drag-and-drop-text-1-to-1-1",
+                            "useCustomName": false,
+                            "customName": "",
+                            "marks": "3",
+                            "scripts": {},
+                            "customMarkingAlgorithm": "",
+                            "extendBaseMarkingAlgorithm": true,
+                            "unitTests": [],
+                            "showCorrectAnswer": true,
+                            "showFeedbackIcon": true,
+                            "variableReplacements": [],
+                            "variableReplacementStrategy": "originalfirst",
+                            "nextParts": [],
+                            "suggestGoingBack": false,
+                            "adaptiveMarkingPenalty": 0,
+                            "adaptiveMarkingUseCondition": "",
+                            "adaptiveMarkingNotUsedMessage": "",
+                            "exploreObjective": null,
+                            "settings": {
+                                "target_text": "<p>Write some <strong>text</strong> with the %[!^!targets]% marked up using %[percent]% and %[square bracket]%. Anything marked up like %[this]% will be replaced with a %[target]% and a clickable item that matches the drop will be created.</p>\n<p>You can use %[HTML]% markup in your paragraph(s) and to include images.</p>",
+                                "how_many_gaps": "6",
+                                "distractors": [],
+                                "target_width": "10",
+                                "target_height": "2",
+                                "mark_on_match": false,
+                                "all_or_nothing": false,
+                                "drags_position": true,
+                                "scholarInstruction": "Select an item and the location you would like to position it."
+                            }
+                        }
 
     static dropInBucketTemplate = {
-        "type": "scholar-drop-in-bucket",
-        "useCustomName": false,
-        "customName": "",
-        "marks": 1,
-        "scripts": {},
-        "customMarkingAlgorithm": "",
-        "extendBaseMarkingAlgorithm": true,
-        "unitTests": [],
-        "showCorrectAnswer": true,
-        "showFeedbackIcon": true,
-        "variableReplacements": [],
-        "variableReplacementStrategy": "originalfirst",
-        "nextParts": [],
-        "suggestGoingBack": false,
-        "adaptiveMarkingPenalty": 0,
-        "exploreObjective": null,
-        "settings": {
-            "drop_zone": "<table width=\"356\" height=\"225\">\n<tbody>\n<tr>\n<td style=\"width: 123.859px;\">Animal</td>\n<td style=\"width: 91.5625px;\">Vegetable</td>\n<td style=\"width: 91.5781px;\">Mineral</td>\n</tr>\n<tr>\n<td style=\"width: 123.859px;\">\n<p>@[</p>\n<p>%[Pangolin]%</p>\n<p>%[Muntjac]%</p>\n<p>%[Mangalica]%</p>\n<p>]@</p>\n</td>\n<td style=\"width: 91.5625px;\">\n<p>@[</p>\n<p>%[Mangelwurzel]%</p>\n<p>%[Rubber]%</p>\n<p>%[Ebony]%</p>\n<p>]@</p>\n</td>\n<td style=\"width: 91.5781px;\">\n<p>@[</p>\n<p>%[Manganese]%</p>\n<p>%[Jade]%</p>\n<p>]@</p>\n</td>\n</tr>\n</tbody>\n</table>",
-            "how_many_matches": "9",
-            "distractors": [],
-            "item_width": "120",
-            "item_height": "80",
-            "all_or_nothing": false,
-            "mark_on_match": false
-        }
-    }
+                            "type": "scholar-drop-in-bucket-1",
+                            "useCustomName": false,
+                            "customName": "",
+                            "marks": "2",
+                            "scripts": {},
+                            "customMarkingAlgorithm": "",
+                            "extendBaseMarkingAlgorithm": true,
+                            "unitTests": [],
+                            "showCorrectAnswer": true,
+                            "showFeedbackIcon": true,
+                            "variableReplacements": [],
+                            "variableReplacementStrategy": "originalfirst",
+                            "nextParts": [],
+                            "suggestGoingBack": false,
+                            "adaptiveMarkingPenalty": 0,
+                            "adaptiveMarkingUseCondition": "",
+                            "adaptiveMarkingNotUsedMessage": "",
+                            "exploreObjective": null,
+                            "settings": {
+                                "drop_zone": "<table width=\"356\" height=\"225\">\n<tbody>\n<tr>\n<td style=\"width: 123.859px;\">Animal</td>\n<td style=\"width: 91.5625px;\">Vegetable</td>\n<td style=\"width: 91.5781px;\">Mineral</td>\n</tr>\n<tr>\n<td style=\"width: 123.859px;\">\n<p>@[</p>\n<p>%[Pangolin]%</p>\n<p>%[Muntjac]%</p>\n<p>%[Mangalica]%</p>\n<p>]@</p>\n</td>\n<td style=\"width: 91.5625px;\">\n<p>@[</p>\n<p>%[Mangelwurzel]%</p>\n<p>%[Rubber]%</p>\n<p>%[Ebony]%</p>\n<p>]@</p>\n</td>\n<td style=\"width: 91.5781px;\">\n<p>@[</p>\n<p>%[Manganese]%</p>\n<p>%[Jade]%</p>\n<p>%[]%</p>\n<p>]@</p>\n</td>\n</tr>\n</tbody>\n</table>",
+                                "howManyMatches": "8",
+                                "distractors": [],
+                                "item_width": "12",
+                                "item_height": "3",
+                                "all_or_nothing": false,
+                                "mark_on_match": false,
+                                "drags_position": true,
+                                "scholarInstruction": "Select an item and a location to position each one."
+                            }
+                        }
 
 }
 export { JSONTemplateProvider };
