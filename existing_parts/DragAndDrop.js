@@ -21,6 +21,22 @@ class DragAndDropPart extends Part {
             }
 
         }
+        function convertPixelsToEms(px) {
+        //convert a value in pixels to a number of columns for a text area. This is a bit of a guess but we can adjust as needed
+        //first check the string value contains px and if so convert to a number
+        px = px.replaceAll("'","");//sometimes this comes with extra quotes
+        let result = 0;
+        if (typeof px === 'string' && px.endsWith('px')) {
+            px = parseFloat(px.slice(0, -2));
+            result = Math.round(px / 16);
+        } else if (typeof px === 'number') {
+            result = Math.round(px / 16);
+        } else {
+            return px;
+        }
+        return result <2 ? 2:result;
+
+    }
         try {
             data.gaps.map((data, i) => {
                 this.addGap(new DragGap(data, i + 1));
@@ -38,8 +54,8 @@ class DragAndDropPart extends Part {
 
         this._dragsVariableName = dragsVariableName || "";
 
-        this._dragHeight = extractValueFromBS(height, builderPrefix + 'Height(') || '';
-        this._dragWidth = extractValueFromBS(width, builderPrefix + 'Width(') || '';
+        this._dragHeight = convertPixelsToEms(extractValueFromBS(height, builderPrefix + 'Height(')) || '';
+        this._dragWidth = convertPixelsToEms(extractValueFromBS(width, builderPrefix + 'Width(')) || '';
         this._builder = new Builder(builder, logger);
         this._convertedPrompt = this.processPrompt(prompt);
         this._subType = this.builder.builderType;
