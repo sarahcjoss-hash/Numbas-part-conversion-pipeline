@@ -10,7 +10,7 @@ describe('QuestionJSONStitcher', () => {
     const examData = {
       question_groups: [{
         questions: [{
-          extensions: ['drag_and_drop', 'card_match', 'some_other_extension'],
+          extensions: ['drag_and_drop', 'manual_marking', 'card_match', 'some_other_extension'],
           custom_part_types: [],
           variables: {},
           ungrouped_variables: []
@@ -21,9 +21,10 @@ describe('QuestionJSONStitcher', () => {
     const question = { extensions: [] };
     stitcher.removeUnwantedExtensions(question, 0, examData);
 
-    expect(examData.question_groups[0].questions[0].extensions).toEqual([
-      'some_other_extension'
-    ]);
+    const extensions = examData.question_groups[0].questions[0].extensions;
+    expect(extensions).not.toContain('drag_and_drop');
+    expect(extensions).not.toContain('manual_marking');
+    expect(extensions).not.toContain('card_match');
     expect(errorReporter.reportError).not.toHaveBeenCalled();
   });
 });

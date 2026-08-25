@@ -1,13 +1,34 @@
 import fs from 'fs';
 import fsPromises from 'fs/promises';
+import pathModule from 'path';
 
 class FolderWorker {
-    constructor(errorReporter) {
+    constructor(folderPath, errorReporter) {
+        this._folderPath = folderPath;
         this._errorReporter = errorReporter;
     }
     reportError(err, additional) {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'FolderWorker'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
+    }
+
+    set folderPath(folderPath) {
+        this._folderPath = folderPath;
+    }
+    get folderPath() {
+        return this._folderPath;
+    }
+    get outputFolderPath() {
+        return pathModule.join(this._folderPath, 'output');
+    }   
+    get errorFolderPath() {
+        return pathModule.join(this._folderPath, 'error_files');
+    }
+    get reportFolderPath() {
+        return pathModule.join(this._folderPath, 'reports');
+    }
+    get overviewReportsPath(){
+        return this.folderPath;
     }
 
     //function to copy a folder and all its contents to a new location
@@ -45,11 +66,16 @@ class FolderWorker {
     async createNewFolderStructure(folderPath) {
         //create 3 folders within the target folder, output, error_files, reports
         try {
-            await fsPromises.mkdir(`${folderPath}/output`, { recursive: true });
-            await fsPromises.mkdir(`${folderPath}/error_files`, { recursive: true });
-            await fsPromises.mkdir(`${folderPath}/reports`, { recursive: true });
-            return true;     
-            
+            const fp = this._folderPath;
+            const outputPath = pathModule.join(fp, 'output');
+            const errorFilePath = pathModule.join(fp, 'error_files');
+            const reportFilePath = pathModule.join(fp, 'reports');
+            Promise.all([
+                fsPromises.mkdir(`${outputPath}`, { recursive: true }),
+                fsPromises.mkdir(`${errorFilePath}`, { recursive: true }),
+                fsPromises.mkdir(`${reportFilePath}`, { recursive: true })]);
+            return true;
+
         } catch (err) {
             this.reportError(err, `Error creating new folder structure ${folderPath}`);
             throw new Error(`Error creating new folder structure ${folderPath}`);

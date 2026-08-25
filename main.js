@@ -6,36 +6,51 @@ import { ErrorReporter } from './utils/ErrorReporter.js';
 import { ExamUpdater } from './ExamUpdater.js';
 import { FileWriter } from './utils/FileWriter.js';
 import { FolderWorker } from './utils/FolderWorker.js';
+import { execFileSync } from 'child_process';
 import fs from 'fs';
 import fsPromises from 'fs/promises';
+import pathModule from 'path';
 
 
 
-// to do
-//create a UI that allows user to browse to a folder
 
-//create somewhere for files we could not process
-//create somewhere for the reports
-const path = "C:/work/sample_exams/";
-const folder = "files_to_convert/";
-const inputFolder = `${path}${folder}`;
 
-const outputPath = `${path}output`;
-const errorFilePath = `${path}error_files`;
-const reportFilePath = `${path}reports`;
-const errorReporter = new ErrorReporter(true, `${folder}`);
+function browseForDirectory() {
+  const powershellScript = `
+    Add-Type -AssemblyName System.Windows.Forms
+    $dialog = New-Object System.Windows.Forms.FolderBrowserDialog
+    $dialog.Description = 'Select the folder containing files_to_convert'
+    $dialog.ShowNewFolderButton = $false
+    if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+      [Console]::WriteLine($dialog.SelectedPath)
+    }
+  `;
+
+  return execFileSync('powershell.exe', ['-NoProfile', '-STA', '-Command', powershellScript], {
+    encoding: 'utf8'
+  }).trim();
+}
+
+const selectedDirectory = browseForDirectory();
+if (!selectedDirectory) {
+  console.log('No folder selected. Exiting.');
+  process.exit(0);
+}
+const folderWorker = new FolderWorker(selectedDirectory, errorReporter);
 const filereader = new FileReader(errorReporter);
-const filewriter = new FileWriter(errorReporter);
+const filewriter = new FileWriter(folderWorker, errorReporter);
 const reportWriter = new ReportWriter();
-const folderWorker = new FolderWorker(errorReporter);
-const folders = await folderWorker.findFoldersInFolder(inputFolder);//find the folders first
+const errorReporter = new ErrorReporter(true, `${selectedDirectory}`);
+const folders = await folderWorker.findFoldersInFolder(selectedDirectory);//find the folders first
+const overviewReportsPath = folderWorker.overviewReportsPath;
+reportWriter.createBatchReport(overviewReportsPath);
+reportWriter.createMasterErrorReport(overviewReportsPath);
+reportWriter.createCSV(overviewReportsPath);
 
-const batchReportFilePath = `${reportFilePath}/batch_report.txt`;
-let batchReportEntries = "";
+
 //set up output folder structure
-await fsPromises.mkdir(`${outputPath}`, { recursive: true });
-await fsPromises.mkdir(`${errorFilePath}`, { recursive: true });
-await fsPromises.mkdir(`${reportFilePath}`, { recursive: true });
+await folderWorker.createNewFolderStructure();
+
 
 //open folder and find source.exam files
 //copy the directory including all files to a new folder called updated_examname
@@ -43,8 +58,8 @@ await fsPromises.mkdir(`${reportFilePath}`, { recursive: true });
 
 async function processExam(workingFolder) {
   try {
-    const examFolderName = `${workingFolder}`.replace(`${inputFolder}/`,'');
-    const updatedExamFolderName =`${outputPath}/${examFolderName}`
+    const examFolderName = pathModule.relative(inputFolder, workingFolder);
+    const updatedExamFolderName = pathModule.join(outputPath, examFolderName);
     const examFiles = await folderWorker.findFilesInFolder(workingFolder, 'source.exam');
     const line = await filereader.getSpecifiedLineInFileAsync(examFiles[0], 2);
     
