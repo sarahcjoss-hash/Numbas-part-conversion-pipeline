@@ -11,41 +11,26 @@ import fs from 'fs';
 import fsPromises from 'fs/promises';
 import pathModule from 'path';
 
-
-
-
-
-function browseForDirectory() {
-  const powershellScript = `
-    Add-Type -AssemblyName System.Windows.Forms
-    $dialog = New-Object System.Windows.Forms.FolderBrowserDialog
-    $dialog.Description = 'Select the folder containing files_to_convert'
-    $dialog.ShowNewFolderButton = $false
-    if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
-      [Console]::WriteLine($dialog.SelectedPath)
-    }
-  `;
-
-  return execFileSync('powershell.exe', ['-NoProfile', '-STA', '-Command', powershellScript], {
-    encoding: 'utf8'
-  }).trim();
-}
-
-const selectedDirectory = browseForDirectory();
-if (!selectedDirectory) {
-  console.log('No folder selected. Exiting.');
-  process.exit(0);
-}
-const folderWorker = new FolderWorker(selectedDirectory, errorReporter);
+//the folderWorker takes responsibility for selecting folder and creating the output folder structure
+const errorReporter = new ErrorReporter(true);
+let folderWorker = new FolderWorker(errorReporter);
 const filereader = new FileReader(errorReporter);
-const filewriter = new FileWriter(folderWorker, errorReporter);
 const reportWriter = new ReportWriter();
-const errorReporter = new ErrorReporter(true, `${selectedDirectory}`);
-const folders = await folderWorker.findFoldersInFolder(selectedDirectory);//find the folders first
+
+let folders = await folderWorker.findFoldersInFolder();//find the folders first
+while (folders.length === 0) {
+  console.warn('No folders containing a source.exam file were found. Please select another directory.');
+  folderWorker = new FolderWorker(errorReporter);
+  folders = await folderWorker.findFoldersInFolder();
+}
+
+const filewriter = new FileWriter(folderWorker, errorReporter);
+
 const overviewReportsPath = folderWorker.overviewReportsPath;
 reportWriter.createBatchReport(overviewReportsPath);
 reportWriter.createMasterErrorReport(overviewReportsPath);
 reportWriter.createCSV(overviewReportsPath);
+filewriter.createNewErrorReportFile(`${overviewReportsPath}/master_error_report.txt`);
 
 
 //set up output folder structure
@@ -58,8 +43,9 @@ await folderWorker.createNewFolderStructure();
 
 async function processExam(workingFolder) {
   try {
-    const examFolderName = pathModule.relative(inputFolder, workingFolder);
-    const updatedExamFolderName = pathModule.join(outputPath, examFolderName);
+    folderWorker.workingFolder(workingFolder);
+    const examFolderName = folderWorker.examFolderName(workingFolder);
+    const updatedExamFolderName = folderWorker.outputExamFolderName(workingFolder);
     const examFiles = await folderWorker.findFilesInFolder(workingFolder, 'source.exam');
     const line = await filereader.getSpecifiedLineInFileAsync(examFiles[0], 2);
     
@@ -73,12 +59,12 @@ async function processExam(workingFolder) {
     console.log(`Exam processing ${processSuccess ? 'succeeded' : 'failed'}`);
     let hasCustomPartsFlag = false;
     if (!processSuccess) {
-      batchReportEntries +="\n There was an issue processing this exam\n";
+      reportWriter.appendToBatchReport("\n There was an issue processing this exam\n");
     }else{
-      batchReportEntries+=`\n Exam contains ${exam.exam.numberOfQuestions} questions\n`;
+      reportWriter.appendToBatchReport(`\n Exam contains ${exam.exam.numberOfQuestions} questions\n`);
       if (exam.exam.extensionsFromQuestions && exam.exam.extensionsFromQuestions.length > 0){
         hasCustomPartsFlag = true;
-          batchReportEntries +=`\n Exam contains custom parts\n ${exam.exam.extensionsFromQuestions}\n`;
+          reportWriter.appendToBatchReport(`\n Exam contains custom parts\n ${exam.exam.extensionsFromQuestions}\n`);
       }
       
     }
@@ -93,15 +79,15 @@ async function processExam(workingFolder) {
       }
     } else {
       if (!hasCustomPartsFlag){
-        batchReportEntries+="Exam bypassed- no custom parts\n"
+        reportWriter.appendToBatchReport("Exam bypassed- no custom parts\n");
       }else{
          errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
 
       }
     }
   
-    reportWriter.writeReportToFile(report, `${reportFilePath}\\${examFolderName}_report.txt`);
-    reportWriter.writeReportToFile(reportWriter.createErrorReport(examJSONObj.name, errorReporter), errorFilePath+`/${examFolderName}_error.txt`);
+    filewriter.writeReportToFile(report, `${reportFilePath}\\${examFolderName}_report.txt`);
+    filewriter.appendToErrorReportFile(errorReporter.errorReport, `${overviewReportsPath}/master_error_report.txt`);
     //console.log(report);
   } catch (error) {
     console.error('Error occurred while processing exam:', error);
@@ -115,7 +101,7 @@ async function processExam(workingFolder) {
 for (const examFolder of folders) {
     const processed = await await processExam(examFolder);
     console.log(processed);
-    batchReportEntries += `${processed ? '' : 'ERROR:'}Exam folder ${examFolder} processed ${processed ? 'successfully\n' : 'with errors'}\n`;
+    reportWriter.appendToBatchReport(`${processed ? '' : 'ERROR:'}Exam folder ${examFolder} processed ${processed ? 'successfully\n' : 'with errors'}\n`);
     //add an overall log here
   }
   const batchReport = reportWriter.createBatchReport(folders, batchReportEntries);

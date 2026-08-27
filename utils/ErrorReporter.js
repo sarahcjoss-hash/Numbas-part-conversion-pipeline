@@ -1,9 +1,13 @@
 class ErrorReporter{
-    constructor(logToConsole, file){
+    constructor(logToConsole){
         this._errors=[]
         this._logToConsole = logToConsole;
-        this._name = file;
+        this._name = "Not set yet";
         
+    }
+
+    set name(name){
+        this._name = name;
     }
     
     reportError(err){

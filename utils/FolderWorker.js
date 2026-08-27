@@ -1,15 +1,55 @@
+import { execFileSync } from 'child_process';
 import fs from 'fs';
 import fsPromises from 'fs/promises';
 import pathModule from 'path';
 
 class FolderWorker {
-    constructor(folderPath, errorReporter) {
-        this._folderPath = folderPath;
+    constructor(errorReporter) {
         this._errorReporter = errorReporter;
+        function browseForDirectory() {
+        const powershellScript = `
+        Add-Type -AssemblyName System.Windows.Forms
+        $dialog = New-Object System.Windows.Forms.FolderBrowserDialog
+        $dialog.Description = 'Select the folder containing files_to_convert'
+        $dialog.ShowNewFolderButton = $false
+        if ($dialog.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+      [Console]::WriteLine($dialog.SelectedPath)
+        }
+        `;
+
+            return execFileSync('powershell.exe', ['-NoProfile', '-STA', '-Command', powershellScript], {
+                encoding: 'utf8'
+            }).trim();
+        }
+
+        const selectedDirectory = browseForDirectory();
+        if (!selectedDirectory) {
+            console.log('No folder selected. Exiting.');
+            process.exit(0);
+        }
+        this._folderPath = pathModule.resolve(selectedDirectory);
+        this._reportsPath = pathModule.dirname(selectedDirectory);
+        
     }
     reportError(err, additional) {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'FolderWorker'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
+    }
+    set workingFolder(wf) {
+        this._workingFolder = wf;
+    }
+    get workingFolder() {
+        return this._workingFolder;
+    }
+    get examFolderName(){
+        if (!this._workingFolder) {
+            throw new Error('Working folder is not set');
+        }
+         return pathModule.relative(this._folderPath, this._workingFolder);
+           
+    }
+    get outputExamFolderName(){
+        return pathModule.join(this.outputFolderPath, this.examFolderName());
     }
 
     set folderPath(folderPath) {
@@ -20,15 +60,15 @@ class FolderWorker {
     }
     get outputFolderPath() {
         return pathModule.join(this._folderPath, 'output');
-    }   
+    }
     get errorFolderPath() {
-        return pathModule.join(this._folderPath, 'error_files');
+        return pathModule.join(this._reportsPath, 'error_files');
     }
     get reportFolderPath() {
-        return pathModule.join(this._folderPath, 'reports');
+        return pathModule.join(this._reportsPath, 'reports');
     }
-    get overviewReportsPath(){
-        return this.folderPath;
+    get overviewReportsPath() {
+        return this._reportsPath;
     }
 
     //function to copy a folder and all its contents to a new location
@@ -53,14 +93,28 @@ class FolderWorker {
             throw new Error(`Error finding files in folder ${folderPath}`);
         }
     }
-    async findFoldersInFolder(folderPath) {
+    async findFoldersInFolder() {
         try {
-            const files = await fsPromises.readdir(folderPath);
-            const matchingFiles = files.filter(file => fsPromises.stat(`${folderPath}/${file}`).then(stat => stat.isDirectory()));
-            return matchingFiles.map(file => `${folderPath}/${file}`);
+            const files = await fsPromises.readdir(this._folderPath);
+            const folders = await Promise.all(files.map(async (file) => {
+                const folderPath = pathModule.join(this._folderPath, file);
+                try {
+                    const stat = await fsPromises.stat(folderPath);
+                    if (!stat.isDirectory()) {
+                        return null;
+                    }
+
+                    await fsPromises.access(pathModule.join(folderPath, 'source.exam'));
+                    return folderPath;
+                } catch {
+                    return null;
+                }
+            }));
+
+            return folders.filter(folderPath => folderPath !== null);
         } catch (err) {
-            this.reportError(err, `Error finding folders in folder ${folderPath}`);
-            throw new Error(`Error finding folders in folder ${folderPath}`);
+            this.reportError(err, `Error finding folders in folder ${this._folderPath}`);
+            throw new Error(`Error finding folders in folder ${this._folderPath}`);
         }
     }
     async createNewFolderStructure(folderPath) {

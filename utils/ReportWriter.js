@@ -73,15 +73,7 @@ class ReportWriter {
         return batchReportString;
     }
 
-    writeReportToFile(reportString, filePath) {
-        fs.writeFile(filePath, reportString, (err) => {
-            if (err) {
-                console.error('Error writing report to file:', err);
-            } else {
-                console.log('Report successfully written to file:', filePath);
-            }
-        });
-    }
+
 
 
 }

@@ -20,6 +20,38 @@ class FileWriter {
         }
     }
 //leave making directories to folderWorker
+    writeReportToFile(reportString, filePath) {
+        fs.writeFile(filePath, reportString, (err) => {
+            if (err) {
+                console.error('Error writing report to file:', err);
+            } else {
+                console.log('Report successfully written to file:', filePath);
+            }
+        });
+    }
+
+    createNewErrorReportFile(filePath) {
+        const timestamp = new Date().toISOString();
+        const initialContent = `Error report file created: ${timestamp}\n`;
+        fs.writeFile(filePath, initialContent, (err) => {
+            if (err) {  
+                console.error('Error writing report to file:', err);
+            } else {
+                console.log('Report successfully written to file:', filePath);
+            }
+        });
+
+    }
+    appendToErrorReportFile(reportString, filePath) {
+        fs.appendFile(filePath, reportString, 'utf8', (err) => {
+            if (err) {
+                console.error('Error appending to error report file:', err);
+            } else {
+                console.log('Successfully appended to error report file:', filePath);
+            }
+        });
+    }
+
 }
 
 
