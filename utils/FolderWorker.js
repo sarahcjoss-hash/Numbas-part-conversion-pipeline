@@ -49,7 +49,10 @@ class FolderWorker {
            
     }
     get outputExamFolderName(){
-        return pathModule.join(this.outputFolderPath, this.examFolderName());
+        return pathModule.join(this.outputFolderPath, this.examFolderName);
+    }
+    get reportsPath() {
+        return pathModule.join(this._reportsPath, 'reports');
     }
 
     set folderPath(folderPath) {
@@ -70,6 +73,23 @@ class FolderWorker {
     get overviewReportsPath() {
         return this._reportsPath;
     }
+    createNewFolderStructure() {
+        //create 3 folders within the reportsPath folder, output, error_files, reports
+        try {
+            const outputPath = this.outputFolderPath;
+            const errorFilePath = this.errorFolderPath;
+            const reportFilePath = this.reportFolderPath;   
+        Promise.all([
+            fsPromises.mkdir(`${outputPath}`, { recursive: true }),
+            fsPromises.mkdir(`${errorFilePath}`, { recursive: true }),
+            fsPromises.mkdir(`${reportFilePath}`, { recursive: true })]);
+        return true;    
+        } catch (err) {
+            this.reportError(err, `Error creating new folder structure ${this._folderPath}`);
+            throw new Error(`Error creating new folder structure ${this._folderPath}`);
+        }  
+    } 
+
 
     //function to copy a folder and all its contents to a new location
     async copyFolder(source, destination) {

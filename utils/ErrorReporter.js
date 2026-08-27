@@ -25,7 +25,8 @@ class ErrorReporter{
     }
     get errorReport(){
         let errorString = `Log file for ${this._name}`;
-        errorString = this._errors.length > 1 ?`!THIS CONVERSION ENCOUNTERED ERRORS\n`:`No errors found`;
+        errorString += this._errors.length > 1 ?`!THIS CONVERSION ENCOUNTERED ERRORS\n`:`No errors found\n
+        `;
         errorString += this.allErrorMessages;
         return errorString;
     }

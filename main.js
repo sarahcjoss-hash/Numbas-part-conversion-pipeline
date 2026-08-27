@@ -15,7 +15,7 @@ import pathModule from 'path';
 const errorReporter = new ErrorReporter(true);
 let folderWorker = new FolderWorker(errorReporter);
 const filereader = new FileReader(errorReporter);
-const reportWriter = new ReportWriter();
+const reportWriter = new ReportWriter();//initialisingthe report writer creates the master report and batch report and CSV report ready to append
 
 let folders = await folderWorker.findFoldersInFolder();//find the folders first
 while (folders.length === 0) {
@@ -27,10 +27,11 @@ while (folders.length === 0) {
 const filewriter = new FileWriter(folderWorker, errorReporter);
 
 const overviewReportsPath = folderWorker.overviewReportsPath;
-reportWriter.createBatchReport(overviewReportsPath);
-reportWriter.createMasterErrorReport(overviewReportsPath);
-reportWriter.createCSV(overviewReportsPath);
+
 filewriter.createNewErrorReportFile(`${overviewReportsPath}/master_error_report.txt`);
+filewriter.writeReportToFile(reportWriter.outputCSV, `${overviewReportsPath}/master_report.csv`);
+filewriter.writeReportToFile(reportWriter.appendToBatchReport(`Batch report for files in ${overviewReportsPath}`), `${overviewReportsPath}/batch_report.txt`);
+folderWorker.createNewFolderStructure(folderWorker.outputPath);
 
 
 //set up output folder structure
@@ -44,8 +45,8 @@ await folderWorker.createNewFolderStructure();
 async function processExam(workingFolder) {
   try {
     folderWorker.workingFolder = workingFolder;
-    const examFolderName = folderWorker.examFolderName(workingFolder);
-    const updatedExamFolderName = folderWorker.outputExamFolderName(workingFolder);
+    const examFolderName = folderWorker.examFolderName;
+    const updatedExamFolderName = folderWorker.outputExamFolderName;
     const examFiles = await folderWorker.findFilesInFolder(workingFolder, 'source.exam');
     const line = await filereader.getSpecifiedLineInFileAsync(examFiles[0], 2);
     
@@ -86,7 +87,7 @@ async function processExam(workingFolder) {
       }
     }
   
-    filewriter.writeReportToFile(report, `${reportFilePath}\\${examFolderName}_report.txt`);
+    filewriter.writeReportToFile(report, `${folderWorker.reportsPath}\\${examFolderName}_report.txt`);
     filewriter.appendToErrorReportFile(errorReporter.errorReport, `${overviewReportsPath}/master_error_report.txt`);
     //console.log(report);
   } catch (error) {
@@ -104,7 +105,6 @@ for (const examFolder of folders) {
     reportWriter.appendToBatchReport(`${processed ? '' : 'ERROR:'}Exam folder ${examFolder} processed ${processed ? 'successfully\n' : 'with errors'}\n`);
     //add an overall log here
   }
-  const batchReport = reportWriter.createBatchReport(folders, batchReportEntries);
-  reportWriter.writeReportToFile(batchReport, batchReportFilePath);
+  
 
 

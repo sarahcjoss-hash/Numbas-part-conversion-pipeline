@@ -2,6 +2,9 @@ import fs from 'fs';
 
 class ReportWriter {
     constructor() {
+        this._masterErrorReport = "";
+        this._batchReport = "";
+        this._outputCSV = "files,exam name,Number of questions,contains CP,custom part types,question numbers with CPs,errors\n";
 
     }
 
@@ -13,26 +16,19 @@ class ReportWriter {
 
 
     }
-    createMasterErrorReport(loc){
-        this._masterErrorReport = "";
-    
-    }
-    createBatchReport(loc){
-        this._batchReport = "";
 
-    }
-    createCSV(loc){
-        this._outputCSV = "files,exam name,Number of questions,contains CP,custom part types,question numbers with CPs,errors\n";
-    }
     appendToBatchReport(reportString){
         this._batchReport += reportString;
+        return this._batchReport;
     }
     appendToMasterErrorReport(reportString){
         this._masterErrorReport += reportString;
+        return this._masterErrorReport;
     }
     appendToCSV(reportString){
         //this may require more finesse to get it inot the correct format
         this._outputCSV += reportString;
+        return this._outputCSV;    
     }
     get outputCSV(){
         return this._outputCSV;
@@ -67,7 +63,7 @@ class ReportWriter {
         return reportString;
     };
     createBatchReport(folders, entries){
-        let batchReportString = `Batch report for ${folders.length} folders\n`;
+        let batchReportString = `Batch report for ${folders?folders.length:0} folders\n`;
         batchReportString += `-------------------------------------\n`;
         batchReportString += entries;
         return batchReportString;
