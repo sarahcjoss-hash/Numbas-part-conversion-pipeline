@@ -43,7 +43,7 @@ await folderWorker.createNewFolderStructure();
 
 async function processExam(workingFolder) {
   try {
-    folderWorker.workingFolder(workingFolder);
+    folderWorker.workingFolder = workingFolder;
     const examFolderName = folderWorker.examFolderName(workingFolder);
     const updatedExamFolderName = folderWorker.outputExamFolderName(workingFolder);
     const examFiles = await folderWorker.findFilesInFolder(workingFolder, 'source.exam');
