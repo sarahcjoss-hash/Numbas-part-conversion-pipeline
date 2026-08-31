@@ -8,6 +8,7 @@ class Exam {
         this._existingExtensions = [];
         this._newExtensions = [];
         this._errorReporter = errorReporter;
+        this._questionsWithCustomParts = [];
     }
 
 
@@ -30,6 +31,16 @@ class Exam {
         });
         this._newExtensions = Array.from(extensions);
         return Array.from(extensions);
+    }
+    get questionsWithCustomParts(){
+        const qps = new Set();   
+        this._questions.forEach((q,i) => {
+            if (q.hasCustomParts){
+                qps.add(q.number);
+            }
+        });
+        this._questionsWithCustomParts = Array.from(qps);
+        return Array.from(this._questionsWithCustomParts);
     }
     addExtension(name){
         if (!this._extensions.includes(name)){

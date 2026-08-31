@@ -24,9 +24,8 @@ class ErrorReporter{
         return this._errors.length>0? this.errors.map(e => `${e.message} \n`).join(): "";
     }
     get errorReport(){
-        let errorString = `Log file for ${this._name}`;
-        errorString += this._errors.length > 1 ?`!THIS CONVERSION ENCOUNTERED ERRORS\n`:`No errors found\n
-        `;
+        let errorString = `\nLog for ${this._name}\n`;
+        errorString += this._errors.length > 1 ?`!THIS CONVERSION ENCOUNTERED ERRORS\n`:`No errors found\n`;
         errorString += this.allErrorMessages;
         return errorString;
     }

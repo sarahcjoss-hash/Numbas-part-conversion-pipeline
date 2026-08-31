@@ -52,6 +52,7 @@ async function processExam(workingFolder) {
     
     const examJSONObj = JSON.parse(line);
     const exam = new ExamFromJSON(examJSONObj, errorReporter);
+    errorReporter.name = exam.exam.name;
     const report = reportWriter.createReport(exam.exam);
     const examUpdater = new ExamUpdater(errorReporter);
     examUpdater.updateExam(exam.exam, errorReporter);//NB! this is the same exam as above not a new object- just a transforamtion process  const updatedJSON = new JSONFromExam(updatedExam, examData, errorReporter)
@@ -75,12 +76,15 @@ async function processExam(workingFolder) {
     //these are async but not dependent
     if (processSuccess && hasCustomPartsFlag) {
       const success = await folderWorker.copyFolder(workingFolder, updatedExamFolderName);//only do this if the folder actually contins cusomt parts
+        reportWriter.appendToCSV(`${examFolderName},${exam.exam.name},${exam.exam.numberOfQuestions},${hasCustomPartsFlag},${hasCustomPartsFlag?exam.data.extensions.join(';'):'N/A'},${hasCustomPartsFlag?exam.exam.questionsWithCustomParts.join(';'):'N/A'},${errorReporter.errors.length>0 ? 'Errors reported' : 'No errors reported'}\n`);
+          //${exam.exam.extensionsFromQuestions.join(',')},${exam.exam.questionsWithCustomParts.join(',')},${errorReporter.errorReport ? 'Errors reported' : 'No errors reported'}\n`);
       if (success){
         filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${updatedExamFolderName}/source.exam`);
+        
       }
     } else {
       if (!hasCustomPartsFlag){
-        reportWriter.appendToBatchReport("Exam bypassed- no custom parts\n");
+       reportWriter.appendToBatchReport("Exam bypassed- no conversion required\n");
       }else{
          errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
 
@@ -105,6 +109,10 @@ for (const examFolder of folders) {
     reportWriter.appendToBatchReport(`${processed ? '' : 'ERROR:'}Exam folder ${examFolder} processed ${processed ? 'successfully\n' : 'with errors'}\n`);
     //add an overall log here
   }
+  //output the report at teh end
+  filewriter.writeReportToFile(reportWriter.batchReport, `${overviewReportsPath}/batch_report.txt`);
+  filewriter.writeReportToFile(reportWriter.outputCSV, `${overviewReportsPath}/master_report.csv`);
+
   
 
 

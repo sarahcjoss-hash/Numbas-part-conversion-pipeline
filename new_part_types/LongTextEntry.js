@@ -42,6 +42,7 @@ class LongTextEntry extends NewPart {
         //remove any builder info from the prompt and just keep the text
         let newPrompt = p.replace(/{manualmarking_builder\(.+?\)}/, '').trim();
         newPrompt = newPrompt.replace(/{manualmarking_textarea_width\(.+?\)}/, '').trim();
+        newPrompt = newPrompt.replace(/{manualmarking_textarea_height\(.+?\)}/, '').trim();
         newPrompt = newPrompt.replace(/{manualmarking_render\(\)}/, '').trim();   
         //remove gaps 
         newPrompt = newPrompt.replace(/\[\[\d+\]\]/, '');

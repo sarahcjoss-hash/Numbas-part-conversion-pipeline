@@ -37,7 +37,11 @@ class QuestionJSONStitcher {
             customPartTypes.forEach(cpt => {
                 const CPJSON = CustomPartJsonProvider.getCustomPartJson(cpt);
                 if (CPJSON) {
+                    if (!examData.question_groups[0].questions[index].custom_part_types) {
+                        examData.question_groups[0].questions[index].custom_part_types = [];
+                    }
                     examData.question_groups[0].questions[index].custom_part_types.push(CPJSON);
+
                 }
             });
             return true;
@@ -53,7 +57,7 @@ class QuestionJSONStitcher {
             const ungroupedVariables = examData.question_groups[0].questions[index].ungrouped_variables;
             if (variables|| ungroupedVariables && customPartTypes) {
                 for (const v in variables) {
-                    console.log(`Checking variable ${v} for question ${index + 1} variable name is ${variables[v].name}`);
+                   // console.log(`Checking variable ${v} for question ${index + 1} variable name is ${variables[v].name}`);
                     if (variables[v].name.startsWith('manualmarking_') || variables[v].name.startsWith('cardmatch_') || variables[v].name.startsWith('dnd_')) {
                         console.log(`deleting variable ${v} `);
                         delete examData.question_groups[0].questions[index].variables[v];
@@ -61,7 +65,7 @@ class QuestionJSONStitcher {
                 }
                 for (const uv in ungroupedVariables) {
                     //ungrouped varaibles do not ahve a name prop
-                    console.log(`Checking ungrouped variable ${uv} for question ${index + 1}`); 
+                    //console.log(`Checking ungrouped variable ${uv} for question ${index + 1}`); 
                     if (ungroupedVariables[uv].startsWith('manualmarking_') || ungroupedVariables[uv].startsWith('cardmatch_') || ungroupedVariables[uv].startsWith('dnd_')) {
                         console.log(`deleting ungrouped variable ${uv} `);
                         examData.question_groups[0].questions[index].ungrouped_variables.splice(uv,1);

@@ -30,6 +30,16 @@ class FileWriter {
         });
     }
 
+    appendReport(reportString, filePath) {
+        fs.appendFile(filePath, reportString, 'utf8', (err) => {
+            if (err) {  
+                console.error('Error appending to report file:', err);
+            } else {
+                console.log('Successfully appended to report file:', filePath);
+            }
+        });
+    }   
+
     createNewErrorReportFile(filePath) {
         const timestamp = new Date().toISOString();
         const initialContent = `Error report file created: ${timestamp}\n`;
@@ -46,9 +56,7 @@ class FileWriter {
         fs.appendFile(filePath, reportString, 'utf8', (err) => {
             if (err) {
                 console.error('Error appending to error report file:', err);
-            } else {
-                console.log('Successfully appended to error report file:', filePath);
-            }
+            } 
         });
     }
 

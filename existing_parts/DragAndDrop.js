@@ -90,10 +90,24 @@ class DragAndDropPart extends Part {
                 const gap = this._gaps[gapNumber];
                 const gapAnswerVariable = gap.displayAnswer;
 
-                //find the bit in square brackets then remove the brackets                
-                const index = parseInt(gapAnswerVariable.match(/\[\d+\]/)[0].replace(/\[|\]/g, ''), 10); // Extract the index number from the variable name
-                const value = gapAnswerVariable && this.dragsList ? this.dragsList[index] : match; // Replace with answer or keep original if not found
-                return value ? `%[${value}]%` : match; // Replace with answer, plus new markup, or keep original if not found
+                //find the bit in square brackets then remove the brackets    
+                if (match =='[[7]]'){
+                    console.warn("HERE" + gapAnswerVariable + " " + this.dragsList + " match" + match); 
+                }           
+                
+                try {
+                    if (!gapAnswerVariable || gapAnswerVariable === '' ){
+                        console.warn('empty gap' + gapAnswerVariable + "dragList " + this.dragsList + " match" + match)
+                        return '%[]%';
+                    }
+                    const index = parseInt(gapAnswerVariable.match(/\[\d+\]/)[0].replace(/\[|\]/g, ''), 10); // Extract the index number from the variable name
+                    const value = gapAnswerVariable && this.dragsList? this.dragsList[index] : match; // Replace with answer or keep original if not found
+                    return value ? `%[${value}]%` : match; // Replace with answer, plus new markup, or keep original if not found
+                } catch (error) {
+                    console.error(`Error processing gap ${gapNumber} with answer variable ${gapAnswerVariable} and match ${match}:`, error);
+                    this.reportError(error, `Error processing gap ${gapNumber} with answer variable ${gapAnswerVariable} and match ${match} and gap.dragList ${this.dragsList}:`);
+                    return match; // Keep original if error occurs
+                }
 
 
             });
@@ -102,7 +116,9 @@ class DragAndDropPart extends Part {
             const convertedPrompt = filledPrompt.replace(/\<p\>\s*{\s*dnd_builder\(.+?\)\s*}\s*{dnd_render\(\)\s*}\s*\<\/p\>/, '');
             return convertedPrompt;
         } catch (error) {
-            console.error("Error processing prompt:", error);
+            console.error("Error processing prompt or finding matches for gaps:", error);
+            this.reportError(error, "Error processing prompt or finding matches for gaps:");
+            return prompt; // Return the original prompt if an error occurs
         }
     }
     reportError(err, additional) {
