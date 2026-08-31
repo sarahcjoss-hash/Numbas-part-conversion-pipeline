@@ -62,7 +62,7 @@ class FolderWorker {
         return this._folderPath;
     }
     get outputFolderPath() {
-        return pathModule.join(this._folderPath, 'output');
+        return pathModule.join(this._reportsPath, 'output');
     }
     get errorFolderPath() {
         return pathModule.join(this._reportsPath, 'error_files');
@@ -137,10 +137,10 @@ class FolderWorker {
             throw new Error(`Error finding folders in folder ${this._folderPath}`);
         }
     }
-    async createNewFolderStructure(folderPath) {
+    async createNewFolderStructure() {
         //create 3 folders within the target folder, output, error_files, reports
         try {
-            const fp = this._folderPath;
+            const fp = this._reportsPath;
             const outputPath = pathModule.join(fp, 'output');
             const errorFilePath = pathModule.join(fp, 'error_files');
             const reportFilePath = pathModule.join(fp, 'reports');
@@ -151,8 +151,8 @@ class FolderWorker {
             return true;
 
         } catch (err) {
-            this.reportError(err, `Error creating new folder structure ${folderPath}`);
-            throw new Error(`Error creating new folder structure ${folderPath}`);
+            this.reportError(err, `Error creating new folder structure ${fp}`);
+            throw new Error(`Error creating new folder structure ${fp}`);
         }
     }
     //function to copy all files in a folder to a new location
