@@ -38,8 +38,10 @@ class Question {
         this._extensions = [];
     }
     addExtensions(extensions) {
-        this._extensions.push(...extensions);
-        this._containsCustomParts = true;
+        if (extensions && extensions.length > 0) {
+            this._extensions.push(...extensions);
+            this._containsCustomParts = true;
+        }
     }
     get extensions() {
         return this._extensions;

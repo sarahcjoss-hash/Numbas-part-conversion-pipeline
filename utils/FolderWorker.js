@@ -29,11 +29,15 @@ class FolderWorker {
         }
         this._folderPath = pathModule.resolve(selectedDirectory);
         this._reportsPath = pathModule.dirname(selectedDirectory);
+        this._postfix = pathModule.parse(this._folderPath).name;
         
     }
     reportError(err, additional) {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'FolderWorker'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
+    }
+    get postfix() {
+        return this._postfix;
     }
     set workingFolder(wf) {
         this._workingFolder = wf;
@@ -62,33 +66,18 @@ class FolderWorker {
         return this._folderPath;
     }
     get outputFolderPath() {
-        return pathModule.join(this._reportsPath, 'output');
+        return pathModule.join(this._reportsPath, `output_${this._postfix}`);
     }
     get errorFolderPath() {
-        return pathModule.join(this._reportsPath, 'error_files');
+        return pathModule.join(this._reportsPath, `error_files_${this._postfix}`);
     }
     get reportFolderPath() {
-        return pathModule.join(this._reportsPath, 'reports');
+        return pathModule.join(this._reportsPath, `reports_${this._postfix}`);
     }
     get overviewReportsPath() {
         return this._reportsPath;
     }
-    createNewFolderStructure() {
-        //create 3 folders within the reportsPath folder, output, error_files, reports
-        try {
-            const outputPath = this.outputFolderPath;
-            const errorFilePath = this.errorFolderPath;
-            const reportFilePath = this.reportFolderPath;   
-        Promise.all([
-            fsPromises.mkdir(`${outputPath}`, { recursive: true }),
-            fsPromises.mkdir(`${errorFilePath}`, { recursive: true }),
-            fsPromises.mkdir(`${reportFilePath}`, { recursive: true })]);
-        return true;    
-        } catch (err) {
-            this.reportError(err, `Error creating new folder structure ${this._folderPath}`);
-            throw new Error(`Error creating new folder structure ${this._folderPath}`);
-        }  
-    } 
+
 
 
     //function to copy a folder and all its contents to a new location
@@ -141,12 +130,11 @@ class FolderWorker {
         //create 3 folders within the target folder, output, error_files, reports
         try {
             const fp = this._reportsPath;
-            const outputPath = pathModule.join(fp, 'output');
-            const errorFilePath = pathModule.join(fp, 'error_files');
-            const reportFilePath = pathModule.join(fp, 'reports');
+            const outputPath = this.outputFolderPath;
+            //const errorFilePath = pathModule.join(fp, `error_files_${this._postfix}`);
+            const reportFilePath = this.reportFolderPath;
             Promise.all([
-                fsPromises.mkdir(`${outputPath}`, { recursive: true }),
-                fsPromises.mkdir(`${errorFilePath}`, { recursive: true }),
+                fsPromises.mkdir(`${outputPath}`, { recursive: true }),,
                 fsPromises.mkdir(`${reportFilePath}`, { recursive: true })]);
             return true;
 

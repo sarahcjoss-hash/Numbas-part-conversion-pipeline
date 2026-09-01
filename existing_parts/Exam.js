@@ -36,7 +36,7 @@ class Exam {
         const qps = new Set();   
         this._questions.forEach((q,i) => {
             if (q.hasCustomParts){
-                qps.add(q.number);
+                qps.add(i+1);
             }
         });
         this._questionsWithCustomParts = Array.from(qps);

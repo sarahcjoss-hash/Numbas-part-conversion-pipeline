@@ -22,21 +22,24 @@ class DragAndDropPart extends Part {
 
         }
         function convertPixelsToEms(px) {
-        //convert a value in pixels to a number of columns for a text area. This is a bit of a guess but we can adjust as needed
-        //first check the string value contains px and if so convert to a number
-        px = px.replaceAll("'","");//sometimes this comes with extra quotes
-        let result = 0;
-        if (typeof px === 'string' && px.endsWith('px')) {
-            px = parseFloat(px.slice(0, -2));
-            result = Math.round(px / 16);
-        } else if (typeof px === 'number') {
-            result = Math.round(px / 16);
-        } else {
-            return px;
-        }
-        return result <2 ? 2:result;
+            //convert a value in pixels to a number of columns for a text area. This is a bit of a guess but we can adjust as needed
+            //first check the string value contains px and if so convert to a number
+            px = px.replaceAll("'", "");//sometimes this comes with extra quotes
+            let result = 0;
+            if (typeof px === 'string'){
+                if (px.endsWith('px')) {
+                    px = px.slice(0, -2)
+                }
+                px =parseFloat(px);
+                result = Math.round(px / 16);
+            } else if (typeof px === 'number') {
+                result = Math.round(px / 16);
+            } else {
+                return px;
+            }
+            return result < 2 ? 2 : result;
 
-    }
+        }
         try {
             data.gaps.map((data, i) => {
                 this.addGap(new DragGap(data, i + 1));
@@ -57,8 +60,10 @@ class DragAndDropPart extends Part {
         this._dragHeight = convertPixelsToEms(extractValueFromBS(height, builderPrefix + 'Height(')) || '';
         this._dragWidth = convertPixelsToEms(extractValueFromBS(width, builderPrefix + 'Width(')) || '';
         this._builder = new Builder(builder, logger);
-        this._convertedPrompt = this.processPrompt(prompt);
         this._subType = this.builder.builderType;
+        this._newPartType = this.newPartTypeMatch;
+        this._convertedPrompt = this.processPrompt(prompt);
+
         super.marks = this.marksFromGaps;
 
     }
@@ -67,7 +72,7 @@ class DragAndDropPart extends Part {
         return ['bucket', 'reorder', '1-2-1'];
     }
     static verifySubType(type) {
-        return DragAndDropPart.dndSubTypes.indexOf(type)>-1;
+        return DragAndDropPart.dndSubTypes.indexOf(type) > -1;
     }
 
     get needsReplacing() {
@@ -85,23 +90,20 @@ class DragAndDropPart extends Part {
             //test logger
 
             const gapRegex = /\[\[\d+\]\]/g;
-            const filledPrompt = prompt.replace(gapRegex, (match) => {
+            let filledPrompt = prompt.replace(gapRegex, (match) => {
                 const gapNumber = parseInt(match.match(/\d+/)[0], 10);
                 const gap = this._gaps[gapNumber];
                 const gapAnswerVariable = gap.displayAnswer;
 
                 //find the bit in square brackets then remove the brackets    
-                if (match =='[[7]]'){
-                    console.warn("HERE" + gapAnswerVariable + " " + this.dragsList + " match" + match); 
-                }           
-                
+
                 try {
-                    if (!gapAnswerVariable || gapAnswerVariable === '' ){
+                    if (!gapAnswerVariable || gapAnswerVariable === '') {
                         console.warn('empty gap' + gapAnswerVariable + "dragList " + this.dragsList + " match" + match)
                         return '%[]%';
                     }
                     const index = parseInt(gapAnswerVariable.match(/\[\d+\]/)[0].replace(/\[|\]/g, ''), 10); // Extract the index number from the variable name
-                    const value = gapAnswerVariable && this.dragsList? this.dragsList[index] : match; // Replace with answer or keep original if not found
+                    const value = gapAnswerVariable && this.dragsList ? this.dragsList[index] : match; // Replace with answer or keep original if not found
                     return value ? `%[${value}]%` : match; // Replace with answer, plus new markup, or keep original if not found
                 } catch (error) {
                     console.error(`Error processing gap ${gapNumber} with answer variable ${gapAnswerVariable} and match ${match}:`, error);
@@ -110,7 +112,21 @@ class DragAndDropPart extends Part {
                 }
 
 
+
             });
+         
+            try {
+                if (this._newPartType === 'bucket') {
+                    // Need to wrap each table cell in bucket markup.
+                    
+                    filledPrompt = filledPrompt
+                        .replace(/<td\b([^>]*)>/gi, '<td$1>@[')
+                        .replace(/<\/td>/gi, ']@</td>');
+                }
+
+            } catch (error) {
+                this.reportError(error, `Unable to find or make buckets in drop in bucket question- will require manual intervation to run`);
+            }
 
             //remove hthe builder string gubbins
             const convertedPrompt = filledPrompt.replace(/\<p\>\s*{\s*dnd_builder\(.+?\)\s*}\s*{dnd_render\(\)\s*}\s*\<\/p\>/, '');
@@ -139,8 +155,8 @@ class DragAndDropPart extends Part {
             if (dragValues) {
                 //relpacing double backslash with forward slash just now because replacing d back is not working
                 const cleanedValues = dragValues.replace(/\\/g, '\/');
-                try{
-                dragList = JSON.parse(cleanedValues);
+                try {
+                    dragList = JSON.parse(cleanedValues);
                 } catch (error) {
                     //going to catch this here and see if we can continue- if we can't then it will error out at the next error
                     console.error("WARNING: problem with drag values detected\n${dragValues}");

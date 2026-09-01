@@ -12,9 +12,6 @@ class ReportWriter {
         let errReportString = `Error report for: ${name}\n`;
         errReportString += logger.errorReport;
         return errReportString;
-
-
-
     }
 
     appendToBatchReport(reportString){

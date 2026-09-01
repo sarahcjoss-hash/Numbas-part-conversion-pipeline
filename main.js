@@ -27,11 +27,15 @@ while (folders.length === 0) {
 const filewriter = new FileWriter(folderWorker, errorReporter);
 
 const overviewReportsPath = folderWorker.overviewReportsPath;
-
-filewriter.createNewErrorReportFile(`${overviewReportsPath}/master_error_report.txt`);
-filewriter.writeReportToFile(reportWriter.outputCSV, `${overviewReportsPath}/master_report.csv`);
-filewriter.writeReportToFile(reportWriter.appendToBatchReport(`Batch report for files in ${overviewReportsPath}`), `${overviewReportsPath}/batch_report.txt`);
+const postfix = folderWorker.postfix;
+const masterErrorReportPath = `${overviewReportsPath}/master_error_report_${postfix}.txt`;
+const masterReportPath = `${overviewReportsPath}/master_report_${postfix}.csv`;
+const batchReportPath = `${overviewReportsPath}/batch_report_${postfix}.txt`;
+filewriter.createNewErrorReportFile(masterErrorReportPath);
+filewriter.writeReportToFile(reportWriter.outputCSV, masterReportPath);
+filewriter.writeReportToFile(reportWriter.appendToBatchReport(`Batch report for files in ${overviewReportsPath}`), batchReportPath);
 folderWorker.createNewFolderStructure(folderWorker.outputPath);
+
 
 
 //set up output folder structure
@@ -85,14 +89,15 @@ async function processExam(workingFolder) {
     } else {
       if (!hasCustomPartsFlag){
        reportWriter.appendToBatchReport("Exam bypassed- no conversion required\n");
+        reportWriter.appendToCSV(`${examFolderName},${exam.exam.name},${exam.exam.numberOfQuestions},${hasCustomPartsFlag},,,\n`);
       }else{
          errorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
 
       }
     }
-  
-    filewriter.writeReportToFile(report, `${folderWorker.reportsPath}\\${examFolderName}_report.txt`);
-    filewriter.appendToErrorReportFile(errorReporter.errorReport, `${overviewReportsPath}/master_error_report.txt`);
+    
+    filewriter.writeReportToFile(report, `${folderWorker.reportFolderPath}\\${examFolderName}_report.txt`);
+    filewriter.appendToErrorReportFile(errorReporter.errorReport, masterErrorReportPath);
     //console.log(report);
   } catch (error) {
     console.error('Error occurred while processing exam:', error);
@@ -110,8 +115,8 @@ for (const examFolder of folders) {
     //add an overall log here
   }
   //output the report at teh end
-  filewriter.writeReportToFile(reportWriter.batchReport, `${overviewReportsPath}/batch_report.txt`);
-  filewriter.writeReportToFile(reportWriter.outputCSV, `${overviewReportsPath}/master_report.csv`);
+  filewriter.writeReportToFile(reportWriter.batchReport, batchReportPath);
+  filewriter.writeReportToFile(reportWriter.outputCSV, masterReportPath);
 
   
 
