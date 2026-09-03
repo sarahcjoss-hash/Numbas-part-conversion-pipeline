@@ -2,6 +2,7 @@ import { FileReader } from '../utils/FileReader.js';
 import { ExtensionNameProvider } from './ExtensionNameProvider.js';
 import { QuestionJSONStitcher } from './QuestionJSONStitcher.js';
 import { CustomPartJsonProvider } from './CustomPartJsonProvider.js';
+import { ExamSettings } from './ExamSettings.js';
 
 class JSONFromExam {
     constructor(errorReporter) {
@@ -67,13 +68,26 @@ class JSONFromExam {
 
     }
 
+    replaceExamSettings(exam, examJSONObj) {
+        try {
+            const examSettings = new ExamSettings(); 
+            examJSONObj.navigation = examSettings.navigation;
+            examJSONObj.feedback = examSettings.feedback;
+            return true;     
+
+        }catch (err) {
+            this.reportError(err, `Unable to update ExamSettings in exam JSON`);
+        }
+    }
+
 
      processExam(exam, examJSONObj) {
 
         try {
         const success = this.addNewExtensionsToJSON(exam, examJSONObj);
+        const settingsSuccess = this.replaceExamSettings(exam, examJSONObj);
             //rename exam
-            examJSONObj.name = examJSONObj.name + "_updated";
+        examJSONObj.name = examJSONObj.name + "_updated";
         const questions = exam.questions;//need flat here as the questions are themselves an array
             const questionStitcher = new QuestionJSONStitcher(this._errorReporter);
             for (const q of questions) {
@@ -85,7 +99,7 @@ class JSONFromExam {
                     questionStitcher.findAndReplaceParts(q, i, examJSONObj);             
                 }
             };
-            return success;
+            return success && settingsSuccess;
         } catch (err) {
 
             this.reportError(err, "");
