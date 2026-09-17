@@ -51,6 +51,9 @@ class CardMatch extends Part {
     get leftCardType() {
         return this._l_c_type;
     }
+    get convertedPrompt() {
+        return this._convertedPrompt;
+    }
 
     processGaps(gaps) {
         //for drag and drop we need to know the number of gaps but also the answers and marks for each gap
