@@ -2,7 +2,7 @@ import { NewPart } from "./NewPart.js";
 class CardMatch extends NewPart {
     constructor(errorLogger) {
         super(errorLogger);
-        this._type = "scholar_card_match";
+        this._type = "card_match";
         this._templateSettings =     {"list_of_pairs": '[["a","A"],["b","B"],["c","C"]]',
                                     "howManyPairs": "3",
                                 "markOnMatch": true,

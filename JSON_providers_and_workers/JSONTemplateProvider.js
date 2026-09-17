@@ -16,7 +16,7 @@ class JSONTemplateProvider {
                 case 'self_marked_text':
                     json = JSONTemplateProvider.selfMarkedTextTemplate;
                     break;
-                case 'card-match':
+                case 'card_match':
                     json = JSONTemplateProvider.cardMatchTemplate;
                     break;
                 case 'drop_in_bucket':

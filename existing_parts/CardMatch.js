@@ -32,7 +32,8 @@ class CardMatch extends Part {
         const height = /cardmatch_cardHeight\(.+?\)/.exec(this.prompt) ? /cardmatch_cardHeight\(.+?\)/.exec(this.prompt)[0] : '5';
         const width = /cardmatch_cardWidth\(.+?\)/.exec(this.prompt) ? /cardmatch_cardWidth\(.+?\)/.exec(this.prompt)[0] : '7';
         this._cardHeight = extractValueFromBS(height, "cardmatch_cardHeight(") || '50';
-        this._cardWidth = extractValueFromBS(width, "cardmatch_cardWidth(") || '120';
+        this._cardWidth = extractValueFromBS(width, "cardmatch_cardWidth(") || '120';      
+        this._convertedPrompt = this.processPrompt(this.prompt);
     }
 
     get needsReplacing(){
@@ -59,6 +60,28 @@ class CardMatch extends Part {
         } catch (error) {
             console.error("Error processing gaps:", error);
             return [];
+        }
+    }
+    processPrompt(prompt) {
+        //find the marked areas in the prompt
+        //remove gaps
+        //remove builder string.
+        //this may leave an empty prompt but if there was any additional instruction in there it should be preserved
+
+        try {
+            //test logger
+
+            const gapRegex = /\[\[\d+\]\]/g;
+            let filledPrompt = prompt.replace(gapRegex, "");
+        
+
+            //remove hthe builder string gubbins
+            const convertedPrompt = filledPrompt.replace(/\<p\>\s*{\s*cardmatch_builder\(.+?\)\s*}\s*{cardmatch_render\(\)\s*}\s*\<\/p\>/, '');
+            return convertedPrompt;
+        } catch (error) {
+            console.error("Error processing prompt or finding matches for gaps:", error);
+            this.reportError(error, "Error processing prompt or finding matches for gaps:");
+            return prompt; // Return the original prompt if an error occurs
         }
     }
     reportError(err, additional){
