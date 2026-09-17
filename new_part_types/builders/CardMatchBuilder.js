@@ -10,7 +10,7 @@ class CardMatchBuilder extends NewPartBuilder {
     buildFromExistingPart(part) {
         try {
             let newPart = new CardMatch(this._errorLogger);
-            newPart.prompt = part.prompt;   
+            newPart.prompt = part.convertedPrompt || "";  
             newPart.marks = part.marks || 1;
             newPart.list_of_pairs = part.pairsVariableValue|| '[["a","A"],["b","B"],["c","C"]]';
             newPart.howManyPairs = part.numberOfPairs || 3;
