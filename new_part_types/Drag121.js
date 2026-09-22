@@ -4,8 +4,28 @@ class Drag121 extends NewDragAndDrop {
     constructor(errorLogger) {
         super(errorLogger);
         this._type = "drag_1_2_1";   
+        this._targetText = "";
+        this._howManyDrags = 1;
+        this._targetWidth = 10;
+        this._targetHeight = 2;
+        this._distractors = [];
+        this._dragItems = [];
+        this._settings = Drag121.getDefaultSettings();
 
 
+    }
+     static getDefaultSettings() {
+        let settings = {};
+        settings.target_text = "<p>Oh %[dear]% this is the default text</p>";
+        settings.how_many_drags = "1";
+        settings.distractors = [];
+        settings.target_height = "2";
+        settings.target_width = "10";
+        settings.all_or_nothing = false;
+        settings.drags_position = true;
+        settings.scholarInstruction = "Select an item and the location you would like to position it.";
+                            
+        return settings;
     }
 
 

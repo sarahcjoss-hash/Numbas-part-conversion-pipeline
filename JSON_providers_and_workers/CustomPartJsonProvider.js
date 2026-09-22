@@ -23,7 +23,7 @@ class CustomPartJsonProvider {
                 case 'drop_in_bucket':
                     json = CustomPartJsonProvider.dropInBucketJson;
                     break;
-                case 'drag_1_2_1 ':
+                case 'drag_1_2_1':
                     json = CustomPartJsonProvider.drag121Json;
                     break;
                 default:

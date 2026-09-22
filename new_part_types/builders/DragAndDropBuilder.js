@@ -15,6 +15,7 @@ class DragAndDropBuilder extends NewPartBuilder {
             // field-sizing where available
             let newPart = new Drag121(this._errorLogger);
             newPart.prompt = ""; //don;t include the prompt because the text goes in settings.targetText
+             newPart.targetText = part.convertedPrompt;
             newPart.marks = part.marks || 1;
             newPart.how_many_gaps = part.numberofGaps;
             newPart.target_width = part.dragWidth || 10;

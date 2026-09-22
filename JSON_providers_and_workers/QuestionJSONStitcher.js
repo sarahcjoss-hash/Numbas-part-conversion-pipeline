@@ -42,7 +42,9 @@ class QuestionJSONStitcher {
                     }
                     examData.question_groups[0].questions[index].custom_part_types.push(CPJSON);
 
-                }
+                }else{
+                    throw new Error(`Unable to get custom part JSON for ${cpt}`);
+                }   
             });
             return true;
         } catch (err) {

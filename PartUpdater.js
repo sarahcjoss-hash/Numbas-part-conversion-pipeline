@@ -68,7 +68,7 @@ class PartUpdater {
             let builder = new DragAndDropBuilder(this._errorReporter);
             console.log(`converting drag and drop part with  sub-type ${dndSubType}`);
             switch (dndSubType) {
-                case "1-2-1":
+                case "drag_1_2_1":
                     //
                     newPart = builder.buildNewDrag121FromExisting(oldPart);
                     break;

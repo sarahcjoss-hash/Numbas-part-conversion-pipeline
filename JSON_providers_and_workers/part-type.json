@@ -795,7 +795,7 @@
             },
             "name": "scholar sentence reorder (click-in-order)",
             "short_name": "scholar-sentence-reorder-click-in-order",
-            "description": "<p>clicked items are dropped into drop locations in order - replaces sentence reorder but can also be used for other drag and drop 1-2-1 types where teh order of drop locations is obivous or intuitive</p>",
+            "description": "<p>clicked items are dropped into drop locations in order - replaces sentence reorder but can also be used for other drag and drop 1-2-1 types where the order of drop locations is obivous or intuitive</p>",
             "help_url": "",
             "input_widget": "ScholarSentenceReorder",
             "input_options": {

@@ -48,6 +48,7 @@ class DragAndDropPart extends Part {
             this.reportError(error, `Error processing gaps in drag and drop part {num}:`)
         }
         const prompt = data.prompt;
+
         const builder = /dnd_builder\(.+?\)/.exec(prompt);
         const dragsVariableName = /drags_./.exec(builder);
         this._dragsListAsJSONString = variables[dragsVariableName].definition;
@@ -61,6 +62,11 @@ class DragAndDropPart extends Part {
         this._dragWidth = convertPixelsToEms(extractValueFromBS(width, builderPrefix + 'Width(')) || '';
         this._builder = new Builder(builder, logger);
         this._subType = this.builder.builderType;
+        //check teh prompt for either 'absdz' or 'relativeDiv' overwrite here for these edge cases
+        const dragToImageFlag = /(absdz|relativeDiv)/.exec(prompt);
+        if (dragToImageFlag) {
+            this._subType = 'drag_1_2_1';
+        }
         this._newPartType = this.newPartTypeMatch;
         this._convertedPrompt = this.processPrompt(prompt);
 
@@ -69,7 +75,7 @@ class DragAndDropPart extends Part {
     }
 
     static get dndSubTypes() {
-        return ['bucket', 'reorder', '1-2-1'];
+        return ['bucket', 'reorder', 'drag_1_2_1'];
     }
     static verifySubType(type) {
         return DragAndDropPart.dndSubTypes.indexOf(type) > -1;
@@ -226,7 +232,9 @@ class DragAndDropPart extends Part {
                 newPartType = 'reorder';
                 break;
             case 'image':
-                newPartType = '1-2-1';
+            case '1-2-1':
+            case 'drag_1_2_1':
+                newPartType = 'drag_1_2_1';
                 break;
             default:
                 newPartType = 'reorder';

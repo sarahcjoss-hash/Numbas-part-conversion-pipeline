@@ -84,6 +84,9 @@ class NewDragAndDrop extends NewPart {
         settings.all_or_nothing = this._allOrNothing;
         return settings;
     }
+    get type() {
+        return this._type;
+    }
 
 
 

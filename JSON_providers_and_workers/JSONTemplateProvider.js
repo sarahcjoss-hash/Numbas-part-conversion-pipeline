@@ -22,7 +22,8 @@ class JSONTemplateProvider {
                 case 'drop_in_bucket':
                     json = JSONTemplateProvider.dropInBucketTemplate;
                     break;
-                case 'drag_1_2_1 ':
+                case 'drag_1_2_1':
+                case '1-2-1':
                     json = JSONTemplateProvider.drag121Template;
                     break;
                 default:

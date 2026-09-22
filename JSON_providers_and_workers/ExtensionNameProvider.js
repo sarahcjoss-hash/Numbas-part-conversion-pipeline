@@ -23,7 +23,7 @@ class ExtensionNameProvider {
                 case 'drop_in_bucket':
                     return 'scholar-drop-in-bucket';
                     break;
-                case 'drag_1_2_1 ':
+                case 'drag_1_2_1':
                     return 'scholar-drag-1-to-1';
                     break;
                 default:

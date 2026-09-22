@@ -1,0 +1,256 @@
+{
+    "name": "General relativity and spacetime",
+    "extensions": [ "drag_and_drop"],
+    "custom_part_types": ["scholar-click-in-order"],
+    "resources": [
+        [
+            "question-resources/ah_cphy1_6etq6spacetime.png",
+            "resources/question-resources/ah_cphy1_6etq6spacetime_xDXsFgX.png"
+        ],
+        [
+            "question-resources/ah_cphy1_6etq6spacetimeGUIDE.png",
+            "resources/question-resources/ah_cphy1_6etq6spacetimeGUIDE_lXAwPD2.png"
+        ]
+    ],
+    "navigation": {
+        "allowregen": true,
+        "showfrontpage": false,
+        "preventleave": false,
+        "typeendtoleave": false
+    },
+    "question_groups": [
+        {
+            "pickingStrategy": "all-ordered",
+            "questions": [
+                {
+                    "name": "General relativity and spacetime",
+                    "extensions": [
+                        "drag_and_drop"
+                    ],
+                    "custom_part_types": [],
+                    "resources": [
+                        "question-resources/ah_cphy1_6etq6spacetime.png",
+                        "question-resources/ah_cphy1_6etq6spacetimeGUIDE.png"
+                    ],
+                    "navigation": {
+                        "allowregen": true,
+                        "showfrontpage": false,
+                        "preventleave": false
+                    },
+                    "contributors": [
+                        {
+                            "name": "Oormi Khaled",
+                            "profile_url": "http://numbas.mathcentre.ac.uk:443/accounts/profile/985/"
+                        },
+                        {
+                            "name": "Sarah Hirstwood",
+                            "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/6/"
+                        },
+                        {
+                            "name": "Mandy Tait",
+                            "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/15/"
+                        },
+                        {
+                            "name": "Stuart Simpson",
+                            "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/1/"
+                        }
+                    ],
+                    "parts": [
+                        {
+                            "customMarkingAlgorithm": "",
+                            "unitTests": [],
+                            "marks": 0,
+                            "type": "gapfill",
+                            "variableReplacements": [],
+                            "prompt": "<div id=\"relativeDiv\" style=\"width: 341px; height: 374px; border: 0px solid #000000; position: relative; max-width: 100%;\"><span class=\"absdz\" id=\"absdz0\" style=\"top: 1px; left: 245px; width: 80px; border: 1px solid #888; padding: 0.1em 0.3em; border-radius: 2px; color: #888; position: absolute; background-color: #ffffff;\">Abs dz 0</span> <span class=\"absdz\" id=\"absdz1\" style=\"top: 93px; left: 115px; width: 80px; border: 1px solid #888; padding: 0.1em 0.3em; border-radius: 2px; color: #888; position: absolute; background-color: #ffffff;\">Abs dz 1</span> <span class=\"absdz\" id=\"absdz2\" style=\"top: 130px; left: 245px; width: 80px; border: 1px solid #888888; padding: 0.1em 0.3em; border-radius: 2px; color: #888888; position: absolute; background-color: #ffffff;\">Abs dz 2</span> <span class=\"absdz\" id=\"absdz3\" style=\"top: 183px; left: 115px; width: 80px; border: 1px solid #888888; padding: 0.1em 0.3em; border-radius: 2px; color: #888888; position: absolute; background-color: #ffffff;\">Abs dz 3</span> <span class=\"absdz\" id=\"absdz4\" style=\"top: 293px; left: 115px; width: 80px; border: 1px solid #888888; padding: 0.1em 0.3em; border-radius: 2px; color: #888888; position: absolute; background-color: #ffffff;\">Abs dz 4</span> <img src=\"resources/question-resources/ah_cphy1_6etq6spacetime.png\"/></div>\n<p>[[0]] [[1]] [[2]] [[3]] [[4]]</p>\n<p>{dnd_builder(\"a\",\"text\",drags_a)}{dnd_dragsPerLine(5)}{dnd_dragHeight(25)}{dnd_drags_location('bottom')}{dnd_render()}</p>",
+                            "showFeedbackIcon": true,
+                            "scripts": {},
+                            "showCorrectAnswer": true,
+                            "gaps": [
+                                {
+                                    "answer": "{drags_a[0]}",
+                                    "fixedHeight": "0px",
+                                    "type": "patternmatch",
+                                    "customMarkingAlgorithm": "",
+                                    "unitTests": [],
+                                    "marks": 1,
+                                    "displayAnswer": "{drags_a[0]}",
+                                    "variableReplacements": [],
+                                    "fixedWidth": "0px",
+                                    "scripts": {},
+                                    "showCorrectAnswer": true,
+                                    "variableReplacementStrategy": "originalfirst",
+                                    "matchMode": "exact",
+                                    "showFeedbackIcon": true,
+                                    "extendBaseMarkingAlgorithm": true
+                                },
+                                {
+                                    "answer": "{drags_a[1]}",
+                                    "fixedHeight": "0px",
+                                    "type": "patternmatch",
+                                    "customMarkingAlgorithm": "",
+                                    "unitTests": [],
+                                    "marks": 1,
+                                    "displayAnswer": "{drags_a[1]}",
+                                    "variableReplacements": [],
+                                    "fixedWidth": "0px",
+                                    "scripts": {},
+                                    "showCorrectAnswer": true,
+                                    "variableReplacementStrategy": "originalfirst",
+                                    "matchMode": "exact",
+                                    "showFeedbackIcon": true,
+                                    "extendBaseMarkingAlgorithm": true
+                                },
+                                {
+                                    "answer": "{drags_a[2]}",
+                                    "fixedHeight": "0px",
+                                    "type": "patternmatch",
+                                    "customMarkingAlgorithm": "",
+                                    "unitTests": [],
+                                    "marks": 1,
+                                    "displayAnswer": "{drags_a[2]}",
+                                    "variableReplacements": [],
+                                    "fixedWidth": "0px",
+                                    "scripts": {},
+                                    "showCorrectAnswer": true,
+                                    "variableReplacementStrategy": "originalfirst",
+                                    "matchMode": "exact",
+                                    "showFeedbackIcon": true,
+                                    "extendBaseMarkingAlgorithm": true
+                                },
+                                {
+                                    "answer": "{drags_a[3]}",
+                                    "fixedHeight": "0px",
+                                    "type": "patternmatch",
+                                    "customMarkingAlgorithm": "",
+                                    "unitTests": [],
+                                    "marks": 1,
+                                    "displayAnswer": "{drags_a[3]}",
+                                    "variableReplacements": [],
+                                    "fixedWidth": "0px",
+                                    "scripts": {},
+                                    "showCorrectAnswer": true,
+                                    "variableReplacementStrategy": "originalfirst",
+                                    "matchMode": "exact",
+                                    "showFeedbackIcon": true,
+                                    "extendBaseMarkingAlgorithm": true
+                                },
+                                {
+                                    "answer": "{drags_a[4]}",
+                                    "fixedHeight": "0px",
+                                    "type": "patternmatch",
+                                    "customMarkingAlgorithm": "",
+                                    "unitTests": [],
+                                    "marks": 1,
+                                    "displayAnswer": "{drags_a[4]}",
+                                    "variableReplacements": [],
+                                    "fixedWidth": "0px",
+                                    "scripts": {},
+                                    "showCorrectAnswer": true,
+                                    "variableReplacementStrategy": "originalfirst",
+                                    "matchMode": "exact",
+                                    "showFeedbackIcon": true,
+                                    "extendBaseMarkingAlgorithm": true
+                                }
+                            ],
+                            "variableReplacementStrategy": "originalfirst",
+                            "sortAnswers": false,
+                            "extendBaseMarkingAlgorithm": true
+                        },
+                        {
+                            "displayColumns": "1",
+                            "displayType": "checkbox",
+                            "unitTests": [],
+                            "matrix": [
+                                "0.3",
+                                "0.3",
+                                "0.4"
+                            ],
+                            "scripts": {},
+                            "maxMarks": 0,
+                            "maxAnswers": "3",
+                            "variableReplacementStrategy": "originalfirst",
+                            "showFeedbackIcon": true,
+                            "extendBaseMarkingAlgorithm": true,
+                            "warningType": "none",
+                            "distractors": [
+                                "",
+                                "",
+                                ""
+                            ],
+                            "minMarks": 0,
+                            "minAnswers": "3",
+                            "customMarkingAlgorithm": "",
+                            "marks": 0,
+                            "type": "m_n_2",
+                            "variableReplacements": [],
+                            "prompt": "<p>Which of the following statements about black holes are true?</p>",
+                            "showCorrectAnswer": true,
+                            "choices": [
+                                "A black hole results from the extreme curvature of space due to its compact mass.",
+                                "The escape velocity for black holes is greater than the speed of light.",
+                                "The Schwarzschild radius is the distance from the centre of a black hole to the event horizon."
+                            ],
+                            "shuffleChoices": true
+                        }
+                    ],
+                    "variablesTest": {
+                        "condition": "",
+                        "maxRuns": 100
+                    },
+                    "preamble": {
+                        "css": "",
+                        "js": ""
+                    },
+                    "rulesets": {},
+                    "advice": "",
+                    "variables": {
+                        "drags_a": {
+                            "name": "drags_a",
+                            "templateType": "anything",
+                            "definition": "[\"v = c\",\"The future\",\"v &gt; c\",\"The present\",\"The past\"]",
+                            "group": "Ungrouped variables",
+                            "description": ""
+                        }
+                    },
+                    "variable_groups": [],
+                    "functions": {},
+                    "ungrouped_variables": [
+                        "drags_a"
+                    ],
+                    "metadata": {
+                        "licence": "All rights reserved",
+                        "description": "<p>ah_cphy1_6etq6</p>\n<p>ah_cphy1_6etq12Draganddrop.swf</p>"
+                    },
+                    "statement": "<p>Complete the diagram by dragging and dropping the labels into place.</p>",
+                    "tags": [
+                        "ah_cphy1_6etq12Draganddrop.swf",
+                        "ah_cphy1_6etq6",
+                        "astrophysics",
+                        "relativity",
+                        "rotational motion",
+                        "spacetime"
+                    ]
+                }
+            ]
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Oormi Khaled",
+            "profile_url": "http://numbas.mathcentre.ac.uk:443/accounts/profile/985/"
+        },
+        {
+            "name": "Sarah Hirstwood",
+            "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/6/"
+        },
+        {
+            "name": "Mandy Tait",
+            "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/15/"
+        },
+        {
+            "name": "Stuart Simpson",
+            "profile_url": "https://assess12test.scholar.hw.ac.uk/accounts/profile/1/"
+        }
+    ]
+}

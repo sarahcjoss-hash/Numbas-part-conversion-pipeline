@@ -54,9 +54,13 @@ class JSONFromExam {
                 const CPJSON = CustomPartJsonProvider.getCustomPartJson(ext);
                 if (extensionsName) {
                     examJSONObj.extensions.push(extensionsName);
+                }else{
+                    throw new Error(`Unable to get extension name for ${ext}`);
                 }
                 if (CPJSON) {
                     examJSONObj.custom_part_types.push(CPJSON);
+                }else{
+                    throw new Error(`Unable to get custom part JSON for ${ext}`);   
                 }
 
             });
