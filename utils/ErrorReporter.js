@@ -14,7 +14,8 @@ class ErrorReporter{
         if (this._logToConsole){
             console.error(`Error via logger : ${err.message}`);
         }
-        this._errors.push(err)
+        this._errors.push(err);
+        console.log(`errors logged so far for ${this._name}: `, this._errors.length);
 
     }
     get errors(){

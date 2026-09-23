@@ -66,7 +66,7 @@ class PartUpdater {
             const targetText = oldPart.convertedPrompt;
             let newPart = oldPart;
             let builder = new DragAndDropBuilder(this._errorReporter);
-            console.log(`converting drag and drop part with  sub-type ${dndSubType}`);
+            //console.log(`converting drag and drop part with  sub-type ${dndSubType}`);
             switch (dndSubType) {
                 case "drag_1_2_1":
                     //

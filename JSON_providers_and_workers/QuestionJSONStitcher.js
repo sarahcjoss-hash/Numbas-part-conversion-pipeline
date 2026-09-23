@@ -113,7 +113,7 @@ class QuestionJSONStitcher {
     }
     replacePrompt(p, clonedJSONObj) {
         const prompt = p.prompt;  
-        console.log(`Replacing prompt with ${prompt}`);  
+        //console.log(`Replacing prompt with ${prompt}`);  
         if (clonedJSONObj && undefined != prompt) {
             clonedJSONObj.prompt = prompt;
             return true;
@@ -135,7 +135,7 @@ class QuestionJSONStitcher {
                 
                 examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = {};
                 examJSONObj.question_groups[0].questions[question.number - 1].parts[partIndex] = clonedTemplateJSONObj;
-                console.log(`Replaced part ${p.number} in question ${question.number} with custom part of type ${type} and sub type ${subType}`);
+                //console.log(`Replaced part ${p.number} in question ${question.number} with custom part of type ${type} and sub type ${subType}`);
    
                 return true;
             } else {

@@ -225,7 +225,7 @@ class DragAndDropPart extends Part {
             return 'bucket';
         }
         let newPartType = 'reorder';
-        console.log(`drag and drop sub type is ${this._subType}`);
+        //console.log(`drag and drop sub type is ${this._subType}`);
         switch (this._subType) {
             case 'reorder':
             case 'text':
