@@ -109,7 +109,7 @@ class DragAndDropPart extends Part {
                         return '%[]%';
                     }
                     const index = parseInt(gapAnswerVariable.match(/\[\d+\]/)[0].replace(/\[|\]/g, ''), 10); // Extract the index number from the variable name
-                    const value = gapAnswerVariable && this.dragsList ? this.dragsList[index] : match; // Replace with answer or keep original if not found
+                    const value = gapAnswerVariable && this.dragsList  ? this.dragsList[index] : 'there was an issue with this gap'; // Replace with answer or keep original if not found
                     return value ? `%[${value}]%` : match; // Replace with answer, plus new markup, or keep original if not found
                 } catch (error) {
                     console.error(`Error processing gap ${gapNumber} with answer variable ${gapAnswerVariable} and match ${match}:`, error);
@@ -179,9 +179,9 @@ class DragAndDropPart extends Part {
 
             this.reportError(error, 'Error processing drag values:');
             //parse with string manipulation as a fallback
-            const trimmedValues = dragValues.trim("'[").trim("]'");
-            dragList = trimmedValues.split(',');
-            return dragList;
+            //const trimmedValues = dragValues.trim("'[").trim("]'");
+            //dragList = trimmedValues.split(',');
+            return null;
         }
     }
 

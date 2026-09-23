@@ -27,6 +27,9 @@ class Question {
     get hasCustomParts() {
         return this._containsCustomParts;
     }
+    set hasCustomParts(value) {
+        this._containsCustomParts = value;
+    }
     addTags(tags) {
         this._tags.push(...tags);
     }

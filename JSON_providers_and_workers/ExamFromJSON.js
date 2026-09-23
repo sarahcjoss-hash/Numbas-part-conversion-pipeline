@@ -13,7 +13,7 @@ class ExamFromJSON {
         this._errorLog = errorReporter;//consider changing this later for a config with logger, logToConsole, and mock etc.
         this.exam;
         //console.log('Config loaded successfully:', this.data);
-        const extensionNames = ['manual_marking', 'drag_and_drop'];//can replace with a list later to match any of
+        
         this.processExamData(this.data);
     }
     reportError(err, additional){
@@ -32,6 +32,7 @@ class ExamFromJSON {
             //working here to change code so that questions and aprts populate themselves from teh data- 
             // //think about how you do this for sub parts- at teh m,oment we are ending up with parts that do not ahve the requisite data
             const parts = q.parts;
+            let partWithFlagFound = false;
             parts.map((p, j) => {
                 let part;
                 const prompt = p.prompt;
@@ -47,11 +48,14 @@ class ExamFromJSON {
                 try {
                     if (mmFlag) {
                          part = new ManualMarkingPart(p, j+1, q.advice, this._errorLog);
+                         partWithFlagFound = true;
                     }else if (ddFlag) {
                         part = new DragAndDropPart(p, j+1, q.variables, this._errorLog);
+                        partWithFlagFound = true;
                    
                     }else if (cmFlag){
                         part = new CardMatch(p, j+1, q.variables, this._errorLog);
+                        partWithFlagFound = true;
                     }
                     else{
                         part = new Part(p, j+1, this._errorLog);                        
@@ -67,6 +71,16 @@ class ExamFromJSON {
 
 
             });
+            if (!partWithFlagFound) {
+                console.log(`No custom part flags found for question ${i + 1} : ${q.name}`);
+                if (question.extensions && question.extensions.length > 0) {
+                    console.log(`Removing extensions for question ${i + 1} : ${q.name} as no custom part flags were found- looks like an anomaly`);
+
+                    question.removeAllExistingExtensions();
+                    question.hasCustomParts = false;
+  
+                }
+            }
             this.exam.addQuestion(question);
 
         });

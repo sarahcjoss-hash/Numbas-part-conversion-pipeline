@@ -55,6 +55,7 @@ class JSONFromExam {
                 if (extensionsName) {
                     examJSONObj.extensions.push(extensionsName);
                 }else{
+                    //we might have ended up here because thre is an extension in  a queston that has had the part that used the extension removed- resulting in conflicting flags about whether the question need replacing
                     throw new Error(`Unable to get extension name for ${ext}`);
                 }
                 if (CPJSON) {
