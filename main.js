@@ -92,7 +92,7 @@ async function processExam(workingFolder) {
     } else {
       if (!hasCustomPartsFlag) {
         reportWriter.appendToBatchReport("Exam bypassed- no conversion required\n");
-        reportWriter.appendToCSV(`${examFolderName},${exam.exam.name},${exam.exam.numberOfQuestions},${hasCustomPartsFlag},,,\n`);
+        reportWriter.appendToCSV(`${examFolderName},${exam.exam.name},${exam.exam.numberOfQuestions},${hasCustomPartsFlag},,,${examErrorReporter.errors.length > 0 ? 'Errors reported' : 'No errors reported'}\n`);
       } else {
         examErrorReporter.reportError(new Error('Unable to write updated exam file as either copying folder or creating updated JSON object was unsuccessful'), 'Unable to write updated exam file');
 

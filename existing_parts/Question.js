@@ -3,6 +3,7 @@ class Question {
         this._name = data.name || "";
         this._tags = data.tags || [];
         this._containsCustomParts = false;
+        this._rogueExtensions = false;
         this._extensions = [];
         this.addExtensions (data.extensions);
         this._qNumber = num;
@@ -30,6 +31,12 @@ class Question {
     set hasCustomParts(value) {
         this._containsCustomParts = value;
     }
+    get hasRogueExtensions() {
+        return this._rogueExtensions;
+    }
+    set hasRogueExtensions(value) {
+        this._rogueExtensions = value;
+    }   
     addTags(tags) {
         this._tags.push(...tags);
     }
