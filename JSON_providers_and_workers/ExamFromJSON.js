@@ -26,13 +26,14 @@ class ExamFromJSON {
         this.exam.existingExtensions = config.extensions;
         const qGroups = config.question_groups;
         const questions = qGroups.map(qg => qg.questions).flat();//need flat here as the questions are themselves an array
+        let partWithFlagFound = false; 
         try {
             questions.map((q, i) => {
                 let question = new Question(q, i + 1, this.errorLog);
                 //working here to change code so that questions and aprts populate themselves from teh data- 
                 // //think about how you do this for sub parts- at teh m,oment we are ending up with parts that do not ahve the requisite data
                 const parts = q.parts;
-                let partWithFlagFound = false;
+                
                 parts.map((p, j) => {
                     let part;
                     const prompt = p.prompt;

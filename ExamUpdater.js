@@ -37,6 +37,7 @@ _findAndReplaceParts(questions){
         try{
         let parts = question.parts;
         const length = parts?parts.length:0;
+        question.removeAllExistingExtensions();//remove them here anyway in case we have a rogue extension in a questons without CPs in an exam with CPs
 
         for (var i=0; i<length; i++){
             const part = parts[i];
@@ -45,7 +46,7 @@ _findAndReplaceParts(questions){
                 if (newPart){  
                 parts[i] = newPart;  
                 console.log(`replaced part ${part.number} in question ${question.number} with new part type ${newPart.type}`); 
-                question.removeAllExistingExtensions();
+                
                 question.addExtensions([newPart.type]);  
                 } else{
                     this.reportError(new Error(`PartUpdater was not able to convert part ${part.number} in question ${question.number}. Original part retained`), `PartUpdater was not able to convert part ${part.number} in question ${question.number}`);
