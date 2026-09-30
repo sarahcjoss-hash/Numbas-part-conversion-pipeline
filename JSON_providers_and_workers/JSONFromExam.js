@@ -16,7 +16,7 @@ class JSONFromExam {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'JSONFromExam'}: ${additional} : ${err.message}`
         this._errorReporter.reportError(err);
     }
-        removeUnwantedExtensions(examData){
+    removeUnwantedExtensions(examData) {
         //use splice to remove 'drag_and_drop' and 'card_match' extensions from the question extensions in the JSON, as these are the ones we are replacing with custom parts and don't want the old extensions causing conflicts
         try {
             const extensions = examData.extensions;
@@ -54,14 +54,14 @@ class JSONFromExam {
                 const CPJSON = CustomPartJsonProvider.getCustomPartJson(ext);
                 if (extensionsName) {
                     examJSONObj.extensions.push(extensionsName);
-                }else{
+                } else {
                     //we might have ended up here because thre is an extension in  a queston that has had the part that used the extension removed- resulting in conflicting flags about whether the question need replacing
                     throw new Error(`Unable to get extension name for ${ext}`);
                 }
                 if (CPJSON) {
                     examJSONObj.custom_part_types.push(CPJSON);
-                }else{
-                    throw new Error(`Unable to get custom part JSON for ${ext}`);   
+                } else {
+                    throw new Error(`Unable to get custom part JSON for ${ext}`);
                 }
 
             });
@@ -75,25 +75,25 @@ class JSONFromExam {
 
     replaceExamSettings(exam, examJSONObj) {
         try {
-            const examSettings = new ExamSettings(); 
+            const examSettings = new ExamSettings();
             examJSONObj.navigation = examSettings.navigation;
             examJSONObj.feedback = examSettings.feedback;
-            return true;     
+            return true;
 
-        }catch (err) {
+        } catch (err) {
             this.reportError(err, `Unable to update ExamSettings in exam JSON`);
         }
     }
 
 
-     processExam(exam, examJSONObj) {
+    processExam(exam, examJSONObj) {
 
         try {
-        const success = this.addNewExtensionsToJSON(exam, examJSONObj);
-        const settingsSuccess = this.replaceExamSettings(exam, examJSONObj);
+            const success = this.addNewExtensionsToJSON(exam, examJSONObj);
+            const settingsSuccess = this.replaceExamSettings(exam, examJSONObj);
             //rename exam
-        examJSONObj.name = examJSONObj.name + "_updated";
-        const questions = exam.questions;//need flat here as the questions are themselves an array
+            examJSONObj.name = examJSONObj.name + "_updated";
+            const questions = exam.questions;//need flat here as the questions are themselves an array
             const questionStitcher = new QuestionJSONStitcher(this._errorReporter);
             for (const q of questions) {
                 const i = questions.indexOf(q);
@@ -101,7 +101,10 @@ class JSONFromExam {
                     questionStitcher.addCustomPartInfoToQuestion(q, i, examJSONObj);
                     questionStitcher.removeUnwantedExtensions(q, i, examJSONObj);
                     questionStitcher.removeUnwantedVariables(q, i, examJSONObj);
-                    questionStitcher.findAndReplaceParts(q, i, examJSONObj);             
+                    questionStitcher.findAndReplaceParts(q, i, examJSONObj);
+                }else if (q.hasRogueExtensions) {
+                    questionStitcher.removeUnwantedExtensions(q, i, examJSONObj);
+                    questionStitcher.removeUnwantedVariables(q, i, examJSONObj);
                 }
             };
             return success && settingsSuccess;

@@ -15,10 +15,27 @@ class ExamFromJSON {
         //console.log('Config loaded successfully:', this.data);
 
         this.processExamData(this.data);
+        //check now for rogue extensions- if there are any questions _with_ custom parts we can ignore this
+        this.checkForRogueExtensions();
+
     }
     reportError(err, additional) {
         err.message = `${this.constructor && this.constructor.name ? this.constructor.name : 'ExamFromJSON'}: ${additional} : ${err.message}`
         this._errorLog.reportError(err);
+    }
+
+    checkForRogueExtensions() {
+        if (this.exam && this.exam.questions) {
+            const questionsWithCustomParts = this.exam.questions.filter(q => q.hasCustomParts);
+            const questionsWithRogueExtensions = this.exam.questions.filter(q => q.hasRogueExtensions);
+            if (questionsWithRogueExtensions.length > 0 && questionsWithCustomParts.length === 0) {
+                const err = new Error(`Rogue extensions found in exam ${this.exam.name} but no questions with custom parts were found`);
+                this.reportError(err, `Exam ${this.exam.name} has rogue extensions but no questions with custom parts`);
+                this.exam.rogueExtensionsRemoved = true;
+            }else if (questionsWithRogueExtensions.length > 0 && questionsWithCustomParts.length > 0) {
+                console.warn(`Rogue extensiosn were found but sucessfully removed`);
+            }        
+        }
     }
 
     processExamData(config) {
@@ -80,7 +97,7 @@ class ExamFromJSON {
                         question.removeAllExistingExtensions();
                         question.hasCustomParts = false;
                         question.hasRogueExtensions = true;
-                        this.reportError(new Error(`Anomaly - rogue extension`), `Exam ${this.exam.name} question ${i + 1} : ${q.name} you need to remove unused extensions`);
+                        //this.reportError(new Error(`Anomaly - rogue extension`), `Exam ${this.exam.name} question ${i + 1} : ${q.name} you need to remove unused extensions`);
                     }
                 }
                 this.exam.addQuestion(question);

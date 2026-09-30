@@ -80,10 +80,10 @@ async function processExam(workingFolder) {
    
 
     //these are async but not dependent
-    if (processSuccess && hasCustomPartsFlag) {
+    if (processSuccess && (hasCustomPartsFlag || exam.exam.rogueExtensionsRemoved)) {
       const success = await folderWorker.copyFolder(workingFolder, updatedExamFolderName);
       //only do this if the folder actually contins cusomt parts
-      reportWriter.appendToCSV(`${examFolderName},${exam.exam.name},${exam.exam.numberOfQuestions},${hasCustomPartsFlag},${hasCustomPartsFlag ? exam.data.extensions.join(';') : 'N/A'},${hasCustomPartsFlag ? exam.exam.questionsWithCustomParts.join(';') : 'N/A'},${examErrorReporter.errors.length > 0 ? 'Errors reported' : 'No errors reported'}\n`);
+      reportWriter.appendToCSV(`${examFolderName},${exam.exam.name},${exam.exam.numberOfQuestions},${hasCustomPartsFlag},${hasCustomPartsFlag ? exam.data.extensions.join(';') : 'N/A'},${hasCustomPartsFlag ? exam.exam.questionsWithCustomParts.join(';') : 'N/A'},${examErrorReporter.errors.length > 0 ? 'Errors reported' : 'No errors reported'}, ${exam.exam.rogueExtensionsRemoved ? 'Rogue extensions removed' : ''}\n`);
       //${exam.exam.extensionsFromQuestions.join(',')},${exam.exam.questionsWithCustomParts.join(',')},${examErrorReporter.errorReport ? 'Errors reported' : 'No errors reported'}\n`);
       if (success) {
         filewriter.stringifyJSONAndwriteToFile(examJSONObj, `${updatedExamFolderName}/source.exam`);

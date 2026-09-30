@@ -9,6 +9,7 @@ class Exam {
         this._newExtensions = [];
         this._errorReporter = errorReporter;
         this._questionsWithCustomParts = [];
+        this._rogueExtensionsRemoved = false;
     }
 
 
@@ -41,6 +42,12 @@ class Exam {
         });
         this._questionsWithCustomParts = Array.from(qps);
         return Array.from(this._questionsWithCustomParts);
+    }
+    get rogueExtensionsRemoved(){
+        return this._rogueExtensionsRemoved;
+    }
+    set rogueExtensionsRemoved(value){
+        this._rogueExtensionsRemoved = value;
     }
     addExtension(name){
         if (!this._extensions.includes(name)){
